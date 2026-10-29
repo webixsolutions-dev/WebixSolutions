@@ -1,0 +1,22 @@
+{
+  "path": "/book-a-call/",
+  "status": 200,
+  "title": "Book a Strategy Call | Webix Solutions",
+  "titleLen": 38,
+  "passTitle": true,
+  "metaDesc": "Book a free 30-minute strategy call with Webix Solutions. Direct scheduling in your time zone with an instant Google Meet link and scope quote in 48 hours.",
+  "metaDescLen": 155,
+  "passMeta": true,
+  "canonical": "https://webixsolutions.com/book-a-call/",
+  "passCanonical": true,
+  "h1": "Book a Strategy Call with Our Senior Leads",
+  "passH1": true,
+  "wordCount": 1158,
+  "passWordCount": true,
+  "schemas": {
+    "contactPage": true,
+    "organization": true
+  },
+  "passSchema": true,
+  "allPass": true
+}

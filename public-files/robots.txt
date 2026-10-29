@@ -1,0 +1,23 @@
+# robots.txt for https://webixsolutions.com
+# Search engines and AI assistants are welcome to read this site.
+# Implement via app/robots.ts so it is generated with the build.
+# One group for everyone (RFC 9309 allows several User-agent lines per group),
+# so named crawlers get the same Disallow rules as everyone else.
+
+User-agent: *
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+Sitemap: https://webixsolutions.com/sitemap.xml

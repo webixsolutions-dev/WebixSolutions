@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" fill="none">
+  <defs>
+    <linearGradient id="redLacquer" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF3B42" />
+      <stop offset="45%" stop-color="#ED1C24" />
+      <stop offset="100%" stop-color="#7A0B10" />
+    </linearGradient>
+    <linearGradient id="graphiteMetal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2E323C" />
+      <stop offset="50%" stop-color="#1C1E24" />
+      <stop offset="100%" stop-color="#101216" />
+    </linearGradient>
+  </defs>
+  <!-- Extruded 3D Graphite Back Face -->
+  <path
+    d="M84 68H172V344L276 268L380 344V242H276V168H452L508 224V396L388 480L276 396L164 480L84 412V68Z"
+    fill="url(#graphiteMetal)"
+    stroke="rgba(255,255,255,0.12)"
+    stroke-width="2"
+  />
+  <!-- Red Lacquer 45-Degree Cut Front Monogram -->
+  <path
+    d="M64 48H152V324L256 248L360 324V222H256V148H432L488 204V376L368 460L256 376L144 460L64 392V48Z"
+    fill="url(#redLacquer)"
+    stroke="rgba(255,255,255,0.22)"
+    stroke-width="1.5"
+  />
+  <!-- Interlocking S Stroke -->
+  <path
+    d="M216 48H524L584 108V184H496V132H292V178H468L524 234V292"
+    stroke="url(#redLacquer)"
+    stroke-width="28"
+    stroke-linecap="square"
+  />
+</svg>

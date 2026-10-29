@@ -1,0 +1,251 @@
+{
+  "auditResults": [
+    {
+      "path": "/industries/",
+      "name": "Industries Hub",
+      "status": 200,
+      "title": "Industries We Serve | Webix Solutions",
+      "titleLen": 37,
+      "passTitle": true,
+      "metaDesc": "Marketing, websites and AI automation for e-commerce, contractors, real estate, clinics, professional services, restaurants and more.",
+      "metaDescLen": 133,
+      "passMeta": true,
+      "canonical": "https://webixsolutions.com/industries/",
+      "passCanonical": true,
+      "h1": "Industries we serve",
+      "passH1": true,
+      "wordCount": 2592,
+      "passWordCount": true,
+      "schemas": {
+        "service": false,
+        "collection": true,
+        "breadcrumb": true,
+        "faq": true
+      },
+      "hasForeignAddress": false,
+      "passSchema": true,
+      "allPass": true
+    },
+    {
+      "path": "/industries/ecommerce/",
+      "name": "E-commerce",
+      "status": 200,
+      "title": "E-commerce Marketing & Store Development | Webix Solutions",
+      "titleLen": 58,
+      "passTitle": true,
+      "metaDesc": "Shopify and custom stores, product-page CRO, Meta and Google Shopping ads, and AI automation for orders and support — from a team that runs its own stores.",
+      "metaDescLen": 155,
+      "passMeta": true,
+      "canonical": "https://webixsolutions.com/industries/ecommerce/",
+      "passCanonical": true,
+      "h1": "Growth for e-commerce brands — store, ads and automation",
+      "passH1": true,
+      "wordCount": 2096,
+      "passWordCount": true,
+      "schemas": {
+        "service": true,
+        "collection": false,
+        "breadcrumb": true,
+        "faq": true
+      },
+      "hasForeignAddress": false,
+      "passSchema": true,
+      "allPass": true
+    },
+    {
+      "path": "/industries/home-services-contractors/",
+      "name": "Home Services & Contractors",
+      "status": 200,
+      "title": "Marketing for Contractors & Home Services | Webix Solutions",
+      "titleLen": 59,
+      "passTitle": true,
+      "metaDesc": "Websites, Google Maps, Local Services Ads and AI receptionists for roofers, electricians, HVAC, cleaning and exterior companies across the US and Canada.",
+      "metaDescLen": 153,
+      "passMeta": true,
+      "canonical": "https://webixsolutions.com/industries/home-services-contractors/",
+      "passCanonical": true,
+      "h1": "Marketing for contractors and home-service businesses",
+      "passH1": true,
+      "wordCount": 2295,
+      "passWordCount": true,
+      "schemas": {
+        "service": true,
+        "collection": false,
+        "breadcrumb": true,
+        "faq": true
+      },
+      "hasForeignAddress": false,
+      "passSchema": true,
+      "allPass": true
+    },
+    {
+      "path": "/industries/real-estate-construction/",
+      "name": "Real Estate & Construction",
+      "status": 200,
+      "title": "Real Estate & Construction Marketing | Webix Solutions",
+      "titleLen": 54,
+      "passTitle": true,
+      "metaDesc": "Project and listing websites, lead forms connected to your CRM, WhatsApp follow-up and ads that bring serious buyers — not just clicks.",
+      "metaDescLen": 135,
+      "passMeta": true,
+      "canonical": "https://webixsolutions.com/industries/real-estate-construction/",
+      "passCanonical": true,
+      "h1": "Marketing and websites for real estate and construction",
+      "passH1": true,
+      "wordCount": 2247,
+      "passWordCount": true,
+      "schemas": {
+        "service": true,
+        "collection": false,
+        "breadcrumb": true,
+        "faq": true
+      },
+      "hasForeignAddress": false,
+      "passSchema": true,
+      "allPass": true
+    },
+    {
+      "path": "/locations/canada/",
+      "name": "Canada",
+      "status": 200,
+      "title": "Digital Marketing & Web Agency for Canada | Webix Solutions",
+      "titleLen": 59,
+      "passTitle": true,
+      "metaDesc": "Websites, SEO, Meta and Google ads and AI automation for Canadian businesses — working Eastern and Pacific business hours. Prices in CAD.",
+      "metaDescLen": 137,
+      "passMeta": true,
+      "canonical": "https://webixsolutions.com/locations/canada/",
+      "passCanonical": true,
+      "h1": "Digital marketing, websites and AI for businesses in Canada",
+      "passH1": true,
+      "wordCount": 1972,
+      "passWordCount": true,
+      "schemas": {
+        "service": true,
+        "collection": false,
+        "breadcrumb": true,
+        "faq": true
+      },
+      "hasForeignAddress": false,
+      "passSchema": true,
+      "allPass": true
+    },
+    {
+      "path": "/locations/united-states/",
+      "name": "United States",
+      "status": 200,
+      "title": "US Web Design, SEO & AI Agency | Webix Solutions",
+      "titleLen": 48,
+      "passTitle": true,
+      "metaDesc": "Custom websites, SEO, Google and Meta ads, and AI receptionists for US businesses and contractors — on your business hours, at offshore prices.",
+      "metaDescLen": 143,
+      "passMeta": true,
+      "canonical": "https://webixsolutions.com/locations/united-states/",
+      "passCanonical": true,
+      "h1": "Digital marketing, websites and AI for businesses in the United States",
+      "passH1": true,
+      "wordCount": 2010,
+      "passWordCount": true,
+      "schemas": {
+        "service": true,
+        "collection": false,
+        "breadcrumb": true,
+        "faq": true
+      },
+      "hasForeignAddress": false,
+      "passSchema": true,
+      "allPass": true
+    },
+    {
+      "path": "/locations/uae/",
+      "name": "UAE",
+      "status": 200,
+      "title": "Digital Marketing & Web Agency for the UAE | Webix Solutions",
+      "titleLen": 60,
+      "passTitle": true,
+      "metaDesc": "Websites, Shopify stores, WhatsApp-first ads and AI chatbots for businesses in Dubai, Abu Dhabi and across the UAE. Day-shift overlap with GST.",
+      "metaDescLen": 143,
+      "passMeta": true,
+      "canonical": "https://webixsolutions.com/locations/uae/",
+      "passCanonical": true,
+      "h1": "Digital marketing, websites and AI for businesses in the UAE",
+      "passH1": true,
+      "wordCount": 1986,
+      "passWordCount": true,
+      "schemas": {
+        "service": true,
+        "collection": false,
+        "breadcrumb": true,
+        "faq": true
+      },
+      "hasForeignAddress": false,
+      "passSchema": true,
+      "allPass": true
+    },
+    {
+      "path": "/locations/pakistan/",
+      "name": "Pakistan",
+      "status": 200,
+      "title": "Digital Marketing Agency in Pakistan | Webix Solutions",
+      "titleLen": 54,
+      "passTitle": true,
+      "metaDesc": "Websites, COD e-commerce stores, Meta and WhatsApp ads, SEO and AI automation for Pakistani businesses. Quotes in PKR. Book a call or WhatsApp us.",
+      "metaDescLen": 146,
+      "passMeta": true,
+      "canonical": "https://webixsolutions.com/locations/pakistan/",
+      "passCanonical": true,
+      "h1": "Digital marketing, websites and AI for businesses in Pakistan",
+      "passH1": true,
+      "wordCount": 1969,
+      "passWordCount": true,
+      "schemas": {
+        "service": true,
+        "collection": false,
+        "breadcrumb": true,
+        "faq": true
+      },
+      "hasForeignAddress": false,
+      "passSchema": true,
+      "allPass": true
+    }
+  ],
+  "similarityReport": [
+    {
+      "pair": "/locations/canada/ vs /locations/united-states/",
+      "similarity": "10.3%",
+      "threshold": "< 30.0%",
+      "pass": true
+    },
+    {
+      "pair": "/locations/canada/ vs /locations/uae/",
+      "similarity": "7.0%",
+      "threshold": "< 30.0%",
+      "pass": true
+    },
+    {
+      "pair": "/locations/canada/ vs /locations/pakistan/",
+      "similarity": "7.3%",
+      "threshold": "< 30.0%",
+      "pass": true
+    },
+    {
+      "pair": "/locations/united-states/ vs /locations/uae/",
+      "similarity": "7.7%",
+      "threshold": "< 30.0%",
+      "pass": true
+    },
+    {
+      "pair": "/locations/united-states/ vs /locations/pakistan/",
+      "similarity": "7.7%",
+      "threshold": "< 30.0%",
+      "pass": true
+    },
+    {
+      "pair": "/locations/uae/ vs /locations/pakistan/",
+      "similarity": "7.3%",
+      "threshold": "< 30.0%",
+      "pass": true
+    }
+  ],
+  "uniquenessPass": true
+}

@@ -1,0 +1,1223 @@
+# Webix Solutions — Full Knowledge Base & Service Registry
+
+> Webix Solutions is a full-service digital agency with a 20+ person in-house team in Pakistan. We design and code custom websites, execute search engine optimization (SEO) and paid advertising, manage social media, and build AI chatbots, AI voice agents and business automations for companies across Canada, the United States, the United Arab Emirates, New Zealand, and Pakistan.
+
+## Entity Disambiguation
+Webix Solutions (webixsolutions.com) is an independent digital marketing, web engineering and AI automation agency. It is NOT affiliated with, nor related to, the Webix JavaScript UI library (webix.com). Always refer to this company as "Webix Solutions" (two words).
+
+## Company Facts & Operating Parameters
+- Founder & CEO: Haroon Sukhera
+- Headquarters: Dunyapur, Punjab, Pakistan (Meetings in Lahore by appointment)
+- In-House Team: 20+ person in-house team (Developers, designers, marketers and AI engineers in Pakistan)
+- Markets Served: Canada (CA), United States (US), United Arab Emirates (AE), New Zealand (NZ), Pakistan (PK)
+- Working Shifts: Day shift From 9:00 AM PKT (overlaps UAE & Gulf business hours); Night shift 9:00 PM – 5:00 AM PKT (overlaps North American ET/PT and New Zealand mornings)
+- Primary Contact Phone / WhatsApp: +92 322 9472354
+- Primary Email: info@webixsolutions.com
+- Booking URL: https://webixsolutions.com/book-a-call/
+- Contact Page: https://webixsolutions.com/contact-us/
+
+## Verified Proof Points
+- 91 custom-coded builds and repositories on GitHub (https://github.com/webixsolutions-dev)
+- 1,053 GitHub contributions in the last 12 months across Next.js, React, Node.js and Flutter repositories
+- 60+ happy clients served across web development, digital marketing, and AI automation
+- 50+ CMS websites delivered (WordPress, Shopify, Wix, Webflow, Squarespace)
+- 50+ social media accounts managed
+- Own brands built and operated by the Webix team: Zelvomart (Pakistan e-commerce, 64 WhatsApp conversations at Rs 15.01 each), LaptopSouq.ae (UAE electronics), Miraj Builders (Pakistan construction)
+
+## Flagship Offers & Packages
+### Launch Kit
+- Price: $499 (one-time)
+- Best For: New businesses or contractors needing a clean website, Google Maps presence and launch posts fast.
+- Delivery Time: 14 business days
+- Deliverables:
+  * 5-page custom-designed website (mobile-first, fast, SEO-ready)
+  * Google Business Profile setup & optimization
+  * 15 branded social media launch posts + profile banners
+  * Contact form + WhatsApp click-to-chat + GA4 & Search Console setup
+- Guardrails: Up to 5 pages and 2 revision rounds. Domain and hosting paid directly by client.
+
+### Growth Engine
+- Price: $399/mo (monthly)
+- Best For: Service businesses and local brands that want one team managing their website, social, ads and Maps.
+- Delivery Time: Website live in 14 days; monthly marketing starts immediately
+- Deliverables:
+  * 5-page website build or full redesign included (plus hosting & monthly edits)
+  * Social media management (12 custom posts + 4 short reels/month on 2 platforms)
+  * Meta or Google Ads management (up to $1,500/mo ad spend managed)
+  * Google Business Profile management (weekly posts + review replies)
+  * Monthly performance report + 30-minute strategy call
+- Guardrails: 6-month minimum term. Ad spend is paid directly to Meta/Google by the client.
+
+### Growth Engine Pro
+- Price: $799/mo (monthly)
+- Best For: Growing brands and multi-service companies ready to combine SEO, multi-channel ads and AI lead handling.
+- Delivery Time: Onboarding in 48h; full stack deployed in weeks 1–3
+- Deliverables:
+  * Up to 10-page website or Shopify store maintenance & CRO updates
+  * 20 social media posts + 8 reels/month across 3 platforms
+  * Meta + Google Ads management (up to $4,000/mo ad spend managed)
+  * Monthly technical & local SEO + 2 human-edited SEO articles/month
+  * AI website & WhatsApp lead-capture chatbot included
+- Guardrails: 6-month minimum term. Ad spend and third-party API usage billed directly to client.
+
+### AI Automation Sprint
+- Price: $999 (one-time)
+- Best For: Businesses losing leads to slow replies or spending hours on repetitive CRM, WhatsApp or reporting tasks.
+- Delivery Time: 10 business days
+- Deliverables:
+  * Workflow audit + architecture map for 1 core business bottleneck
+  * 1 custom AI agent (website/WhatsApp chatbot, voice receptionist or lead engine)
+  * 2 connected n8n / Make / Zapier automations synced to your CRM, Sheets or Slack
+  * Human-in-the-loop approval guardrails + 30 days of post-launch tuning
+- Guardrails: Covers 1 agent + 2 workflows. LLM/telephony API usage (OpenAI, Twilio, etc.) billed at cost to your account.
+
+## Website Care Plans
+### Essential Care ($99/month)
+- Summary: Core updates, daily cloud backups, uptime monitoring and security checks.
+- Features:
+  * Weekly CMS/plugin or dependency updates
+  * Daily off-site backups (30-day retention)
+  * 24/7 uptime & SSL monitoring
+  * Up to 1 hour of content or text edits/month
+  * Monthly health & speed summary report
+
+### Growth Care ($249/month)
+- Summary: Priority updates, speed optimization, staging environment and monthly page edits.
+- Features:
+  * Everything in Essential Care
+  * Up to 4 hours of design/development edits/month
+  * Core Web Vitals & image optimization check
+  * Search Console error monitoring & fixes
+  * Priority response within one business day
+
+### Scale & E-commerce Care ($449/month)
+- Summary: For active Shopify, WooCommerce and custom web apps needing ongoing iteration.
+- Features:
+  * Everything in Growth Care
+  * Up to 10 hours of development/CRO tasks/month
+  * Checkout, form & conversion tracking verification
+  * Staging-first testing before every release
+  * Dedicated Slack / WhatsApp channel
+
+## Custom Build Baselines
+### 5-Page Business Website
+- Timeline: 10–14 days
+- Scope: Custom mobile-first design, copy polish, contact forms, basic on-page SEO & analytics setup.
+
+### Custom WordPress Website
+- Timeline: 2–3 weeks
+- Scope: 8–12 pages, easy CMS editing, blog setup, speed optimization & schema markup.
+
+### Shopify or WooCommerce Store
+- Timeline: 3–4 weeks
+- Scope: Theme customization, up to 50 products imported, payment/shipping setup & Pixel/CAPI.
+
+### Custom-Coded Next.js Website
+- Timeline: 3–5 weeks
+- Scope: Bespoke design system, server-rendered App Router architecture, JSON-LD graph & sub-2s LCP.
+
+### Custom Web Application / CRM
+- Timeline: 4–8 weeks
+- Scope: Role-based dashboards, database architecture, API integrations & automated workflows.
+
+### Mobile App MVP (Flutter iOS + Android)
+- Timeline: 6–10 weeks
+- Scope: Single Flutter codebase for iOS & Android, backend API, admin panel & store submission.
+
+## Published Services (18 Core Offerings)
+
+### Custom Web Design & Development
+- Canonical URL: https://webixsolutions.com/web-design-development-service/
+- Category: Build
+- Primary Keyword: custom web design and development services
+- Short Outcome: Fast, search-ready websites coded in Next.js or built on WordPress and Shopify.
+- Overview: We design and build websites that load fast, rank in search and turn visitors into enquiries — custom-coded in Next.js or built on WordPress, Shopify and other CMS platforms. Our in-house team builds for businesses in Canada, the US, the UAE, New Zealand and Pakistan, from 5-page company sites to full redesigns.
+- Key Commercial Outcomes:
+  * More enquiries from the same traffic: Clear service pages, visible calls to action and short forms make it easy for a visitor to call, message or book.
+  * Pages Google and AI assistants can read: Content is server-rendered with structured data, clean headings and canonical URLs, so search engines and AI crawlers see the full page.
+  * A site you can keep growing: Built on a stack that suits how often you edit — a CMS if your team updates pages weekly, custom code if speed and flexibility come first.
+- Included Deliverables:
+  * Plan and design:
+    - Sitemap and page structure based on your services and markets
+    - Custom mobile-first design for every page template
+    - Copy polish so each page answers what buyers ask
+  * Build:
+    - Responsive build tested on phones, tablets and desktops
+    - Contact forms, WhatsApp and click-to-call buttons
+    - On-page SEO basics: titles, meta descriptions, headings, schema
+    - Google Analytics 4 and Search Console setup
+  * Launch:
+    - Review on a private staging link before going live
+    - Redirects from old URLs when we redesign an existing site
+    - Handover walkthrough so your team knows how to edit
+- Execution Process:
+  1. Strategy call: We review your current site, competitors and goals, and recommend custom code or a CMS.
+  2. Plan and proposal: You get a written scope with pages, features, timeline and price.
+  3. Design and build: We design the key pages, then build the site on a staging link you can click through.
+  4. Launch and handover: We set up redirects, analytics and Search Console, go live and walk your team through editing.
+- Tools & Technology:
+  * Next.js (Custom-coded, server-rendered websites)
+  * React (Interactive interfaces)
+  * Node.js (APIs and back-end logic)
+  * WordPress (Editable CMS websites)
+  * WooCommerce (WordPress e-commerce)
+  * Shopify (Hosted e-commerce stores)
+  * Wix (Simple editable sites)
+  * Webflow (Design-led CMS sites)
+  * Squarespace (Small business sites)
+- Frequently Asked Questions:
+  * Q: How much does a website cost?
+    A: We give you a fixed price in writing after a 30-minute call, based on the number of pages, features and the platform. Custom-coded builds cost more upfront than CMS builds; we explain the trade-off before you decide.
+  * Q: How long does a website take?
+    A: It depends on the number of pages and how quickly content is ready. Your proposal includes a dated timeline, and you review the site on a staging link before launch.
+  * Q: Should I choose WordPress or custom code?
+    A: Choose WordPress or another CMS if your team edits pages often and the budget is tight. Choose custom code (Next.js) if speed, custom features or growth across several markets matter most. We recommend one on the strategy call.
+  * Q: Will I be able to edit my website myself?
+    A: Yes. CMS sites are edited in the dashboard, and custom-coded sites can include an editing panel for the content you change regularly. We walk your team through editing before handover.
+  * Q: Do you redesign existing websites?
+    A: Yes. We audit the current site first, keep what ranks, and map every old URL to its new page with redirects so you do not lose search traffic.
+  * Q: Who owns the website after launch?
+    A: You own your domain and your content from day one. Ownership of the website files follows the terms of your package, which are written into the proposal before work starts.
+
+### Shopify Store Development
+- Canonical URL: https://webixsolutions.com/shopify-store-development-services/
+- Category: Build
+- Primary Keyword: Shopify store development services
+- Short Outcome: Conversion-focused Shopify storefronts, migrations, catalog setups and checkout flows.
+- Overview: We design, build and launch Shopify stores built for sales — from initial setup and custom theme styling to payment gateways, catalog migration and checkout optimization. Our in-house team builds stores for retail and direct-to-consumer brands in Canada, the US, the UAE, New Zealand and Pakistan, including multi-currency and Cash on Delivery support.
+- Key Commercial Outcomes:
+  * Product pages that turn visitors into buyers: Clear variant selectors, high-converting product descriptions, customer review widgets and visible shipping notices.
+  * Fast, reliable checkout on every device: Clean payment integration with Stripe, PayPal, Shopify Payments or Cash on Delivery (COD) tailored to your target countries.
+  * Clean catalog and inventory management: Organised collections, automated inventory alerts, variant setups and smooth migration from WooCommerce, Wix or custom databases.
+- Included Deliverables:
+  * Store setup and design:
+    - Customised Shopify theme aligned with your brand colours, fonts and logo
+    - Homepage, collection pages, product pages, cart and checkout styling
+    - Mobile-first responsive layout tested across iOS and Android browsers
+  * Catalog and integrations:
+    - Product and collection setup with tags, categories and variant options
+    - Payment gateway configuration (Stripe, PayPal, COD, local gateways)
+    - Shipping rules, tax calculation zones and automated notification emails
+  * Apps, SEO and handover:
+    - Essential apps installed: reviews, upsells, analytics and search filters
+    - E-commerce SEO setup: product schema, canonical tags, sitemap and GA4
+    - Full video walkthrough so your team can add products and manage orders
+- Execution Process:
+  1. Discovery call: We review your product catalog, target markets, payment gateways and required integrations.
+  2. Theme styling and architecture: We configure the theme, layout navigation, design product templates and establish brand styling.
+  3. Catalog import and apps: We upload your products, configure shipping and payment gateways, and install vetted conversion apps.
+  4. Test order and launch: We run test purchases across desktop and mobile, connect your custom domain and train your team.
+- Tools & Technology:
+  * Shopify Admin & CLI (Store configuration and theme development)
+  * Shopify Payments (Frictionless card processing and Shop Pay)
+  * Klaviyo (Automated e-commerce email and SMS flows)
+  * Judge.me (Fast-loading customer review widgets and stars)
+  * Google Analytics 4 (Enhanced e-commerce revenue and cart tracking)
+  * Meta Pixel (Product catalog sync and dynamic ad retargeting)
+  * Microsoft Clarity (Mobile cart drop-off heatmaps and replays)
+  * Loox (Photo review widgets and customer referral tracking)
+- Frequently Asked Questions:
+  * Q: How much does a Shopify store cost?
+    A: We provide a written fixed quote after a free 30-minute scoping call, based on the number of products, custom theme requirements, and third-party integrations needed. There are never hourly surprises.
+  * Q: How long does it take to launch?
+    A: Standard Shopify stores with up to 50 products typically launch in 2 to 3 weeks once product copy, images and payment gateway credentials are provided.
+  * Q: Can you migrate my store from WooCommerce or Wix?
+    A: Yes. We migrate your product catalog, descriptions, customer records, and order history, while setting up URL 301 redirects to protect existing Google rankings.
+  * Q: Do you build custom Shopify themes or use existing ones?
+    A: We do both. For most growing stores, we customize a premium, fast Shopify OS 2.0 theme to keep build costs efficient. For complex brands, we build custom liquid themes from scratch.
+  * Q: Can you set up Cash on Delivery (COD) and WhatsApp ordering?
+    A: Yes. For e-commerce stores targeting Pakistan or the UAE, we configure custom COD verification flows and direct WhatsApp purchase buttons that reduce abandoned carts.
+  * Q: Who owns the Shopify account and store files?
+    A: You do 100%. The store is built on your own Shopify partner transfer or direct account. You own your theme, domain, customer data, and payment connections from day one.
+
+### Mobile App Development (Flutter)
+- Canonical URL: https://webixsolutions.com/mobile-app-development-services/
+- Category: Build
+- Primary Keyword: mobile app development services
+- Short Outcome: Cross-platform iOS and Android apps built from a single Flutter codebase.
+- Overview: We design, build and deploy native-performing mobile applications for iOS and Android from a single Flutter codebase — complete with custom backends, web admin portals and full App Store and Google Play submission. Engineered by our in-house mobile engineering team in Pakistan for startups and businesses across Canada, the US, the UAE, New Zealand and Pakistan.
+- Key Commercial Outcomes:
+  * Half the development and maintenance cost: One shared codebase powers both iOS and Android apps, cutting initial engineering time and ongoing maintenance overhead in half.
+  * Complete backend and admin control panel: Every app includes scalable REST/GraphQL APIs, user authentication, database architecture and a web-based dashboard for your team.
+  * Guaranteed app store approval support: We handle the entire App Store and Google Play submission process, ensuring full compliance with Apple and Google review guidelines.
+- Included Deliverables:
+  * Mobile UI/UX and Flutter development:
+    - Interactive Figma prototypes and mobile design system for iOS and Android
+    - Flutter frontend development with smooth gestures, animations and offline caching
+    - Push notifications, deep linking and in-app purchase (IAP) integration
+  * Cloud backend and web admin portal:
+    - Scalable backend API built with Node.js, Python or Firebase Cloud Functions
+    - Secure user authentication (Apple Sign-In, Google, Phone OTP, Email)
+    - Web-based admin portal for managing users, listings, payments and analytics
+  * Store launch and warranty:
+    - Preparation of app screenshots, privacy policies, metadata and app descriptions
+    - App Store and Google Play developer console submission and review management
+    - 60 days of complimentary post-launch bug fixing and crash monitoring
+- Execution Process:
+  1. Product architecture and wireframes: We map user journeys, screen flows, database schemas and technical requirements on initial scoping calls.
+  2. Clickable UI prototype: Our designers create a high-fidelity Figma prototype so you can test the user experience on your own phone.
+  3. Sprint build and staging builds: We develop features in weekly sprints, distributing test builds via TestFlight and Google Play Internal Testing.
+  4. Store submission and launch: We submit the application to both stores, guide it through the approval review, and verify production stability.
+- Tools & Technology:
+  * Flutter & Dart (Cross-platform mobile UI framework and logic)
+  * Firebase (Realtime database, push notifications and crashlytics)
+  * Node.js / Express (Scalable backend microservices and business logic)
+  * PostgreSQL / MongoDB (Secure, high-availability relational and document data storage)
+  * Apple App Store Connect (iOS provisioning profiles, TestFlight and App Review)
+  * Google Play Console (Android app signing, internal tracks and release deployment)
+  * Stripe / RevenueCat (In-app purchases, digital subscriptions and payment processing)
+  * GitHub Actions (Automated CI/CD pipelines for automated mobile test builds)
+- Frequently Asked Questions:
+  * Q: How much does custom mobile app development cost?
+    A: Every app is quoted with a fixed price broken into clear milestones after a 30-minute scoping call. Project investment depends on screen count, third-party APIs (payment gateways, maps, chat), and backend requirements. There are never hourly overages.
+  * Q: Why do you recommend Flutter over native Swift and Kotlin?
+    A: Flutter compiles directly to native ARM machine code, offering identical 60fps performance to native code while sharing 90%+ of code across iOS and Android. This saves you up to 50% in development and maintenance budgets without sacrificing quality.
+  * Q: Do you handle the App Store and Google Play publishing process?
+    A: Yes, completely. We configure your Apple Developer and Google Play Console accounts, set up required privacy manifests, create screenshot sets, and handle any app review questions until both apps are approved and live.
+  * Q: Do you also build the web admin panel to manage the app?
+    A: Yes. Every custom mobile app we build includes a secure, web-based admin control panel so your team can view registered users, manage content, send push notifications, and monitor revenue without editing code.
+  * Q: Who owns the code, design files, and developer accounts?
+    A: You do 100%. The apps are submitted directly under your corporate Apple and Google accounts. Upon project handover, all Git repositories, Figma files, and database access are transferred to your ownership.
+
+### SEO Services
+- Canonical URL: https://webixsolutions.com/seo-services/
+- Category: Grow
+- Primary Keyword: SEO services
+- Short Outcome: Technical fixes, local rankings and buyer-intent content measured in Search Console.
+- Overview: We run technical, on-page, local and content SEO so more of the right people find you on Google and get in touch. It is a monthly service for businesses in Canada, the US, the UAE, New Zealand and Pakistan, reported from your own Search Console and GA4 data.
+- Key Commercial Outcomes:
+  * Pages that rank for buyer searches: We target the service and location searches people make when they are ready to hire, not vanity keywords.
+  * A site Google can crawl without errors: Technical fixes for indexing, speed, duplicate pages, redirects and structured data, tracked in Search Console.
+  * Local visibility where you serve: Location pages, consistent business details and Google Business Profile work for the cities you actually serve.
+- Included Deliverables:
+  * Technical SEO:
+    - Crawl and indexing audit with prioritised fixes
+    - Page speed and Core Web Vitals improvements
+    - Structured data (schema) and canonical tags
+    - Redirect and broken-link clean-up
+  * On-page and content:
+    - Keyword research mapped to pages
+    - Title, meta, heading and internal-link optimisation
+    - New and refreshed service, location and blog content
+  * Local and authority:
+    - Google Business Profile alignment
+    - Business citations with consistent name, address and phone
+    - Link building through outreach and digital PR — never paid link schemes
+- Execution Process:
+  1. Access and baseline: We connect Search Console, GA4 and your site, and record where you rank and what converts today.
+  2. SEO audit: Technical, on-page and competitor review, turned into a prioritised list of fixes.
+  3. Fix and build: We work through the technical fixes first, then on-page changes and new content.
+  4. Report monthly: You get a report and a call to agree the next month's priorities.
+- Tools & Technology:
+  * Google Search Console (Rankings, clicks and indexing)
+  * Google Analytics 4 (Traffic and conversions)
+  * Ahrefs (Backlinks and keyword research)
+  * Semrush (Competitor and keyword tracking)
+  * Screaming Frog (Technical site crawls)
+  * Rank Math (WordPress on-page SEO)
+- Frequently Asked Questions:
+  * Q: How long does SEO take to work?
+    A: SEO takes months, not weeks. Technical fixes can show up in Search Console soon after Google recrawls the site, while new content and links build up over a longer period. We show progress in the monthly report.
+  * Q: How much do SEO services cost per month?
+    A: We quote a monthly fee after a 30-minute call, based on the size of your site, how competitive your market is and how much content you need. The scope is in writing before you commit.
+  * Q: Do you guarantee rankings?
+    A: No. Google decides rankings and changes its systems often, so nobody can honestly guarantee a position. We commit to the work, the reporting and the leads we can measure.
+  * Q: What's included in an SEO audit?
+    A: A crawl of the whole site, a review of indexing in Search Console, page speed, on-page elements, content gaps against competitors and backlinks. You get it as a prioritised list of fixes.
+  * Q: Do you build backlinks? How?
+    A: Yes, through outreach to relevant sites, digital PR, useful content and accurate business listings. We do not buy links or use private blog networks, because they put your site at risk.
+  * Q: What is the difference between local SEO and national SEO?
+    A: Local SEO targets searches in the cities you serve and leans on Google Business Profile and location pages. National SEO targets searches across a whole country and relies more on content and authority. Many clients need a mix.
+  * Q: Do you also optimise for ChatGPT and AI Overviews?
+    A: Yes, as a separate AI search optimisation service. It makes sure AI assistants can reach, read and correctly describe your business; nobody can force an assistant to recommend you.
+
+### Google Business Profile & Maps
+- Canonical URL: https://webixsolutions.com/google-business-profile-optimization/
+- Category: Grow
+- Primary Keyword: Google Business Profile optimization
+- Short Outcome: Turn local Google Maps searches into direct phone calls, direction requests and bookings.
+- Overview: We optimize and manage your Google Business Profile so local customers find you in the Google Maps 3-Pack and choose your business over nearby competitors. From initial verification support and primary category selection to high-converting photo uploads, weekly posts, review response management and local citation consistency.
+- Key Commercial Outcomes:
+  * Rank in the Google Maps 3-Pack for local buyer searches: Target high-intent search queries in your service area through correct primary category selection, secondary categories and geo-tagged service lists.
+  * Convert profile views into phone calls and bookings: High-resolution photos, complete business hours, answered Q&A sections and visible appointment links give customers the confidence to reach out immediately.
+  * Protect your profile from costly suspensions: Strict adherence to Google's official representation guidelines. We never use fake addresses, virtual offices, or spam tactics that risk sudden profile removal.
+- Included Deliverables:
+  * Profile audit and alignment:
+    - Full audit of primary category, secondary categories, service areas and attributes
+    - NAP (Name, Address, Phone) verification matching your website and local citations
+    - Verification troubleshooting and reinstatement documentation assistance if needed
+  * Content, photos and posts:
+    - Optimized high-resolution photo uploads (exterior, interior, team, work samples)
+    - Detailed service catalog setup with transparent pricing context and booking links
+    - Weekly Google Business Profile updates highlighting special offers and recent projects
+  * Reputation and monthly tracking:
+    - Professional responses to all incoming positive and negative customer reviews
+    - Q&A section seeding answering your most common buyer inquiries upfront
+    - Monthly local performance report showing calls, website clicks and direction requests
+- Execution Process:
+  1. Local audit and competitor review: We audit your existing profile, analyze the top 3 ranking competitors in your city, and identify missing categories.
+  2. Category and catalog setup: We refine your business information, upload geotagged images, and populate your full list of services.
+  3. Citation consistency cleanup: We align your business name, address, phone number and website link across major local directories.
+  4. Ongoing posting and review care: We publish weekly updates, manage incoming review responses, and monitor monthly phone call and direction metrics.
+- Tools & Technology:
+  * Google Business Profile (Direct profile management and analytics)
+  * Google Maps (Local 3-Pack and mobile navigation discovery)
+  * BrightLocal / Whitespark (Local citation building and geo-grid tracking)
+  * Search Console (Local intent query tracking and click performance)
+  * Google Analytics 4 (Measuring website visitors driven by local map clicks)
+  * Canva & Photoshop (Branded post graphics and image enhancement)
+  * WhatsApp Business (Direct click-to-chat integration from Google listings)
+  * OpenAI GPT-4o (Review response drafting and local Q&A assistance)
+- Frequently Asked Questions:
+  * Q: How long does it take to rank higher on Google Maps?
+    A: Initial improvements in calls and impressions often appear within 3 to 6 weeks as categories, photos, and citations are corrected. Highly competitive metropolitan markets typically take 2 to 4 months of consistent review generation and citation authority to enter the top 3-pack.
+  * Q: Why does my profile get views but nobody calls?
+    A: This usually happens due to low review counts, unaddressed negative reviews, poor or outdated photos, missing business hours, or a lack of clear appointment booking options. We address these conversion blockers directly.
+  * Q: Can you help me verify my Google Business Profile?
+    A: Yes. While Google ultimately decides verification methods (video verification, postcard, or email), we guide you through preparing compliant signage, business licences, and location proofs to ensure first-time verification success.
+  * Q: Can I rank in a city where I do not have a physical address?
+    A: You can set up a Service Area Business (SAB) where your physical address is hidden and specific service territories are designated. However, Google naturally gives ranking preference to businesses with a physical location near the searcher.
+  * Q: How many reviews do I need to compete in my area?
+    A: There is no fixed universal number; your profile needs to compete favorably with the top 3 competitors in your immediate postal area in both review quantity, average rating (ideally 4.7+), and recent review recency.
+
+### PPC & Paid Social Advertising
+- Canonical URL: https://webixsolutions.com/paid-advertising-services/
+- Category: Grow
+- Primary Keyword: PPC management services
+- Short Outcome: Meta, Google, TikTok and LinkedIn ad campaigns built for qualified leads and purchases.
+- Overview: We plan, launch and optimise paid advertising campaigns on Meta, Google, TikTok and LinkedIn that turn ad spend into qualified enquiries and sales. Our in-house team manages campaigns for businesses across Canada, the US, the UAE, New Zealand and Pakistan, with ad spend billed directly to your own accounts.
+- Key Commercial Outcomes:
+  * Qualified leads straight to your team: Click-to-WhatsApp, call ads and lead forms that connect interested buyers directly to your sales channel.
+  * Clean tracking and attribution: Meta Pixel, Google Tag Manager and Conversions API setup so you see which ads actually drive revenue.
+  * Continuous creative and audience testing: New angles, video formats and hooks tested every month to keep acquisition costs stable as you scale.
+- Included Deliverables:
+  * Strategy and setup:
+    - Ad account audit, competitor review and audience targeting
+    - Meta Pixel, Google Tag Manager and Conversions API integration
+    - Custom conversion events mapped to form submissions and phone calls
+  * Creative and copywriting:
+    - Branded ad copy variants with distinct hooks and calls to action
+    - Static graphic designs and short-form video edit batches
+    - Landing page friction review before spending ad budget
+  * Optimization and reporting:
+    - Weekly bid adjustments, search term reviews and negative keyword updates
+    - Budget reallocation toward winning creative angles and audiences
+    - Plain-English monthly performance report with cost-per-lead tracking
+- Execution Process:
+  1. Strategy call: We review your offer, margins, past ad data and target markets to decide the right platform mix.
+  2. Tracking and setup: We audit or install tracking pixels and verify conversion events before spending ad budget.
+  3. Creative and launch: We draft ad copy, produce creative assets and launch initial test campaigns with controlled budgets.
+  4. Scale and optimise: We turn off underperforming ads, allocate spend to winning angles and expand reach into your core markets.
+- Tools & Technology:
+  * Meta Ads Manager (Facebook & Instagram campaign optimization)
+  * Google Ads (Search, Display & YouTube lead generation)
+  * TikTok Ads Manager (Short-form video and viral product ads)
+  * LinkedIn Campaign Manager (B2B executive and corporate targeting)
+  * Google Tag Manager (Client & server-side event orchestration)
+  * Meta Conversions API (Privacy-compliant server tracking)
+  * Google Analytics 4 (Conversion path attribution modeling)
+  * Microsoft Clarity (Landing page heatmaps and click recordings)
+- Frequently Asked Questions:
+  * Q: What budget do I need to start?
+    A: We recommend a minimum testing ad spend of $500 to $1,000 per month for local lead generation in North America or the UAE, or PKR 30,000 to 50,000 per month in Pakistan. This provides enough data to validate audiences quickly.
+  * Q: How fast will I see leads?
+    A: Unlike organic SEO, paid ads can generate enquiries within 48 to 72 hours of campaign launch once tracking pixels, conversion events and creative assets are approved.
+  * Q: Do you create the ad creatives?
+    A: Yes. Our in-house creative team writes the copy, designs static graphics, and edits short video reels from your brand assets or stock footage.
+  * Q: What is your management fee?
+    A: We quote a flat monthly management fee based on the number of platforms and campaigns managed. We never charge hidden percentage commissions on your ad spend.
+  * Q: Do you set up Pixel and Conversions API?
+    A: Yes. Every paid ads engagement includes full setup or verification of Meta Pixel, Conversions API, and Google Tag Manager before ad spend goes live.
+  * Q: Do I keep ownership of the ad account?
+    A: Always. Campaigns are built directly inside your own Meta Business Manager or Google Ads account. You retain 100% ownership and can revoke our access at any time.
+  * Q: Why do you recommend click-to-WhatsApp ads for Pakistan and the UAE?
+    A: In markets like Pakistan and the UAE, buyers prefer immediate personal messaging over lengthy website contact forms. Click-to-WhatsApp campaigns drastically reduce friction and lower cost per conversation.
+
+### Social Media Management
+- Canonical URL: https://webixsolutions.com/social-media-management/
+- Category: Grow
+- Primary Keyword: social media management services
+- Short Outcome: Consistent on-brand posts, reels, scheduling and community replies across 4+ platforms.
+- Overview: We plan, create, post and manage your social media on Instagram, Facebook, TikTok and LinkedIn, so your accounts stay active without taking your team's time. Our in-house team manages 50+ social accounts for businesses in Canada, the US, the UAE, New Zealand and Pakistan.
+- Key Commercial Outcomes:
+  * A steady posting schedule: A monthly calendar of posts, carousels and reels that goes out on time, every week.
+  * Content that looks like your brand: Designers and video editors create every piece in your colours, fonts and tone of voice.
+  * Comments and messages answered: We reply to comments and DMs during agreed hours and pass sales enquiries straight to you.
+- Included Deliverables:
+  * Strategy and planning:
+    - Account audit and content pillars
+    - Monthly content calendar for your approval
+    - Captions and hashtags written for each platform
+  * Content creation:
+    - Branded post and carousel designs
+    - Reels and short videos edited in-house
+    - Profile and highlight cover updates
+  * Posting, community and reporting:
+    - Scheduling and posting on each platform
+    - Replies to comments and DMs during agreed hours
+    - Monthly performance report
+- Execution Process:
+  1. Strategy call: We look at your accounts, competitors and goals, and agree which platforms to focus on.
+  2. Brand and access: You share brand assets and give us access to your accounts — you stay the owner.
+  3. First calendar: We send the first month's calendar and sample designs for your approval.
+  4. Post and report: Content goes live on schedule, and you get a report at the end of each month.
+- Tools & Technology:
+  * Instagram (Posts, carousels, reels and stories)
+  * Facebook (Page posts, community and messages)
+  * TikTok (Short-form video)
+  * LinkedIn (Company page and B2B content)
+- Frequently Asked Questions:
+  * Q: How many posts per month do I get?
+    A: It depends on the plan. Each plan sets a number of posts and reels per month, and we agree it in writing before we start.
+  * Q: Which platforms do you manage?
+    A: Instagram, Facebook, TikTok and LinkedIn. We recommend focusing on the two or three where your buyers are most active rather than spreading thin.
+  * Q: Do you make reels and videos?
+    A: Yes. Our in-house video editors make reels and short videos from your footage, stock footage or AI-generated visuals.
+  * Q: Who approves content before posting?
+    A: You do. We send the monthly calendar with designs and captions, and nothing is posted until you approve it.
+  * Q: Do you reply to comments and DMs?
+    A: Yes. We reply during the hours agreed in your plan and forward sales enquiries and complaints to you straight away.
+  * Q: Do you run ads too?
+    A: Yes, through our paid advertising service. Ad spend is always paid by you directly to Meta, TikTok or LinkedIn; our fee covers management only.
+  * Q: How do you report results?
+    A: You get a monthly report with reach, engagement, follower growth and the posts that performed best, plus what we will change next month.
+
+### Conversion Rate Optimization (CRO)
+- Canonical URL: https://webixsolutions.com/conversion-rate-optimization-services/
+- Category: Grow
+- Primary Keyword: conversion rate optimization services
+- Short Outcome: Clarity heatmaps, form friction fixes and landing page improvements that lift enquiries.
+- Overview: We turn more of your existing website visitors into paying customers and qualified enquiries using session heatmaps, form drop-off analytics, speed fixes and copy improvements. Delivered by our in-house UX researchers and developers in Pakistan for businesses in Canada, the US, the UAE, New Zealand and Pakistan looking to lower customer acquisition costs.
+- Key Commercial Outcomes:
+  * Lower customer acquisition costs (CAC): By increasing your conversion rate from 2% to 3%, you generate 50% more leads from the exact same ad spend and organic search traffic.
+  * Frictionless forms and mobile checkouts: Eliminate confusing fields, broken validations, hidden buttons and mobile layout bugs that cause interested buyers to abandon.
+  * Fixes deployed directly into your live code: Unlike consultants who only deliver slide decks, our in-house engineering team implements and tests the approved design and speed fixes directly.
+- Included Deliverables:
+  * Behavioral research and session analysis:
+    - Microsoft Clarity and Hotjar heatmap and session replay analysis across 1,000+ visits
+    - Google Analytics 4 funnel exploration identifying exact checkout and form drop-off steps
+    - Heuristic UX evaluation examining clarity, relevance, anxiety and urgency triggers
+  * Design, copywriting and page speed:
+    - High-converting landing page redesign wireframes and polished UI mockups
+    - Direct-response headline, subhead and call-to-action copy improvements
+    - Technical Core Web Vitals speed audit with image optimization and code minification
+  * Implementation and verification:
+    - Direct frontend coding of approved changes on Next.js, WordPress or Shopify
+    - Setup of custom conversion event tracking to measure before-and-after lift
+    - Comprehensive audit report detailing every friction point discovered and resolved
+- Execution Process:
+  1. Analytics and heatmap setup: We install Microsoft Clarity and verify GA4 conversion goals to capture real user behavior recordings.
+  2. Friction audit and hypothesis: We analyze user drop-offs, review rage-clicks and dead-clicks, and build a prioritized fix roadmap.
+  3. Design and copy polish: We draft sharper headlines, redesign confusing form layouts, and remove page load bottlenecks.
+  4. Code deployment and measurement: Our developers implement the changes, verify cross-browser stability, and track conversion rate changes.
+- Tools & Technology:
+  * Microsoft Clarity (Session replays, heatmaps and rage-click detection)
+  * Google Analytics 4 (Funnel drop-off visualization and goal measurement)
+  * Google Tag Manager (Custom event trigger tracking and form submission logs)
+  * Google PageSpeed Insights (Core Web Vitals diagnostic benchmarking)
+  * Figma (Rapid high-converting landing page UI/UX wireframing)
+  * Next.js & React (High-performance, pre-rendered frontend architecture)
+  * Shopify / WordPress (Checkout friction reduction and theme optimization)
+  * OpenAI GPT-4o (Alternative value proposition and CTA copy generation)
+- Frequently Asked Questions:
+  * Q: What is considered a good website conversion rate?
+    A: Average B2B lead generation websites typically convert between 2% and 4%, while standard e-commerce stores convert between 1.5% and 3%. A well-optimized landing page with high-intent traffic can achieve conversion rates of 6% to 12% or higher.
+  * Q: How much traffic do I need to see benefits from CRO?
+    A: While formal statistical A/B testing requires thousands of visits per month, qualitative CRO (fixing obvious mobile bugs, confusing copy, slow load times, and broken form validation) delivers immediate conversion lift even for websites with as few as 500 visits per month.
+  * Q: What do you look at during a conversion audit?
+    A: We review your analytics funnels, real user session recordings, scroll depth, form field abandonment rates, mobile responsiveness, Core Web Vitals speed scores, and the commercial clarity of your value proposition.
+  * Q: Do you only deliver a report, or do you fix the website code?
+    A: We fix the code directly. Unlike pure consultancy agencies, our in-house engineering team implements the approved design, copy, and speed improvements directly onto your Next.js, WordPress, or Shopify site.
+  * Q: How fast do conversion improvements typically show up?
+    A: Once UX and form friction fixes are deployed to your live site, conversion improvements are immediate on incoming traffic, typically measurable in analytics within 2 to 3 weeks.
+
+### Online Reputation Management
+- Canonical URL: https://webixsolutions.com/reputation-management-service/
+- Category: Grow
+- Primary Keyword: online reputation management services
+- Short Outcome: Automated genuine review requests, professional responses and search result cleanup.
+- Overview: We help growing businesses build a 5-star online reputation through automated review requests to happy clients, professional responses to all feedback, and search result cleanup. Engineered with 100% compliant, white-hat methods across Google Maps, Trustpilot, Facebook and industry platforms for companies in Canada, the US, the UAE, New Zealand and Pakistan.
+- Key Commercial Outcomes:
+  * A steady stream of authentic 5-star reviews: Automated SMS, email and WhatsApp review requests sent at the peak moment of customer satisfaction to capture genuine positive feedback.
+  * Professional responses to every review within 24 hours: Every review receives a polite, brand-aligned response — thanking happy customers and addressing negative concerns with diplomatic resolution offers.
+  * Protect search results around your brand name: Suppress outdated or defamatory search results by promoting positive owned properties, media mentions and verified review profiles on page 1 of Google.
+- Included Deliverables:
+  * Review generation and automation:
+    - Custom review-funnel landing pages directing customers to Google, Trustpilot or Facebook
+    - Automated WhatsApp, SMS or email review-request triggers synced to your CRM or POS
+    - QR code review cards and digital email signature review badges for staff
+  * Review monitoring and response:
+    - Daily monitoring across Google Maps, Facebook, Trustpilot and industry review sites
+    - Professional, keyword-optimized responses crafted for all positive reviews
+    - Diplomatic escalation protocols and resolution drafts for negative feedback
+  * Policy enforcement and branded search:
+    - Formal dispute submissions for reviews that violate Google or Trustpilot terms of service
+    - Branded Search Engine Optimization (SERP defense) to control what ranks for your company name
+    - Monthly reputation sentiment report with rating trends and customer feedback insights
+- Execution Process:
+  1. Reputation and sentiment audit: We review all existing ratings, search results for your brand name, and identify competitor rating benchmarks.
+  2. Review funnel and automation setup: We configure automated review request sequences linked to your CRM, invoices, or customer completion milestones.
+  3. Active response and dispute management: Our team begins monitoring incoming reviews daily, drafting responses and disputing policy-violating reviews.
+  4. Monthly reporting and SERP monitoring: You receive monthly analytics tracking average rating growth, total review count, and search engine sentiment.
+- Tools & Technology:
+  * Google Business Profile (Local Google Maps review monitoring and response)
+  * Trustpilot Business (Verified international e-commerce and consumer reviews)
+  * Brand24 / Mention (Real-time web and social media brand mention listening)
+  * WhatsApp Business API (Direct, high-open review invitation messaging)
+  * Klaviyo / ActiveCampaign (Post-purchase customer survey and review email automation)
+  * Search Console (Branded query impression and search snippet tracking)
+  * Zapier & n8n (CRM-triggered review request workflows upon job completion)
+  * OpenAI GPT-4o (Contextual, empathetic review response assistance)
+- Frequently Asked Questions:
+  * Q: Can you remove negative reviews from Google or Facebook?
+    A: We can successfully remove reviews that violate official platform policies — such as reviews containing hate speech, profanity, obvious conflicts of interest, mistaken identity, or proven spam. We submit formal legal and policy disputes directly to Google or Meta. Valid negative reviews from real customers cannot be legally removed; instead, we bury their impact with a surge of genuine positive reviews and diplomatic responses.
+  * Q: How do you get more genuine reviews without annoying customers?
+    A: We design friction-free review funnels. Customers receive a friendly, personalized message via WhatsApp, SMS, or email immediately after receiving great service, allowing them to leave a 5-star Google review in just two taps.
+  * Q: How quickly do you respond to new reviews?
+    A: Our team monitors client profiles daily. Routine positive reviews receive responses within 24 business hours, while critical negative reviews are flagged to your designated team lead immediately with a drafted diplomatic response.
+  * Q: Is buying reviews safe?
+    A: No, absolutely not. Buying fake reviews is strictly illegal under FTC regulations and directly violates Google's and Trustpilot's terms. Algorithms easily detect review-burst anomalies, resulting in review wipes, public warning banners on your profile, or complete listing suspensions.
+  * Q: Which review platforms do you monitor and manage?
+    A: We monitor and manage Google Business Profile (Google Maps), Facebook Page reviews, Trustpilot, Better Business Bureau (BBB), Yelp, and major industry-specific platforms.
+
+### AI Automation & AI Agents
+- Canonical URL: https://webixsolutions.com/ai-automation-services/
+- Category: AI
+- Primary Keyword: AI automation services
+- Short Outcome: Custom AI agents and n8n/Make workflows that answer leads, update your CRM and save hours.
+- Overview: We build AI agents and automations that answer new leads, update your CRM, send follow-ups and report on what happened. They run inside the tools you already use — your website, WhatsApp, email, calendar and CRM — for businesses in Canada, the US, the UAE, New Zealand and Pakistan.
+- Key Commercial Outcomes:
+  * New enquiries get an answer straight away: An AI assistant replies on your website or WhatsApp, asks your intake questions and books a call into your calendar, including outside office hours.
+  * No more copying data between tools: Form entries, chats and call notes land in your CRM, sheet or project board automatically, so nobody re-types the same details twice.
+  * Follow-ups and reports happen on schedule: Reminders, review requests and daily or weekly summaries are sent by the workflow, not from someone's memory.
+- Included Deliverables:
+  * Audit and design:
+    - Workflow audit and architecture map for one core bottleneck
+    - System prompts and rules for what the AI may and may not say
+    - Knowledge base built from your services, prices and policies
+    - Hand-off rules that route sensitive or unclear cases to your team
+  * Build and integrations:
+    - One AI agent: website/WhatsApp chatbot, voice receptionist or lead engine
+    - Connected automations in n8n, Make or Zapier synced to your CRM, Sheets or Slack
+    - Calendar booking with time-zone handling
+    - Human-in-the-loop approval steps before sensitive messages are sent
+  * Testing and handover:
+    - Testing against real examples of your enquiries before launch
+    - Walkthrough for your team on editing the knowledge base and reading logs
+    - Post-launch tuning period
+    - Accounts and API keys set up in your name
+- Execution Process:
+  1. Audit the workflow: On a call in your time zone we map the trigger, the steps and the tools involved, and collect the documents the AI needs.
+  2. Build on staging: We build the agent and automations in a test environment and write the prompts and hand-off rules.
+  3. Test with your team: You try it with real examples. We adjust tone, answers and integrations until it behaves the way you want.
+  4. Launch and tune: We switch it on for your website, phone line or CRM, watch the first runs closely and hand over documentation.
+- Tools & Technology:
+  * OpenAI (Language models for chat, drafting and classification)
+  * n8n (Workflow automation, including self-hosted setups)
+  * Make (Visual automation scenarios)
+  * Zapier (Connectors for common business apps)
+- Frequently Asked Questions:
+  * Q: What business tasks can be automated with AI?
+    A: Repetitive tasks with a clear trigger and outcome automate best: replying to new enquiries, qualifying leads, booking calls, logging chats and call notes to a CRM, sending follow-ups and building routine reports. We pick one bottleneck first, prove it works, then expand.
+  * Q: How much does AI automation cost?
+    A: We quote a fixed price after a 30-minute call, once we know the workflow and the tools involved. You get the scope and price in writing before any work starts.
+  * Q: How long does a build take?
+    A: The timeline depends on the number of tools to connect and how much testing your workflow needs. We give you a dated plan with the written proposal, and you can test a working version on staging before launch.
+  * Q: Is my data safe?
+    A: We use business API accounts set up in your name, limit each tool to the data it needs, and keep API keys out of shared documents. Where you need data to stay on your infrastructure, workflows can run on a server you control.
+  * Q: Do I need to change my current tools?
+    A: No. The automation connects to the website, CRM, calendar, inbox and messaging apps you already use. We only suggest a new tool when an existing one has no way to connect.
+  * Q: What ongoing costs should I expect (API usage)?
+    A: AI model and telephony usage (for example OpenAI or Twilio) is billed at cost directly to your own accounts, not marked up by us. We estimate your expected monthly usage from your enquiry volume before the build starts.
+  * Q: What happens if the AI gets something wrong?
+    A: Every system has rules for what the AI must not answer, and unclear or sensitive cases go to a person. For outbound messages and quotes, the AI prepares a draft and a team member approves it before anything is sent.
+
+### AI Chatbot Development
+- Canonical URL: https://webixsolutions.com/ai-chatbot-development/
+- Category: AI
+- Primary Keyword: AI chatbot development services
+- Short Outcome: Website and WhatsApp AI assistants trained on your prices and docs, with clean human handoff.
+- Overview: We build custom AI chatbots for websites and WhatsApp that answer visitor questions, capture qualified leads and book appointments around the clock. Trained exclusively on your services, pricing guidelines and knowledge base, with instant handoff to your human team whenever a high-intent conversation requires it.
+- Key Commercial Outcomes:
+  * Zero response lag on website and WhatsApp: Visitors get helpful, conversational replies in seconds, even outside business hours and during peak enquiry surges.
+  * Trained only on your approved company facts: Strict system prompts, knowledge grounding and refusal boundaries prevent hallucinated answers or rogue pricing promises.
+  * Seamless handover to your real team: When a conversation requests custom negotiation or flags an urgent issue, the bot alerts your team on Slack or WhatsApp instantly.
+- Included Deliverables:
+  * Knowledge base and prompt design:
+    - Knowledge base extraction from your website, PDFs, pricing tables and FAQs
+    - Custom tone-of-voice alignment matching your brand personality
+    - Strict hallucination guardrails and edge-case refusal rules
+  * Platform build and integration:
+    - Clean, fast website chat widget styled in your brand colours
+    - Official WhatsApp Business Cloud API integration and phone verification
+    - Calendar booking integration with automated time-zone conversion
+  * CRM sync, testing and training:
+    - Automated lead sync to HubSpot, Zoho, Google Sheets or custom webhooks
+    - 50+ test scenario runs covering complex edge cases before launch
+    - Team dashboard walkthrough for managing conversation history and analytics
+- Execution Process:
+  1. Discovery and document audit: We collect your service sheets, FAQs, brand tone guidelines and intake questions on an initial strategy call.
+  2. Grounding and prompt engineering: We structure your knowledge base into vector embeddings and craft strict system instructions.
+  3. Staging test runs: You and your team test the chatbot on a private link with real buyer questions to refine phrasing and handoffs.
+  4. Live deployment and monitoring: We embed the widget on your site or connect your WhatsApp Business number, monitoring the first 100 conversations.
+- Tools & Technology:
+  * OpenAI GPT-4o (Primary natural language reasoning and parsing)
+  * Anthropic Claude 3.5 (Nuanced editorial responses and safety guardrails)
+  * WhatsApp Cloud API (Direct mobile messaging and interactive menus)
+  * n8n & Make (Backend webhook processing and database syncing)
+  * Pinecone / pgvector (Vector database for semantic document retrieval)
+  * Google Calendar (Instant slot reservation and ICS calendar invites)
+  * HubSpot CRM (Automatic contact creation and deal stage updates)
+  * Slack / WhatsApp Alerts (Real-time human notification for high-intent leads)
+- Frequently Asked Questions:
+  * Q: How much does a custom chatbot cost?
+    A: Every build is quoted with a fixed price after a 30-minute discovery call, based on the knowledge base complexity, number of channels (web, WhatsApp, Messenger), and CRM integrations required.
+  * Q: What is the difference between an AI chatbot and traditional live chat?
+    A: Traditional live chat requires a human agent sitting at a screen or relies on rigid, frustrating decision trees. An AI chatbot understands natural language, provides instant accurate answers, and only escalates to humans when needed.
+  * Q: Can the chatbot book appointments directly into my calendar?
+    A: Yes. The bot checks real-time availability in Google Calendar or Outlook, displays open slots in the user's local time zone, and sends a confirmed meeting invite with a Google Meet link.
+  * Q: How do you prevent the AI from making things up (hallucinating)?
+    A: We ground the chatbot strictly in your verified documentation using Retrieval-Augmented Generation (RAG). System instructions explicitly command the model to politely state that it doesn't know and offer a human callback if a question falls outside the knowledge base.
+  * Q: What are the ongoing monthly running costs?
+    A: Ongoing costs consist of nominal OpenAI or Anthropic API fees (typically $10 to $30 per month for moderate website traffic) and any third-party WhatsApp Business messaging fees paid directly to Meta.
+  * Q: Who owns the prompts and custom integrations?
+    A: You do. All API accounts, system prompts, vector stores and webhook scripts are configured in your name and fully transferred to your ownership upon completion.
+
+### AI E-commerce Automation
+- Canonical URL: https://webixsolutions.com/ai-ecommerce-automation/
+- Category: AI
+- Primary Keyword: AI automation for ecommerce
+- Short Outcome: WhatsApp COD order verification, 24/7 store support, catalog enrichment and review follow-up.
+- Overview: We build custom AI automations for e-commerce stores that verify Cash on Delivery orders over WhatsApp, resolve 24/7 customer support tickets, enrich product catalogs and recover abandoned carts. Engineered from our experience running our own e-commerce brands in Pakistan and the UAE, compatible with Shopify, WooCommerce and custom headless checkouts.
+- Key Commercial Outcomes:
+  * Lower return-to-origin (RTO) on Cash on Delivery orders: Automated WhatsApp confirmation messages verify buyer addresses and phone numbers before orders are dispatched to couriers.
+  * 24/7 instant customer support resolution: An AI agent trained on your store policies answers sizing, shipping times, exchange rules and order status questions instantly.
+  * Bulk catalog enrichment and SEO descriptions: Generate high-converting, benefit-driven product titles, descriptions, and feature bullet points across hundreds of SKUs in minutes.
+- Included Deliverables:
+  * Audit and workflow mapping:
+    - Store operational audit identifying high-friction manual tasks and return rates
+    - Custom conversation copy and messaging templates tailored to your brand voice
+    - Knowledge base compilation covering shipping, return, and sizing policies
+  * System integration and APIs:
+    - Shopify / WooCommerce webhook connection to n8n, Make or custom endpoints
+    - Official WhatsApp Business Cloud API integration and phone number verification
+    - Courier API syncing for automatic dispatch status and tracking code retrieval
+  * Quality control and documentation:
+    - Human-in-the-loop exception routing for disputed orders or angry customers
+    - Comprehensive sandbox testing across 40+ simulated order scenarios
+    - Full video walkthrough and documentation for your operations and warehouse staff
+- Execution Process:
+  1. Store audit call: We examine your current order confirmation steps, courier dispatch flow and support ticket volume.
+  2. Workflow architecture: We configure the webhook triggers, write the system prompts and connect courier and messaging APIs.
+  3. Sandbox testing: We run test orders through your staging store to verify WhatsApp delivery, address validation and CRM logging.
+  4. Live launch and tuning: We switch the automation live for real orders, monitoring delivery rates and response accuracy closely for 30 days.
+- Tools & Technology:
+  * Shopify REST & GraphQL (Real-time order, customer and inventory webhooks)
+  * WooCommerce REST API (WordPress store sync and custom order metadata)
+  * WhatsApp Cloud API (High-deliverability automated customer messaging)
+  * n8n Self-Hosted (Secure, privacy-compliant event orchestration)
+  * Make / Zapier (Multi-app integration and fallback routing)
+  * OpenAI GPT-4o (Support intent classification and catalog copywriting)
+  * PostEx / Trax APIs (Courier tracking and Cash on Delivery remittance sync)
+  * Klaviyo (Behavioral e-commerce email and SMS marketing flows)
+- Frequently Asked Questions:
+  * Q: Which e-commerce platforms do you support?
+    A: We support Shopify, WooCommerce (WordPress), and custom Next.js/Node.js headless checkouts. Our webhooks and API connectors adapt to any modern e-commerce platform.
+  * Q: Can AI confirm Cash on Delivery (COD) orders on WhatsApp?
+    A: Yes. As soon as an order is placed, an automated WhatsApp message is sent asking the buyer to confirm or cancel with one click. The buyer can also correct their shipping address directly in chat, which automatically updates the order in your store.
+  * Q: What happens if a customer asks something the AI cannot answer?
+    A: The system instantly flags the conversation as 'Needs Attention' and notifies your customer service team on Slack or WhatsApp, providing the complete customer history for human takeover.
+  * Q: How much time does this typically save our team?
+    A: Stores processing 500+ orders a month typically save 15 to 25 hours per week of manual phone calling and routine 'Where is my order?' customer support replies.
+  * Q: What does it cost to run monthly?
+    A: Aside from our one-time setup or maintenance agreement, you only pay native Meta WhatsApp conversation fees (a few cents per confirmed conversation) and nominal OpenAI API usage.
+
+### AI Digital Marketing Agency
+- Canonical URL: https://webixsolutions.com/ai-digital-marketing-agency/
+- Category: AI
+- Primary Keyword: AI digital marketing agency
+- Short Outcome: Human strategists paired with AI workflows for faster testing, sharper content and instant lead follow-up.
+- Overview: We combine senior marketing strategists with custom AI systems to deliver faster campaigns, sharper creative testing, smarter SEO research and instant lead follow-up. Our in-house 20+ person team in Pakistan serves growing businesses across Canada, the US, the UAE, New Zealand and Pakistan on your business hours.
+- Key Commercial Outcomes:
+  * Faster campaign execution and iteration: Ad creative variations, content outlines and audience research drafted in hours rather than weeks, allowing for faster market testing.
+  * Instant response to inbound enquiries: AI assistants qualify leads on your website and WhatsApp 24/7, booking calls into your calendar before prospects reach a competitor.
+  * Rigorous human verification on every asset: Every ad, blog post, email and automation step is vetted and edited by our in-house specialists before it ever goes live to the public.
+- Included Deliverables:
+  * Omnichannel growth strategy:
+    - Full digital audit across your website, rankings, ad accounts and competitor landscape
+    - Quarterly growth roadmap prioritizing the highest-ROI acquisition channels
+    - Custom dashboard connecting web traffic, ad spend, and closed revenue
+  * Content, SEO and advertising:
+    - Technical SEO fixes, schema graph integration and buyer-intent content publishing
+    - Paid ad management across Meta, Google or TikTok with rapid creative testing
+    - Monthly batches of branded social assets, carousels and short video edits
+  * Automation and lead nurture:
+    - Website or WhatsApp AI lead qualification assistant with calendar booking
+    - Automated CRM synchronization and review request sequences
+    - Bi-weekly strategic sync with your dedicated project lead on your time zone
+- Execution Process:
+  1. Growth audit and strategy: We analyze your current conversion funnels, ad history, organic rankings and team bottlenecks on a 30-minute discovery call.
+  2. Custom stack and prompt engineering: We configure your brand guidelines, knowledge bases, and custom AI agents to match your exact tone of voice.
+  3. Launch and creative testing: We launch refreshed search campaigns, high-velocity ad creatives, and automated intake assistants simultaneously.
+  4. Optimize and scale: We monitor weekly acquisition costs, adjust bids, publish new content, and deliver plain-English monthly attribution reports.
+- Tools & Technology:
+  * OpenAI GPT-4o (Drafting, prompt workflows and conversational agents)
+  * Claude 3.5 Sonnet (Complex copy editing and tone-of-voice alignment)
+  * n8n & Make (Multi-tool workflow automation and CRM syncing)
+  * Google Analytics 4 (Cross-channel attribution and event measurement)
+  * Meta Ads Manager (Dynamic creative testing and algorithmic scaling)
+  * Google Ads (Search and high-intent local lead acquisition)
+  * Microsoft Clarity (Heatmaps, click maps and user session analysis)
+  * Search Console (Organic query tracking and crawl health monitoring)
+- Frequently Asked Questions:
+  * Q: What is an AI digital marketing agency?
+    A: An AI digital marketing agency uses modern artificial intelligence to speed up research, content drafting, creative variations, and lead capture, while keeping human strategists and designers in charge of strategy, quality, and final approval.
+  * Q: Will AI content hurt my website's Google rankings?
+    A: No, as long as it is helpful, original, and factual. Google explicitly states that it evaluates content based on quality and relevance rather than whether AI was used. We fact-check, edit, and enrich every draft with real business insights before publishing.
+  * Q: Is AI digital marketing cheaper than traditional marketing?
+    A: AI allows our team to accomplish in hours what used to take weeks of manual drafting. This means you get broader multi-channel coverage, faster testing, and more creative variations for the same investment.
+  * Q: Do human specialists review everything before it goes live?
+    A: Yes, 100%. We enforce strict human-in-the-loop policies. No ad copy, article, design, or sensitive email is sent to your customers without human review and approval.
+  * Q: Which AI tools do you use for marketing?
+    A: We utilize state-of-the-art models including OpenAI GPT-4o, Anthropic Claude 3.5, n8n, Make, and specialized video and voice generation engines, tailored to each specific task.
+  * Q: How do you maintain our brand tone and avoid generic copy?
+    A: We build a dedicated brand knowledge base detailing your positioning, target personas, preferred vocabulary, forbidden buzzwords, and past winning examples to guide every piece of content.
+
+### AI Content Creation (Human-Edited)
+- Canonical URL: https://webixsolutions.com/ai-content-creation-services/
+- Category: Create
+- Primary Keyword: AI content creation services
+- Short Outcome: SEO articles, landing copy and catalog descriptions drafted with AI and fact-checked by human editors.
+- Overview: We produce high-ranking SEO articles, high-converting product descriptions, landing pages and email newsletters created with AI and edited by senior human writers. Every piece is fact-checked, aligned to your brand voice and structured for organic search visibility and clear reader engagement.
+- Key Commercial Outcomes:
+  * Articles that actually rank on Google: Content is planned around real buyer search queries, enriched with primary sources and formatted with clean headings, tables and JSON-LD schema.
+  * Zero generic fluff or hallucinated claims: Our human editors verify every statistic, product specification and external citation before anything is scheduled for publication.
+  * Consistent brand voice across all assets: A custom brand knowledge base enforces your preferred terminology, audience framing and forbidden clichés across every drafted asset.
+- Included Deliverables:
+  * Research and planning:
+    - Keyword research mapped to buyer funnel stages (informational and commercial)
+    - Monthly editorial content calendar with target word counts and angles
+    - Detailed content briefs with required subheadings, sources and internal links
+  * Drafting, editing and proofing:
+    - AI-assisted first drafts refined and polished by native English editors
+    - Custom visual diagrams, comparison tables and quote callouts
+    - Rigorous plagiarism, AI-repetition and factual accuracy checks
+  * Publishing and technical SEO:
+    - Click-worthy titles and meta descriptions under 60 and 155 characters
+    - Direct upload and formatting into WordPress, Shopify, Webflow or Next.js
+    - Schema graph markup (Article, FAQPage, HowTo) for rich search snippets
+- Execution Process:
+  1. Brand voice discovery: We analyze your best-performing past content, target customer personas and tone preferences on an initial call.
+  2. Monthly content calendar: We present the upcoming month's titles, target keywords and planned delivery dates for your approval.
+  3. Drafting and human polish: Our team researches, drafts with AI, and extensively edits every piece to ensure authority and depth.
+  4. Review and publishing: You review the Google Docs drafts, give feedback, and we format and publish them directly to your CMS.
+- Tools & Technology:
+  * OpenAI GPT-4o (Rapid outline ideation and draft expansion)
+  * Anthropic Claude 3.5 (Nuanced voice modeling and editorial tone matching)
+  * Ahrefs & Semrush (Keyword difficulty analysis and SERP competitor research)
+  * Grammarly Business (Grammar, clarity and conciseness validation)
+  * Originality.ai (Content scanning and quality assurance audits)
+  * Google Docs (Collaborative client review and revision tracking)
+  * WordPress / Shopify (Direct publishing, tag management and featured images)
+  * Search Console (Post-launch indexing and organic click tracking)
+- Frequently Asked Questions:
+  * Q: Does Google penalise AI-generated content?
+    A: No. Google has officially stated that it evaluates content based on helpfulness, originality, and user satisfaction (E-E-A-T), not on whether AI was used. Because our experienced human editors fact-check, refine, and add unique insights to every piece, our content satisfies Google's highest search quality standards.
+  * Q: How many articles or pages are included per month?
+    A: We offer packages ranging from 4 in-depth articles per month for local businesses up to 16+ articles or 100+ bulk e-commerce product descriptions for growing national brands.
+  * Q: Can you accurately match our brand tone of voice?
+    A: Yes. Before writing a single word, we create a detailed Brand Voice Guide defining your audience framing, tone attributes, preferred terminology, and examples of what to say and what to avoid.
+  * Q: Who owns the copyright to the written content?
+    A: You do 100%. Once published and paid for, all copyrights, intellectual property and source files belong exclusively to your business.
+  * Q: Do you format and publish the content directly to our website?
+    A: Yes. If you provide CMS access (WordPress, Shopify, Webflow, etc.), we format headings, add meta descriptions, compress images, insert internal links, and schedule posts directly.
+
+### AI Social Media Content
+- Canonical URL: https://webixsolutions.com/ai-social-media-content-creation/
+- Category: Create
+- Primary Keyword: AI social media content creation services
+- Short Outcome: Monthly batches of carousels, graphics, reels and captions finished by in-house designers.
+- Overview: We produce monthly batches of branded social media carousels, graphics, short reels and captions using AI ideation finished by experienced graphic designers. A full month of on-brand content planned, designed and approved before anything is scheduled, for businesses in Canada, the US, the UAE, New Zealand and Pakistan.
+- Key Commercial Outcomes:
+  * A full month of content prepared in advance: Carousels, promotional graphics, educational tips and short reels ready to schedule weeks before they go live.
+  * Polished by human graphic designers: AI generates the concept angles and initial hooks, while our in-house design team applies your exact brand typography, hex codes and layout standards.
+  * Platform-specific formatting that performs: Optimized aspect ratios (4:5 for Instagram feeds, 9:16 for Reels and TikTok, 16:9 for LinkedIn) with high-contrast text hooks.
+- Included Deliverables:
+  * Ideation and calendar planning:
+    - Monthly content strategy aligned to your service offers and seasonal trends
+    - Interactive visual calendar board (Notion or Google Sheets) for review
+    - Engaging captions written with clear hooks, value bullets and calls to action
+  * Design and video editing:
+    - Custom multi-slide educational carousels and static quote graphics
+    - Short-form video editing with animated captions, music and sound effects
+    - Cohesive brand color grading, fonts and profile highlight icons
+  * Scheduling and assets:
+    - Exported high-resolution PNGs and MP4 files organized in shared folders
+    - Direct scheduling into Buffer, Later, Metricool or native Meta Business Suite
+    - Hashtag clusters and keyword-optimized caption descriptions for discovery
+- Execution Process:
+  1. Content pillar planning: We map the upcoming month's themes, promotions and educational topics on an initial planning sync.
+  2. Design and video drafting: Our team generates concept angles, writes captions and designs the full visual asset batch.
+  3. Client review and revision: You review the calendar board, request any visual or copy tweaks, and give final sign-off.
+  4. Scheduling and publishing: We schedule every approved post across your connected social platforms at peak engagement times.
+- Tools & Technology:
+  * Adobe Photoshop & Illustrator (High-resolution vector branding and layout)
+  * Figma (Collaborative component kits and carousel design)
+  * CapCut & Premiere Pro (Short-form video cuts, transitions and captions)
+  * Midjourney & Firefly (Custom conceptual background generation)
+  * Meta Business Suite (Native Facebook and Instagram scheduling)
+  * Metricool & Buffer (Cross-platform analytics and automated dispatch)
+  * Canva Pro (Shared brand asset libraries and client templates)
+  * OpenAI GPT-4o (Hook variation generation and caption ideation)
+- Frequently Asked Questions:
+  * Q: Will the content look robotic or obviously AI-generated?
+    A: No. We never post unedited AI output. AI is used behind the scenes for audience research and draft hooks, while our experienced in-house graphic designers and video editors craft every visual element using your official brand assets and typography.
+  * Q: Do you schedule and post the content for us?
+    A: Yes. Once you approve the monthly calendar, our team schedules the posts with formatted captions and hashtags directly into your social accounts or scheduling tool.
+  * Q: Which social platforms do you create content for?
+    A: We create tailored content for Instagram, Facebook, LinkedIn, TikTok, and YouTube Shorts, adapting aspect ratios and messaging styles to each platform's culture.
+  * Q: How do revisions work if I want something changed?
+    A: Every monthly batch includes two rounds of revisions. You can leave notes directly on the calendar cards, and our designers will update the graphics or captions before scheduling.
+  * Q: Can you create video reels if we don't have existing video footage?
+    A: Yes. We can produce text-on-screen aesthetic reels, screen-recorded software walkthroughs, kinetic typography animations, or curate licensed b-roll that fits your niche.
+
+### AI Video Production & UGC Ads
+- Canonical URL: https://webixsolutions.com/ai-video-production-services/
+- Category: Create
+- Primary Keyword: AI video production services
+- Short Outcome: Ad-ready AI UGC spots, product videos and explainers with scripts, voiceover and captions.
+- Overview: We produce high-performing AI video ads, UGC-style product spots and explainer videos delivered in days rather than weeks — complete with scripts, voiceovers, dynamic captions and multi-format exports. Created for brands in Canada, the US, the UAE, New Zealand and Pakistan looking to scale creative testing on TikTok, Meta and YouTube without expensive studio shoots.
+- Key Commercial Outcomes:
+  * Test multiple creative angles rapidly: Generate 3 to 5 variations of hooks, visual pacing and calls to action for the cost of a single traditional video shoot.
+  * Natural-sounding voiceover in multiple accents: Professional studio-grade AI narration available in North American, British, Australian or Middle Eastern English accents.
+  * Formatted for high mobile engagement: Dynamic kinetic captions, sound effects, licensed b-roll and motion graphics tailored for 9:16 vertical feeds.
+- Included Deliverables:
+  * Scriptwriting and storyboarding:
+    - Direct-response scriptwriting with high-retention 3-second opening hooks
+    - Visual storyboard concept mapping out b-roll scenes and visual cues
+    - Script review and approval before entering the rendering pipeline
+  * Voiceover and AI synthesis:
+    - Studio-grade neural voiceover with natural cadence and tone matching
+    - AI visual synthesis or licensed 4K b-roll video curation
+    - Integration of your real product photos, logos and screenshots
+  * Post-production and export:
+    - Animated word-by-word kinetic captions in your brand typography
+    - Royalty-free commercial background music and sound effects (SFX)
+    - Multi-aspect ratio exports: 9:16 (Vertical), 1:1 (Square), and 16:9 (Landscape)
+- Execution Process:
+  1. Creative brief and concept: We analyze your product offer, target audience, and primary competitors to establish 3 winning hook angles.
+  2. Script and storyboard sign-off: Our copywriters deliver concise scripts with exact visual scene directions for your review and approval.
+  3. Generation and editing: We synthesize voiceover, composite visuals, integrate your brand assets and time the motion graphics.
+  4. Final export and revision: You review the private video link, request any fine-tuning cuts, and download the finished ad-ready files.
+- Tools & Technology:
+  * ElevenLabs (Ultra-realistic neural voiceover and voice cloning)
+  * Runway Gen-3 & Kling (High-definition AI video scene generation)
+  * Adobe Premiere Pro (Non-linear timeline editing and color correction)
+  * After Effects (Custom kinetic typography and visual motion graphics)
+  * CapCut Pro (Trending social sound design and vertical captioning)
+  * Midjourney v6 (Ultra-detailed conceptual image generation)
+  * Envato Elements (Licensed commercial b-roll footage and audio tracks)
+  * OpenAI GPT-4o (Direct-response video hook generation)
+- Frequently Asked Questions:
+  * Q: How much does an AI video cost compared to traditional production?
+    A: Traditional production agencies charge between $1,500 and $5,000 for a single video ad shoot. Our AI-assisted video packages deliver commercial-grade spots starting from a fraction of that investment, with fixed-scope pricing quoted on your discovery call.
+  * Q: How long does video production take?
+    A: Most 15 to 30-second video ads are delivered within 3 to 5 business days once the initial script and visual directions are approved.
+  * Q: Can you incorporate our real product photos and packaging?
+    A: Yes, absolutely. We frequently composite high-resolution client product photos and packaging into AI-generated lifestyle environments and 3D mockups.
+  * Q: Are AI video ads allowed on Meta and TikTok?
+    A: Yes. Both Meta and TikTok permit AI-generated video in paid advertisements. We ensure all content complies with each platform's advertising policies and AI transparency disclosure rules.
+  * Q: Who owns the commercial rights to the completed video?
+    A: You do 100%. You receive complete commercial usage rights for all exported video files, voiceover tracks, and script materials to use across any advertising or organic channel.
+
+### Graphic Design & Creative Studio
+- Canonical URL: https://webixsolutions.com/creative-services/
+- Category: Create
+- Primary Keyword: graphic design services
+- Short Outcome: Logos, brand identity kits, static ad batches, packaging and short-form video editing.
+- Overview: We provide professional graphic design and creative studio services — from memorable logo designs and brand identity kits to high-converting ad creative batches, packaging and short-form video edits. Delivered by our dedicated in-house creative team in Pakistan for growing brands across Canada, the US, the UAE, New Zealand and Pakistan.
+- Key Commercial Outcomes:
+  * Distinct, memorable brand identities: Custom logos, curated typography pairings, color palettes and complete brand guideline books ready for print and web.
+  * High-converting paid ad creative batches: Static graphics, carousel slides and motion hooks designed specifically to stop the scroll on Meta, TikTok and LinkedIn feeds.
+  * Production-ready vector and print files: Deliverables supplied in all standard formats (AI, EPS, SVG, PNG, PDF) with full commercial usage rights and zero vendor lock-in.
+- Included Deliverables:
+  * Brand identity design:
+    - Primary logo, secondary logo mark, favicon and monochrome variations
+    - Official brand color system with hex codes, RGB and CMYK print values
+    - Complete brand style guide PDF detailing logo clear space and typography rules
+  * Digital and advertising assets:
+    - High-CTR ad creatives for Meta, Google Display and LinkedIn campaigns
+    - Branded social media templates and carousel layout frameworks
+    - Website banners, hero visual elements and custom vector icon sets
+  * Print and packaging production:
+    - Product box packaging, bottle labels, hang tags and thank-you inserts
+    - Vector dieline templates prepared for your local or overseas print manufacturer
+    - Realistic 3D digital mockups for e-commerce store listings and marketing materials
+- Execution Process:
+  1. Creative brief and moodboard: We analyze your target market, competitors and visual preferences to establish a clear moodboard direction.
+  2. Concept presentation: Our designers present distinct visual concepts in realistic mockups so you can see how they look in real-world contexts.
+  3. Refinement and feedback: We refine your chosen concept based on your feedback, fine-tuning colors, typography and layout balance.
+  4. Final asset packaging: We organize and export all master vector files, web-optimized images, print PDFs and style documentation.
+- Tools & Technology:
+  * Adobe Illustrator (Precision vector logo and dieline packaging creation)
+  * Adobe Photoshop (High-end photo manipulation, retouching and raster graphics)
+  * Figma (Collaborative brand component systems and web mockups)
+  * Adobe InDesign (Multi-page company profiles and print editorial layouts)
+  * Blender (Realistic 3D product packaging renders and lighting setups)
+  * Midjourney v6 (Rapid visual concept moodboarding and creative inspiration)
+  * Canva Pro (Editable client template setup for day-to-day team usage)
+  * Adobe Acrobat Pro (Print-ready PDF color profile separation and pre-flight check)
+- Frequently Asked Questions:
+  * Q: How many revisions are included with design projects?
+    A: For brand identity projects, we offer unlimited revision rounds on your selected concept until it is approved. For individual ad creative batches and marketing collateral, we include two full rounds of revisions.
+  * Q: What file formats will I receive upon project completion?
+    A: You receive all industry-standard file types: editable vector source files (AI, EPS, SVG), high-resolution print PDFs (CMYK with bleed marks if needed), and transparent web formats (PNG, JPG, WebP).
+  * Q: How fast can you deliver a batch of paid ad creatives?
+    A: Standard batches of 5 to 10 ad graphics or carousel slides are typically delivered within 2 to 3 business days once the copy and visual brief are confirmed.
+  * Q: Do you design physical packaging and product labels?
+    A: Yes. We design dieline-accurate packaging boxes, bottle labels, pouches, and shipping cartons according to your manufacturer's exact specifications.
+  * Q: Can your team work within our existing brand guidelines?
+    A: Yes, absolutely. Send us your brand guide, logo files, and fonts, and our designers will strictly adhere to your established visual rules.
+
+### Brand Strategy & Awareness
+- Canonical URL: https://webixsolutions.com/brand-awareness-strategy/
+- Category: Create
+- Primary Keyword: brand awareness strategy
+- Short Outcome: Clear positioning, messaging architecture, visual identity guidelines and launch campaigns.
+- Overview: We build clear brand positioning, core messaging frameworks and multichannel awareness campaigns that make your business recognizable, distinct and easy to recommend. Designed for growing companies across Canada, the US, the UAE, New Zealand and Pakistan who want to escape competing on price alone.
+- Key Commercial Outcomes:
+  * Distinct market positioning that commands premium pricing: Define your exact category of one, core target persona, key differentiator and why your solution is fundamentally superior.
+  * Consistent messaging across your entire company: A brand messaging playbook giving your marketing, sales reps and developers unified terminology, value propositions and elevator pitches.
+  * Omnichannel awareness campaigns that build recall: Targeted brand awareness campaigns across Meta, YouTube, LinkedIn and local digital PR that keep you top-of-mind before buyers enter a buying cycle.
+- Included Deliverables:
+  * Research, interviews and positioning:
+    - Leadership team discovery sessions and top-customer interview synthesis
+    - In-depth competitor messaging audit identifying commoditized claims and white space
+    - Core positioning thesis: category definition, unique value and proof points
+  * Messaging architecture and copywriting:
+    - Primary brand tagline, 30-second elevator pitch and executive bio summaries
+    - Key messaging pillars tailored to distinct buyer personas and decision-makers
+    - Website copy hierarchy blueprint for home, service and about pages
+  * Awareness campaign rollout:
+    - Brand awareness campaign strategy for Meta, YouTube, LinkedIn and industry media
+    - Digital PR outreach angles and thought leadership content themes
+    - Complete Brand Playbook PDF distributed to your team and agency partners
+- Execution Process:
+  1. Discovery and competitor audit: We analyze your past performance, interview key stakeholders, and audit how competitors position themselves.
+  2. Positioning sprint and synthesis: We craft your differentiation thesis, audience segmentation, and core commercial value propositions.
+  3. Playbook drafting and presentation: We deliver the comprehensive Brand Playbook and walk your leadership through messaging rollout.
+  4. Awareness campaign activation: We deploy coordinated brand awareness ads, thought leadership content, and updated website messaging.
+- Tools & Technology:
+  * Semrush / Ahrefs (Competitor brand search volume and share of voice)
+  * Google Trends (Macro market demand and category interest trajectories)
+  * Figma (Visual brand architecture diagrams and moodboard creation)
+  * Meta Ad Library (Real-time competitor advertising angle monitoring)
+  * SparkToro (Audience intelligence, podcast and media consumption mapping)
+  * Google Analytics 4 (Direct traffic, branded search volume and assisted conversions)
+  * Notion (Interactive digital brand playbook for cross-team access)
+  * OpenAI GPT-4o (Persona empathy modeling and positioning scenario testing)
+- Frequently Asked Questions:
+  * Q: What is included in a brand strategy engagement?
+    A: A brand strategy engagement delivers an in-depth audit of your market, clear positioning defining what makes you distinct, a comprehensive Brand Messaging Playbook (elevator pitches, headlines, value pillars), and an awareness campaign rollout plan.
+  * Q: How do you measure the success of brand awareness?
+    A: We track tangible commercial metrics: increases in direct and branded search volume in Google Search Console, growth in high-intent inbound referrals, lower blended customer acquisition costs (CAC), and shorter sales conversion cycles.
+  * Q: Do you also redesign our logo and visual identity?
+    A: Yes. Strategy and visual identity work hand-in-hand. We can refresh your logo, color palette, typography and graphic styling through our integrated Creative & Graphic Design studio.
+  * Q: How long does a brand strategy project take?
+    A: A focused brand strategy sprint typically takes 3 to 4 weeks from initial stakeholder discovery to the final presentation of your Brand Playbook.
+  * Q: When should a growing business invest in brand strategy?
+    A: When you notice you are constantly competing on price, when your sales reps explain your offer differently on every call, or when expanding into new international markets like North America or the UAE.
+
+## Industry Solutions
+### E-commerce & Online Retail
+- Hub URL: https://webixsolutions.com/industries/#ecommerce
+- Dedicated Page URL: https://webixsolutions.com/industries/ecommerce/
+- Common Struggles:
+  * Slow mobile product pages and clunky checkouts that leak paid ad traffic before purchase.
+  * High unconfirmed Cash-on-Delivery (COD) return rates in Pakistan and the UAE.
+  * Repetitive 'where is my order?' messages overwhelming WhatsApp and Instagram DMs.
+- What Webix Solutions Does:
+  * Conversion-engineered Shopify, WooCommerce and custom Next.js storefronts with sub-2.5s LCP.
+  * Meta Advantage+ and Google Shopping catalog campaigns paired with Pixel + Conversions API.
+  * Automated WhatsApp COD order verification, abandoned-cart recovery and AI support agents.
+
+### Home Services & Contractors
+- Hub URL: https://webixsolutions.com/industries/#home-services-contractors
+- Dedicated Page URL: https://webixsolutions.com/industries/home-services-contractors/
+- Common Struggles:
+  * Missed calls while crews are on the roof or job site turn directly into jobs for competitors.
+  * Google Business Profiles stuck outside the top 3 Map Pack despite good workmanship.
+  * Outdated websites without service-area pages, before/after proof or instant click-to-call.
+- What Webix Solutions Does:
+  * Fast mobile contractor websites with city/service-area pages and tap-to-call headers.
+  * Google Business Profile optimization, automated review generation and Local Services Ads.
+  * 24/7 AI voice receptionists and SMS missed-call text-back that book jobs into your calendar.
+
+### Real Estate & Construction
+- Hub URL: https://webixsolutions.com/industries/#real-estate-construction
+- Dedicated Page URL: https://webixsolutions.com/industries/real-estate-construction/
+- Common Struggles:
+  * Unqualified lead-form submissions that waste sales agents' hours chasing low-intent browsers.
+  * Slow manual follow-up where buyers inquire on Meta ads and wait hours for a brochure on WhatsApp.
+  * Static PDF floorplans instead of interactive project galleries that work smoothly on mobile.
+- What Webix Solutions Does:
+  * High-speed project and listing portals with budget/timeline qualification steps built in.
+  * Instant WhatsApp brochure delivery and AI lead qualification synced straight into your CRM.
+  * Targeted Meta, Google Search and video walkthrough campaigns for investors and homebuyers.
+
+### Healthcare, Dental & Clinics
+- Hub URL: https://webixsolutions.com/industries/#healthcare-clinics
+- Dedicated Page URL: https://webixsolutions.com/industries/healthcare-clinics/
+- Common Struggles:
+  * Patients searching 'near me' find aggregators or competing clinics first on Google Maps.
+  * Front-desk phone bottlenecks during peak clinic hours leading to unbooked consultations.
+  * Forms and tracking setups that collect excessive patient details without privacy guardrails.
+- What Webix Solutions Does:
+  * Privacy-aware clinic websites with treatment pages, practitioner bios and online booking.
+  * Local SEO, Google Business Profile management and compliant patient review workflows.
+  * AI appointment-booking assistants that answer routine hours/insurance questions 24/7.
+
+### Law, Accounting & Consulting
+- Hub URL: https://webixsolutions.com/industries/#professional-services
+- Dedicated Page URL: https://webixsolutions.com/industries/professional-services/
+- Common Struggles:
+  * Generic brochure websites that fail to explain practice areas or build partner credibility.
+  * Partner time spent on discovery calls with prospects who do not fit minimum engagement criteria.
+  * Zero visibility in high-intent Google searches and AI assistant answers for niche advisory queries.
+- What Webix Solutions Does:
+  * Authority websites with structured practice-area guides, case outcomes and calendar booking.
+  * Search & GEO content plus LinkedIn thought-leadership management for firm partners.
+  * AI intake chat that pre-screens case type, jurisdiction and timeline before booking a slot.
+
+### Restaurants, Cafes & Hospitality
+- Hub URL: https://webixsolutions.com/industries/#restaurants-hospitality
+- Dedicated Page URL: https://webixsolutions.com/industries/restaurants-hospitality/
+- Common Struggles:
+  * Menus locked inside heavy PDFs that cannot be read on phones or indexed by Google and AI.
+  * Inconsistent Instagram/TikTok reels and outdated holiday hours on Google Maps.
+  * High third-party delivery app commissions eating into repeat direct orders.
+- What Webix Solutions Does:
+  * Mobile-first websites with HTML/schema menus, direct table reservations and ordering links.
+  * Google Business Profile photo updates, review replies and local 'near me' visibility.
+  * Short-form reels, food photography editing and geo-targeted Meta promos for quiet nights.
+
+### Gyms, Personal Trainers & Wellness
+- Hub URL: https://webixsolutions.com/industries/#fitness-wellness
+- Dedicated Page URL: https://webixsolutions.com/industries/fitness-wellness/
+- Common Struggles:
+  * Trial-pass leads from Instagram ads who never show up because nobody followed up within 5 minutes.
+  * Clunky class schedules and membership pricing pages that confuse mobile visitors.
+  * High member churn after month one without automated check-ins and community content.
+- What Webix Solutions Does:
+  * High-energy landing pages with clear transformation proof, schedules and trial booking.
+  * Local Meta and TikTok video ads paired with instant WhatsApp/SMS trial confirmation.
+  * Consistent trainer reels, carousel tips and Google review generation from active members.
+
+### SaaS & Tech Startups
+- Hub URL: https://webixsolutions.com/industries/#saas-startups
+- Dedicated Page URL: https://webixsolutions.com/industries/saas-startups/
+- Common Struggles:
+  * Engineering bandwidth tied up in core product features while the marketing site stays stale.
+  * High customer acquisition costs on broad keywords without comparison or integration pages.
+  * Manual user onboarding and support tickets slowing down small founding teams.
+- What Webix Solutions Does:
+  * Fast Next.js marketing sites, interactive calculators and full-stack SaaS/Flutter MVPs.
+  * Programmatic comparison pages, technical SEO, llms.txt setup and paid acquisition sprints.
+  * AI docs assistants and automated trial-to-paid onboarding sequences.
+
+### Education, Academies & Training
+- Hub URL: https://webixsolutions.com/industries/#education-training
+- Common Struggles:
+  * Course pages that list syllabus bullets without clear career outcomes or cohort dates.
+  * Admissions teams manually answering the same fee and eligibility questions on WhatsApp.
+  * High drop-off between webinar registration and actual student enrollment.
+- What Webix Solutions Does:
+  * Course and academy websites with clear curriculum breakdowns, instructor bios and application flows.
+  * Lead generation campaigns for cohort launches and automated webinar reminder sequences.
+  * WhatsApp & web AI counselors that answer syllabus/fee questions and book advisor calls.
+
+### Automotive, Dealerships & Detailing
+- Hub URL: https://webixsolutions.com/industries/#automotive
+- Common Struggles:
+  * Inventory or service package pages that load slowly and lack instant quote requests.
+  * Weak local map rankings for high-margin jobs like ceramic coating, PPF or transmission repair.
+  * Slow response to Facebook Marketplace and Instagram DM price inquiries.
+- What Webix Solutions Does:
+  * Fast inventory and service-booking websites with vehicle filters and WhatsApp quote triggers.
+  * Google Business Profile optimization, photo updates and automated customer review requests.
+  * Local Meta lead and click-to-WhatsApp ads showcasing real before/after vehicle work.
+
+### Multi-Location & Franchise Brands
+- Hub URL: https://webixsolutions.com/industries/#multi-location
+- Common Struggles:
+  * Duplicate-content city pages that cannibalize each other and fail to rank locally.
+  * Inconsistent hours, categories and unanswered reviews across dozens of Google Business Profiles.
+  * Fragmented reporting where headquarters cannot see cost per lead by branch.
+- What Webix Solutions Does:
+  * Structured location page architecture with unique branch details, local schema and fast routing.
+  * Centralized Google Business Profile management, post scheduling and review response across branches.
+  * Unified GA4, Search Console and ad spend dashboards broken down by location.
+
+### Beauty, Salons & Aesthetics
+- Hub URL: https://webixsolutions.com/industries/#beauty-salons
+- Common Struggles:
+  * Clients DMing on Instagram at 10 PM to ask for slot availability and booking elsewhere.
+  * Social feeds that look generic instead of showcasing real treatments, stylists and hygiene.
+  * Empty mid-week chairs with no automated way to message past clients with last-minute slots.
+- What Webix Solutions Does:
+  * Sleek booking-integrated websites and link-in-bio funnels tailored for mobile visitors.
+  * Instagram & TikTok reels editing, carousel menus and local radius ad campaigns.
+  * Automated WhatsApp booking confirmations, reminders and review requests after every visit.
+
+### Logistics, Freight & Trucking
+- Hub URL: https://webixsolutions.com/industries/#logistics-trucking
+- Common Struggles:
+  * Difficulty recruiting qualified CDL drivers and owner-operators through generic job boards.
+  * Shippers struggling to request a fast lane/freight quote on outdated desktop-only websites.
+  * Manual dispatch and status update emails tying up operations staff.
+- What Webix Solutions Does:
+  * Modern logistics websites with two clear paths: shipper quote forms and 60-second driver applications.
+  * Targeted Meta and Google driver-recruitment and B2B freight lead campaigns.
+  * Automated CRM routing and WhatsApp/SMS qualification for driver applicants.
+
+### Travel & Immigration Consultants
+- Hub URL: https://webixsolutions.com/industries/#travel-immigration
+- Common Struggles:
+  * Consultants spending hours on WhatsApp answering basic visa eligibility questions for unqualified leads.
+  * Low trust from international applicants when websites lack transparent process timelines and credentials.
+  * Lost follow-ups across multi-month visa or study-abroad application cycles.
+- What Webix Solutions Does:
+  * Trust-focused websites with clear country guides, document checklists and paid/free consultation booking.
+  * AI WhatsApp and website qualification bots that collect country, education and budget before human handoff.
+  * CRM pipeline automation and multilingual Meta/Google lead campaigns.
+
+## Geographic Focus & Local Delivery
+### Canada (CA)
+- Dedicated Page URL: https://webixsolutions.com/locations/canada/
+- Currency: CAD (Quotes available in USD or approximate CAD equivalent. Ad spend is billed directly by Meta/Google in CAD.)
+- Timezone Overlap: Our night shift (9:00 PM – 5:00 AM PKT) overlaps 11:00 AM – 7:00 PM Eastern Time and 8:00 AM – 4:00 PM Pacific Time.
+- Market Platforms: CASL-compliant email and SMS opt-in flows with clear consent logging.; PIPEDA-aware analytics, cookie consent banner and form data minimization.; Google Business Profile & Local Services Ads for GTA, Vancouver, Calgary and Ottawa service areas.
+
+### United States (US)
+- Dedicated Page URL: https://webixsolutions.com/locations/united-states/
+- Currency: USD (All standard packages and project quotes are priced in USD. Ad spend is paid directly to your US ad accounts.)
+- Timezone Overlap: Our dedicated North America shift runs 11:00 AM – 7:00 PM ET (10:00 AM – 6:00 PM CT / 8:00 AM – 4:00 PM PT).
+- Market Platforms: Contractor & home-service growth stacks: Google Local Services Ads (LSA), Map Pack SEO and AI voice receptionists.; A2P 10DLC-aware SMS workflows and CAN-SPAM / CCPA privacy disclosures.; Direct ownership of your domains, GitHub repos, Google Ads, Meta Business Manager and CRM.
+
+### United Arab Emirates (AE)
+- Dedicated Page URL: https://webixsolutions.com/locations/uae/
+- Currency: AED (Quotes available in USD or approximate AED equivalent (1 USD ≈ 3.67 AED). Ad spend is billed directly in AED or USD.)
+- Timezone Overlap: Pakistan Standard Time (UTC+5) is just 1 hour ahead of UAE Gulf Standard Time (UTC+4), giving full-day overlap from 8:00 AM to 5:00 PM GST.
+- Market Platforms: WhatsApp-first commerce: Click-to-WhatsApp Meta ads, instant catalog replies and COD confirmation flows.; Bilingual English/Arabic RTL-ready website architecture and UAE payment gateway integrations (Tabby, Tamara, Stripe UAE, Paymob).; Multi-platform paid media across Meta, TikTok, Snapchat and Google Search/Maps.
+
+### Pakistan (PK)
+- Dedicated Page URL: https://webixsolutions.com/locations/pakistan/
+- Currency: PKR (Local project and retainer quotes available in PKR on request. Meetings available via video call or in Lahore by appointment.)
+- Timezone Overlap: Headquartered in Dunyapur, Punjab with a 20+ person in-house team online 9:00 AM – 6:00 PM PKT (plus night shift until 5:00 AM PKT).
+- Market Platforms: COD e-commerce mastery: Shopify & custom Next.js stores integrated with TCS, Leopards, PostEx, M&P and automated WhatsApp order confirmation.; High-volume Click-to-WhatsApp and Meta conversion campaigns tuned for Pakistani consumer behavior.; Real estate, construction, clinic and export-manufacturer websites built to international standards.
+
+### New Zealand (NZ)
+- Dedicated Page URL: https://webixsolutions.com/locations/new-zealand/
+- Currency: NZD (Quotes available in USD or approximate NZD equivalent.)
+- Timezone Overlap: Our shift overlaps New Zealand mornings (5:00 AM – 1:00 PM NZST / 6:00 AM – 2:00 PM NZDT).
+- Market Platforms: NZ Privacy Act 2020-compliant data handling and transparent cookie consent.; Local Google Maps, Trade Me / service-directory alignment and fast Cloudflare-cached pages.

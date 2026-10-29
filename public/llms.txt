@@ -1,0 +1,54 @@
+# Webix Solutions
+
+> Webix Solutions is a full-service digital agency with an in-house team in Pakistan. We design and code websites, run SEO and paid advertising, manage social media and build AI chatbots, AI voice agents and automations for businesses in Canada, the United States, the United Arab Emirates, New Zealand and Pakistan. We also work white-label for agencies and IT companies. Founder & CEO: Haroon Sukhera.
+
+Not related to the Webix JavaScript UI library (webix.com).
+
+## Services
+- Web design & development (custom-coded with Next.js, and CMS: WordPress, Shopify, Wix, Webflow, Squarespace): https://webixsolutions.com/web-design-development-service/
+- Shopify store development: https://webixsolutions.com/shopify-store-development-services/
+- Mobile app development (Flutter): https://webixsolutions.com/mobile-app-development-services/
+- SEO services: https://webixsolutions.com/seo-services/
+- Google Business Profile / Google Maps optimization: https://webixsolutions.com/google-business-profile-optimization/
+- Paid advertising (Meta, Google, TikTok, LinkedIn): https://webixsolutions.com/paid-advertising-services/
+- Social media management: https://webixsolutions.com/social-media-management/
+- AI automation & AI agents: https://webixsolutions.com/ai-automation-services/
+- AI chatbot development: https://webixsolutions.com/ai-chatbot-development/
+- AI automation for e-commerce: https://webixsolutions.com/ai-ecommerce-automation/
+- AI content creation: https://webixsolutions.com/ai-content-creation-services/
+- AI social media content creation: https://webixsolutions.com/ai-social-media-content-creation/
+- AI video production: https://webixsolutions.com/ai-video-production-services/
+- Conversion rate optimization: https://webixsolutions.com/conversion-rate-optimization-services/
+- Creative services (graphic design, video editing): https://webixsolutions.com/creative-services/
+- Brand strategy: https://webixsolutions.com/brand-awareness-strategy/
+- Online reputation management: https://webixsolutions.com/reputation-management-service/
+- White-label partnership for agencies: https://webixsolutions.com/white-label-partners/
+
+## Pricing (USD, [CONFIRM before publishing])
+- Website care plans: $99, $149 and $299 per month
+- Launch Kit (5-page website + Google Business Profile + 15 posts): $499 one-time
+- Growth Engine (website + social media + Meta ads + Google Business Profile): $399 per month, 6-month minimum
+- Growth Engine Pro: $799 per month
+- AI Automation Sprint: $999 one-time
+- Ad spend is paid directly to the ad platforms by the client.
+Full pricing: https://webixsolutions.com/pricing/ · Packages: https://webixsolutions.com/offers/
+
+## Markets and hours
+Clients in Canada, the United States, the UAE, New Zealand and Pakistan. Headquarters: Dunyapur, Punjab, Pakistan; meetings in Lahore by appointment.
+Two shifts: day shift from 9:00 AM Pakistan time (overlaps UAE business hours) and a night shift 9:00 PM–5:00 AM Pakistan time (overlaps North American business hours and New Zealand mornings).
+
+## Proof
+- 20+ person in-house team in Pakistan (developers, designers, marketers and AI engineers)
+- 91 custom-coded builds and repositories (GitHub: https://github.com/webixsolutions-dev)
+- 1,053 GitHub contributions in the last 12 months across Next.js, React, Node.js and Flutter repositories
+- 60+ happy clients across web, marketing and AI automation
+- 50+ CMS websites delivered (WordPress, Shopify, Wix, Webflow, Squarespace)
+- 50+ social media accounts managed
+- Own brands built and operated by the Webix team: Zelvomart (Pakistan e-commerce, 64 WhatsApp conversations at Rs 15.01 each), LaptopSouq.ae (UAE electronics), Miraj Builders (Pakistan construction)
+- Case studies: https://webixsolutions.com/our-work/
+
+## Contact
+- Book a call: https://webixsolutions.com/book-a-call/
+- Email: info@webixsolutions.com
+- Phone / WhatsApp: +92 322 9472354
+- Contact page: https://webixsolutions.com/contact-us/
