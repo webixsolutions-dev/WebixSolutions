@@ -36,6 +36,7 @@ export interface WorkEntry {
   summary: string;
   cover?: string;
   projectUrl?: string;
+  coverCaption?: string;
   challenge: string;
   solution: string[];
   results: WorkMetric[];
@@ -97,6 +98,41 @@ export const WORK_REGISTRY: WorkEntry[] = [
     projectUrl: "https://camzcleaning.com/",
   },
   {
+    slug: "jooblie",
+    title: "Jooblie",
+    descriptor: "Recruitment platform",
+    country: "",
+    category: "Custom software & CRM",
+    summary: "A recruitment platform with job search, applications, recruiter tools and an admin dashboard.",
+    challenge: "Give job seekers and recruiters separate workspaces while keeping job listings and applications connected.",
+    solution: ["Public job search and listings", "Job seeker applications and recruiter dashboards", "Shared publishing across specialist job portals"],
+    results: [],
+    services: ["custom-crm-development", "web-design-development-service"],
+    stack: ["React", "Vite", "Express", "Supabase"],
+    permission: "named",
+    published: true,
+    cover: "/images/studio/jooblie-cover.svg",
+    coverCaption: "Illustration of the Jooblie product flow",
+  },
+  {
+    slug: "walshkon-consultants",
+    title: "Walshkon Consultants",
+    descriptor: "Multi-region consulting website",
+    country: "",
+    category: "Websites",
+    summary: "A consulting website that directs visitors to relevant services by country or region.",
+    challenge: "Help visitors navigate a range of consulting services that vary by market.",
+    solution: ["Country selection on the homepage", "Market-specific pages and service navigation"],
+    results: [],
+    services: ["web-design-development-service"],
+    stack: ["Next.js", "React"],
+    permission: "named",
+    published: true,
+    cover: workImage("walshkon-cover"),
+    coverCaption: "Walshkon Consultants public website",
+    projectUrl: "https://www.walshkonconsultants.com/",
+  },
+  {
     slug: "zelvomart-ecommerce-platform",
     cover: workImage("commerce"),
     title: "Zelvomart — Custom E-commerce Platform & WhatsApp Ads",
@@ -144,7 +180,7 @@ export const WORK_REGISTRY: WorkEntry[] = [
   },
   {
     slug: "us-contractor-websites",
-    cover: workImage("systems"),
+    cover: workImage("trade-cover"),
     title: "Websites for US Trade Contractors",
     descriptor: "Electrical & Exterior Lighting Contractors · United States",
     country: "United States",
@@ -184,7 +220,7 @@ export const WORK_REGISTRY: WorkEntry[] = [
   },
   {
     slug: "custom-crm-agency-operations",
-    cover: workImage("systems"),
+    cover: "/images/studio/crm-cover.svg",
     title: "Custom Agency Operations & Client Management CRM",
     descriptor: "Agency Infrastructure & Workflow Automation · Pakistan & Remote",
     country: "Pakistan",
@@ -223,7 +259,7 @@ export const WORK_REGISTRY: WorkEntry[] = [
   },
   {
     slug: "ai-lead-engine-google-maps",
-    cover: workImage("systems"),
+    cover: "/images/studio/lead-cover.svg",
     title: "AI-assisted Lead Research and Review",
     descriptor: "B2B Lead Research & Outreach Automation · United States & Canada",
     country: "United States",

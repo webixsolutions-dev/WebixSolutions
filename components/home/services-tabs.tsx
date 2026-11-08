@@ -20,15 +20,20 @@ export function ServicesTabs({ columns }: { columns: MegaMenuColumn[] }) {
           tabs.current[index]?.focus();
         }}>
         {columns.map((column, index) => <button ref={(button) => { tabs.current[index] = button; }} key={column.category} type="button" role="tab" id={`${id}-tab-${index}`}
-          aria-selected={active === index} aria-controls={`${id}-panel-${index}`} tabIndex={active === index ? 0 : -1} onClick={() => setActive(index)}>{column.heading}</button>)}
+          aria-selected={active === index} aria-controls={`${id}-panel-${index}`} tabIndex={active === index ? 0 : -1} onClick={() => setActive(index)}>{column.heading}<span aria-hidden="true">{column.items.length}</span></button>)}
       </div>
       {columns.map((column, index) => (
         <div key={column.category} role="tabpanel" id={`${id}-panel-${index}`} aria-labelledby={`${id}-tab-${index}`} hidden={active !== index} className="studio-service-panel">
-          {column.items.map((item) => (
-            <Link className="studio-service" key={item.href} href={item.href}>
-              <div><h3>{item.label}</h3>{item.description && <p>{item.description}</p>}</div><ArrowUpRight size={20} />
-            </Link>
-          ))}
+          <p className="studio-service-panel-intro"><strong>{column.heading}</strong> <span>{column.subtitle}</span></p>
+          <div className="studio-service-cards">
+            {column.items.map((item) => (
+              <Link className="studio-service studio-cut-frame" key={item.href} href={item.href} data-studio-spotlight>
+                <h3>{item.label}</h3>
+                {item.description && <p>{item.description}</p>}
+                <span>Service details <ArrowUpRight size={17} /></span>
+              </Link>
+            ))}
+          </div>
         </div>
       ))}
     </div>

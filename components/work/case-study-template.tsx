@@ -96,7 +96,7 @@ export function CaseStudyTemplate({ study, nextSlot }: CaseStudyTemplateProps) {
           </div>
         </Container>
       </Section>
-      {study.cover && <Section surface="steel" spacing="compact"><Container><ProjectCover study={study} sizes="(max-width: 760px) 94vw, 1100px" /><p className="mt-2 text-sm text-fg-secondary">Illustrative cover image</p></Container></Section>}
+      {study.cover && <Section surface="steel" spacing="compact"><Container><ProjectCover study={study} sizes="(max-width: 760px) 94vw, 1100px" /><p className="mt-2 text-sm text-fg-secondary">{study.coverCaption ?? "Illustrative cover image"}</p></Container></Section>}
 
 
       {/* =========================================================================

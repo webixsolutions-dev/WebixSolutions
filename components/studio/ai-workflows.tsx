@@ -26,7 +26,7 @@ const serviceDiagrams = {
 
 export function AiWorkflows() {
   return (
-    <section id="ai-workflows" className="studio-section studio-ai" aria-labelledby="studio-ai-title">
+    <section id="ai-workflows" className="studio-section studio-ai" aria-labelledby="studio-ai-title" data-studio-light>
       <div className="studio-wrap">
         <div className="studio-ai-lamp" data-studio-lamp>
           <div className="studio-ai-light" aria-hidden="true"><i /></div>
@@ -47,7 +47,7 @@ export function AiWorkflows() {
         <WorkflowDemo />
         <div className="studio-ai-cards" data-studio-stagger>
           {HOME_CONTENT.aiSystemsSection.systems.map((system, index) => (
-            <article key={system.id} className="studio-ai-card" data-studio-spotlight>
+            <article key={system.id} className="studio-ai-card studio-cut-frame" data-studio-spotlight>
               <div className="studio-ai-card-visual" aria-hidden="true">
                 <span className="studio-ai-card-number">0{index + 1}</span>
                 <div>{serviceDiagrams[system.id as keyof typeof serviceDiagrams].map(({ label, Icon }) => <span key={label}><Icon size={19} />{label}</span>)}</div>

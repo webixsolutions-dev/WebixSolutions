@@ -57,7 +57,7 @@ export function createEarthRenderer(canvas: HTMLCanvasElement, image: HTMLImageE
       const focused = active === place.code;
       context.beginPath();
       context.arc(x, y, focused ? 8 : 5, 0, 2 * Math.PI);
-      context.fillStyle = focused ? "#ffffff" : "#ff4657";
+      context.fillStyle = focused ? "#ffffff" : "#ed1b24";
       context.fill();
       context.strokeStyle = "#fff";
       context.lineWidth = focused ? 2 : 1;
@@ -65,7 +65,7 @@ export function createEarthRenderer(canvas: HTMLCanvasElement, image: HTMLImageE
       if (focused) {
         context.beginPath();
         context.arc(x, y, 14, 0, 2 * Math.PI);
-        context.strokeStyle = "#ff4657";
+        context.strokeStyle = "#ed1b24";
         context.stroke();
       }
     }

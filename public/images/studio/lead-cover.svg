@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
+  <defs><pattern id="dot" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="14" cy="14" r="1.5" fill="#585a62"/></pattern></defs>
+  <rect width="960" height="540" fill="#131418"/>
+  <rect width="960" height="540" fill="url(#dot)" opacity=".58"/>
+  <path d="M190 252C235 252 260 181 320 181H361M526 181H576C625 181 620 310 673 310H716" fill="none" stroke="#ed1b24" stroke-width="3"/>
+  <path d="M190 252C235 252 260 181 320 181H361M526 181H576C625 181 620 310 673 310H716" fill="none" stroke="#ed1b24" stroke-width="20" opacity=".12"/>
+  <g font-family="system-ui, sans-serif">
+    <text x="62" y="82" fill="#bfc1c7" font-size="17">Workflow illustration</text>
+    <g fill="#23252b" stroke="#757982" stroke-width="2"><path d="M65 210h112l17 17v67H65Z"/><path d="M361 135h149l17 17v77H361Z"/><path d="M715 268h160l17 17v67H715Z"/></g>
+    <g fill="#f0f1f4" font-size="19" font-weight="650"><text x="81" y="260">Discover</text><text x="379" y="189">Audit and draft</text><text x="733" y="318">Human review</text></g>
+    <g fill="#ed1b24"><circle cx="194" cy="252" r="5"/><circle cx="361" cy="181" r="5"/><circle cx="526" cy="181" r="5"/><circle cx="715" cy="310" r="5"/></g>
+  </g>
+</svg>

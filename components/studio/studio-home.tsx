@@ -1,10 +1,11 @@
 import Link from "next/link";
-import { ArrowDown, ArrowUpRight, Plus, Sparkle } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Check, Plus, Sparkle } from "lucide-react";
 import { getMegaMenuColumns } from "@/content/navigation";
 import type { NextSlotResult } from "@/lib/booking/next-slot";
 import { ServicesTabs } from "@/components/home/services-tabs";
 import { AiWorkflows } from "./ai-workflows";
 import { StudioPackages, StudioProofWall } from "./home-proof-sections";
+import { HOME_CONTENT } from "@/content/home";
 import { SITE_FACTS } from "@/content/site-facts";
 import { STUDIO } from "@/content/studio";
 import { getPublishedWorkEntries } from "@/content/work";
@@ -14,12 +15,13 @@ import { HeroShowcase } from "./hero-showcase";
 
 export function StudioHome({ nextSlot }: { nextSlot: NextSlotResult }) {
   const projects = getPublishedWorkEntries();
-  const featured = ["camz-cleaning-booking", "zelvomart-ecommerce-platform", "custom-crm-agency-operations", "us-contractor-websites", "ai-lead-engine-google-maps"]
+  const featured = ["camz-cleaning-booking", "jooblie", "walshkon-consultants", "zelvomart-ecommerce-platform", "custom-crm-agency-operations", "us-contractor-websites", "ai-lead-engine-google-maps"]
     .flatMap((slug) => projects.filter((project) => project.slug === slug));
   const proof = SITE_FACTS.stats;
+  const ways = HOME_CONTENT.twoWays;
   return (
     <>
-      <section className="studio-hero" data-studio-spotlight>
+      <section className="studio-hero" data-studio-spotlight data-studio-light>
         <div className="studio-wrap studio-hero-inner">
           <div className="studio-hero-copy">
             <p className="studio-label" data-hero-intro><span /> Full-service digital agency</p>
@@ -34,7 +36,7 @@ export function StudioHome({ nextSlot }: { nextSlot: NextSlotResult }) {
           <div className="studio-hero-index"><a href="#studio-proof-title"><ArrowDown size={15} /> Scroll to explore</a><span>{STUDIO.heroNote}</span></div>
         </div>
       </section>
-      <section className="studio-proof" aria-labelledby="studio-proof-title" data-studio-proof-band>
+      <section className="studio-proof" aria-labelledby="studio-proof-title" data-studio-proof-band data-studio-light>
         <div className="studio-proof-ribbon" aria-hidden="true">
           <div className="studio-proof-ribbon-track" data-studio-proof-track>
             {Array.from({ length: 3 }, (_, index) => (
@@ -59,7 +61,7 @@ export function StudioHome({ nextSlot }: { nextSlot: NextSlotResult }) {
         </div>
         <div className="studio-proof-wordmark" data-studio-proof-mark aria-hidden="true">WEBIX</div>
       </section>
-      <section className="studio-section studio-light" id="selected-work">
+      <section className="studio-section studio-light" id="selected-work" data-studio-light>
         <div className="studio-wrap">
           <div className="studio-section-head" data-studio-reveal>
             <div><p className="studio-label"><span /> Selected projects</p><h2>See what we’ve built.</h2></div>
@@ -67,7 +69,7 @@ export function StudioHome({ nextSlot }: { nextSlot: NextSlotResult }) {
           </div>
           <div className="studio-bento" data-studio-gallery>
             {featured.map((study, index) => (
-              <Link key={study.slug} href={`/our-work/${study.slug}/`} className={`studio-project studio-project-${index}`} data-studio-project>
+              <Link key={study.slug} href={`/our-work/${study.slug}/`} className={`studio-project studio-project-${index} studio-cut-frame`} data-studio-project>
                 <ProjectCover study={study} />
                 <div className="studio-project-copy"><p>{study.descriptor}</p><h3>{study.title}</h3><span className="studio-project-arrow"><ArrowUpRight size={20} /></span></div>
               </Link>
@@ -75,30 +77,48 @@ export function StudioHome({ nextSlot }: { nextSlot: NextSlotResult }) {
           </div>
         </div>
       </section>
-      <section className="studio-section studio-dark">
-        <div className="studio-wrap studio-service-grid">
-          <div data-studio-reveal><h2>Where we can help.</h2><p className="studio-section-lead">From the page a customer lands on to the tools your team uses after they get in touch.</p><Link className="studio-link" href="/services/">Browse all services <ArrowUpRight size={17} /></Link></div>
+      <section className="studio-section studio-dark studio-services-section" data-studio-light>
+        <div className="studio-wrap">
+          <div className="studio-section-head" data-studio-reveal>
+            <div><h2>Where we can help.</h2><p className="studio-section-lead">From the page a customer lands on to the tools your team uses after they get in touch.</p></div>
+            <Link className="studio-link" href="/services/">Browse all services <ArrowUpRight size={17} /></Link>
+          </div>
           <ServicesTabs columns={getMegaMenuColumns()} />
         </div>
         <div className="studio-platform-window"><div className="studio-platforms" data-studio-marquee>{[...STUDIO.platforms, ...STUDIO.platforms].map((name, index) => <span key={`${name}-${index}`} aria-hidden={index >= STUDIO.platforms.length}>{name}</span>)}</div></div>
       </section>
       <AiWorkflows />
       <StudioPackages />
-      <section className="studio-section studio-light">
+      <section className="studio-section studio-light studio-process-section" data-studio-light>
         <div className="studio-wrap">
           <div className="studio-section-head" data-studio-reveal><div><h2>From brief to launch.</h2></div><Link className="studio-link" href="/offers/">Explore packages <ArrowUpRight size={18} /></Link></div>
           <ol className="studio-process" data-studio-stagger>{STUDIO.process.map((step, i) => <li key={step.title}><span>0{i + 1}</span><h3>{step.title}</h3><p>{step.detail}</p></li>)}</ol>
-          <div className="studio-audiences" data-studio-stagger>{STUDIO.audiences.map((item) => <article key={item.label}><p className="studio-label">{item.label}</p><h3>{item.title}</h3><p>{item.detail}</p><Link href={item.href} className="studio-link">{item.action} <ArrowUpRight size={17} /></Link></article>)}</div>
         </div>
       </section>
-      <section className="studio-section studio-dark studio-market-section" id="our-markets">
+      <section className="studio-section studio-audience-section" data-studio-light>
+        <div className="studio-wrap">
+          <div className="studio-section-head" data-studio-reveal>
+            <div><p className="studio-label"><span /> {ways.kicker}</p><h2>{ways.h2}</h2></div>
+          </div>
+          <div className="studio-audiences" data-studio-stagger>
+            {[ways.forBusinesses, ways.forAgencies].map((item, index) => (
+              <article className="studio-cut-frame" key={item.badge}>
+                <p className="studio-label studio-chip">{item.badge}</p><h3>{item.title}</h3><p>{item.description}</p>
+                <ul>{item.bullets.map((bullet) => <li key={bullet}><Check size={16} aria-hidden="true" />{bullet}</li>)}</ul>
+                <Link href={item.ctaHref} className={index === 0 ? "studio-button" : "studio-button studio-button-outline"}>{item.ctaLabel} <ArrowUpRight size={17} /></Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="studio-section studio-dark studio-market-section" id="our-markets" data-studio-light>
         <div className="studio-wrap studio-market-grid">
-          <div data-studio-reveal><p className="studio-label"><span /> Where we work</p><h2>Based in Pakistan.<br />Working worldwide.</h2><p className="studio-section-lead">Our remote team works with clients in Canada, the United States, the United Arab Emirates, New Zealand and Pakistan. We plan calls and handovers around your time zone.</p></div>
+          <div data-studio-reveal><p className="studio-label"><span /> Where we work</p><h2>Based in Pakistan. Working worldwide.</h2><p className="studio-section-lead">Our remote team works with clients in Canada, the United States, the United Arab Emirates, New Zealand and Pakistan. We plan calls and handovers around your time zone.</p></div>
           <MarketGlobe />
         </div>
       </section>
       <StudioProofWall />
-      <section className="studio-section studio-light studio-questions" id="project-questions">
+      <section className="studio-section studio-light studio-questions" id="project-questions" data-studio-light>
         <div className="studio-wrap studio-question-grid">
           <aside data-studio-reveal>
             <h2>Good questions to ask first.</h2>

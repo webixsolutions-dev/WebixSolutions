@@ -131,10 +131,27 @@ export function StudioMotion() {
             scrollTrigger: { trigger: proofBand, start: "top 95%", end: "bottom 83%", scrub: 0.75 },
           });
         }
+        for (const surface of gsap.utils.toArray<HTMLElement>("[data-studio-light], #main section[data-surface], #main .studio-section")) {
+          gsap.timeline({
+            defaults: { ease: "none" },
+            scrollTrigger: { trigger: surface, start: "top bottom", end: "bottom top", scrub: 0.65 },
+          })
+            .fromTo(surface, { "--studio-spread": 0.18, "--studio-light-opacity": 0.05, "--studio-light-travel": "-6%" }, {
+              "--studio-spread": 1, "--studio-light-opacity": 0.9, "--studio-light-travel": "12%", duration: 0.55,
+            })
+            .to(surface, { "--studio-spread": 1.25, "--studio-light-opacity": 0.16, "--studio-light-travel": "27%", duration: 0.45 });
+        }
         const lamp = document.querySelector("[data-studio-lamp]");
-        if (lamp) gsap.from(lamp.querySelector(".studio-ai-light"), {
-          scaleX: 0.45, opacity: 0.3, duration: 0.95, ease: "power3.out",
-          scrollTrigger: { trigger: lamp, start: "top 87%", once: true },
+        if (lamp) {
+          gsap.fromTo(lamp.querySelector(".studio-ai-light"), { scaleX: 0.12, scaleY: 0.4, opacity: 0.12 }, {
+            scaleX: 1, scaleY: 1, opacity: 1, ease: "none",
+            scrollTrigger: { trigger: lamp, start: "top 94%", end: "bottom 51%", scrub: 0.55 },
+          });
+        }
+        const process = document.querySelector(".studio-process");
+        if (process) gsap.fromTo(process, { "--studio-progress": 0 }, {
+          "--studio-progress": 1, ease: "none",
+          scrollTrigger: { trigger: process, start: "top 90%", end: "bottom 52%", scrub: 0.65 },
         });
         const network = document.querySelector("[data-studio-network]");
         if (network) ScrollTrigger.create({

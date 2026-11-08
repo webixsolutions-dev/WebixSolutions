@@ -21,14 +21,14 @@ export function Footer() {
   ];
 
   return (
-    <footer className="studio-footer" data-surface="graphite">
-      <div className="studio-footer-cta">
-        <div className="studio-wrap studio-footer-cta-inner">
-          <div><p>Let’s talk</p><h2>What are you building?</h2><span>Book a free 30-minute call to talk through your project.</span></div>
-          <Link href="/book-a-call/" className="studio-button">Book a strategy call <ArrowUpRight size={18} /></Link>
-        </div>
-      </div>
+    <footer className="studio-footer" data-surface="graphite" data-studio-light>
       <div className="studio-wrap">
+        <div className="studio-footer-cta studio-cut-frame" data-studio-spotlight>
+          <div className="studio-footer-cta-inner">
+            <div><p className="studio-label"><span /> Let’s talk</p><h2>What are you building?</h2><span>Book a free 30-minute call to talk through your project.</span></div>
+            <Link href="/book-a-call/" className="studio-button">Book a strategy call <ArrowUpRight size={18} /></Link>
+          </div>
+        </div>
         <div className="studio-footer-main">
           <div className="studio-footer-identity">
             <Link href="/" aria-label="Webix Solutions home"><Image src="/images/logo.png" alt="" width={154} height={40} /></Link>
@@ -43,6 +43,7 @@ export function Footer() {
           </div>)}
         </div>
         <div className="studio-footer-news"><div><p>Notes from the studio</p><span>Occasional updates on web, search and automation.</span></div><NewsletterForm /></div>
+        <div className="studio-footer-wordmark" aria-hidden="true">WEBIX SOLUTIONS</div>
         <div className="studio-footer-legal"><span>© {new Date().getFullYear()} Webix Solutions</span><div>{columns.legal.map((item) => <Link href={item.href} key={item.href}>{item.label}</Link>)}<CookieSettingsTrigger /></div></div>
       </div>
     </footer>

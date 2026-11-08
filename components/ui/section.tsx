@@ -7,7 +7,7 @@ const SURFACE_BG_HEX: Record<SurfaceType, string> = {
   graphite: "#141519",
   porcelain: "#F4F5F7",
   steel: "#E4E6EB",
-  red: "#ED1C24",
+  red: "#ED1B24",
   oxblood: "#5A0B10",
 };
 

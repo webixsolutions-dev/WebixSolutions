@@ -41,7 +41,7 @@ export function GrowthConsole({ signals }: { signals: GrowthSignalItem[] }) {
   };
 
   return (
-    <div className="studio-growth-console" role="region" aria-roledescription="carousel" aria-label="Proof at a glance"
+    <div className="studio-growth-console studio-cut-frame" role="region" aria-roledescription="carousel" aria-label="Proof at a glance"
       onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
       onFocusCapture={() => setFocused(true)} onBlurCapture={(event) => {
         if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false);
@@ -58,8 +58,10 @@ export function GrowthConsole({ signals }: { signals: GrowthSignalItem[] }) {
             </div>
             <div className="growth-console-copy">
               <p className="growth-console-kicker">{signal.kicker}</p>
-              {signal.metricValue && <strong className="growth-console-metric">{signal.metricValue}</strong>}
-              <h2>{signal.title}</h2>
+              <div className="growth-console-title">
+                {signal.metricValue && <strong className="growth-console-metric">{signal.metricValue}</strong>}
+                <h2>{signal.title}</h2>
+              </div>
               {signal.slotData?.slotIso && signal.slotData.easternTimeFormatted && <ClientSlotTime slotIso={signal.slotData.slotIso} easternFallback={signal.slotData.easternTimeFormatted} />}
               <p className="growth-console-detail">{signal.detail}</p>
               <div className="growth-console-meta"><span>{signal.sourceLabel}</span>

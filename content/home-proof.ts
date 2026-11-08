@@ -29,7 +29,7 @@ export function getHomeProofSignals(nextSlot: NextSlotResult): GrowthSignalItem[
       href: "/paid-advertising-services/",
       linkLabel: "Paid advertising services",
       confirmed: ad?.confirmed === true,
-      image: "/images/studio/proof-ads.webp",
+      image: "/images/studio/proof-ads-editorial.webp",
     },
     {
       id: "signal-ai",
@@ -41,7 +41,7 @@ export function getHomeProofSignals(nextSlot: NextSlotResult): GrowthSignalItem[
       href: "/#ai-workflows",
       linkLabel: "See AI workflows",
       confirmed: true,
-      image: "/images/studio/proof-ai.webp",
+      image: "/images/studio/proof-ai-editorial.webp",
     },
     {
       id: "signal-github",
@@ -53,7 +53,7 @@ export function getHomeProofSignals(nextSlot: NextSlotResult): GrowthSignalItem[
       href: "/our-work/",
       linkLabel: "Explore our work",
       confirmed: github.confirmed && customCodedBuilds.confirmed,
-      image: "/images/studio/proof-engineering.webp",
+      image: "/images/studio/proof-engineering-editorial.webp",
     },
     {
       id: "signal-slot",
@@ -65,7 +65,7 @@ export function getHomeProofSignals(nextSlot: NextSlotResult): GrowthSignalItem[
       linkLabel: "Book this call",
       slotData: nextSlot,
       confirmed: true,
-      image: "/images/studio/proof-booking.webp",
+      image: "/images/studio/proof-booking-editorial.webp",
     },
   ];
   return signals.filter((signal) => signal.confirmed);
