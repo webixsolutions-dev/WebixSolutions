@@ -3,12 +3,9 @@ import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Kicker } from "@/components/ui/kicker";
 import { Button } from "@/components/ui/button";
-import {
-  GrowthConsole,
-  type GrowthSignalItem,
-} from "@/components/home/growth-console";
+import { GrowthConsole } from "@/components/home/growth-console";
 import { HOME_CONTENT } from "@/content/home";
-import { SITE_FACTS, isConfirmed } from "@/content/site-facts";
+import { getHomeProofSignals } from "@/content/home-proof";
 import type { NextSlotResult } from "@/lib/booking/next-slot";
 
 export interface HeroSectionProps {
@@ -21,79 +18,7 @@ export interface HeroSectionProps {
  * No WebGL.
  */
 export function HeroSection({ nextSlot }: HeroSectionProps) {
-  const adMetric = SITE_FACTS.adResults[0];
-
-  // Ordered signals:
-  // 1) Zelvomart — Rs 15.01 per WhatsApp conversation
-  // 2) AI receptionist flow
-  // 3) 1,053 contributions across 91 repositories
-  // 4) Next open strategy call (WhatsApp/email fallback in production until booking is live)
-  const candidateSignals: GrowthSignalItem[] = [
-    {
-      id: "signal-ads",
-      kicker: "Zelvomart e-commerce campaign",
-      metricValue: adMetric.metricValue,
-      title: "Cost per WhatsApp conversation",
-      detail:
-        "64 WhatsApp conversations generated at Rs 15.01 each in the last 30 days for our own brand, Zelvomart.",
-      sourceLabel: "Source: Meta Ads Manager (last 30 days)",
-      href: "/paid-advertising-services/",
-      linkLabel: "Paid advertising services",
-      confirmed: isConfirmed(adMetric.confirmed),
-    },
-    {
-      id: "signal-ai",
-      kicker: "AI systems in production",
-      metricValue: "24/7",
-      title: "AI receptionist that answers, qualifies and books",
-      detail:
-        "Website and WhatsApp chatbots, AI phone receptionists and Google Maps lead engines built with OpenAI, n8n and Make.",
-      sourceLabel: "Source: Production AI deployments",
-      href: "/ai-automation-services/",
-      linkLabel: "AI automation services",
-      confirmed: true,
-    },
-    {
-      id: "signal-github",
-      kicker: "Verified GitHub engineering activity",
-      metricValue: SITE_FACTS.stats.githubContributionsLastYear.value,
-      title: "Contributions across 91 repositories",
-      detail:
-        "1,053 contributions in the last 12 months across 91 Next.js, React, Node.js and Flutter repositories.",
-      sourceLabel: "Source: github.com/webixsolutions-dev",
-      href: "/our-work/",
-      linkLabel: "Explore our work",
-      confirmed: isConfirmed(
-        SITE_FACTS.stats.githubContributionsLastYear.confirmed
-      ),
-    },
-    {
-      id: "signal-slot",
-      kicker: "Next open strategy call",
-      title: "30-minute video call with our team",
-      detail:
-        "Discuss your website, marketing or AI workflow goals directly with our team on your time zone.",
-      sourceLabel: "Direct video call with our team",
-      href: "/book-a-call/",
-      linkLabel: "Book this call",
-      slotData: nextSlot,
-      confirmed: true,
-    },
-    {
-      id: "signal-shifts",
-      kicker: "Two daily shifts across 5 markets",
-      metricValue: "5 markets",
-      title: "Day and night shifts overlapping your business hours",
-      detail:
-        "Our night shift (9:00 PM to 5:00 AM PKT) overlaps North American business hours; our day shift (from 9:00 AM PKT) overlaps the UAE.",
-      sourceLabel: "Canada, US, UAE, New Zealand and Pakistan",
-      href: "/contact-us/",
-      linkLabel: "See working hours",
-      confirmed: isConfirmed(SITE_FACTS.stats.marketsServedCount.confirmed),
-    },
-  ];
-
-  const signals = candidateSignals.filter((s) => s.confirmed).slice(0, 4);
+  const signals = getHomeProofSignals(nextSlot);
 
   return (
     <Section surface="graphite" spacing="hero" grid className="relative">

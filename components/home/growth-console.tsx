@@ -1,217 +1,90 @@
 "use client";
 
-import * as React from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
-import { CutFrame } from "@/components/ui/cut-frame";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Pause, Play } from "lucide-react";
+import { useEffect, useId, useState, useSyncExternalStore } from "react";
 import { ClientSlotTime } from "@/components/home/client-slot-time";
-import type { NextSlotResult } from "@/lib/booking/next-slot";
+import type { GrowthSignalItem } from "@/content/home-proof";
 
-export interface GrowthSignalItem {
-  id: string;
-  kicker: string;
-  metricValue?: string;
-  title: string;
-  detail: string;
-  sourceLabel: string;
-  href: string;
-  linkLabel: string;
-  slotData?: NextSlotResult;
-  confirmed: boolean;
+export type { GrowthSignalItem } from "@/content/home-proof";
+
+const motionPreference = "(prefers-reduced-motion: reduce)";
+
+function prefersReducedMotion() {
+  return window.matchMedia(motionPreference).matches;
 }
 
-export interface GrowthConsoleProps {
-  signals: GrowthSignalItem[];
+function subscribeToMotionPreference(callback: () => void) {
+  const media = window.matchMedia(motionPreference);
+  media.addEventListener("change", callback);
+  return () => media.removeEventListener("change", callback);
 }
 
-/**
- * Right-side hero proof panel (docs/05-design-system.md).
- * - All 4 active signals are server-rendered in a <ul> list so crawlers read every signal.
- * - Cross-fades every 4.5s on the client, pauses on hover/focus, provides dot controls
- *   and Left/Right arrow keyboard navigation.
- */
-export function GrowthConsole({ signals }: GrowthConsoleProps) {
-  const [activeIndex, setActiveIndex] = React.useState(0);
-  const [paused, setPaused] = React.useState(false);
+export function GrowthConsole({ signals }: { signals: GrowthSignalItem[] }) {
+  const id = useId();
+  const [active, setActive] = useState(0);
+  const [playing, setPlaying] = useState(true);
+  const [hovered, setHovered] = useState(false);
+  const [focused, setFocused] = useState(false);
+  const reduced = useSyncExternalStore(subscribeToMotionPreference, prefersReducedMotion, () => false);
 
-  React.useEffect(() => {
-    if (paused || signals.length <= 1) return;
-    const prefersReduced =
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReduced) return;
-
-    const timer = window.setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % signals.length);
-    }, 4500);
-
+  useEffect(() => {
+    if (!playing || hovered || focused || reduced || signals.length < 2) return;
+    const timer = window.setInterval(() => setActive((index) => (index + 1) % signals.length), 7000);
     return () => window.clearInterval(timer);
-  }, [paused, signals.length]);
+  }, [playing, hovered, focused, reduced, signals.length]);
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    if (e.key === "ArrowRight") {
-      e.preventDefault();
-      setActiveIndex((prev) => (prev + 1) % signals.length);
-    } else if (e.key === "ArrowLeft") {
-      e.preventDefault();
-      setActiveIndex((prev) => (prev - 1 + signals.length) % signals.length);
-    }
+  const select = (index: number) => {
+    setActive((index + signals.length) % signals.length);
+    setPlaying(false);
   };
 
   return (
-    <div
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onFocusCapture={() => setPaused(true)}
-      onBlurCapture={() => setPaused(false)}
-      onKeyDown={handleKeyDown}
-      role="region"
-      aria-roledescription="carousel"
-      aria-label="Proof at a glance"
-      className="w-full max-w-[440px] lg:ml-auto animate-hero-console"
-    >
-      <CutFrame
-        cutSize="lg"
-        glass="dark"
-        innerClassName="p-6 md:p-7 flex flex-col justify-between min-h-[330px]"
-      >
-        {/* Console Header Bar */}
-        <div className="flex items-center justify-between border-b border-white/12 pb-3.5 text-xs text-[#A7ACB8]">
-          <span className="inline-flex items-center gap-2 font-medium text-white">
-            <span
-              aria-hidden="true"
-              className="h-2 w-2 rounded-full bg-[#16A34A]"
-            />
-            <span>Proof at a glance</span>
-          </span>
-          <span className="font-metric text-white">
-            0{activeIndex + 1} / 0{signals.length}
-          </span>
+    <div className="studio-growth-console" role="region" aria-roledescription="carousel" aria-label="Proof at a glance"
+      onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
+      onFocusCapture={() => setFocused(true)} onBlurCapture={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false);
+      }}>
+      <div className="growth-console-header">
+        <span><i aria-hidden="true" /> Proof at a glance</span>
+        <span className="growth-console-count">{String(active + 1).padStart(2, "0")} / {String(signals.length).padStart(2, "0")}</span>
+      </div>
+      <div className="growth-console-panels" aria-live={playing && !reduced ? "off" : "polite"}>
+        {signals.map((signal, index) => (
+          <article key={signal.id} id={`${id}-${index}`} className="growth-console-panel" aria-hidden={index !== active} inert={index !== active} aria-roledescription="slide" aria-label={`${index + 1} of ${signals.length}`}>
+            <div className="growth-console-image">
+              <Image src={signal.image} fill sizes="(max-width: 740px) 92vw, (max-width: 1100px) 49vw, 610px" loading={index === 0 ? "eager" : "lazy"} fetchPriority={index === 0 ? "high" : undefined} alt="" />
+            </div>
+            <div className="growth-console-copy">
+              <p className="growth-console-kicker">{signal.kicker}</p>
+              {signal.metricValue && <strong className="growth-console-metric">{signal.metricValue}</strong>}
+              <h2>{signal.title}</h2>
+              {signal.slotData?.slotIso && signal.slotData.easternTimeFormatted && <ClientSlotTime slotIso={signal.slotData.slotIso} easternFallback={signal.slotData.easternTimeFormatted} />}
+              <p className="growth-console-detail">{signal.detail}</p>
+              <div className="growth-console-meta"><span>{signal.sourceLabel}</span>
+                {signal.href.startsWith("/#")
+                  ? <a href={signal.href.slice(1)}>{signal.linkLabel} <ArrowUpRight size={14} /></a>
+                  : <Link href={signal.href}>{signal.linkLabel} <ArrowUpRight size={14} /></Link>}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+      <div className="growth-console-controls" onKeyDown={(event) => {
+        if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+        event.preventDefault();
+        select(active + (event.key === "ArrowRight" ? 1 : -1));
+      }}>
+        <div className="growth-console-dots" role="group" aria-label="Proof cards">
+          {signals.map((signal, index) => <button key={signal.id} type="button" aria-label={`Show ${signal.kicker}`} aria-controls={`${id}-${index}`} aria-pressed={index === active} onClick={() => select(index)}><i /></button>)}
         </div>
-
-        {/* All 4 Signals Rendered in a Server-Rendered <ul> List */}
-        <ul
-          aria-live="polite"
-          className="relative my-5 grid grid-cols-1 grid-rows-1"
-        >
-          {signals.map((sig, idx) => {
-            const isActive = idx === activeIndex;
-            return (
-              <li
-                key={sig.id}
-                aria-hidden={!isActive}
-                className={cn(
-                  "col-start-1 row-start-1 transition-opacity duration-350 ease-[cubic-bezier(0.22,1,0.36,1)] flex flex-col justify-between space-y-3",
-                  isActive
-                    ? "opacity-100 z-10 pointer-events-auto"
-                    : "opacity-0 z-0 pointer-events-none select-none"
-                )}
-              >
-                <div className="text-xs font-medium text-[#ED1C24]">
-                  {sig.kicker}
-                </div>
-
-                {sig.slotData ? (
-                  sig.slotData.mode === "slot" &&
-                  sig.slotData.slotIso &&
-                  sig.slotData.easternTimeFormatted ? (
-                    <div className="space-y-2">
-                      <ClientSlotTime
-                        slotIso={sig.slotData.slotIso}
-                        easternFallback={sig.slotData.easternTimeFormatted}
-                      />
-                      <p className="text-sm text-[#A7ACB8] leading-relaxed">
-                        {sig.detail}
-                      </p>
-                    </div>
-                  ) : (
-                    <div className="space-y-2">
-                      <div className="font-display text-xl md:text-2xl font-semibold text-white">
-                        {sig.slotData.meetingTitle}
-                      </div>
-                      <p className="text-sm text-[#A7ACB8] leading-relaxed">
-                        {sig.slotData.fallbackMessage}
-                      </p>
-                      <div className="flex flex-wrap items-center gap-4 pt-1 text-xs font-medium text-white">
-                        <a
-                          href={sig.slotData.whatsappUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          tabIndex={isActive ? 0 : -1}
-                          className="underline underline-offset-4 hover:text-[#ED1C24]"
-                        >
-                          WhatsApp {sig.slotData.phoneDisplay}
-                        </a>
-                        <a
-                          href={`mailto:${sig.slotData.email}`}
-                          tabIndex={isActive ? 0 : -1}
-                          className="underline underline-offset-4 hover:text-[#ED1C24]"
-                        >
-                          {sig.slotData.email}
-                        </a>
-                      </div>
-                    </div>
-                  )
-                ) : (
-                  <div className="space-y-1.5">
-                    {sig.metricValue && (
-                      <div className="font-metric text-4xl md:text-5xl text-white">
-                        {sig.metricValue}
-                      </div>
-                    )}
-                    <div className="font-display text-lg font-semibold text-white">
-                      {sig.title}
-                    </div>
-                    <p className="text-sm text-[#A7ACB8] leading-relaxed">
-                      {sig.detail}
-                    </p>
-                  </div>
-                )}
-
-                <div className="pt-2 flex items-center justify-between text-xs text-[#A7ACB8]">
-                  <span>{sig.sourceLabel}</span>
-                  <Link
-                    href={sig.href}
-                    tabIndex={isActive ? 0 : -1}
-                    className="font-medium text-white hover:text-[#ED1C24] transition-colors underline underline-offset-4"
-                  >
-                    {sig.linkLabel}
-                  </Link>
-                </div>
-              </li>
-            );
-          })}
-        </ul>
-
-        {/* Console Footer: Accessible Dot Controls */}
-        <div className="flex items-center justify-between border-t border-white/12 pt-3.5">
-          <div
-            role="tablist"
-            aria-label="Select proof signal"
-            className="flex items-center gap-2"
-          >
-            {signals.map((sig, idx) => {
-              const isSelected = idx === activeIndex;
-              return (
-                <button
-                  key={sig.id}
-                  type="button"
-                  role="tab"
-                  aria-selected={isSelected}
-                  aria-label={`Signal ${idx + 1}: ${sig.kicker}`}
-                  onClick={() => setActiveIndex(idx)}
-                  className={cn(
-                    "h-2.5 transition-all duration-200 rounded-full",
-                    isSelected
-                      ? "w-7 bg-[#ED1C24]"
-                      : "w-2.5 bg-white/25 hover:bg-white/50"
-                  )}
-                />
-              );
-            })}
-          </div>
+        <div className="growth-console-nav">
+          {!reduced && <button type="button" aria-label={playing ? "Pause rotation" : "Play rotation"} onClick={() => setPlaying(!playing)}>{playing ? <Pause size={15} /> : <Play size={15} />}</button>}
+          <button type="button" aria-label="Previous proof card" onClick={() => select(active - 1)}><ArrowLeft size={16} /></button>
+          <button type="button" aria-label="Next proof card" onClick={() => select(active + 1)}><ArrowRight size={16} /></button>
         </div>
-      </CutFrame>
+      </div>
     </div>
   );
 }

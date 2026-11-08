@@ -3,6 +3,39 @@
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 
+function trackSpotlight(surface: HTMLElement) {
+  let frame = 0;
+  let x = 0;
+  let y = 0;
+  const move = (event: PointerEvent) => {
+    if (event.pointerType !== "mouse") return;
+    x = event.clientX;
+    y = event.clientY;
+    if (frame) return;
+    frame = requestAnimationFrame(() => {
+      frame = 0;
+      const bounds = surface.getBoundingClientRect();
+      surface.style.setProperty("--studio-pointer-x", `${x - bounds.left}px`);
+      surface.style.setProperty("--studio-pointer-y", `${y - bounds.top}px`);
+      surface.dataset.pointerActive = "";
+    });
+  };
+  const clear = () => {
+    if (frame) cancelAnimationFrame(frame);
+    frame = 0;
+    delete surface.dataset.pointerActive;
+  };
+  surface.addEventListener("pointermove", move, { passive: true });
+  surface.addEventListener("pointerleave", clear);
+  return () => {
+    clear();
+    surface.removeEventListener("pointermove", move);
+    surface.removeEventListener("pointerleave", clear);
+    surface.style.removeProperty("--studio-pointer-x");
+    surface.style.removeProperty("--studio-pointer-y");
+  };
+}
+
 export function StudioMotion() {
   const path = usePathname();
   const wipe = useRef<HTMLDivElement>(null);
@@ -45,6 +78,9 @@ export function StudioMotion() {
       const stage = document.querySelector<HTMLElement>("[data-hero-stage]");
       const tilt = stage?.querySelector<HTMLElement>("[data-hero-tilt]");
       let removePointer: (() => void) | undefined;
+      const removeSpotlights = desktop.matches
+        ? Array.from(document.querySelectorAll<HTMLElement>("[data-studio-spotlight]"), trackSpotlight)
+        : [];
       const context = gsap.context(() => {
         if (changed && wipe.current) {
           gsap.fromTo(wipe.current, { scaleX: 1, autoAlpha: 1 }, {
@@ -84,6 +120,26 @@ export function StudioMotion() {
           xPercent: -36, ease: "none",
           scrollTrigger: { trigger: marquee.parentElement, start: "top bottom", end: "bottom top", scrub: 0.8 },
         });
+        const proofBand = document.querySelector("[data-studio-proof-band]");
+        if (proofBand) {
+          gsap.to(proofBand.querySelector("[data-studio-proof-track]"), {
+            xPercent: -28, ease: "none",
+            scrollTrigger: { trigger: proofBand, start: "top bottom", end: "bottom top", scrub: 0.65 },
+          });
+          gsap.from(proofBand.querySelector("[data-studio-proof-mark]"), {
+            yPercent: 38, opacity: 0.4, ease: "none",
+            scrollTrigger: { trigger: proofBand, start: "top 95%", end: "bottom 83%", scrub: 0.75 },
+          });
+        }
+        const lamp = document.querySelector("[data-studio-lamp]");
+        if (lamp) gsap.from(lamp.querySelector(".studio-ai-light"), {
+          scaleX: 0.45, opacity: 0.3, duration: 0.95, ease: "power3.out",
+          scrollTrigger: { trigger: lamp, start: "top 87%", once: true },
+        });
+        const network = document.querySelector("[data-studio-network]");
+        if (network) ScrollTrigger.create({
+          trigger: network, start: "top 92%", end: "bottom top", toggleClass: "is-flowing",
+        });
         if (stage && tilt && desktop.matches) {
           const rotateX = gsap.quickTo(tilt, "rotationX", { duration: 0.55, ease: "power3.out" });
           const rotateY = gsap.quickTo(tilt, "rotationY", { duration: 0.55, ease: "power3.out" });
@@ -91,10 +147,8 @@ export function StudioMotion() {
             const bounds = stage.getBoundingClientRect();
             const x = (event.clientX - bounds.left) / bounds.width;
             const y = (event.clientY - bounds.top) / bounds.height;
-            stage.style.setProperty("--spot-x", `${x * 100}%`);
-            stage.style.setProperty("--spot-y", `${y * 100}%`);
-            rotateX((0.5 - y) * 14);
-            rotateY((x - 0.5) * 18);
+            rotateX((0.5 - y) * 8);
+            rotateY((x - 0.5) * 10);
           };
           const reset = () => { rotateX(0); rotateY(0); };
           stage.addEventListener("pointermove", move);
@@ -104,7 +158,7 @@ export function StudioMotion() {
             stage.removeEventListener("pointerleave", reset);
           };
           gsap.to(stage, {
-            y: 75, ease: "none",
+            y: 25, ease: "none",
             scrollTrigger: { trigger: stage, start: "top top", end: "bottom top", scrub: 0.5 },
           });
         }
@@ -113,6 +167,7 @@ export function StudioMotion() {
       cleanup = () => {
         delete document.documentElement.dataset.studioMotion;
         removePointer?.();
+        removeSpotlights.forEach((remove) => remove());
         context.revert();
         if (lenis) {
           gsap.ticker.remove(tick);

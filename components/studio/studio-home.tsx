@@ -1,5 +1,10 @@
 import Link from "next/link";
-import { ArrowDown, ArrowUpRight, Plus } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Plus, Sparkle } from "lucide-react";
+import { getMegaMenuColumns } from "@/content/navigation";
+import type { NextSlotResult } from "@/lib/booking/next-slot";
+import { ServicesTabs } from "@/components/home/services-tabs";
+import { AiWorkflows } from "./ai-workflows";
+import { StudioPackages, StudioProofWall } from "./home-proof-sections";
 import { SITE_FACTS } from "@/content/site-facts";
 import { STUDIO } from "@/content/studio";
 import { getPublishedWorkEntries } from "@/content/work";
@@ -7,34 +12,52 @@ import { MarketGlobe } from "./market-globe";
 import { ProjectCover } from "./project-cover";
 import { HeroShowcase } from "./hero-showcase";
 
-export function StudioHome() {
+export function StudioHome({ nextSlot }: { nextSlot: NextSlotResult }) {
   const projects = getPublishedWorkEntries();
-  const featured = ["camz-cleaning-booking", "zelvomart-ecommerce-platform", "custom-crm-agency-operations"]
+  const featured = ["camz-cleaning-booking", "zelvomart-ecommerce-platform", "custom-crm-agency-operations", "us-contractor-websites", "ai-lead-engine-google-maps"]
     .flatMap((slug) => projects.filter((project) => project.slug === slug));
   const proof = SITE_FACTS.stats;
   return (
     <>
-      <section className="studio-hero">
+      <section className="studio-hero" data-studio-spotlight>
         <div className="studio-wrap studio-hero-inner">
           <div className="studio-hero-copy">
-            <p className="studio-label" data-hero-intro><span /> Web design and digital systems</p>
-            <h1>{STUDIO.headline.map((line) => <span className="studio-line-mask" key={line}><span data-studio-hero-line>{line}</span></span>)}</h1>
+            <p className="studio-label" data-hero-intro><span /> Full-service digital agency</p>
+            <h1>{STUDIO.headline.map((line, index) => <span className="studio-line-mask" key={line}><span data-studio-hero-line>{line}{index < STUDIO.headline.length - 1 ? " " : ""}</span></span>)}</h1>
             <p className="studio-hero-lead" data-hero-intro>{STUDIO.lead}</p>
             <div className="studio-actions" data-hero-ctas="true" data-hero-intro>
               <Link href="/book-a-call/" className="studio-button">Book a strategy call <ArrowUpRight size={17} /></Link>
               <a href="#selected-work" className="studio-button studio-button-outline">Explore our work <ArrowDown size={16} /></a>
             </div>
           </div>
-          <HeroShowcase />
-          <div className="studio-hero-index"><a href="#selected-work"><ArrowDown size={15} /> Scroll to explore</a><span>{STUDIO.heroNote}</span></div>
+          <HeroShowcase nextSlot={nextSlot} />
+          <div className="studio-hero-index"><a href="#studio-proof-title"><ArrowDown size={15} /> Scroll to explore</a><span>{STUDIO.heroNote}</span></div>
         </div>
       </section>
-      <section className="studio-proof" aria-label="Webix Solutions in numbers">
-        <div className="studio-wrap studio-proof-grid">
-          {[proof.cmsWebsitesBuilt, proof.totalClientsServed, proof.teamSize, proof.socialAccountsManaged].map((item) => (
-            <div key={item.label}><strong>{item.value}</strong><span>{item.label}</span></div>
-          ))}
+      <section className="studio-proof" aria-labelledby="studio-proof-title" data-studio-proof-band>
+        <div className="studio-proof-ribbon" aria-hidden="true">
+          <div className="studio-proof-ribbon-track" data-studio-proof-track>
+            {Array.from({ length: 3 }, (_, index) => (
+              <div key={index}>
+                {["Web & commerce", "Search & paid media", "CRM & portals", "AI automation", "White-label delivery"].map((label) => (
+                  <span key={label}>{label}<Sparkle size={13} /></span>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
+        <div className="studio-wrap studio-proof-content">
+          <div className="studio-proof-heading" data-studio-reveal>
+            <h2 id="studio-proof-title">The work behind Webix.</h2>
+            <p>What our team has delivered for businesses and agency partners.</p>
+          </div>
+          <div className="studio-proof-grid" data-studio-stagger>
+            {[proof.cmsWebsitesBuilt, proof.totalClientsServed, proof.teamSize, proof.socialAccountsManaged].map((item) => (
+              <div key={item.label}><strong>{item.value}</strong><span>{item.label}</span></div>
+            ))}
+          </div>
+        </div>
+        <div className="studio-proof-wordmark" data-studio-proof-mark aria-hidden="true">WEBIX</div>
       </section>
       <section className="studio-section studio-light" id="selected-work">
         <div className="studio-wrap">
@@ -55,12 +78,12 @@ export function StudioHome() {
       <section className="studio-section studio-dark">
         <div className="studio-wrap studio-service-grid">
           <div data-studio-reveal><h2>Where we can help.</h2><p className="studio-section-lead">From the page a customer lands on to the tools your team uses after they get in touch.</p><Link className="studio-link" href="/services/">Browse all services <ArrowUpRight size={17} /></Link></div>
-          <div data-studio-stagger>{STUDIO.services.map((service) => <Link className="studio-service" key={service.number} href={service.href}>
-            <span>{service.number}</span><div><h3>{service.title}</h3><p>{service.detail}</p></div><ArrowUpRight size={20} />
-          </Link>)}</div>
+          <ServicesTabs columns={getMegaMenuColumns()} />
         </div>
         <div className="studio-platform-window"><div className="studio-platforms" data-studio-marquee>{[...STUDIO.platforms, ...STUDIO.platforms].map((name, index) => <span key={`${name}-${index}`} aria-hidden={index >= STUDIO.platforms.length}>{name}</span>)}</div></div>
       </section>
+      <AiWorkflows />
+      <StudioPackages />
       <section className="studio-section studio-light">
         <div className="studio-wrap">
           <div className="studio-section-head" data-studio-reveal><div><h2>From brief to launch.</h2></div><Link className="studio-link" href="/offers/">Explore packages <ArrowUpRight size={18} /></Link></div>
@@ -74,6 +97,7 @@ export function StudioHome() {
           <MarketGlobe />
         </div>
       </section>
+      <StudioProofWall />
       <section className="studio-section studio-light studio-questions" id="project-questions">
         <div className="studio-wrap studio-question-grid">
           <aside data-studio-reveal>

@@ -1,6 +1,6 @@
 export const STUDIO = {
-  headline: ["Make the web", "work for you."],
-  lead: "We design websites that turn visits into enquiries, build software that keeps the work moving, and help customers find you through search.",
+  headline: ["Hire one team", "for web, growth", "and AI."],
+  lead: "We design websites and stores, help customers find you through search and ads, and build CRM tools and AI workflows that keep enquiries moving.",
   heroNote: "Websites, commerce, search and automation for businesses and agency partners.",
   services: [
     { number: "01", title: "Websites & online stores", detail: "Give customers a clear route from the first visit to a booking or sale. We build on WordPress, Shopify, Webflow, Framer and custom code.", href: "/web-design-development-service/" },
@@ -13,6 +13,7 @@ export const STUDIO = {
     { title: "Set the brief", detail: "We map the problem, agree on the scope and tell you what we need from your team." },
     { title: "Review a working build", detail: "For a straightforward website, the first build can be ready to review in three business days after we have the content and access." },
     { title: "Test, launch and hand over", detail: "We check the site on mobile, test forms and tracking, and walk through the agreed workflows before handing over access." },
+    { title: "Report and improve", detail: "For ongoing marketing, we review search, analytics and ad performance each month and agree what to improve next." },
   ],
   audiences: [
     { label: "For businesses", title: "Make the next step easier for customers", detail: "From a storefront to a service booking, we help people find what they need and act on it.", href: "/services/", action: "Explore services" },
