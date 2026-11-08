@@ -3,6 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { ArrowRight, Check, Sparkles, Layers, ArrowUpRight } from "lucide-react";
+import { INTERIOR } from "@/content/interior";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Kicker } from "@/components/ui/kicker";
@@ -91,11 +92,11 @@ export function ServicesHubView({ categories, nextSlot }: ServicesHubViewProps) 
             <Kicker>Full-service digital delivery</Kicker>
 
             <h1 className="type-display text-white">
-              Services built to grow your business
+              Find the right service
             </h1>
 
             <p className="type-lead text-[#A7ACB8] max-w-[62ch]">
-              Websites, Shopify stores, mobile apps, SEO, paid advertising, and custom AI automation — engineered by an remote team of 20+ on your time zone.
+              {INTERIOR.services.lead}
             </p>
 
             <div
@@ -106,14 +107,14 @@ export function ServicesHubView({ categories, nextSlot }: ServicesHubViewProps) 
               <Button href="/book-a-call/" variant="primary" size="lg">
                 Book a strategy call
               </Button>
-              <Button href="/offers/" variant="secondary" size="lg">
-                See growth packages
+              <Button href="#service-directory" variant="secondary" size="lg">
+                Browse services
               </Button>
             </div>
 
             <div className="pt-2 flex flex-wrap items-center gap-3">
               <Chip asSpan active>
-                18 Core services across 4 pillars
+                {categories.reduce((total, group) => total + group.services.length, 0)} services
               </Chip>
               <span className="text-xs text-[#A7ACB8]">
                 Serving Canada, the US, the UAE, New Zealand and Pakistan
@@ -127,6 +128,7 @@ export function ServicesHubView({ categories, nextSlot }: ServicesHubViewProps) 
           SERVICES DIRECTORY (Porcelain with Notch)
          ========================================================================= */}
       <Section
+        id="service-directory"
         surface="porcelain"
         previousSurface="graphite"
         notch
@@ -211,7 +213,7 @@ export function ServicesHubView({ categories, nextSlot }: ServicesHubViewProps) 
                   <div className="border-b border-[#D5D8E0] pb-4 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
                     <div>
                       <span className="text-xs font-semibold text-[#ED1C24] uppercase tracking-wider">
-                        {cat.category} Column
+                        {cat.category}
                       </span>
                       <h2 className="type-h2 text-[#111215] mt-1">{cat.title}</h2>
                     </div>

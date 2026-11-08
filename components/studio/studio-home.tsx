@@ -54,7 +54,7 @@ export function StudioHome({ nextSlot }: { nextSlot: NextSlotResult }) {
             <p>What our team has delivered for businesses and agency partners.</p>
           </div>
           <div className="studio-proof-grid" data-studio-stagger>
-            {[proof.cmsWebsitesBuilt, proof.totalClientsServed, proof.teamSize, proof.socialAccountsManaged].map((item) => (
+            {[proof.websitesDelivered, proof.totalClientsServed, proof.teamSize, proof.socialAccountsManaged].map((item) => (
               <div key={item.label}><strong>{item.value}</strong><span>{item.label}</span></div>
             ))}
           </div>

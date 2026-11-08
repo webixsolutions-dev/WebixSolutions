@@ -52,7 +52,7 @@ export function BlogIndexView({
       {/* =========================================================================
           1. HERO & CATEGORY SELECTOR (Graphite)
          ========================================================================= */}
-      <Section surface="graphite" className="pt-24 pb-12">
+      <Section surface="graphite" spacing="hero">
         <Container>
           <div className="max-w-3xl space-y-4 mb-10">
             <Kicker>Engineering & growth insights</Kicker>

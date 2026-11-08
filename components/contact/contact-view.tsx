@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { INTERIOR } from "@/content/interior";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Kicker } from "@/components/ui/kicker";
@@ -111,13 +112,13 @@ export function ContactView() {
       {/* =========================================================================
           1. HERO & ACTION TILES (Graphite)
          ========================================================================= */}
-      <Section surface="graphite" className="pt-24 pb-14">
+      <Section surface="graphite" spacing="hero">
         <Container>
           <div className="max-w-3xl space-y-4 mb-12">
             <Kicker>Connect directly with our team</Kicker>
             <h1 className="type-display text-white">Contact Webix Solutions</h1>
             <p className="type-lead text-[#9CA3AF]">
-              Book a strategy call on your time zone, chat with our founder on WhatsApp, or send a detailed scope brief using the form below.
+              {INTERIOR.contact.lead}
             </p>
           </div>
 
@@ -206,7 +207,7 @@ export function ContactView() {
                 <div>
                   <h2 className="type-h2 text-[#111215]">Send a project inquiry</h2>
                   <p className="text-xs text-[#717684] mt-1">
-                    Fill in your details below and our senior department leads will evaluate your requirements within one business day.
+                    Share a few details so we can connect you with the right person.
                   </p>
                 </div>
 
@@ -226,7 +227,7 @@ export function ContactView() {
                       Message Received!
                     </h3>
                     <p className="text-xs text-[#15803D] max-w-md mx-auto leading-relaxed">
-                      Thank you for contacting Webix Solutions. Our senior leads have received your submission and will reply within one business day.
+                      Thanks for sending your brief. We’ll review it and follow up using the contact details you provided.
                     </p>
                     <div className="pt-2">
                       <Button href="/book-a-call/" variant="primary" size="sm">

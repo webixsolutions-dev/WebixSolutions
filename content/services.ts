@@ -186,7 +186,7 @@ export const SERVICES_REGISTRY: ServiceEntry[] = [
     published: false,
     title: "CMS Website Development Services | Webix Solutions",
     metaDescription:
-      "WordPress, WooCommerce, Shopify, Wix, Webflow and Squarespace websites — 150+ CMS builds delivered. Easy to edit, fast and SEO-ready.",
+      "WordPress, WooCommerce, Shopify, Wix, Webflow and Squarespace websites — 150 CMS builds delivered. Easy to edit, fast and SEO-ready.",
     h1: "CMS website development on every major platform",
     primaryKeyword: "CMS website development",
     secondaryKeywords: [
@@ -214,7 +214,7 @@ export const SERVICES_REGISTRY: ServiceEntry[] = [
     published: false,
     title: "WordPress Development Services | Webix Solutions",
     metaDescription:
-      "Custom WordPress and Elementor Pro websites, WooCommerce stores, speed fixes, malware cleanup and ongoing care from a team that has built 150+ CMS sites.",
+      "Custom WordPress and Elementor Pro websites, WooCommerce stores, speed fixes, malware cleanup and ongoing care from a team that has built 150 CMS sites.",
     h1: "WordPress development services",
     primaryKeyword: "WordPress development services",
     secondaryKeywords: [

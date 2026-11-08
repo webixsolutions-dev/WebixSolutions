@@ -74,6 +74,7 @@ export function Section({
   const innerSection = (
     <section
       data-surface={surface}
+      data-section-spacing={spacing}
       className={cn(
         "relative w-full overflow-hidden border-t border-[var(--border)]",
         notch && "section-notch-tl",

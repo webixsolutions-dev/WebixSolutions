@@ -7,6 +7,7 @@ import { CutFrame } from "@/components/ui/cut-frame";
 import type { ServiceFaq } from "@/content/services";
 
 export interface FaqSectionProps {
+  id?: string;
   kicker?: string;
   heading?: string;
   subtitle?: string;
@@ -22,6 +23,7 @@ export interface FaqSectionProps {
  * for GPTBot, ClaudeBot, PerplexityBot and Googlebot, with zero client JS needed.
  */
 export function FaqSection({
+  id,
   kicker = "Frequently asked questions",
   heading = "Direct answers on pricing, timelines, time zones and ownership",
   subtitle,
@@ -32,6 +34,8 @@ export function FaqSection({
 }: FaqSectionProps) {
   return (
     <Section
+      id={id}
+      className="interior-faq"
       surface={surface}
       previousSurface={previousSurface}
       notch={notch}

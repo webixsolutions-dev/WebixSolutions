@@ -1,3 +1,5 @@
+import { Check } from "lucide-react";
+import { INTERIOR } from "@/content/interior";
 import { BookingWidget } from "@/components/booking/booking-widget";
 import { buildMetadata } from "@/config/seo";
 import { SITE_FACTS } from "@/content/site-facts";
@@ -11,12 +13,15 @@ export const metadata = buildMetadata({
 export default function BookACallPage() {
   return (
     <>
-      <section className="studio-section studio-dark booking-page">
+      <section className="studio-section studio-dark booking-page interior-booking-hero">
         <div className="studio-wrap studio-service-grid">
           <div>
             <p className="studio-label"><span /> Project enquiries</p>
             <h1 className="type-display">Book a strategy call</h1>
-            <p className="studio-section-lead">Choose a call type, date and time. We’ll use the call to understand your project and agree on the next step.</p>
+            <p className="studio-section-lead">{INTERIOR.booking.lead}</p>
+            <ul className="interior-booking-agenda">
+              {INTERIOR.booking.agenda.map((item) => <li key={item}><Check size={16} aria-hidden="true" />{item}</li>)}
+            </ul>
             <p className="studio-section-lead">Need help booking? <a className="underline" href={`mailto:${SITE_FACTS.contact.email}`}>Email us</a>.</p>
           </div>
           <BookingWidget sourcePage="/book-a-call/" />

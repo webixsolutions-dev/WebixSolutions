@@ -3,11 +3,11 @@
 import * as React from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { INTERIOR } from "@/content/interior";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Kicker } from "@/components/ui/kicker";
 import { Button } from "@/components/ui/button";
-import { Chip } from "@/components/ui/chip";
 import { FinalCtaSection } from "@/components/home/final-cta-section";
 import { GithubActivityBlock } from "./github-activity-block";
 import { OwnBrandsBand } from "./own-brands-band";
@@ -86,7 +86,7 @@ export function OurWorkHubView({ entries, nextSlot }: OurWorkHubViewProps) {
             <h1 className="type-display text-white">Our work</h1>
 
             <p className="type-lead text-[#A7ACB8] max-w-[62ch]">
-              Case studies from 91 custom-coded builds, 150+ CMS websites and 50+ managed social accounts: websites, Shopify, CRM, AI agents and ad campaigns.
+              {INTERIOR.work.lead}
             </p>
 
             <div
@@ -97,19 +97,16 @@ export function OurWorkHubView({ entries, nextSlot }: OurWorkHubViewProps) {
               <Button href="/book-a-call/" variant="primary" size="lg">
                 Book a strategy call
               </Button>
-              <Button href="/offers/" variant="secondary" size="lg">
-                View growth packages
+              <Button href="#work-directory" variant="secondary" size="lg">
+                Browse projects
               </Button>
             </div>
 
-            <div className="pt-2 flex flex-wrap items-center gap-3">
-              <Chip asSpan active>
-                91 Custom builds · 1,053 GitHub commits · 120+ Clients
-              </Chip>
-              <span className="text-xs text-[#A7ACB8]">
-                Only real commercial results and verified own-brand metrics
-              </span>
-            </div>
+            <dl className="interior-proof-strip">
+              {INTERIOR.work.stats.map((stat) => (
+                <div key={stat.label}><dt>{stat.label}</dt><dd>{stat.value}</dd></div>
+              ))}
+            </dl>
           </div>
         </Container>
       </Section>
@@ -118,6 +115,7 @@ export function OurWorkHubView({ entries, nextSlot }: OurWorkHubViewProps) {
           2. CASE STUDIES DIRECTORY + FILTER (Porcelain with Notch)
          ========================================================================= */}
       <Section
+        id="work-directory"
         surface="porcelain"
         previousSurface="graphite"
         notch
@@ -160,7 +158,7 @@ export function OurWorkHubView({ entries, nextSlot }: OurWorkHubViewProps) {
               <div
                 key={study.slug}
                 hidden={selectedCategory !== "All" && selectedCategory !== study.category}
-                className="group cut-tr-lg bg-white border border-[#d7d7dc] hover:border-[#be1421] transition-colors overflow-hidden"
+                className="group studio-cut-frame interior-project-card"
               >
                 <ProjectCover study={study} />
                 <div className="p-6 md:p-8 space-y-5">
@@ -214,7 +212,7 @@ export function OurWorkHubView({ entries, nextSlot }: OurWorkHubViewProps) {
 
                 <div className="pt-4 border-t border-[#E4E6EB] flex items-center justify-between">
                   <span className="text-xs text-[#717684]">
-                    {study.permission === "named" ? "Public Brand Proof" : "Anonymized Client Delivery"}
+                    {study.permission === "named" ? "Named project" : "Anonymised project"}
                   </span>
                   {!study.scopeOnly && <Link
                     href={`/our-work/${study.slug}/`}

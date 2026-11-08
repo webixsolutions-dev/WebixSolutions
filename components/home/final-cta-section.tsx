@@ -1,6 +1,7 @@
 import { Section, type SurfaceType } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
+import { INTERIOR } from "@/content/interior";
 import type { NextSlotResult } from "@/lib/booking/next-slot";
 
 export interface FinalCtaSectionProps {
@@ -10,14 +11,14 @@ export interface FinalCtaSectionProps {
 
 export function FinalCtaSection({ previousSurface = "porcelain" }: FinalCtaSectionProps) {
   return (
-    <Section surface="oxblood" previousSurface={previousSurface} notch>
+    <Section surface="oxblood" previousSurface={previousSurface} notch className="interior-closing" spacing="compact">
       <Container>
-        <div className="flex flex-wrap items-end justify-between gap-6">
+        <div className="interior-closing-panel studio-cut-frame">
           <div className="space-y-3">
-            <h2 className="type-h1 text-white">Let’s talk about your project.</h2>
-            <p className="type-lead text-[#f3dce1]">Choose a date and time for a free call with our team.</p>
+            <h2 className="type-h1 text-white">{INTERIOR.closing.title}</h2>
+            <p className="type-lead text-[#f3dce1]">{INTERIOR.closing.detail}</p>
           </div>
-          <Button href="/book-a-call/" variant="primary" size="lg">Book a strategy call</Button>
+          <Button href="/book-a-call/" variant="primary" size="lg" className="interior-closing-button">Book a strategy call</Button>
         </div>
       </Container>
     </Section>

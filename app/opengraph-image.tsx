@@ -83,8 +83,7 @@ export default function OpenGraphImage() {
               lineHeight: 1.4,
             }}
           >
-            20+ team members · 91 custom-coded builds · 150+ CMS sites ·
-            50+ social accounts managed.
+            {`${SITE_FACTS.stats.teamSize.value} team members · ${SITE_FACTS.stats.customCodedBuilds.value} custom-coded builds · ${SITE_FACTS.stats.websitesDelivered.value} websites delivered · ${SITE_FACTS.stats.socialAccountsManaged.value} social accounts managed.`}
           </div>
         </div>
 

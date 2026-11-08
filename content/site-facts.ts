@@ -109,21 +109,28 @@ export const SITE_FACTS = {
       detail: "Developers, designers, marketers and AI engineers in Pakistan",
       confirmed: true,
     },
+    websitesDelivered: {
+      value: "280",
+      label: "Websites delivered",
+      detail: "Website projects delivered by Webix Solutions",
+      confirmed: true,
+    },
     customCodedBuilds: {
-      value: "91",
+      value: "94",
       label: "Custom-coded builds",
-      detail: "Across 91 Next.js, React, Node.js and Flutter repositories",
+      detail: "Projects built with Next.js, React, Node.js and Flutter",
       confirmed: true,
     },
     githubContributionsLastYear: {
       value: "1,053",
+      repositoryCount: 91,
       label: "GitHub contributions in the last 12 months",
       detail:
         "1,053 contributions in the last 12 months across 91 Next.js, React, Node.js and Flutter repositories",
       confirmed: true,
     },
     cmsWebsitesBuilt: {
-      value: "150+",
+      value: "150",
       label: "CMS websites delivered",
       detail: "WordPress, Shopify, Webflow and Framer",
       confirmed: true,

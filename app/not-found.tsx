@@ -10,7 +10,7 @@ export default function NotFound() {
   const popularServices = getPublishedServices().slice(0, 6);
 
   return (
-    <Section surface="graphite" spacing="hero" grid>
+    <Section surface="graphite" spacing="hero" grid className="studio-error-page">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-7 space-y-6">

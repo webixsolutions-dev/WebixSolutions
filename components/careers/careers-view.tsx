@@ -31,7 +31,7 @@ export function CareersView() {
       {/* =========================================================================
           1. HERO (Graphite)
          ========================================================================= */}
-      <Section surface="graphite" className="pt-24 pb-14">
+      <Section surface="graphite" spacing="hero">
         <Container>
           <div className="max-w-3xl space-y-4 mb-6">
             <Kicker>{hero.kicker}</Kicker>

@@ -3,6 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { ArrowRight, AlertCircle, CheckCircle2, Sparkles, Building2 } from "lucide-react";
+import { INTERIOR } from "@/content/interior";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Kicker } from "@/components/ui/kicker";
@@ -27,7 +28,7 @@ const FAQS = [
   {
     question: "Have you worked with businesses in my exact niche?",
     answer:
-      "Across 91 repositories and 120+ clients, our remote team has delivered projects for online retailers, roofers, electrical contractors, equipment leasing companies, real estate developers, healthcare clinics, and B2B consultancies across North America, the UAE, and Pakistan. On our strategy call, we share relevant live examples and case studies.",
+      "Across 94 custom-coded builds and 120+ clients, our remote team has delivered projects for online retailers, roofers, electrical contractors, equipment leasing companies, real estate developers, healthcare clinics, and B2B consultancies across North America, the UAE, and Pakistan. On our strategy call, we share relevant live examples and case studies.",
   },
   {
     question: "Do you work with early-stage startups and new businesses?",
@@ -81,7 +82,7 @@ export function IndustriesHubView({ industries, nextSlot }: IndustriesHubViewPro
             </h1>
 
             <p className="type-lead text-[#A7ACB8] max-w-[62ch]">
-              Marketing, websites and AI automation built around how your customers actually buy — engineered by our team of 20+ across 14 distinct commercial verticals.
+              {INTERIOR.industries.lead}
             </p>
 
             <div
@@ -92,8 +93,8 @@ export function IndustriesHubView({ industries, nextSlot }: IndustriesHubViewPro
               <Button href="/book-a-call/" variant="primary" size="lg">
                 Book a strategy call
               </Button>
-              <Button href="/offers/" variant="secondary" size="lg">
-                View growth packages
+              <Button href="#industry-directory" variant="secondary" size="lg">
+                Explore industries
               </Button>
             </div>
 
@@ -113,6 +114,7 @@ export function IndustriesHubView({ industries, nextSlot }: IndustriesHubViewPro
           INTERACTIVE SELECTOR + DETAIL PANEL (Porcelain with Notch)
          ========================================================================= */}
       <Section
+        id="industry-directory"
         surface="porcelain"
         previousSurface="graphite"
         notch

@@ -1,7 +1,8 @@
 import { ProjectCover } from "@/components/studio/project-cover";
 import * as React from "react";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, ShieldCheck, ArrowUpRight, Check, AlertCircle } from "lucide-react";
+import { ArrowRight, CheckCircle2, Check, AlertCircle } from "lucide-react";
+import { InteriorLinks } from "@/components/studio/interior-links";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Kicker } from "@/components/ui/kicker";
@@ -48,7 +49,7 @@ export function CaseStudyTemplate({ study, nextSlot }: CaseStudyTemplateProps) {
               <li className="flex items-center gap-2">
                 <span aria-hidden="true" className="text-white/20">/</span>
                 <span aria-current="page" className="text-white font-medium">
-                  {study.slug}
+                  {study.title}
                 </span>
               </li>
             </ol>
@@ -87,15 +88,19 @@ export function CaseStudyTemplate({ study, nextSlot }: CaseStudyTemplateProps) {
 
             <div className="pt-2 flex flex-wrap items-center gap-3">
               <Chip asSpan active>
-                Verified Commercial Case Study
+                Project case study
               </Chip>
               <span className="text-xs text-[#A7ACB8]">
-                Delivered by Webix engineering team
+                Delivered by the Webix Solutions team
               </span>
             </div>
           </div>
         </Container>
       </Section>
+      <InteriorLinks links={[
+        { id: "case-scope", label: "What we built" },
+        { id: "case-services", label: "Related services" },
+      ]} />
       {study.cover && <Section surface="steel" spacing="compact"><Container><ProjectCover study={study} sizes="(max-width: 760px) 94vw, 1100px" /><p className="mt-2 text-sm text-fg-secondary">{study.coverCaption ?? "Illustrative cover image"}</p></Container></Section>}
 
 
@@ -135,7 +140,7 @@ export function CaseStudyTemplate({ study, nextSlot }: CaseStudyTemplateProps) {
       {/* =========================================================================
           3. CHALLENGE & SOLUTION (Steel with Notch)
          ========================================================================= */}
-      <Section
+      <Section id="case-scope"
         surface="steel"
         previousSurface="porcelain"
         notch
@@ -147,7 +152,7 @@ export function CaseStudyTemplate({ study, nextSlot }: CaseStudyTemplateProps) {
               <div className="flex items-center gap-2 text-[#C8101A]">
                 <AlertCircle className="h-5 w-5" />
                 <h2 className="font-display text-lg font-bold text-[#111215]">
-                  The Challenge
+                  The challenge
                 </h2>
               </div>
               <p className="text-sm text-[#454954] leading-relaxed">
@@ -159,7 +164,7 @@ export function CaseStudyTemplate({ study, nextSlot }: CaseStudyTemplateProps) {
               <div className="flex items-center gap-2 text-[#16A34A]">
                 <CheckCircle2 className="h-5 w-5" />
                 <h2 className="font-display text-lg font-bold text-[#111215]">
-                  What We Engineered & Shipped
+                  What we built
                 </h2>
               </div>
               <ul className="space-y-3.5">
@@ -223,7 +228,7 @@ export function CaseStudyTemplate({ study, nextSlot }: CaseStudyTemplateProps) {
       {/* =========================================================================
           6. RELATED SERVICES (Steel with Notch)
          ========================================================================= */}
-      <Section
+      <Section id="case-services"
         surface="steel"
         previousSurface="graphite"
         notch

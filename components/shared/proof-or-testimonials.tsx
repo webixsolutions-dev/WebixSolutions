@@ -60,8 +60,8 @@ function StaticGithubContributionSvg() {
  * Rules (Rule 04 & Corrections #5 and #7):
  * - Renders client testimonials ONLY when >= 3 items have `verified: true` && `permission: true`.
  * - Otherwise renders the Proof Wall:
- *   - Confirmed GitHub activity ("1,053 contributions in the last 12 months across 91 Next.js, React, Node.js and Flutter repositories")
- *   - Confirmed team & delivery numbers ("20+ team members", "150+ CMS websites", "50+ social accounts")
+ *   - Confirmed GitHub activity (October 2026 snapshot)
+ *   - Confirmed team & delivery numbers ("20+ team members", "150 CMS websites", "50+ social accounts")
  *   - Own brands (Zelvomart, LaptopSouq.ae, Miraj Builders) and ad metrics (Rs 15.01, etc.) are gated behind `isConfirmed()` so they stay hidden in production until confirmed.
  */
 export function ProofOrTestimonials() {
@@ -150,7 +150,7 @@ export function ProofOrTestimonials() {
                   </div>
                   <div>
                     <div className="font-metric text-4xl md:text-5xl text-white">
-                      {SITE_FACTS.stats.customCodedBuilds.value}
+                      {SITE_FACTS.stats.githubContributionsLastYear.repositoryCount}
                     </div>
                     <div className="text-xs text-[#A7ACB8] mt-1">
                       Custom-coded repositories

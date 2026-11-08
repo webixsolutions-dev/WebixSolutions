@@ -14,6 +14,7 @@ import {
   Users2,
   Cpu,
 } from "lucide-react";
+import { InteriorLinks } from "@/components/studio/interior-links";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Kicker } from "@/components/ui/kicker";
@@ -202,11 +203,17 @@ export function WhiteLabelView({ nextSlot }: WhiteLabelViewProps) {
           </div>
         </Container>
       </Section>
+      <InteriorLinks links={[
+        { id: "partner-scope", label: "What we deliver" },
+        { id: "partner-workflow", label: "How we work" },
+        { id: "partner-rates", label: "Partner rates" },
+        { id: "pilot", label: "Pilot project" },
+      ]} />
 
       {/* =========================================================================
           2. WHAT WE DELIVER WHITE-LABEL (Porcelain with Notch)
          ========================================================================= */}
-      <Section
+      <Section id="partner-scope"
         surface="porcelain"
         previousSurface="graphite"
         notch
@@ -216,7 +223,7 @@ export function WhiteLabelView({ nextSlot }: WhiteLabelViewProps) {
           <div className="max-w-3xl space-y-3 mb-12">
             <Kicker>Capabilities menu</Kicker>
             <h2 className="type-h2 text-[#111215]">
-              Everything your agency needs to scale client retainers
+              Work we can deliver for your agency
             </h2>
             <p className="type-body text-[#454954]">
               High-throughput technical and creative disciplines executed by full-time specialists under one roof.
@@ -249,7 +256,7 @@ export function WhiteLabelView({ nextSlot }: WhiteLabelViewProps) {
       {/* =========================================================================
           3. HOW IT WORKS — 5-STEP FLOW (Steel with Notch)
          ========================================================================= */}
-      <Section
+      <Section id="partner-workflow"
         surface="steel"
         previousSurface="porcelain"
         notch
@@ -303,7 +310,7 @@ export function WhiteLabelView({ nextSlot }: WhiteLabelViewProps) {
           <div className="max-w-3xl space-y-3 mb-12">
             <Kicker>Accountability standards</Kicker>
             <h2 className="type-h2 text-white">
-              Guarantees we actually uphold every single sprint
+              How we protect your client relationships
             </h2>
             <p className="type-lead text-[#A7ACB8]">
               No overseas contractor excuses. Built on professional operational integrity.
@@ -334,7 +341,7 @@ export function WhiteLabelView({ nextSlot }: WhiteLabelViewProps) {
       {/* =========================================================================
           5. PARTNER PRICING (Porcelain with Notch)
          ========================================================================= */}
-      <Section
+      <Section id="partner-rates"
         surface="porcelain"
         previousSurface="graphite"
         notch

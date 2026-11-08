@@ -8,7 +8,7 @@ export const WEB_DESIGN_DEVELOPMENT: ServicePageContent = {
     "We design and build websites that load fast, rank in search and turn visitors into enquiries — custom-coded in Next.js or built on WordPress, Shopify and other CMS platforms.",
     "Our remote team builds for businesses in Canada, the US, the UAE, New Zealand and Pakistan, from 5-page company sites to full redesigns.",
   ],
-  proofChip: "91 custom-coded builds and 150+ CMS websites delivered",
+  proofChip: "280 websites delivered across custom and CMS projects",
 
   outcomes: {
     h2: "A website that does a job for your business",

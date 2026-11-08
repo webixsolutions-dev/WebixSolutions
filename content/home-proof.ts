@@ -17,7 +17,7 @@ export interface GrowthSignalItem {
 
 export function getHomeProofSignals(nextSlot: NextSlotResult): GrowthSignalItem[] {
   const ad = SITE_FACTS.adResults.find((result) => result.id === "pkr-whatsapp-convs");
-  const { githubContributionsLastYear: github, customCodedBuilds } = SITE_FACTS.stats;
+  const { githubContributionsLastYear: github } = SITE_FACTS.stats;
   const signals: GrowthSignalItem[] = [
     {
       id: "signal-ads",
@@ -47,12 +47,12 @@ export function getHomeProofSignals(nextSlot: NextSlotResult): GrowthSignalItem[
       id: "signal-github",
       kicker: "Engineering activity",
       metricValue: github.value,
-      title: `Contributions across ${customCodedBuilds.value} repositories`,
+      title: `Contributions across ${github.repositoryCount} repositories`,
       detail: github.detail,
       sourceLabel: "Webix Solutions on GitHub",
       href: "/our-work/",
       linkLabel: "Explore our work",
-      confirmed: github.confirmed && customCodedBuilds.confirmed,
+      confirmed: github.confirmed,
       image: "/images/studio/proof-engineering-editorial.webp",
     },
     {

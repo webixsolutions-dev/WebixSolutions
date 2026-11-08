@@ -9,6 +9,7 @@ import {
   ShieldCheck,
   Check,
 } from "lucide-react";
+import { InteriorLinks } from "@/components/studio/interior-links";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Kicker } from "@/components/ui/kicker";
@@ -103,11 +104,18 @@ export function IndustryPageTemplate({
           </div>
         </Container>
       </Section>
+      <InteriorLinks links={[
+        { id: "industry-needs", label: "Common problems" },
+        { id: "industry-plan", label: "What we set up" },
+        { id: "industry-work", label: "Relevant work" },
+        { id: "industry-pricing", label: "Pricing" },
+        { id: "industry-questions", label: "Questions" },
+      ]} />
 
       {/* =========================================================================
           2. WHAT USUALLY GOES WRONG (Porcelain with Notch)
          ========================================================================= */}
-      <Section
+      <Section id="industry-needs"
         surface="porcelain"
         previousSurface="graphite"
         notch
@@ -153,7 +161,7 @@ export function IndustryPageTemplate({
       {/* =========================================================================
           3. WHAT WE SET UP (Graphite with Notch + Grid)
          ========================================================================= */}
-      <Section
+      <Section id="industry-plan"
         surface="graphite"
         previousSurface="porcelain"
         notch
@@ -250,7 +258,7 @@ export function IndustryPageTemplate({
       {/* =========================================================================
           5. PROOF & CASE STUDY (Porcelain with Notch)
          ========================================================================= */}
-      <Section
+      <Section id="industry-work"
         surface="porcelain"
         previousSurface="steel"
         notch
@@ -260,7 +268,7 @@ export function IndustryPageTemplate({
           <div className="max-w-3xl space-y-3 mb-12">
             <Kicker>Verified results</Kicker>
             <h2 className="type-h2 text-[#111215]">
-              Real proof in {content.shortLabel.toLowerCase()}
+              Relevant projects
             </h2>
             <p className="type-body text-[#454954]">
               We run real brands and live client codebases — not synthetic mockups.
@@ -308,7 +316,7 @@ export function IndustryPageTemplate({
       {/* =========================================================================
           6. PRICING SNAPSHOT (Signal Red with Notch & Watermark)
          ========================================================================= */}
-      <Section
+      <Section id="industry-pricing"
         surface="red"
         previousSurface="porcelain"
         notch
@@ -370,6 +378,7 @@ export function IndustryPageTemplate({
           8. FAQ ACCORDION (Porcelain with Notch)
          ========================================================================= */}
       <FaqSection
+        id="industry-questions"
         kicker="Direct answers"
         heading={`Frequently asked questions about ${content.shortLabel.toLowerCase()} marketing`}
         subtitle="Transparent answers regarding implementation timelines, ad spend, and expected results."

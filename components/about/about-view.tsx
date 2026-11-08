@@ -36,14 +36,14 @@ export function AboutView() {
       {/* =========================================================================
           1. INTRO / HERO SECTION (Porcelain with Notch)
          ========================================================================= */}
-      <Section surface="porcelain" className="pt-24 pb-16">
+      <Section surface="graphite" spacing="hero">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left 7 Columns */}
             <div className="lg:col-span-7 space-y-6">
               <Kicker>{hero.kicker}</Kicker>
-              <h1 className="type-display text-[#111215]">{hero.h1}</h1>
-              <p className="type-lead text-[#454954] max-w-2xl">{hero.lead}</p>
+              <h1 className="type-display text-white">{hero.h1}</h1>
+              <p className="type-lead text-[#c5c9d1] max-w-2xl">{hero.lead}</p>
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <Button href="/book-a-call/" variant="primary" size="lg">
                   Book a strategy call
@@ -99,7 +99,7 @@ export function AboutView() {
 
                 <div className="space-y-2 text-xs text-[#454954] leading-relaxed">
                   <p>
-                    • Leads an engineering team in Dunyapur, Punjab.
+                    • Leads the Webix Solutions team from Dunyapur, Punjab.
                   </p>
                   <p>
                     • Built proprietary brands: Zelvomart, LaptopSouq.ae & Miraj Builders.
@@ -117,7 +117,7 @@ export function AboutView() {
       {/* =========================================================================
           2. FOUNDER STORY & QUOTE (Graphite with Notch)
          ========================================================================= */}
-      <Section surface="graphite" previousSurface="porcelain" notch spacing="default">
+      <Section surface="oxblood" previousSurface="graphite" notch spacing="default">
         <Container>
           <div className="max-w-4xl mx-auto space-y-8">
             <div className="space-y-3 text-center sm:text-left">
@@ -216,14 +216,14 @@ export function AboutView() {
             {/* Left 6 Columns: Explanation */}
             <div className="lg:col-span-6 space-y-4">
               <Kicker>Coordinated global shifts</Kicker>
-              <h2 className="type-h2 text-white">
+              <h2 className="type-h2 text-[#111215]">
                 How we overlap your local business hours
               </h2>
-              <p className="type-body text-[#9CA3AF] leading-relaxed">
-                Offshore delivery is only effective when communication is fast. We eliminate the 12-hour response lag by structuring our remote production into two coordinated shifts covering North America, the Gulf, New Zealand, and Pakistan.
+              <p className="type-body text-[#454954] leading-relaxed">
+                Our two shifts give us working-hour overlap with clients in North America, the Gulf, New Zealand and Pakistan.
               </p>
 
-              <div className="space-y-3 pt-2 text-xs text-[#D1D5DB]">
+              <div className="space-y-3 pt-2 text-sm text-[#454954]">
                 <div className="flex items-start gap-2.5">
                   <CheckCircle2 className="h-4 w-4 text-[#ED1C24] shrink-0 mt-0.5" />
                   <span>
@@ -324,10 +324,10 @@ export function AboutView() {
                 {SITE_FACTS.stats.githubContributionsLastYear.value}
               </div>
               <div className="text-xs font-semibold text-white">
-                GitHub Contributions / Year
+                GitHub contributions in the October 2026 snapshot
               </div>
               <p className="text-[11px] text-[#9CA3AF]">
-                Across 91 Next.js, React, Node.js and Flutter repositories.
+                Across {SITE_FACTS.stats.githubContributionsLastYear.repositoryCount} repositories in the reporting period.
               </p>
             </div>
 
@@ -345,13 +345,13 @@ export function AboutView() {
 
             <div className="p-6 cut-tr-sm border border-white/10 bg-white/[0.02] space-y-2">
               <div className="font-display text-4xl font-bold text-white">
-                {SITE_FACTS.stats.cmsWebsitesBuilt.value}
+                {SITE_FACTS.stats.websitesDelivered.value}
               </div>
               <div className="text-xs font-semibold text-white">
-                CMS Websites Delivered
+                Websites delivered
               </div>
               <p className="text-[11px] text-[#9CA3AF]">
-                WordPress, Shopify, Wix, Webflow, and Squarespace.
+                Includes {SITE_FACTS.stats.cmsWebsitesBuilt.value} CMS websites.
               </p>
             </div>
           </div>

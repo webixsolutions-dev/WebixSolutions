@@ -1,5 +1,7 @@
 "use client";
 
+import { OFFER_FAQS } from "@/content/pricing";
+
 import * as React from "react";
 import Link from "next/link";
 import {
@@ -13,6 +15,7 @@ import {
   TrendingUp,
   MessageCircle,
 } from "lucide-react";
+import { INTERIOR } from "@/content/interior";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Kicker } from "@/components/ui/kicker";
@@ -22,7 +25,6 @@ import { FaqSection } from "@/components/shared/faq-section";
 import { FinalCtaSection } from "@/components/home/final-cta-section";
 import {
   FLAGSHIP_OFFERS,
-  MARKET_COMPARISON_RANGES,
 } from "@/content/pricing";
 import type { NextSlotResult } from "@/lib/booking/next-slot";
 
@@ -53,38 +55,7 @@ const FIRST_30_DAYS = [
   },
 ];
 
-const FAQS = [
-  {
-    question: "What is the minimum term commitment for the $399/month Growth Engine?",
-    answer:
-      "The Growth Engine package carries a 6-month minimum agreement. This structure allows us to build or completely redesign your 5-page custom website in month 1 (a deliverable normally valued at $1,500+) with zero upfront development fees, amortizing that technical investment across 6 months of active marketing management.",
-  },
-  {
-    question: "What if I already have an existing website?",
-    answer:
-      "A complete modern redesign is already included in month 1 at no extra charge! If your current website is already fast, modern, and high-converting, we instead dedicate those engineering hours to conversion rate optimization (CRO), building high-ticket landing pages, or configuring advanced tracking pipelines.",
-  },
-  {
-    question: "Which advertising platforms are included in the monthly management?",
-    answer:
-      "The $399/mo Growth Engine includes dedicated management for one core paid channel (Meta Ads or Google Search/Maps). Growth Engine Pro ($799/mo) covers multi-channel execution across both Meta and Google Ads, managing up to $4,000/month in client ad spend.",
-  },
-  {
-    question: "Who writes the content, captions, and designs the creative assets?",
-    answer:
-      "Our remote team handles 100% of the creative and copywriting work. Designers, video editors, and senior copywriters collaborate directly on your account under senior review. You simply approve the batch before it goes live.",
-  },
-  {
-    question: "What happens after the initial 6-month agreement concludes?",
-    answer:
-      "After 6 months, full website ownership and source code transfer 100% to your business. You can continue on a flexible month-to-month basis with 30 days notice, upgrade to Growth Engine Pro, or scale back to a standalone website care plan.",
-  },
-  {
-    question: "Can I upgrade or downgrade my package as our business grows?",
-    answer:
-      "Yes. You can upgrade from the Launch Kit to the Growth Engine at any time, or scale from Growth Engine to Pro as your monthly advertising budget expands.",
-  },
-];
+
 
 export function OffersLandingView({ nextSlot }: OffersLandingViewProps) {
   // Fire analytical events on CTA click
@@ -113,19 +84,14 @@ export function OffersLandingView({ nextSlot }: OffersLandingViewProps) {
       <Section surface="graphite" spacing="hero" grid className="relative">
         <Container>
           <div className="max-w-3xl space-y-6 animate-hero-rise">
-            <div className="flex items-center gap-2">
-              <span className="px-2.5 py-1 rounded bg-[#ED1C24] text-white text-xs font-bold uppercase tracking-wider">
-                Integrated Growth Packages
-              </span>
-              <Kicker>Zero Freelancer Chains</Kicker>
-            </div>
+            <Kicker>Websites, growth and automation</Kicker>
 
             <h1 className="type-display text-white">
-              Growth packages for businesses that want results, not reports
+              Growth packages for businesses
             </h1>
 
             <p className="type-lead text-[#A7ACB8] max-w-[62ch]">
-              Website build or redesign, ongoing social media management, paid ads, and Google Maps — executed by one unified 20+ person team from $399/month.
+              {INTERIOR.offers.lead}
             </p>
 
             <div
@@ -152,10 +118,10 @@ export function OffersLandingView({ nextSlot }: OffersLandingViewProps) {
 
             <div className="pt-2 flex flex-wrap items-center gap-3">
               <Chip asSpan active>
-                120+ Clients · 91 Builds · CA, US, UAE, NZ & PK
+                Choose a one-time project or monthly support
               </Chip>
               <span className="text-xs text-[#A7ACB8]">
-                Ad spend paid directly to platforms · Fast 14-day turnaround
+                Ad spend is paid directly to the platforms
               </span>
             </div>
           </div>
@@ -211,7 +177,7 @@ export function OffersLandingView({ nextSlot }: OffersLandingViewProps) {
 
                   <div className="flex items-baseline gap-1 pt-1 border-t border-[#E4E6EB]">
                     <span className="font-display text-3xl font-bold text-[#111215]">
-                      {offer.priceDisplay}
+                      {offer.confirmed ? offer.priceDisplay : "Custom quote"}
                     </span>
                     {offer.minTerm && (
                       <span className="text-[11px] text-[#717684] block mt-0.5">
@@ -270,12 +236,12 @@ export function OffersLandingView({ nextSlot }: OffersLandingViewProps) {
       >
         <Container>
           <div className="max-w-3xl space-y-3 mb-10">
-            <Kicker>Market economics</Kicker>
+            <Kicker>Package comparison</Kicker>
             <h2 className="type-h2 text-[#111215]">
-              What it would cost to hire this separately
+              Compare package scopes
             </h2>
             <p className="type-body text-[#454954]">
-              Typical North American digital agency retainer rates versus our integrated Growth Engine package.
+              Compare the type of support and the main focus of each package before you request a quote.
             </p>
           </div>
 
@@ -284,31 +250,19 @@ export function OffersLandingView({ nextSlot }: OffersLandingViewProps) {
               <table className="w-full text-left text-sm border-collapse">
                 <thead>
                   <tr className="border-b border-[#D5D8E0] bg-[#F8F9FA] text-[#717684] text-xs font-semibold uppercase tracking-wider">
-                    <th scope="col" className="p-4 sm:p-5">Individual Service Deliverable</th>
-                    <th scope="col" className="p-4 sm:p-5">Typical US / Canada Agency Rate</th>
-                    <th scope="col" className="p-4 sm:p-5 text-[#C8101A]">Webix Growth Engine</th>
+                    <th scope="col" className="p-4 sm:p-5">Package</th>
+                    <th scope="col" className="p-4 sm:p-5">Engagement</th>
+                    <th scope="col" className="p-4 sm:p-5">Best fit</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-[#E4E6EB]">
-                  {MARKET_COMPARISON_RANGES.map((row, i) => (
-                    <tr key={i} className="hover:bg-[#F8F9FA]/50 transition-colors">
-                      <td className="p-4 sm:p-5 font-medium text-[#111215]">
-                        {row.roleOrService}
-                      </td>
-                      <td className="p-4 sm:p-5 font-mono text-[#717684]">
-                        {row.typicalUsCaRange}
-                      </td>
-                      <td className="p-4 sm:p-5 font-semibold text-[#16A34A] flex items-center gap-1.5">
-                        <Check className="h-4 w-4" />
-                        <span>{row.webixGrowthEngine}</span>
-                      </td>
+                  {FLAGSHIP_OFFERS.map((offer) => (
+                    <tr key={offer.id}>
+                      <th scope="row" className="p-4 sm:p-5 font-semibold text-[#111215]">{offer.name}</th>
+                      <td className="p-4 sm:p-5 whitespace-nowrap">{offer.billingType === "monthly" ? "Monthly support" : "One-time project"}</td>
+                      <td className="p-4 sm:p-5">{offer.whoItsFor}</td>
                     </tr>
                   ))}
-                  <tr className="bg-[#FAF0F0] font-bold text-[#111215]">
-                    <td className="p-4 sm:p-5">Total Estimated Monthly Investment</td>
-                    <td className="p-4 sm:p-5 font-mono text-[#C8101A]">$2,350 – $5,000+ / mo</td>
-                    <td className="p-4 sm:p-5 font-display text-lg text-[#16A34A]">$399 / month</td>
-                  </tr>
                 </tbody>
               </table>
             </div>
@@ -367,10 +321,10 @@ export function OffersLandingView({ nextSlot }: OffersLandingViewProps) {
                 Speed Benchmarks
               </span>
               <div className="font-display text-3xl font-bold text-white">
-                &lt; 2.0s LCP
+                Performance checks
               </div>
               <p className="text-xs text-[#A7ACB8] leading-relaxed">
-                Server-rendered Next.js architectures with static edge caching, zero heavy theme plugins, and responsive image optimizations.
+                We review mobile performance and test key actions before handover.
               </p>
             </div>
           </div>
@@ -393,7 +347,7 @@ export function OffersLandingView({ nextSlot }: OffersLandingViewProps) {
               What happens in your first 30 days
             </h2>
             <p className="type-body text-[#454954]">
-              How we launch your new website and kickstart multi-channel lead acquisition in four seamless phases.
+              How we launch your new website and prepare the website and marketing work in four phases.
             </p>
           </div>
 
@@ -427,7 +381,7 @@ export function OffersLandingView({ nextSlot }: OffersLandingViewProps) {
         kicker="Direct answers"
         heading="Common questions about our growth packages"
         subtitle="Transparent terms regarding contract lengths, ad budgets, and ownership transfers."
-        faqs={FAQS}
+        faqs={OFFER_FAQS}
         surface="steel"
         previousSurface="porcelain"
         notch

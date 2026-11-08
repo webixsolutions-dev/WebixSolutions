@@ -305,3 +305,19 @@ export const MARKET_COMPARISON_RANGES = [
     webixGrowthEngine: "Included in $399/mo",
   },
 ];
+
+export const PRICING_FAQS = [
+  { question: "How do you price a project?", answer: "We quote after we understand what you need. Your proposal sets out the scope, milestones, price and payment schedule before work begins." },
+  { question: "Can I book one project or get ongoing support?", answer: "Both are available. Choose a one-time build or audit, a monthly care plan, or a growth package. Your proposal explains the term and how to make changes." },
+  { question: "How do international payments work?", answer: "We confirm the invoice currency and available payment methods in your proposal." },
+  { question: "Does my quote include advertising spend?", answer: "You pay advertising platforms directly from your own account. Our proposal lists the management fee separately." },
+  { question: "What if I need help after launch?", answer: "Your project scope sets out the support included at handover. We also offer ongoing care for updates and maintenance." },
+];
+
+export const OFFER_FAQS = [
+  { question: "What is the term for Growth Engine?", answer: "Growth Engine includes an initial six-month term. The proposal explains how the website build and ongoing marketing work are scheduled." },
+  { question: "Can you work with the website I already have?", answer: "Yes. We can scope a redesign, or use the agreed build time for landing pages, tracking or improvements to your existing site." },
+  { question: "Which advertising platforms are included?", answer: "Growth Engine covers one paid channel. Growth Engine Pro covers Meta and Google Ads. You pay advertising spend directly to the platforms." },
+  { question: "Who prepares the content and creative?", answer: "Our team prepares the content included in your package and sends it to you for review before publishing." },
+  { question: "Can I change packages as my needs change?", answer: "Yes. Tell us what you want to change and we’ll agree on the new scope, billing and handover terms in writing." },
+];

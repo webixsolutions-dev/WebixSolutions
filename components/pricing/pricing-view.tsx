@@ -1,5 +1,7 @@
 "use client";
 
+import { PRICING_FAQS } from "@/content/pricing";
+
 import * as React from "react";
 import Link from "next/link";
 import {
@@ -12,6 +14,7 @@ import {
   Sparkles,
   Zap,
 } from "lucide-react";
+import { INTERIOR } from "@/content/interior";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Kicker } from "@/components/ui/kicker";
@@ -35,33 +38,7 @@ interface PricingViewProps {
 
 type PricingSegment = "care" | "builds" | "onetime";
 
-const FAQS = [
-  {
-    question: "Why are your prices lower than US and Canadian digital agencies?",
-    answer:
-      "Our central engineering and creative campus is located in Dunyapur, Pakistan, where operational overhead is significantly lower than New York, Toronto, or London. Because our 20+ person team works directly under senior technical leadership—using the exact same enterprise tools (Next.js, Tailwind, Meta CAPI, Google Ads, Zapier)—we pass those structural savings directly to our clients without compromising code quality.",
-  },
-  {
-    question: "Is there a long-term contract required for one-time builds or care plans?",
-    answer:
-      "No long-term contracts for one-time builds or care plans. Website builds are delivered on fixed-price written milestone scopes with an initial 40% deposit. Monthly website care plans can be cancelled anytime with 30 days written notice. Only our deeply discounted growth packages on /offers/ have a 6-month minimum commitment to cover upfront build and setup costs.",
-  },
-  {
-    question: "How do international payments work for clients outside Pakistan?",
-    answer:
-      "We invoice securely in US Dollars (USD) or approximate CAD/AED/NZD equivalents. Clients can pay via corporate credit card, ACH transfer, Wise Business, or international wire. Domestic Pakistani clients can pay in PKR via 1Link, Raast, or corporate cross-cheque with official tax invoices.",
-  },
-  {
-    question: "Do your service prices include advertising spend?",
-    answer:
-      "No. Advertising spend is paid directly by you to the advertising platforms (Meta, Google, TikTok) using your own company credit card. This guarantees 100% financial transparency, ensures you earn your own card reward points, and eliminates agency markups on media spend.",
-  },
-  {
-    question: "What happens if I need revisions after a website or software build is launched?",
-    answer:
-      "Every project build includes 14 to 30 days of complimentary post-launch support and bug fixes. For ongoing design iterations, landing page testing, and monthly updates, we recommend transitioning to one of our monthly care plans or an integrated growth package.",
-  },
-];
+
 
 export function PricingView({ nextSlot }: PricingViewProps) {
   const [segment, setSegment] = React.useState<PricingSegment>("care");
@@ -99,7 +76,7 @@ export function PricingView({ nextSlot }: PricingViewProps) {
             <h1 className="type-display text-white">Pricing</h1>
 
             <p className="type-lead text-[#A7ACB8] max-w-[62ch]">
-              Clear prices for care plans, custom website builds, SEO, ads and AI automation. Fixed scopes, no hidden agency middleman markups, and zero lock-in.
+              {INTERIOR.pricing.lead}
             </p>
 
             <div
@@ -110,17 +87,17 @@ export function PricingView({ nextSlot }: PricingViewProps) {
               <Button href="/book-a-call/" variant="primary" size="lg">
                 Book a strategy call
               </Button>
-              <Button href="/offers/" variant="secondary" size="lg">
-                View growth packages ($399/mo)
+              <Button href="#pricing-options" variant="secondary" size="lg">
+                Explore pricing options
               </Button>
             </div>
 
             <div className="pt-2 flex flex-wrap items-center gap-3">
               <Chip asSpan active>
-                Standard Invoicing in USD · PKR / CAD / AED on request
+                Written scopes and quotes
               </Chip>
               <span className="text-xs text-[#A7ACB8]">
-                Ad spend paid directly to platforms · 40% kickoff deposit
+                Ad spend is paid directly to the platforms
               </span>
             </div>
           </div>
@@ -131,6 +108,7 @@ export function PricingView({ nextSlot }: PricingViewProps) {
           2. SEGMENTED CONTROL + PRICING TABLES (Porcelain with Notch)
          ========================================================================= */}
       <Section
+        id="pricing-options"
         surface="porcelain"
         previousSurface="graphite"
         notch
@@ -154,6 +132,7 @@ export function PricingView({ nextSlot }: PricingViewProps) {
               <button
                 type="button"
                 onClick={() => setSegment("care")}
+                aria-pressed={segment === "care"}
                 className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all ${
                   segment === "care"
                     ? "bg-white text-[#111215] shadow-xs"
@@ -165,6 +144,7 @@ export function PricingView({ nextSlot }: PricingViewProps) {
               <button
                 type="button"
                 onClick={() => setSegment("builds")}
+                aria-pressed={segment === "builds"}
                 className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all ${
                   segment === "builds"
                     ? "bg-white text-[#111215] shadow-xs"
@@ -176,6 +156,7 @@ export function PricingView({ nextSlot }: PricingViewProps) {
               <button
                 type="button"
                 onClick={() => setSegment("onetime")}
+                aria-pressed={segment === "onetime"}
                 className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all ${
                   segment === "onetime"
                     ? "bg-white text-[#111215] shadow-xs"
@@ -188,8 +169,7 @@ export function PricingView({ nextSlot }: PricingViewProps) {
           </div>
 
           {/* VIEW A: CARE PLANS */}
-          {segment === "care" && (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div data-pricing-panel hidden={segment !== "care"} className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {CARE_PLANS.map((plan, idx) => (
                 <div
                   key={plan.id}
@@ -201,7 +181,7 @@ export function PricingView({ nextSlot }: PricingViewProps) {
                 >
                   {idx === 1 && (
                     <span className="absolute -top-3 left-8 px-3 py-0.5 rounded-full bg-[#ED1C24] text-white text-[10px] font-bold uppercase tracking-wider">
-                      Most popular for SMBs
+                      Featured care plan
                     </span>
                   )}
 
@@ -217,10 +197,10 @@ export function PricingView({ nextSlot }: PricingViewProps) {
 
                     <div className="flex items-baseline gap-1 pt-2 border-t border-[#E4E6EB]">
                       <span className="font-display text-4xl font-bold text-[#111215]">
-                        ${plan.priceUsd}
+                        {plan.confirmed ? `$${plan.priceUsd}` : "Custom quote"}
                       </span>
                       <span className="text-xs font-semibold text-[#717684]">
-                        {plan.billingPeriod}
+                        {plan.confirmed ? plan.billingPeriod : "Monthly care"}
                       </span>
                     </div>
 
@@ -236,17 +216,15 @@ export function PricingView({ nextSlot }: PricingViewProps) {
 
                   <div className="pt-4 border-t border-[#E4E6EB]">
                     <Button href="/book-a-call/" variant={idx === 1 ? "primary" : "secondary"} size="default" className="w-full">
-                      Start {plan.name}
+                      Ask about {plan.name}
                     </Button>
                   </div>
                 </div>
               ))}
             </div>
-          )}
 
           {/* VIEW B: BUILDS TABLE */}
-          {segment === "builds" && (
-            <div className="rounded-xl border border-[#E4E6EB] bg-white overflow-hidden shadow-xs">
+          <div data-pricing-panel hidden={segment !== "builds"} className="rounded-xl border border-[#E4E6EB] bg-white overflow-hidden shadow-xs">
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-sm border-collapse">
                   <thead>
@@ -268,7 +246,7 @@ export function PricingView({ nextSlot }: PricingViewProps) {
                           </Link>
                         </td>
                         <td className="p-4 sm:p-5 font-mono font-bold text-[#C8101A] whitespace-nowrap">
-                          From ${b.startingPriceUsd}
+                          {b.confirmed ? `From $${b.startingPriceUsd}` : "Custom quote"}
                         </td>
                         <td className="p-4 sm:p-5 text-xs text-[#717684] whitespace-nowrap">
                           {b.timeline}
@@ -287,11 +265,9 @@ export function PricingView({ nextSlot }: PricingViewProps) {
                 </table>
               </div>
             </div>
-          )}
 
           {/* VIEW C: ONE-TIME SERVICES */}
-          {segment === "onetime" && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div data-pricing-panel hidden={segment !== "onetime"} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {ONE_TIME_SERVICES.map((item) => (
                 <div
                   key={item.id}
@@ -300,10 +276,10 @@ export function PricingView({ nextSlot }: PricingViewProps) {
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
                       <span className="font-mono text-xs px-2 py-0.5 rounded bg-[#FAF0F0] text-[#C8101A] font-semibold">
-                        Sprint Sprint
+                        One-time service
                       </span>
                       <span className="font-display text-xl font-bold text-[#111215]">
-                        {item.priceDisplay}
+                        {item.confirmed ? item.priceDisplay : "Custom quote"}
                       </span>
                     </div>
 
@@ -325,13 +301,12 @@ export function PricingView({ nextSlot }: PricingViewProps) {
                       <ArrowRight className="h-3 w-3" />
                     </Link>
                     <Button href="/book-a-call/" variant="secondary" size="sm">
-                      Order sprint
+                      Request a quote
                     </Button>
                   </div>
                 </div>
               ))}
             </div>
-          )}
 
           {/* Integrated Offers Teaser Banner */}
           <div className="mt-16 p-8 md:p-10 rounded-2xl bg-[#141519] border border-white/12 text-white flex flex-col lg:flex-row lg:items-center justify-between gap-8">
@@ -341,7 +316,7 @@ export function PricingView({ nextSlot }: PricingViewProps) {
                 <span>Prefer an integrated growth bundle?</span>
               </span>
               <h3 className="font-display text-2xl font-bold text-white">
-                Full-service marketing packages from $399/month
+                Website, marketing and automation packages
               </h3>
               <p className="text-xs text-[#A7ACB8] leading-relaxed">
                 Combine custom website builds or redesigns, monthly SEO fixes, social media management, and paid advertising campaigns under a single predictable investment.
@@ -437,7 +412,7 @@ export function PricingView({ nextSlot }: PricingViewProps) {
         kicker="Direct answers"
         heading="Frequently asked questions about our pricing"
         subtitle="Transparent answers regarding billing cycles, contracts, and currency equivalents."
-        faqs={FAQS}
+        faqs={PRICING_FAQS}
         surface="porcelain"
         previousSurface="steel"
         notch
