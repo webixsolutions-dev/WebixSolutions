@@ -20,7 +20,7 @@ export function RoiCalculator({ defaultHours = 25, defaultRate = 45 }: RoiCalcul
   const fmt = (n: number) => `$${n.toLocaleString("en-US")}`;
 
   return (
-    <div className="cut-tr bg-[#141519] text-white p-6 md:p-10">
+    <div className="rounded-xl bg-[#141519] text-white p-6 md:p-10">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         <div className="lg:col-span-7 space-y-7">
           <div className="space-y-2.5">

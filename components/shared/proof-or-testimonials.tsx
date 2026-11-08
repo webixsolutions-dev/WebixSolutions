@@ -2,7 +2,7 @@ import * as React from "react";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Kicker } from "@/components/ui/kicker";
-import { CutFrame } from "@/components/ui/cut-frame";
+import { CardSurface } from "@/components/ui/card-surface";
 import { Chip } from "@/components/ui/chip";
 import { Button } from "@/components/ui/button";
 import { getVerifiedTestimonials } from "@/content/testimonials";
@@ -75,7 +75,7 @@ export function ProofOrTestimonials() {
 
   if (verifiedQuotes.length >= 3) {
     return (
-      <Section surface="graphite" previousSurface="steel" notch grid>
+      <Section surface="graphite" >
         <Container>
           <div className="max-w-2xl space-y-3">
             <Kicker>Verified client reviews</Kicker>
@@ -86,7 +86,7 @@ export function ProofOrTestimonials() {
 
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
             {verifiedQuotes.map((t) => (
-              <CutFrame
+              <CardSurface
                 key={t.id}
                 innerClassName="p-6 flex flex-col justify-between gap-4"
               >
@@ -99,7 +99,7 @@ export function ProofOrTestimonials() {
                     {t.role}, {t.company} · {t.country}
                   </div>
                 </div>
-              </CutFrame>
+              </CardSurface>
             ))}
           </div>
         </Container>
@@ -108,7 +108,7 @@ export function ProofOrTestimonials() {
   }
 
   return (
-    <Section surface="graphite" previousSurface="steel" notch grid>
+    <Section surface="graphite" >
       <Container>
         <div className="max-w-2xl space-y-3">
           <Kicker>Verifiable engineering & delivery proof</Kicker>
@@ -125,8 +125,8 @@ export function ProofOrTestimonials() {
         <div className="mt-10 grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Confirmed GitHub Activity Block (7 cols) */}
           <div className="lg:col-span-7">
-            <CutFrame
-              cutSize="lg"
+            <CardSurface
+
               innerClassName="p-6 md:p-8 h-full flex flex-col justify-between gap-6"
             >
               <div className="space-y-4">
@@ -184,13 +184,13 @@ export function ProofOrTestimonials() {
                   View GitHub profile
                 </Button>
               </div>
-            </CutFrame>
+            </CardSurface>
           </div>
 
           {/* Confirmed In-House Delivery Scale (5 cols) */}
           <div className="lg:col-span-5">
-            <CutFrame
-              cutSize="lg"
+            <CardSurface
+
               innerClassName="p-6 md:p-8 h-full flex flex-col justify-between gap-6"
             >
               <div className="space-y-5">
@@ -243,7 +243,7 @@ export function ProofOrTestimonials() {
                   Meet the team & see how we work
                 </Button>
               </div>
-            </CutFrame>
+            </CardSurface>
           </div>
         </div>
 
@@ -266,7 +266,7 @@ export function ProofOrTestimonials() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {confirmedOwnBrands.map((brand) => (
-                <CutFrame key={brand.name} innerClassName="p-6 flex flex-col justify-between gap-4 h-full">
+                <CardSurface key={brand.name} innerClassName="p-6 flex flex-col justify-between gap-4 h-full">
                   <div className="space-y-2">
                     <div className="text-xs font-medium text-[#ED1C24]">
                       In-house venture · {brand.market}
@@ -289,15 +289,15 @@ export function ProofOrTestimonials() {
                       <span aria-hidden="true">&rarr;</span>
                     </a>
                   )}
-                </CutFrame>
+                </CardSurface>
               ))}
             </div>
 
             {/* Zelvomart Ad Result Card */}
             {confirmedAdResults.length > 0 && (
               <div className="mt-6">
-                <CutFrame
-                  cutSize="lg"
+                <CardSurface
+
                   innerClassName="p-6 md:p-8 flex flex-col lg:flex-row lg:items-center justify-between gap-6 bg-white/[0.02]"
                 >
                   <div className="space-y-1.5 max-w-xl">
@@ -321,7 +321,7 @@ export function ProofOrTestimonials() {
                       <div className="text-xs text-[#A7ACB8] mt-0.5">Conversations (last 30 days)</div>
                     </div>
                   </div>
-                </CutFrame>
+                </CardSurface>
               </div>
             )}
           </div>

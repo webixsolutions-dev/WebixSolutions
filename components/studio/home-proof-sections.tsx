@@ -17,7 +17,7 @@ export function StudioPackages() {
           <Link className="studio-link" href="/offers/">Compare all packages <ArrowUpRight size={17} /></Link>
         </div>
         <div className="studio-packages" data-studio-stagger>
-          {offers.map((offer) => <article key={offer.id} className="studio-package studio-cut-frame" data-studio-spotlight data-featured={Boolean(offer.featured)}>
+          {offers.map((offer) => <article key={offer.id} className="studio-package signal-card" data-studio-spotlight data-featured={Boolean(offer.featured)}>
             <div className="studio-package-top">
               <p className="studio-package-type">{offer.billingType === "monthly" ? "Monthly support" : "One-time project"}</p>
               {offer.featured && <span>Featured</span>}
@@ -52,7 +52,7 @@ export function StudioProofWall() {
             </div>
           </div>
           <div className="studio-engineering-grid" data-studio-stagger>
-            <article className="studio-engineering-card studio-cut-frame" data-studio-spotlight>
+            <article className="studio-engineering-card signal-card" data-studio-spotlight>
               <div className="studio-engineering-header"><span className="studio-chip"><GitFork size={16} aria-hidden="true" /> GitHub activity</span><span>October 2026 snapshot</span></div>
               <dl className="studio-engineering-metrics">
                 {[githubContributionsLastYear, customCodedBuilds].map((stat) => <div key={stat.label}><dt>{stat.label}</dt><dd>{stat.value}</dd></div>)}
@@ -63,7 +63,7 @@ export function StudioProofWall() {
                 <a className="studio-link" href={SITE_FACTS.socials.github} target="_blank" rel="noreferrer">View GitHub profile <ArrowUpRight size={16} /></a>
               </div>
             </article>
-            <article className="studio-engineering-card studio-cut-frame" data-studio-spotlight>
+            <article className="studio-engineering-card signal-card" data-studio-spotlight>
               <p className="studio-chip">Production team</p>
               <dl className="studio-engineering-scale">
                 {[teamSize, cmsWebsitesBuilt, socialAccountsManaged].map((stat) => <div key={stat.label}><dt>{stat.label}</dt><dd>{stat.value}</dd><dd>{stat.detail}</dd></div>)}
@@ -80,19 +80,19 @@ export function StudioProofWall() {
             <Link className="studio-link" href="/our-work/">View all projects <ArrowUpRight size={16} /></Link>
           </div>
           <div className="studio-owned-brands" data-studio-stagger>
-            {brands.map((brand) => <article key={brand.name} className="studio-owned-brand studio-cut-frame">
+            {brands.map((brand) => <article key={brand.name} className="studio-owned-brand signal-card">
               <p className="studio-label">{brand.market} <span className="studio-chip">Our platform</span></p>
               <h3>{brand.name}</h3><p>{brand.description}</p>
               {"url" in brand && <a href={brand.url} className="studio-link" target="_blank" rel="noreferrer">Visit platform <ArrowUpRight size={15} /></a>}
             </article>)}
-            {builds.map((build) => <article key={build.slug} className="studio-owned-brand studio-cut-frame">
+            {builds.map((build) => <article key={build.slug} className="studio-owned-brand signal-card">
               <p className="studio-label">{build.country || build.category} <span className="studio-chip">Client project</span></p>
               <h3>{build.title}</h3><p>{build.summary}</p>
               <Link href={`/our-work/${build.slug}/`} className="studio-link">View project <ArrowUpRight size={15} /></Link>
             </article>)}
           </div>
           {testimonials.length >= 3 && <div className="studio-owned-brands studio-testimonials">
-            {testimonials.map((item) => <figure className="studio-owned-brand studio-cut-frame" key={item.id}><blockquote>{item.quote}</blockquote><figcaption>{item.name}, {item.company}</figcaption></figure>)}
+            {testimonials.map((item) => <figure className="studio-owned-brand signal-card" key={item.id}><blockquote>{item.quote}</blockquote><figcaption>{item.name}, {item.company}</figcaption></figure>)}
           </div>}
         </div>
       </section>

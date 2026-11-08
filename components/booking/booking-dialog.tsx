@@ -24,10 +24,18 @@ export function BookingDialog() {
       const node = dialog.current;
       if (!node || url.origin !== location.origin || url.pathname !== "/book-a-call/" || path === "/book-a-call/") return;
       event.preventDefault();
-      trigger.current = link;
+      trigger.current = link.closest(".studio-nav-mobile")
+        ? document.querySelector(".studio-nav-toggle")
+        : link;
       const type = url.searchParams.get("type");
       setMeetingType(type === "partner" || type === "intro" ? type : "strategy");
-      if (!node.open) node.showModal();
+      if (!node.open) {
+        link.closest<HTMLDialogElement>("dialog")?.close();
+        node.showModal();
+        const bounds = node.getBoundingClientRect();
+        node.style.setProperty("--iris-x", event.detail ? `${event.clientX - bounds.left}px` : "50%");
+        node.style.setProperty("--iris-y", event.detail ? `${event.clientY - bounds.top}px` : "50%");
+      }
     }
     document.addEventListener("click", open, true);
     return () => document.removeEventListener("click", open, true);

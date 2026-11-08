@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 function trackSpotlight(surface: HTMLElement) {
   let frame = 0;
@@ -36,16 +36,91 @@ function trackSpotlight(surface: HTMLElement) {
   };
 }
 
+function trackMagnetism(event: PointerEvent) {
+  const button = event.target instanceof Element
+    ? event.target.closest<HTMLElement>(".studio-button:not(.studio-button-outline):not(:disabled)")
+    : null;
+  if (!button || event.pointerType !== "mouse") return;
+  const bounds = button.getBoundingClientRect();
+  const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+  const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+  button.style.setProperty("--button-x", `${Math.max(-6, Math.min(6, x * 12))}px`);
+  button.style.setProperty("--button-y", `${Math.max(-6, Math.min(6, y * 12))}px`);
+}
+
+function resetMagnetism(event: PointerEvent) {
+  const button = event.target instanceof Element ? event.target.closest<HTMLElement>(".studio-button") : null;
+  if (!button || (event.relatedTarget instanceof Node && button.contains(event.relatedTarget))) return;
+  button.style.removeProperty("--button-x");
+  button.style.removeProperty("--button-y");
+}
+
 export function StudioMotion() {
   const path = usePathname();
+  const router = useRouter();
   const wipe = useRef<HTMLDivElement>(null);
-  const previous = useRef(path);
+  const reveal = useRef<(() => void) | null>(null);
 
   useEffect(() => {
-    const changed = previous.current !== path;
-    previous.current = path;
+    reveal.current?.();
+  }, [path]);
+
+  useEffect(() => {
+    const overlay = wipe.current;
+    if (!overlay) return;
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const desktop = window.matchMedia("(pointer: fine) and (min-width: 1000px)");
+    let animation: { kill: () => void } | undefined;
+    let timeout: ReturnType<typeof setTimeout> | undefined;
+    let gsap: typeof import("gsap").gsap | undefined;
+    void import("gsap").then((module) => { gsap = module.gsap; }).catch(() => undefined);
+
+    const cover = (event: MouseEvent) => {
+      if (!gsap || preference.matches || event.defaultPrevented || event.button !== 0 ||
+          event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      const link = event.target instanceof Element ? event.target.closest<HTMLAnchorElement>("a[href]") : null;
+      if (!link || link.target || link.hasAttribute("download")) return;
+      const url = new URL(link.href);
+      if (url.origin !== location.origin || url.pathname === location.pathname ||
+          /^\/(?:api\/|admin\/|lp\/|book-a-call\/?$)/.test(url.pathname) || /\.[a-z0-9]+$/i.test(url.pathname)) return;
+      event.preventDefault();
+      if (reveal.current) return;
+      const animator = gsap;
+      const origin = event.detail
+        ? event.clientX < window.innerWidth / 2 ? "left center" : "right center"
+        : "left center";
+      const destination = origin.startsWith("left") ? "right center" : "left center";
+
+      const uncover = () => {
+        clearTimeout(timeout);
+        animation?.kill();
+        reveal.current = null;
+        animation = animator.to(overlay, {
+          scaleX: 0, autoAlpha: 0, transformOrigin: destination,
+          duration: preference.matches ? 0 : 0.45, ease: "power3.inOut",
+        });
+      };
+      reveal.current = uncover;
+      animation?.kill();
+      animation = animator.fromTo(overlay, { scaleX: 0, autoAlpha: 1, transformOrigin: origin }, {
+        scaleX: 1, duration: 0.45, ease: "power3.inOut",
+        onComplete: () => {
+          router.push(url.pathname + url.search + url.hash);
+          timeout = setTimeout(uncover, 2400);
+        },
+      });
+    };
+    document.addEventListener("click", cover, true);
+    return () => {
+      clearTimeout(timeout);
+      animation?.kill();
+      reveal.current = null;
+      document.removeEventListener("click", cover, true);
+    };
+  }, [router]);
+
+  useEffect(() => {
+    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const desktop = window.matchMedia("(any-pointer: fine)");
     let disposed = false;
     let restart = 0;
     let cleanup: (() => void) | undefined;
@@ -64,7 +139,9 @@ export function StudioMotion() {
       gsap.registerPlugin(ScrollTrigger);
 
       const lenis = lenisModule ? new lenisModule.default({
-        duration: 0.85,
+        duration: 1.1,
+        lerp: 0.09,
+        syncTouch: false,
         anchors: { offset: -95 },
         stopInertiaOnNavigate: true,
         prevent: (node) => node.hasAttribute("data-lenis-prevent") || node.tagName === "DIALOG",
@@ -81,12 +158,11 @@ export function StudioMotion() {
       const removeSpotlights = desktop.matches
         ? Array.from(document.querySelectorAll<HTMLElement>("[data-studio-spotlight]"), trackSpotlight)
         : [];
+      if (desktop.matches) {
+        document.addEventListener("pointermove", trackMagnetism, { passive: true });
+        document.addEventListener("pointerout", resetMagnetism);
+      }
       const context = gsap.context(() => {
-        if (changed && wipe.current) {
-          gsap.fromTo(wipe.current, { scaleX: 1, autoAlpha: 1 }, {
-            scaleX: 0, autoAlpha: 0, transformOrigin: "right", duration: 0.48, ease: "power3.inOut",
-          });
-        }
         if (stage) {
           const hero = gsap.timeline({ defaults: { ease: "power3.out" } });
           hero.from("[data-studio-hero-line]", { yPercent: 96, opacity: 0.18, stagger: 0.12, duration: 0.9 }, 0);
@@ -131,16 +207,11 @@ export function StudioMotion() {
             scrollTrigger: { trigger: proofBand, start: "top 95%", end: "bottom 83%", scrub: 0.75 },
           });
         }
-        for (const surface of gsap.utils.toArray<HTMLElement>("[data-studio-light], #main section[data-surface], #main .studio-section")) {
-          gsap.timeline({
-            defaults: { ease: "none" },
-            scrollTrigger: { trigger: surface, start: "top bottom", end: "bottom top", scrub: 0.65 },
-          })
-            .fromTo(surface, { "--studio-spread": 0.18, "--studio-light-opacity": 0.05, "--studio-light-travel": "-6%" }, {
-              "--studio-spread": 1, "--studio-light-opacity": 0.9, "--studio-light-travel": "12%", duration: 0.55,
-            })
-            .to(surface, { "--studio-spread": 1.25, "--studio-light-opacity": 0.16, "--studio-light-travel": "27%", duration: 0.45 });
-        }
+        const wordmark = document.querySelector("[data-footer-wordmark]");
+        if (wordmark) gsap.fromTo(wordmark, { xPercent: 13 }, {
+          xPercent: 0, ease: "none",
+          scrollTrigger: { trigger: wordmark.parentElement, start: "top bottom", end: "bottom 72%", scrub: 0.65 },
+        });
         const lamp = document.querySelector("[data-studio-lamp]");
         if (lamp) {
           gsap.fromTo(lamp.querySelector(".studio-ai-light"), { scaleX: 0.12, scaleY: 0.4, opacity: 0.12 }, {
@@ -183,6 +254,12 @@ export function StudioMotion() {
       document.documentElement.dataset.studioMotion = "ready";
       cleanup = () => {
         delete document.documentElement.dataset.studioMotion;
+        document.removeEventListener("pointermove", trackMagnetism);
+        document.removeEventListener("pointerout", resetMagnetism);
+        for (const button of document.querySelectorAll<HTMLElement>(".studio-button[style]")) {
+          button.style.removeProperty("--button-x");
+          button.style.removeProperty("--button-y");
+        }
         removePointer?.();
         removeSpotlights.forEach((remove) => remove());
         context.revert();

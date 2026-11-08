@@ -163,8 +163,6 @@ export function AiSystemsSection() {
   return (
     <Section
       surface="red"
-      previousSurface="graphite"
-      notch
       watermark="monogram"
     >
       <Container>
@@ -186,7 +184,7 @@ export function AiSystemsSection() {
             <article
               key={sys.id}
               data-surface="graphite"
-              className="cut-tr bg-[#141519] border border-white/20 p-6 md:p-7 flex flex-col justify-between gap-6 shadow-xl"
+              className="rounded-xl bg-[#141519] border border-white/20 p-6 md:p-7 flex flex-col justify-between gap-6 shadow-xl"
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between text-xs text-[#A7ACB8]">
@@ -225,7 +223,7 @@ export function AiSystemsSection() {
           ))}
         </div>
 
-        <div className="mt-10 flex flex-wrap items-center justify-between gap-4 bg-[#141519] cut-tr p-6 border border-white/15">
+        <div className="mt-10 flex flex-wrap items-center justify-between gap-4 bg-[#141519] rounded-xl p-6 border border-white/15">
           <p className="text-base font-medium text-white">
             Want to automate lead replies, WhatsApp orders or CRM data entry in
             10 days?

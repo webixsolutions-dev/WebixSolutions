@@ -3,7 +3,7 @@ import { Check } from "lucide-react";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Kicker } from "@/components/ui/kicker";
-import { CutFrame } from "@/components/ui/cut-frame";
+import { CardSurface } from "@/components/ui/card-surface";
 import { Chip } from "@/components/ui/chip";
 import { Button } from "@/components/ui/button";
 import { FLAGSHIP_OFFERS } from "@/content/pricing";
@@ -20,7 +20,7 @@ export function PackagesTeaser() {
   );
 
   return (
-    <Section surface="graphite" previousSurface="porcelain" notch grid>
+    <Section surface="graphite" >
       <Container>
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
           <div className="max-w-2xl space-y-3">
@@ -48,9 +48,9 @@ export function PackagesTeaser() {
           {teaserOffers.map((offer) => {
             const showPrice = isConfirmed(offer.confirmed);
             return (
-              <CutFrame
+              <CardSurface
                 key={offer.id}
-                cutSize="lg"
+
                 className={
                   offer.featured
                     ? "bg-[#ED1C24] p-[1.5px]"
@@ -115,7 +115,7 @@ export function PackagesTeaser() {
                     Book a strategy call
                   </Button>
                 </div>
-              </CutFrame>
+              </CardSurface>
             );
           })}
         </div>

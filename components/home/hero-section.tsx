@@ -21,7 +21,7 @@ export function HeroSection({ nextSlot }: HeroSectionProps) {
   const signals = getHomeProofSignals(nextSlot);
 
   return (
-    <Section surface="graphite" spacing="hero" grid className="relative">
+    <Section surface="graphite" spacing="hero" className="relative">
       {/* Oxblood radial glow + pre-rendered 3D monogram backdrop (No WebGL) */}
       <div
         aria-hidden="true"

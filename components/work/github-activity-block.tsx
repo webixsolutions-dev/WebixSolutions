@@ -5,7 +5,7 @@ export function GithubActivityBlock() {
   const { githubContributionsLastYear, customCodedBuilds } = SITE_FACTS.stats;
 
   return (
-    <div className="studio-engineering-card studio-cut-frame">
+    <div className="studio-engineering-card signal-card">
       <div className="studio-engineering-header">
         <span className="studio-chip"><GitFork size={16} aria-hidden="true" /> GitHub activity</span>
         <span>October 2026 snapshot</span>

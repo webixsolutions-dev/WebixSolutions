@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Kicker } from "@/components/ui/kicker";
-import { CutFrame } from "@/components/ui/cut-frame";
+import { CardSurface } from "@/components/ui/card-surface";
 import { HOME_CONTENT } from "@/content/home";
 import { isConfirmed } from "@/content/site-facts";
 
@@ -38,7 +38,7 @@ export function HowWeWork() {
   const show48h = isConfirmed(HOME_CONTENT.howWeWork.proposal48hConfirmed);
 
   return (
-    <Section surface="porcelain" previousSurface="graphite" notch>
+    <Section surface="porcelain" >
       <Container>
         <div ref={sectionRef}>
           <div className="max-w-2xl space-y-3">
@@ -72,9 +72,9 @@ export function HowWeWork() {
 
                 return (
                   <li key={step.number}>
-                    <CutFrame innerClassName="p-6 h-full flex flex-col justify-between gap-4">
+                    <CardSurface innerClassName="p-6 h-full flex flex-col justify-between gap-4">
                       <div className="space-y-3">
-                        <div className="inline-flex h-10 w-10 items-center justify-center bg-[#C8101A] text-white font-metric text-base cut-tr-sm">
+                        <div className="inline-flex h-10 w-10 items-center justify-center bg-[#C8101A] text-white font-metric text-base rounded-xl">
                           {step.number}
                         </div>
                         <h3 className="type-h3 text-[#111215]">{step.title}</h3>
@@ -82,7 +82,7 @@ export function HowWeWork() {
                           {desc}
                         </p>
                       </div>
-                    </CutFrame>
+                    </CardSurface>
                   </li>
                 );
               })}

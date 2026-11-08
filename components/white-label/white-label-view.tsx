@@ -136,7 +136,7 @@ export function WhiteLabelView({ nextSlot }: WhiteLabelViewProps) {
       {/* =========================================================================
           1. HERO SECTION (Graphite)
          ========================================================================= */}
-      <Section surface="graphite" spacing="hero" grid className="relative">
+      <Section surface="graphite" spacing="hero" className="relative">
         <Container>
           {/* Breadcrumbs */}
           <nav aria-label="Breadcrumb" className="mb-6 animate-hero-rise">
@@ -215,8 +215,6 @@ export function WhiteLabelView({ nextSlot }: WhiteLabelViewProps) {
          ========================================================================= */}
       <Section id="partner-scope"
         surface="porcelain"
-        previousSurface="graphite"
-        notch
         spacing="default"
       >
         <Container>
@@ -258,8 +256,6 @@ export function WhiteLabelView({ nextSlot }: WhiteLabelViewProps) {
          ========================================================================= */}
       <Section id="partner-workflow"
         surface="steel"
-        previousSurface="porcelain"
-        notch
         spacing="default"
       >
         <Container>
@@ -301,9 +297,6 @@ export function WhiteLabelView({ nextSlot }: WhiteLabelViewProps) {
          ========================================================================= */}
       <Section
         surface="graphite"
-        previousSurface="steel"
-        notch
-        grid
         spacing="default"
       >
         <Container>
@@ -343,8 +336,6 @@ export function WhiteLabelView({ nextSlot }: WhiteLabelViewProps) {
          ========================================================================= */}
       <Section id="partner-rates"
         surface="porcelain"
-        previousSurface="graphite"
-        notch
         spacing="default"
       >
         <Container>
@@ -377,8 +368,6 @@ export function WhiteLabelView({ nextSlot }: WhiteLabelViewProps) {
       <Section
         id="pilot"
         surface="red"
-        previousSurface="porcelain"
-        notch
         watermark="monogram"
         spacing="default"
       >
@@ -413,14 +402,12 @@ export function WhiteLabelView({ nextSlot }: WhiteLabelViewProps) {
         subtitle="Clear details on our non-disclosure policies, project management tools, and billing terms."
         faqs={FAQS}
         surface="porcelain"
-        previousSurface="red"
-        notch
       />
 
       {/* =========================================================================
           8. FINAL CTA (Oxblood with Notch)
          ========================================================================= */}
-      <FinalCtaSection nextSlot={nextSlot} previousSurface="porcelain" />
+      <FinalCtaSection nextSlot={nextSlot} />
     </div>
   );
 }

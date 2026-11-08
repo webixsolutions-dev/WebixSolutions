@@ -24,7 +24,7 @@ export function CaseStudyTemplate({ study, nextSlot }: CaseStudyTemplateProps) {
       {/* =========================================================================
           1. HERO SECTION (Graphite)
          ========================================================================= */}
-      <Section surface="graphite" spacing="hero" grid className="relative">
+      <Section surface="graphite" spacing="hero" className="relative">
         <Container>
           {/* Breadcrumbs */}
           <nav aria-label="Breadcrumb" className="mb-6 animate-hero-rise">
@@ -101,7 +101,7 @@ export function CaseStudyTemplate({ study, nextSlot }: CaseStudyTemplateProps) {
         { id: "case-scope", label: "What we built" },
         { id: "case-services", label: "Related services" },
       ]} />
-      {study.cover && <Section surface="steel" spacing="compact"><Container><ProjectCover study={study} sizes="(max-width: 760px) 94vw, 1100px" /><p className="mt-2 text-sm text-fg-secondary">{study.coverCaption ?? "Illustrative cover image"}</p></Container></Section>}
+      {study.cover && <Section surface="steel" spacing="compact"><Container><div className="signal-chamfer"><ProjectCover study={study} sizes="(max-width: 760px) 94vw, 1100px" /></div><p className="mt-2 text-sm text-fg-secondary">{study.coverCaption ?? "Illustrative cover image"}</p></Container></Section>}
 
 
       {/* =========================================================================
@@ -110,8 +110,6 @@ export function CaseStudyTemplate({ study, nextSlot }: CaseStudyTemplateProps) {
       {study.results.length > 0 && (
       <Section
         surface="porcelain"
-        previousSurface="graphite"
-        notch
         spacing="default"
       >
         <Container>
@@ -142,8 +140,6 @@ export function CaseStudyTemplate({ study, nextSlot }: CaseStudyTemplateProps) {
          ========================================================================= */}
       <Section id="case-scope"
         surface="steel"
-        previousSurface="porcelain"
-        notch
         spacing="default"
       >
         <Container>
@@ -186,8 +182,6 @@ export function CaseStudyTemplate({ study, nextSlot }: CaseStudyTemplateProps) {
       {study.beforeAfter && (
         <Section
           surface="porcelain"
-          previousSurface="steel"
-          notch
           spacing="default"
         >
           <Container>
@@ -201,9 +195,6 @@ export function CaseStudyTemplate({ study, nextSlot }: CaseStudyTemplateProps) {
          ========================================================================= */}
       <Section
         surface="graphite"
-        previousSurface={study.beforeAfter ? "porcelain" : "steel"}
-        notch
-        grid
         spacing="compact"
       >
         <Container>
@@ -230,8 +221,6 @@ export function CaseStudyTemplate({ study, nextSlot }: CaseStudyTemplateProps) {
          ========================================================================= */}
       <Section id="case-services"
         surface="steel"
-        previousSurface="graphite"
-        notch
         spacing="default"
       >
         <Container>
@@ -260,7 +249,7 @@ export function CaseStudyTemplate({ study, nextSlot }: CaseStudyTemplateProps) {
       {/* =========================================================================
           7. FINAL CTA (Oxblood with Notch)
          ========================================================================= */}
-      <FinalCtaSection nextSlot={nextSlot} previousSurface="steel" />
+      <FinalCtaSection nextSlot={nextSlot} />
     </div>
   );
 }

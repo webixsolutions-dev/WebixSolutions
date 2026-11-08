@@ -27,7 +27,7 @@ export function WorkflowDemo() {
     return () => observer.disconnect();
   }, []);
 
-  return <div className="studio-workflow studio-cut-frame" data-studio-spotlight ref={section}>
+  return <div className="studio-workflow signal-card" data-studio-spotlight ref={section}>
     <div className="studio-workflow-heading">
       <p className="studio-label"><span /> Interactive workflow</p>
       <h3>Build an AI agent for new enquiries.</h3>

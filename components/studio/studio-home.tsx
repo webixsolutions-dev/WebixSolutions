@@ -69,7 +69,7 @@ export function StudioHome({ nextSlot }: { nextSlot: NextSlotResult }) {
           </div>
           <div className="studio-bento" data-studio-gallery>
             {featured.map((study, index) => (
-              <Link key={study.slug} href={`/our-work/${study.slug}/`} className={`studio-project studio-project-${index} studio-cut-frame`} data-studio-project>
+              <Link key={study.slug} href={`/our-work/${study.slug}/`} className={`studio-project studio-project-${index} signal-card`} data-studio-project>
                 <ProjectCover study={study} />
                 <div className="studio-project-copy"><p>{study.descriptor}</p><h3>{study.title}</h3><span className="studio-project-arrow"><ArrowUpRight size={20} /></span></div>
               </Link>
@@ -102,7 +102,7 @@ export function StudioHome({ nextSlot }: { nextSlot: NextSlotResult }) {
           </div>
           <div className="studio-audiences" data-studio-stagger>
             {[ways.forBusinesses, ways.forAgencies].map((item, index) => (
-              <article className="studio-cut-frame" key={item.badge}>
+              <article className="signal-card" key={item.badge}>
                 <p className="studio-label studio-chip">{item.badge}</p><h3>{item.title}</h3><p>{item.description}</p>
                 <ul>{item.bullets.map((bullet) => <li key={bullet}><Check size={16} aria-hidden="true" />{bullet}</li>)}</ul>
                 <Link href={item.ctaHref} className={index === 0 ? "studio-button" : "studio-button studio-button-outline"}>{item.ctaLabel} <ArrowUpRight size={17} /></Link>
@@ -111,7 +111,7 @@ export function StudioHome({ nextSlot }: { nextSlot: NextSlotResult }) {
           </div>
         </div>
       </section>
-      <section className="studio-section studio-dark studio-market-section" id="our-markets" data-studio-light>
+      <section className="studio-section studio-dark studio-market-section" id="our-markets" data-studio-light data-studio-spotlight>
         <div className="studio-wrap studio-market-grid">
           <div data-studio-reveal><p className="studio-label"><span /> Where we work</p><h2>Based in Pakistan. Working worldwide.</h2><p className="studio-section-lead">Our remote team works with clients in Canada, the United States, the United Arab Emirates, New Zealand and Pakistan. We plan calls and handovers around your time zone.</p></div>
           <MarketGlobe />

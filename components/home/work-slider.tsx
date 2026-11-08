@@ -8,7 +8,7 @@ import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Kicker } from "@/components/ui/kicker";
 import { Chip } from "@/components/ui/chip";
-import { CutFrame } from "@/components/ui/cut-frame";
+import { CardSurface } from "@/components/ui/card-surface";
 import { Button, ArrowUpRightIcon } from "@/components/ui/button";
 import {
   WORK_CATEGORIES,
@@ -115,7 +115,7 @@ export function WorkSlider({ publishedEntries }: WorkSliderProps) {
   }, [emblaApi]);
 
   return (
-    <Section surface="porcelain" previousSurface="red" notch>
+    <Section surface="porcelain" >
       <Container>
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
           <div className="max-w-2xl space-y-3">
@@ -178,8 +178,8 @@ export function WorkSlider({ publishedEntries }: WorkSliderProps) {
                     key={entry.slug}
                     className="min-w-0 shrink-0 grow-0 basis-full md:basis-1/2 pl-6"
                   >
-                    <CutFrame
-                      cutSize="lg"
+                    <CardSurface
+
                       innerClassName="p-6 md:p-8 h-full flex flex-col justify-between gap-6"
                     >
                       <div className="space-y-3">
@@ -214,7 +214,7 @@ export function WorkSlider({ publishedEntries }: WorkSliderProps) {
                           </Link>
                         </div>
                       </div>
-                    </CutFrame>
+                    </CardSurface>
                   </div>
                 ))
               : filteredVerifiedTracks.map((track) => (
@@ -222,8 +222,8 @@ export function WorkSlider({ publishedEntries }: WorkSliderProps) {
                     key={track.id}
                     className="min-w-0 shrink-0 grow-0 basis-full md:basis-1/2 pl-6"
                   >
-                    <CutFrame
-                      cutSize="lg"
+                    <CardSurface
+
                       innerClassName="p-6 md:p-8 h-full flex flex-col justify-between gap-6"
                     >
                       <div className="space-y-3">
@@ -278,7 +278,7 @@ export function WorkSlider({ publishedEntries }: WorkSliderProps) {
                           )}
                         </div>
                       </div>
-                    </CutFrame>
+                    </CardSurface>
                   </div>
                 ))}
           </div>

@@ -1,143 +1,104 @@
 @import "tailwindcss";
 
-/* ============================================================================
-   WEBIX SOLUTIONS — "CUT & GLASS" DESIGN SYSTEM TOKENS (docs/05-design-system.md)
-   ============================================================================ */
-
+/* Signal palette and shared surface roles */
 :root {
-  /* Brand Core Palette */
-  --color-graphite: #141519;
-  --color-graphite-elevated: #1C1E24;
-  --color-porcelain: #F4F5F7;
-  --color-porcelain-elevated: #FFFFFF;
-  --color-steel: #E4E6EB;
-  --color-steel-elevated: #ECEEF2;
-  --color-signal-red: #ED1B24;
-  --color-signal-red-hover: #C8141B;
-  --color-red-ink: #C8101A;
-  --red-ink: #C8101A;
-  --color-oxblood: #5A0B10;
-  --color-oxblood-elevated: #6E0E15;
-
-  /* Semantic Status */
+  --signal: #ED1C24;
+  --signal-ink: #C8101A;
+  --ember: #FF5A60;
+  --oxblood: #4A0A0E;
+  --ink: #0E0E10;
+  --ink-2: #17171B;
+  --ink-3: #222228;
+  --paper: #FFFFFF;
+  --paper-2: #F3F3F5;
+  --text-dim: #A6A6B0;
+  --text-mute: #5C5F69;
+  --red-ink: var(--signal-ink);
+  --chamfer: clamp(24px, 3vw, 44px);
+  --signal-noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.96' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='white' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E");
+  --color-graphite: var(--ink);
+  --color-graphite-elevated: var(--ink-2);
+  --color-porcelain: var(--paper);
+  --color-porcelain-elevated: var(--paper-2);
+  --color-steel: var(--paper-2);
+  --color-steel-elevated: var(--paper);
+  --color-signal-red: var(--signal);
+  --color-signal-red-hover: var(--signal-ink);
+  --color-red-ink: var(--signal-ink);
+  --color-oxblood: var(--oxblood);
+  --color-oxblood-elevated: var(--ink-2);
   --success: #16A34A;
   --warning: #D97706;
   --danger: #DC2626;
-
-  /* Default Surface = Graphite */
-  --surface: #141519;
-  --surface-elevated: #1C1E24;
-  --text-primary: #F5F6F8;
-  --text-secondary: #A7ACB8;
-  --text-muted: #6C7280;
-  --border: rgba(255, 255, 255, 0.09);
-  --accent: #ED1B24;
-  --accent-hover: #C8141B;
-  --accent-soft: rgba(237, 27, 36, 0.12);
-
-  /* Geometry & Spacing Tokens */
-  --cut: 14px;
-  --cut-sm: 10px;
-  --cut-lg: 22px;
-  --notch: 28px;
   --gutter: clamp(1.25rem, 4vw, 3.5rem);
   --container-max: 1280px;
   --container-narrow: 760px;
-
-  /* Fluid Type Scale (clamp) */
-  --text-display: clamp(2.5rem, 4.6vw + 1rem, 4.5rem);
-  --text-h1: clamp(2.125rem, 3.4vw + 1rem, 3.5rem);
-  --text-h2: clamp(1.625rem, 2.2vw + 0.8rem, 2.5rem);
+  --text-display: clamp(2.8rem, 1.6rem + 5vw, 6.2rem);
+  --text-h1: var(--text-display);
+  --text-h2: clamp(2.1rem, 1.4rem + 2.6vw, 3.8rem);
   --text-h3: clamp(1.25rem, 1.1vw + 0.9rem, 1.625rem);
   --text-h4: 1.125rem;
   --text-lead: clamp(1.0625rem, 0.4vw + 0.95rem, 1.25rem);
-  --text-body: 1rem;
+  --text-body: 1.0625rem;
   --text-sm: 0.875rem;
   --text-xs: 0.75rem;
-
-  /* Motion */
   --ease-out-quart: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-@media (min-width: 768px) {
-  :root {
-    --notch: 48px;
-  }
+:root, [data-surface="graphite"] {
+  --surface: var(--ink);
+  --surface-elevated: var(--ink-2);
+  --text-primary: var(--paper);
+  --text-secondary: var(--text-dim);
+  --text-muted: var(--text-dim);
+  --border: #ffffff14;
+  --accent: var(--ember);
+  --accent-hover: var(--ember);
+  --accent-soft: #ed1c2424;
 }
 
-/* ============================================================================
-   FIVE SURFACE FAMILIES
-   ============================================================================ */
-
-[data-surface="graphite"] {
-  --surface: #141519;
-  --surface-elevated: #1C1E24;
-  --text-primary: #F5F6F8;
-  --text-secondary: #A7ACB8;
-  --text-muted: #6C7280;
-  --border: rgba(255, 255, 255, 0.09);
-  --accent: #ED1B24;
-  --accent-hover: #C8141B;
-  --accent-soft: rgba(237, 27, 36, 0.14);
-  background-color: var(--surface);
-  color: var(--text-primary);
-}
-
-[data-surface="porcelain"] {
-  --surface: #F4F5F7;
-  --surface-elevated: #FFFFFF;
-  --text-primary: #111215;
-  --text-secondary: #454954;
-  --text-muted: #6C7280;
-  --border: rgba(17, 18, 21, 0.09);
-  --accent: #ED1B24;
-  --accent-hover: #C8141B;
-  --accent-soft: rgba(237, 27, 36, 0.1);
-  background-color: var(--surface);
-  color: var(--text-primary);
+[data-surface="porcelain"], [data-surface="steel"] {
+  --surface: var(--paper);
+  --surface-elevated: var(--paper-2);
+  --text-primary: var(--ink);
+  --text-secondary: var(--text-mute);
+  --text-muted: var(--text-mute);
+  --border: #0e0e1014;
+  --accent: var(--signal-ink);
+  --accent-hover: var(--signal-ink);
+  --accent-soft: #ed1c241a;
 }
 
 [data-surface="steel"] {
-  --surface: #E4E6EB;
-  --surface-elevated: #FFFFFF;
-  --text-primary: #111215;
-  --text-secondary: #454954;
-  --text-muted: #5E6472;
-  --border: rgba(17, 18, 21, 0.11);
-  --accent: #ED1B24;
-  --accent-hover: #C8141B;
-  --accent-soft: rgba(237, 27, 36, 0.1);
-  background-color: var(--surface);
-  color: var(--text-primary);
+  --surface: var(--paper-2);
+  --surface-elevated: var(--paper);
 }
 
 [data-surface="red"] {
-  --surface: #ED1B24;
-  --surface-elevated: #C8141B;
-  --text-primary: #FFFFFF;
-  --text-secondary: rgba(255, 255, 255, 0.9);
-  --text-muted: rgba(255, 255, 255, 0.76);
-  --border: rgba(255, 255, 255, 0.24);
-  --accent: #FFFFFF;
-  --accent-hover: #F4F5F7;
-  --accent-soft: rgba(255, 255, 255, 0.16);
-  background-color: var(--surface);
-  color: var(--text-primary);
+  --surface: var(--signal);
+  --surface-elevated: var(--ink);
+  --text-primary: #000;
+  --text-secondary: #000;
+  --text-muted: #000;
+  --border: #0e0e1024;
+  --accent: var(--ink);
+  --accent-hover: var(--ink);
+  --accent-soft: #0e0e1014;
 }
 
 [data-surface="oxblood"] {
-  --surface: #5A0B10;
-  --surface-elevated: #6E0E15;
-  --text-primary: #F5F6F8;
-  --text-secondary: #E2C6C8;
-  --text-muted: #B88E91;
-  --border: rgba(255, 255, 255, 0.14);
-  --accent: #ED1B24;
-  --accent-hover: #FF3B42;
-  --accent-soft: rgba(237, 27, 36, 0.22);
-  background-color: var(--surface);
-  color: var(--text-primary);
+  --surface: var(--oxblood);
+  --surface-elevated: var(--ink);
+  --text-primary: var(--paper);
+  --text-secondary: #efd7d8;
+  --text-muted: #efd7d8;
+  --border: #ffffff14;
+  --accent: var(--ember);
+  --accent-hover: var(--ember);
+  --accent-soft: #ed1c2438;
 }
+
+[data-surface] { background-color: var(--surface); color: var(--text-primary); }
 
 /* ============================================================================
    TAILWIND V4 THEME MAPPING
@@ -191,7 +152,7 @@ h1, h2, h3, .font-display {
   font-family: var(--font-clash-grotesk), system-ui, sans-serif;
   font-size: var(--text-display);
   font-weight: 600;
-  line-height: 1.02;
+  line-height: .98;
   letter-spacing: -0.03em;
 }
 
@@ -199,7 +160,7 @@ h1, h2, h3, .font-display {
   font-family: var(--font-clash-grotesk), system-ui, sans-serif;
   font-size: var(--text-h1);
   font-weight: 600;
-  line-height: 1.06;
+  line-height: .98;
   letter-spacing: -0.025em;
 }
 
@@ -207,7 +168,7 @@ h1, h2, h3, .font-display {
   font-family: var(--font-clash-grotesk), system-ui, sans-serif;
   font-size: var(--text-h2);
   font-weight: 600;
-  line-height: 1.12;
+  line-height: 1.04;
   letter-spacing: -0.02em;
 }
 
@@ -264,92 +225,34 @@ h1, h2, h3, .font-display {
   font-variant-numeric: tabular-nums;
 }
 
-/* ============================================================================
-   SHAPES: TOP-RIGHT-ONLY 45° CUT CORNER & SECTION NOTCH (docs/05)
-   ============================================================================ */
-
-.cut-tr {
-  clip-path: polygon(
-    0 0,
-    calc(100% - var(--cut)) 0,
-    100% var(--cut),
-    100% 100%,
-    0 100%
-  );
+/* Only large showcase media and the booking dialog use the logo angle. */
+.signal-chamfer, .booking-dialog {
+  clip-path: polygon(var(--chamfer) 0, 100% 0, 100% calc(100% - var(--chamfer)), calc(100% - var(--chamfer)) 100%, 0 100%, 0 var(--chamfer));
 }
 
-.cut-tr-sm {
-  --cut: var(--cut-sm);
-  clip-path: polygon(
-    0 0,
-    calc(100% - var(--cut)) 0,
-    100% var(--cut),
-    100% 100%,
-    0 100%
-  );
+.signal-card {
+  position: relative;
+  isolation: isolate;
+  border: 0;
+  border-radius: 14px;
+  background: var(--surface-elevated);
+  transition: translate .24s var(--ease-out-quart), box-shadow .24s var(--ease-out-quart);
 }
 
-.cut-tr-lg {
-  --cut: var(--cut-lg);
-  clip-path: polygon(
-    0 0,
-    calc(100% - var(--cut)) 0,
-    100% var(--cut),
-    100% 100%,
-    0 100%
-  );
+@media (hover: hover) and (pointer: fine) {
+  .signal-card:hover {
+    translate: 0 -4px;
+    box-shadow: 0 0 0 2px var(--signal), 0 18px 40px -18px #ed1c2466;
+  }
 }
-
-/* Section top-left 45° notch transition */
-.section-notch-tl {
-  clip-path: polygon(
-    var(--notch) 0,
-    100% 0,
-    100% 100%,
-    0 100%,
-    0 var(--notch)
-  );
-}
-
-/* ============================================================================
-   LIQUID GLASS SURFACES (Restricted to the 4 allowed places)
-   ============================================================================ */
 
 .glass-surface-dark {
-  background: rgba(20, 21, 25, 0.68);
-  backdrop-filter: blur(18px) saturate(160%);
-  -webkit-backdrop-filter: blur(18px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.18),
-    0 20px 50px rgba(0, 0, 0, 0.35);
+  background: var(--ink-2);
+  border-radius: 14px;
 }
-
 .glass-surface-light {
-  background: rgba(244, 245, 247, 0.74);
-  backdrop-filter: blur(18px) saturate(160%);
-  -webkit-backdrop-filter: blur(18px) saturate(160%);
-  border: 1px solid rgba(17, 18, 21, 0.1);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.7),
-    0 16px 40px rgba(17, 18, 21, 0.08);
-}
-
-@supports not (backdrop-filter: blur(1px)) {
-  .glass-surface-dark {
-    background: rgba(20, 21, 25, 0.94);
-  }
-  .glass-surface-light {
-    background: rgba(244, 245, 247, 0.96);
-  }
-}
-
-/* Subtle architectural grid lines on dark sections */
-.bg-architectural-grid {
-  background-image:
-    linear-gradient(to right, var(--border) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
-  background-size: 80px 80px;
+  background: var(--paper-2);
+  border-radius: 14px;
 }
 
 /* Single Orchestrated Hero Load Animation (docs/05-design-system.md) */
@@ -385,8 +288,8 @@ h1, h2, h3, .font-display {
 
 /* Focus Ring Accessibility */
 :focus-visible {
-  outline: 2px solid #ED1B24;
-  outline-offset: 2px;
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 /* Reduced Motion Compliance */

@@ -41,7 +41,7 @@ export function GrowthConsole({ signals }: { signals: GrowthSignalItem[] }) {
   };
 
   return (
-    <div className="studio-growth-console studio-cut-frame" role="region" aria-roledescription="carousel" aria-label="Proof at a glance"
+    <div className="studio-growth-console signal-chamfer" role="region" aria-roledescription="carousel" aria-label="Proof at a glance"
       onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
       onFocusCapture={() => setFocused(true)} onBlurCapture={(event) => {
         if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false);

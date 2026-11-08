@@ -52,7 +52,7 @@ export function IndustriesHubView({ industries, nextSlot }: IndustriesHubViewPro
       {/* =========================================================================
           HERO SECTION (Graphite)
          ========================================================================= */}
-      <Section surface="graphite" spacing="hero" grid className="relative">
+      <Section surface="graphite" spacing="hero" className="relative">
         <Container>
           {/* Breadcrumbs */}
           <nav aria-label="Breadcrumb" className="mb-6 animate-hero-rise">
@@ -116,8 +116,6 @@ export function IndustriesHubView({ industries, nextSlot }: IndustriesHubViewPro
       <Section
         id="industry-directory"
         surface="porcelain"
-        previousSurface="graphite"
-        notch
         spacing="default"
       >
         <Container>
@@ -321,8 +319,6 @@ export function IndustriesHubView({ industries, nextSlot }: IndustriesHubViewPro
          ========================================================================= */}
       <Section
         surface="steel"
-        previousSurface="porcelain"
-        notch
         spacing="default"
       >
         <Container>
@@ -358,14 +354,12 @@ export function IndustriesHubView({ industries, nextSlot }: IndustriesHubViewPro
         subtitle="How our Pakistani engineering and marketing team delivers results across different sectors."
         faqs={FAQS}
         surface="porcelain"
-        previousSurface="steel"
-        notch
       />
 
       {/* =========================================================================
           FINAL CTA SECTION (Oxblood with Notch)
          ========================================================================= */}
-      <FinalCtaSection nextSlot={nextSlot} previousSurface="porcelain" />
+      <FinalCtaSection nextSlot={nextSlot} />
     </div>
   );
 }

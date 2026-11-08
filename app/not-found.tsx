@@ -3,14 +3,14 @@ import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Kicker } from "@/components/ui/kicker";
 import { Button } from "@/components/ui/button";
-import { CutFrame } from "@/components/ui/cut-frame";
+import { CardSurface } from "@/components/ui/card-surface";
 import { getPublishedServices } from "@/content/services";
 
 export default function NotFound() {
   const popularServices = getPublishedServices().slice(0, 6);
 
   return (
-    <Section surface="graphite" spacing="hero" grid className="studio-error-page">
+    <Section surface="graphite" spacing="hero" className="studio-error-page">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-7 space-y-6">
@@ -34,7 +34,7 @@ export default function NotFound() {
           </div>
 
           <div className="lg:col-span-5">
-            <CutFrame innerClassName="p-6 md:p-8 space-y-4">
+            <CardSurface innerClassName="p-6 md:p-8 space-y-4">
               <p className="font-display text-lg font-semibold text-white">
                 Core services
               </p>
@@ -53,7 +53,7 @@ export default function NotFound() {
                   </li>
                 ))}
               </ul>
-            </CutFrame>
+            </CardSurface>
           </div>
         </div>
       </Container>

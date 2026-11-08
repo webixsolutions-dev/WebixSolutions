@@ -47,7 +47,7 @@ export function AiWorkflows() {
         <WorkflowDemo />
         <div className="studio-ai-cards" data-studio-stagger>
           {HOME_CONTENT.aiSystemsSection.systems.map((system, index) => (
-            <article key={system.id} className="studio-ai-card studio-cut-frame" data-studio-spotlight>
+            <article key={system.id} className="studio-ai-card signal-card" data-studio-spotlight>
               <div className="studio-ai-card-visual" aria-hidden="true">
                 <span className="studio-ai-card-number">0{index + 1}</span>
                 <div>{serviceDiagrams[system.id as keyof typeof serviceDiagrams].map(({ label, Icon }) => <span key={label}><Icon size={19} />{label}</span>)}</div>

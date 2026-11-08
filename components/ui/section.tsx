@@ -3,22 +3,8 @@ import { cn } from "@/lib/utils";
 
 export type SurfaceType = "graphite" | "porcelain" | "steel" | "red" | "oxblood";
 
-const SURFACE_BG_HEX: Record<SurfaceType, string> = {
-  graphite: "#141519",
-  porcelain: "#F4F5F7",
-  steel: "#E4E6EB",
-  red: "#ED1B24",
-  oxblood: "#5A0B10",
-};
-
 export interface SectionProps extends React.HTMLAttributes<HTMLElement> {
   surface?: SurfaceType;
-  /** Preceding section's surface so the 45° top-left notch reveals the exact preceding color */
-  previousSurface?: SurfaceType;
-  /** Cut a 45° top-left corner notch where the surface changes */
-  notch?: boolean;
-  /** Subtle architectural grid background on dark surfaces */
-  grid?: boolean;
   /**
    * The ONLY allowed section watermark is the outlined Webix monogram ("monogram")
    * on Signal Red (`surface="red"`) sections. Never giant section numbers or letters.
@@ -53,9 +39,6 @@ function OutlinedWebixMonogramWatermark() {
 
 export function Section({
   surface = "graphite",
-  previousSurface = "graphite",
-  notch = false,
-  grid = false,
   watermark = false,
   spacing = "default",
   className,
@@ -71,14 +54,12 @@ export function Section({
 
   const showMonogramWatermark = watermark === "monogram" && surface === "red";
 
-  const innerSection = (
+  return (
     <section
       data-surface={surface}
       data-section-spacing={spacing}
       className={cn(
-        "relative w-full overflow-hidden border-t border-[var(--border)]",
-        notch && "section-notch-tl",
-        grid && "bg-architectural-grid",
+        "relative w-full overflow-hidden",
         spacingClasses,
         className
       )}
@@ -89,16 +70,4 @@ export function Section({
     </section>
   );
 
-  if (!notch) {
-    return innerSection;
-  }
-
-  return (
-    <div
-      style={{ backgroundColor: SURFACE_BG_HEX[previousSurface] }}
-      className="relative w-full"
-    >
-      {innerSection}
-    </div>
-  );
 }
