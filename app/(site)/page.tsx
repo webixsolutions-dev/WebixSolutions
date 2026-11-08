@@ -1,6 +1,6 @@
 import { buildMetadata } from "@/config/seo";
 import { buildFaqJsonLd } from "@/lib/schema";
-import { HOME_CONTENT } from "@/content/home";
+import { STUDIO } from "@/content/studio";
 import { StudioHome } from "@/components/studio/studio-home";
 
 export const metadata = buildMetadata({
@@ -12,7 +12,7 @@ export const metadata = buildMetadata({
 export default function HomePage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildFaqJsonLd(HOME_CONTENT.faqs)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildFaqJsonLd(STUDIO.faqs)) }} />
       <StudioHome />
     </>
   );

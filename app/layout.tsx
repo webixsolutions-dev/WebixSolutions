@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import "./studio.css";
+import "lenis/dist/lenis.css";
 import {
   DEFAULT_DESCRIPTION,
   DEFAULT_TITLE,

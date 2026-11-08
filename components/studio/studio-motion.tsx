@@ -12,49 +12,122 @@ export function StudioMotion() {
     const changed = previous.current !== path;
     previous.current = path;
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (preference.matches) return;
-
+    const desktop = window.matchMedia("(pointer: fine) and (min-width: 1000px)");
     let disposed = false;
+    let restart = 0;
     let cleanup: (() => void) | undefined;
-    void Promise.all([import("gsap"), import("gsap/ScrollTrigger")]).then(([{ gsap }, { ScrollTrigger }]) => {
-      if (disposed) return;
+
+    const start = async () => {
+      const run = ++restart;
+      cleanup?.();
+      cleanup = undefined;
+      if (preference.matches) return;
+      const [{ gsap }, { ScrollTrigger }, lenisModule] = await Promise.all([
+        import("gsap"),
+        import("gsap/ScrollTrigger"),
+        desktop.matches ? import("lenis") : Promise.resolve(null),
+      ]);
+      if (disposed || run !== restart) return;
       gsap.registerPlugin(ScrollTrigger);
+
+      const lenis = lenisModule ? new lenisModule.default({
+        duration: 0.85,
+        anchors: { offset: -95 },
+        stopInertiaOnNavigate: true,
+        prevent: (node) => node.hasAttribute("data-lenis-prevent") || node.tagName === "DIALOG",
+      }) : null;
+      const tick = (time: number) => lenis?.raf(time * 1000);
+      if (lenis) {
+        lenis.on("scroll", ScrollTrigger.update);
+        gsap.ticker.add(tick);
+      }
+
+      const stage = document.querySelector<HTMLElement>("[data-hero-stage]");
+      const tilt = stage?.querySelector<HTMLElement>("[data-hero-tilt]");
+      let removePointer: (() => void) | undefined;
       const context = gsap.context(() => {
         if (changed && wipe.current) {
           gsap.fromTo(wipe.current, { scaleX: 1, autoAlpha: 1 }, {
-            scaleX: 0, autoAlpha: 0, transformOrigin: "right", duration: 0.38, ease: "power3.inOut",
+            scaleX: 0, autoAlpha: 0, transformOrigin: "right", duration: 0.48, ease: "power3.inOut",
           });
         }
+        if (stage) {
+          const hero = gsap.timeline({ defaults: { ease: "power3.out" } });
+          hero.from("[data-studio-hero-line]", { yPercent: 96, opacity: 0.18, stagger: 0.12, duration: 0.9 }, 0);
+          hero.from("[data-hero-intro]", { y: 20, opacity: 0.2, stagger: 0.11, duration: 0.65 }, 0.18);
+          hero.from("[data-hero-card]", { y: 70, scale: 0.93, opacity: 0.25, stagger: 0.14, duration: 1 }, 0.12);
+        }
 
-        const headings = gsap.utils.toArray<HTMLElement>("[data-studio-hero-line]");
-        gsap.from(headings, { yPercent: 78, opacity: 0.15, stagger: 0.09, duration: 0.75, ease: "power3.out" });
-
-        const responsive = gsap.matchMedia();
-        responsive.add("(min-width: 900px) and (prefers-reduced-motion: no-preference)", () => {
-          const gallery = document.querySelector("[data-studio-gallery]");
-          if (gallery) {
-            gsap.to(gallery.querySelectorAll("[data-studio-cover]"), {
-              yPercent: -10, ease: "none",
-              scrollTrigger: { trigger: gallery, start: "top bottom", end: "bottom top", scrub: 0.7 },
+        for (const group of gsap.utils.toArray<HTMLElement>("[data-studio-reveal], [data-studio-stagger]")) {
+          gsap.from(group.hasAttribute("data-studio-stagger") ? group.children : group, {
+            y: 32, duration: 0.7, stagger: 0.09, ease: "power2.out",
+            scrollTrigger: { trigger: group, start: "top 92%", once: true },
+          });
+        }
+        const gallery = document.querySelector("[data-studio-gallery]");
+        if (gallery) {
+          const cards = gallery.querySelectorAll("[data-studio-project]");
+          if (cards.length) gsap.from(cards, {
+            y: desktop.matches ? 84 : 32, stagger: 0.12, duration: 0.82, ease: "power3.out",
+            scrollTrigger: { trigger: gallery, start: "top 91%", once: true },
+          });
+          for (const cover of gallery.querySelectorAll<HTMLElement>("[data-studio-cover]")) {
+            if (!desktop.matches) break;
+            gsap.fromTo(cover, { yPercent: -1 }, {
+              yPercent: -12, ease: "none",
+              scrollTrigger: { trigger: cover.closest(".studio-cover"), start: "top bottom", end: "bottom top", scrub: 0.65 },
             });
           }
-          const line = document.querySelector("[data-studio-marquee]");
-          if (line) {
-            gsap.fromTo(line, { x: 0 }, {
-              x: -120, ease: "none",
-              scrollTrigger: { trigger: line, start: "top bottom", end: "bottom top", scrub: true },
-            });
-          }
+        }
+        const marquee = document.querySelector("[data-studio-marquee]");
+        if (marquee && desktop.matches) gsap.fromTo(marquee, { xPercent: 0 }, {
+          xPercent: -36, ease: "none",
+          scrollTrigger: { trigger: marquee.parentElement, start: "top bottom", end: "bottom top", scrub: 0.8 },
         });
-        return () => responsive.revert();
+        if (stage && tilt && desktop.matches) {
+          const rotateX = gsap.quickTo(tilt, "rotationX", { duration: 0.55, ease: "power3.out" });
+          const rotateY = gsap.quickTo(tilt, "rotationY", { duration: 0.55, ease: "power3.out" });
+          const move = (event: PointerEvent) => {
+            const bounds = stage.getBoundingClientRect();
+            const x = (event.clientX - bounds.left) / bounds.width;
+            const y = (event.clientY - bounds.top) / bounds.height;
+            stage.style.setProperty("--spot-x", `${x * 100}%`);
+            stage.style.setProperty("--spot-y", `${y * 100}%`);
+            rotateX((0.5 - y) * 14);
+            rotateY((x - 0.5) * 18);
+          };
+          const reset = () => { rotateX(0); rotateY(0); };
+          stage.addEventListener("pointermove", move);
+          stage.addEventListener("pointerleave", reset);
+          removePointer = () => {
+            stage.removeEventListener("pointermove", move);
+            stage.removeEventListener("pointerleave", reset);
+          };
+          gsap.to(stage, {
+            y: 75, ease: "none",
+            scrollTrigger: { trigger: stage, start: "top top", end: "bottom top", scrub: 0.5 },
+          });
+        }
       });
-      cleanup = () => context.revert();
-    }).catch(() => { /* Content remains visible if motion cannot load. */ });
-    const stop = () => { if (preference.matches) cleanup?.(); };
-    preference.addEventListener("change", stop);
+      document.documentElement.dataset.studioMotion = "ready";
+      cleanup = () => {
+        delete document.documentElement.dataset.studioMotion;
+        removePointer?.();
+        context.revert();
+        if (lenis) {
+          gsap.ticker.remove(tick);
+          lenis.destroy();
+        }
+      };
+    };
+    const sync = () => { void start().catch((error: unknown) => console.error("Studio motion could not initialize", error)); };
+    sync();
+    preference.addEventListener("change", sync);
+    desktop.addEventListener("change", sync);
     return () => {
       disposed = true;
-      preference.removeEventListener("change", stop);
+      preference.removeEventListener("change", sync);
+      desktop.removeEventListener("change", sync);
       cleanup?.();
     };
   }, [path]);

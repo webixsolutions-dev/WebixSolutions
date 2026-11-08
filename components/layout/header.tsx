@@ -1,433 +1,93 @@
 "use client";
 
-import * as React from "react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronDown, Menu, X } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { SITE_FACTS } from "@/content/site-facts";
-import {
-  PRIMARY_NAV_LINKS,
-  type MegaMenuColumn,
-} from "@/content/navigation";
+import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { PRIMARY_NAV_LINKS, type MegaMenuColumn } from "@/content/navigation";
 
-export interface HeaderProps {
-  megaMenuColumns: MegaMenuColumn[];
-  simplified?: boolean;
-}
+type HeaderProps = { megaMenuColumns: MegaMenuColumn[]; simplified?: boolean };
 
-export function Header({ megaMenuColumns, simplified = false }: HeaderProps) {
-  const pathname = usePathname();
-  const [scrolled, setScrolled] = React.useState(false);
-  const [megaOpen, setMegaOpen] = React.useState(false);
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [mobileAccordionOpen, setMobileAccordionOpen] = React.useState<string | null>("Build");
-  const megaContainerRef = React.useRef<HTMLDivElement>(null);
-  const servicesTrigger = React.useRef<HTMLButtonElement>(null);
+function Navigation({ megaMenuColumns, simplified, path }: HeaderProps & { path: string }) {
+  const [open, setOpen] = useState<"services" | "mobile" | null>(null);
+  const [scrolled, setScrolled] = useState(false);
+  const shell = useRef<HTMLElement>(null);
+  const serviceToggle = useRef<HTMLButtonElement>(null);
+  const mobileToggle = useRef<HTMLButtonElement>(null);
 
-  React.useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 80);
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+  useEffect(() => {
+    const sync = () => setScrolled(window.scrollY > 36);
+    const frame = requestAnimationFrame(sync);
+    window.addEventListener("scroll", sync, { passive: true });
+    return () => { cancelAnimationFrame(frame); window.removeEventListener("scroll", sync); };
   }, []);
 
-  React.useEffect(() => {
-    const frame = requestAnimationFrame(() => { setMegaOpen(false); setMobileOpen(false); });
-    return () => cancelAnimationFrame(frame);
-  }, [pathname]);
-
-  React.useEffect(() => {
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        if (megaOpen && megaContainerRef.current?.contains(document.activeElement)) servicesTrigger.current?.focus();
-        setMegaOpen(false);
-        setMobileOpen(false);
-      }
+  useEffect(() => {
+    if (!open) return;
+    const key = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      (open === "services" ? serviceToggle : mobileToggle).current?.focus();
+      setOpen(null);
     };
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
-  }, [megaOpen]);
+    const outside = (event: PointerEvent) => {
+      if (event.target instanceof Node && !shell.current?.contains(event.target)) setOpen(null);
+    };
+    const desktop = window.matchMedia("(min-width: 1000px)");
+    const close = () => setOpen(null);
+    document.addEventListener("keydown", key);
+    document.addEventListener("pointerdown", outside);
+    desktop.addEventListener("change", close);
+    return () => {
+      document.removeEventListener("keydown", key);
+      document.removeEventListener("pointerdown", outside);
+      desktop.removeEventListener("change", close);
+    };
+  }, [open]);
 
   return (
-    <>
-      <header
-        className={cn(
-          "fixed inset-x-0 top-0 z-50 transition-all duration-250 ease-[cubic-bezier(0.22,1,0.36,1)]",
-          scrolled ? "pt-3.5 px-3 md:px-6" : "pt-0 px-0"
+    <header ref={shell} className="studio-nav" data-scrolled={scrolled} onBlur={(event) => {
+      if (event.relatedTarget instanceof Node && !event.currentTarget.contains(event.relatedTarget)) setOpen(null);
+    }}>
+      <div className="studio-nav-shell">
+        <Link href="/" className="studio-nav-brand" aria-label="Webix Solutions home" onClick={() => setOpen(null)}>
+          <Image src="/images/logo.png" alt="" width={154} height={40} priority />
+        </Link>
+        {!simplified && (
+          <nav className="studio-nav-links" aria-label="Main navigation">
+            <button ref={serviceToggle} className="studio-nav-link" type="button" aria-expanded={open === "services"} aria-controls="studio-service-menu" onClick={() => setOpen(open === "services" ? null : "services")}>Services <ChevronDown size={14} /></button>
+            {PRIMARY_NAV_LINKS.filter((item) => item.href !== "/services/" && item.href !== "/ai-automation-services/").map((item) => (
+              <Link className="studio-nav-link" href={item.href} key={item.href} aria-current={path.startsWith(item.href) ? "page" : undefined} onClick={() => setOpen(null)}>{item.label}</Link>
+            ))}
+          </nav>
         )}
-      >
-        <div
-          onMouseLeave={() => { if (!megaContainerRef.current?.contains(document.activeElement)) setMegaOpen(false); }}
-          onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setMegaOpen(false); }}
-          ref={megaContainerRef}
-          className={cn(
-            "mx-auto transition-all duration-250 ease-[cubic-bezier(0.22,1,0.36,1)]",
-            scrolled
-              ? "max-w-[1260px] rounded-lg glass-surface-dark px-4 md:px-6 h-16"
-              : "max-w-[1280px] px-[var(--gutter)] h-20 studio-header-shell border-b border-white/[0.07]"
-          )}
-        >
-          <div className="flex h-full items-center justify-between gap-4">
-            {/* Brand Logo */}
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2.5 shrink-0 focus-visible:outline-offset-4"
-              aria-label="Webix Solutions — Home"
-            >
-              <Image
-                src="/images/logo.png"
-                alt="Webix Solutions"
-                width={154}
-                height={40}
-                priority
-                className="h-9 md:h-10 w-auto object-contain"
-              />
-            </Link>
-
-            {/* Desktop Primary Navigation (hidden on simplified LP layout) */}
-            {!simplified && (
-              <nav
-                aria-label="Main navigation"
-                className="hidden lg:flex items-center gap-1"
-              >
-                {PRIMARY_NAV_LINKS.map((item) => {
-                  const isServices = item.label === "Services";
-                  const isActive =
-                    pathname === item.href ||
-                    (item.href !== "/" && pathname?.startsWith(item.href));
-
-                  if (isServices) {
-                    return (
-                      <div
-                        key={item.href}
-                        className="relative"
-                        onMouseEnter={() => { if (!megaOpen) setMegaOpen(true); }}
-                      >
-                        <button
-                          type="button"
-                          aria-expanded={megaOpen}
-                          ref={servicesTrigger}
-                          aria-controls="services-mega-menu"
-                          onClick={(event) => { if (event.detail === 0) setMegaOpen((prev) => !prev); else setMegaOpen(true); }}
-                          className={cn(
-                            "inline-flex items-center gap-1.5 px-3.5 py-2 text-sm font-medium rounded-md transition-colors duration-150",
-                            megaOpen || isActive
-                              ? "text-white bg-white/[0.07]"
-                              : "text-[#A7ACB8] hover:text-white"
-                          )}
-                        >
-                          <span>Services</span>
-                          <ChevronDown
-                            strokeWidth={1.5}
-                            className={cn(
-                              "h-4 w-4 transition-transform duration-180",
-                              megaOpen && "rotate-180 text-[#ED1C24]"
-                            )}
-                          />
-                        </button>
-                      </div>
-                    );
-                  }
-
-                  return (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className={cn(
-                        "px-3.5 py-2 text-sm font-medium rounded-md transition-colors duration-150",
-                        isActive
-                          ? "text-white bg-white/[0.07]"
-                          : "text-[#A7ACB8] hover:text-white"
-                      )}
-                    >
-                      {item.label}
-                    </Link>
-                  );
-                })}
-              </nav>
-            )}
-
-            {/* Right CTAs */}
-            <div className="flex items-center gap-2.5">
-              <div className="hidden sm:block">
-                <Button href="/book-a-call/" variant="primary" size="sm">
-                  Book a call
-                </Button>
-              </div>
-
-              {!simplified && (
-                <button
-                  type="button"
-                  aria-label={mobileOpen ? "Close menu" : "Open menu"}
-                  aria-expanded={mobileOpen}
-                  onClick={() => setMobileOpen(true)}
-                  className="inline-flex lg:hidden h-10 w-10 items-center justify-center rounded-md border border-white/15 bg-white/[0.04] text-white"
-                >
-                  <Menu strokeWidth={1.5} className="h-5 w-5" />
-                </button>
-              )}
-            </div>
-          </div>
-
-          {/* Desktop 4-Column Mega Menu (All links remain in DOM for crawlers) */}
-          {!simplified && (
-            <div
-              id="services-mega-menu"
-              aria-hidden={!megaOpen}
-              className={cn(
-                "hidden lg:block absolute left-1/2 -translate-x-1/2 w-[min(1140px,calc(100vw-2rem))] pt-3 transition-all duration-200",
-                megaOpen
-                  ? "opacity-100 translate-y-0 pointer-events-auto visible"
-                  : "opacity-0 -translate-y-2 pointer-events-none invisible"
-              )}
-            >
-              <div className={cn("bg-[#17171b] border border-white/16 p-6", megaOpen && "studio-mega-panel")}>
-                <div className="grid grid-cols-4 gap-6">
-                  {megaMenuColumns.map((col) => (
-                    <div key={col.category} data-mega-column className="space-y-3">
-                      <div className="border-b border-white/10 pb-2.5">
-                        <div className="flex items-center gap-2">
-                          <span className="inline-block h-2.5 w-2.5 bg-[#ED1C24]" />
-                          <span className="font-display text-sm font-semibold text-white">
-                            {col.heading}
-                          </span>
-                        </div>
-                        <p className="text-xs text-[#A7ACB8] mt-0.5">
-                          {col.subtitle}
-                        </p>
-                      </div>
-                      <ul className="space-y-1.5">
-                        {col.items.map((srv) => (
-                          <li key={srv.href}>
-                            <Link
-                              href={srv.href}
-                              className="group block rounded-md p-2 hover:bg-white/[0.05] transition-colors"
-                            >
-                              <div className="text-sm font-medium text-[#F5F6F8] group-hover:text-[#ED1C24] transition-colors">
-                                {srv.label}
-                              </div>
-                              {srv.description && (
-                                <p className="text-xs text-[#A7ACB8] line-clamp-1 mt-0.5">
-                                  {srv.description}
-                                </p>
-                              )}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Mega Menu Footer Bar */}
-                <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-[#A7ACB8]">
-                  <div className="flex items-center gap-6">
-                    <Link
-                      href="/services/"
-                      className="font-medium text-white hover:text-[#ED1C24] transition-colors"
-                    >
-                      View all 18 services
-                    </Link>
-                    <Link
-                      href="/offers/"
-                      className="font-medium text-white hover:text-[#ED1C24] transition-colors"
-                    >
-                      Growth packages from $399/mo
-                    </Link>
-                    <Link
-                      href="/white-label-partners/"
-                      className="font-medium text-white hover:text-[#ED1C24] transition-colors"
-                    >
-                      White-label agency partnership
-                    </Link>
-                  </div>
-                  <span>Serving Canada, the US, the UAE, New Zealand and Pakistan</span>
-                </div>
-              </div>
-            </div>
-          )}
+        <div className="studio-nav-actions">
+          <Link href="/book-a-call/" className="studio-button studio-nav-book" onClick={() => setOpen(null)}>Book a call <ArrowUpRight size={15} /></Link>
+          {!simplified && <button ref={mobileToggle} className="studio-nav-toggle" type="button" aria-expanded={open === "mobile"} aria-controls="studio-mobile-menu" aria-label={open === "mobile" ? "Close menu" : "Open menu"} onClick={() => setOpen(open === "mobile" ? null : "mobile")}>{open === "mobile" ? <X size={23} /> : <Menu size={23} />}</button>}
         </div>
-      </header>
-
-      {/* Mobile Right-Side Sheet (80% width) with Accordion */}
+      </div>
       {!simplified && (
-        <div
-          aria-hidden={!mobileOpen}
-          className={cn(
-            "fixed inset-0 z-50 lg:hidden transition-opacity duration-200",
-            mobileOpen
-              ? "opacity-100 pointer-events-auto"
-              : "opacity-0 pointer-events-none"
-          )}
-        >
-          <div
-            onClick={() => setMobileOpen(false)}
-            className="absolute inset-0 bg-black/70 backdrop-blur-xs"
-          />
-          <aside
-            aria-label="Mobile navigation drawer"
-            className={cn(
-              "absolute right-0 top-0 bottom-0 w-[80%] max-w-[360px] bg-[#141519] border-l border-white/12 flex flex-col justify-between overflow-y-auto p-6 transition-transform duration-250 ease-[cubic-bezier(0.22,1,0.36,1)]",
-              mobileOpen ? "translate-x-0" : "translate-x-full"
-            )}
-          >
-            <div>
-              <div className="flex items-center justify-between pb-5 border-b border-white/10">
-                <span className="font-display text-base font-semibold text-white">
-                  Menu
-                </span>
-                <button
-                  type="button"
-                  aria-label="Close navigation menu"
-                  onClick={() => setMobileOpen(false)}
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/15 text-white"
-                >
-                  <X strokeWidth={1.5} className="h-4 w-4" />
-                </button>
-              </div>
-
-              <div className="mt-5 space-y-2">
-                <p className="text-xs font-medium text-[#A7ACB8] mb-2">
-                  Services by category
-                </p>
-                {megaMenuColumns.map((col) => {
-                  const isOpen = mobileAccordionOpen === col.category;
-                  return (
-                    <div
-                      key={col.category}
-                      className="rounded-md border border-white/10 bg-[#1C1E24]/60"
-                    >
-                      <button
-                        type="button"
-                        aria-expanded={isOpen}
-                        onClick={() =>
-                          setMobileAccordionOpen(isOpen ? null : col.category)
-                        }
-                        className="flex w-full items-center justify-between px-3.5 py-2.5 text-left text-sm font-medium text-white"
-                      >
-                        <span className="inline-flex items-center gap-2">
-                          <span className="h-2 w-2 bg-[#ED1C24]" />
-                          {col.heading}
-                          <span className="text-xs text-[#A7ACB8] font-normal">
-                            — {col.subtitle}
-                          </span>
-                        </span>
-                        <ChevronDown
-                          strokeWidth={1.5}
-                          className={cn(
-                            "h-4 w-4 shrink-0 text-[#A7ACB8] transition-transform",
-                            isOpen && "rotate-180 text-[#ED1C24]"
-                          )}
-                        />
-                      </button>
-                      <ul
-                        className={cn(
-                          "px-3.5 pb-3 space-y-1.5 border-t border-white/8 pt-2",
-                          !isOpen && "hidden"
-                        )}
-                      >
-                        {col.items.map((srv) => (
-                          <li key={srv.href}>
-                            <Link
-                              href={srv.href}
-                              onClick={() => setMobileOpen(false)}
-                              className="block py-1 text-sm text-[#A7ACB8] hover:text-white"
-                            >
-                              {srv.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  );
-                })}
-
-                <div className="pt-4 space-y-1 border-t border-white/10 mt-4">
-                  <Link
-                    href="/services/"
-                    onClick={() => setMobileOpen(false)}
-                    className="block py-2 text-sm font-medium text-white hover:text-[#ED1C24]"
-                  >
-                    All Services Hub
-                  </Link>
-                  <Link
-                    href="/our-work/"
-                    onClick={() => setMobileOpen(false)}
-                    className="block py-2 text-sm font-medium text-white hover:text-[#ED1C24]"
-                  >
-                    Our Work
-                  </Link>
-                  <Link
-                    href="/industries/"
-                    onClick={() => setMobileOpen(false)}
-                    className="block py-2 text-sm font-medium text-white hover:text-[#ED1C24]"
-                  >
-                    Industries
-                  </Link>
-                  <Link
-                    href="/pricing/"
-                    onClick={() => setMobileOpen(false)}
-                    className="block py-2 text-sm font-medium text-white hover:text-[#ED1C24]"
-                  >
-                    Pricing
-                  </Link>
-                  <Link
-                    href="/offers/"
-                    onClick={() => setMobileOpen(false)}
-                    className="block py-2 text-sm font-medium text-white hover:text-[#ED1C24]"
-                  >
-                    Growth Packages
-                  </Link>
-                  <Link
-                    href="/white-label-partners/"
-                    onClick={() => setMobileOpen(false)}
-                    className="block py-2 text-sm font-medium text-white hover:text-[#ED1C24]"
-                  >
-                    White-Label Partners
-                  </Link>
-                  <Link
-                    href="/about-us/"
-                    onClick={() => setMobileOpen(false)}
-                    className="block py-2 text-sm font-medium text-white hover:text-[#ED1C24]"
-                  >
-                    About Us
-                  </Link>
-                  <Link
-                    href="/contact-us/"
-                    onClick={() => setMobileOpen(false)}
-                    className="block py-2 text-sm font-medium text-white hover:text-[#ED1C24]"
-                  >
-                    Contact Us
-                  </Link>
-                </div>
-              </div>
+        <>
+          <nav className="studio-nav-panel" id="studio-service-menu" aria-label="Services" hidden={open !== "services"} data-lenis-prevent>
+            <div className="studio-nav-panel-intro"><span>What we do</span><Link href="/services/" onClick={() => setOpen(null)}>See all services <ArrowUpRight size={15} /></Link></div>
+            <div className="studio-nav-columns">
+              {megaMenuColumns.map((column) => <div key={column.category} data-mega-column>
+                <p>{column.heading}</p><span>{column.subtitle}</span>
+                <ul>{column.items.map((item) => <li key={item.href}><Link href={item.href} onClick={() => setOpen(null)}>{item.label}</Link></li>)}</ul>
+              </div>)}
             </div>
-
-            <div className="pt-6 border-t border-white/10 space-y-2.5">
-              <Button
-                href="/book-a-call/"
-                variant="primary"
-                className="w-full"
-              >
-                Book a strategy call
-              </Button>
-              <Button
-                href={SITE_FACTS.contact.whatsappUrl}
-                external
-                variant="secondary"
-                className="w-full"
-              >
-                WhatsApp {SITE_FACTS.contact.phoneDisplay}
-              </Button>
-            </div>
-          </aside>
-        </div>
+          </nav>
+          <nav className="studio-nav-panel studio-nav-mobile" id="studio-mobile-menu" aria-label="Mobile navigation" hidden={open !== "mobile"} data-lenis-prevent>
+            {PRIMARY_NAV_LINKS.map((item) => <Link key={item.href} href={item.href} aria-current={path === item.href ? "page" : undefined} onClick={() => setOpen(null)}>{item.label} <ArrowUpRight size={18} /></Link>)}
+            <Link href="/contact-us/" onClick={() => setOpen(null)}>Contact <ArrowUpRight size={18} /></Link>
+          </nav>
+        </>
       )}
-    </>
+    </header>
   );
+}
+
+export function Header(props: HeaderProps) {
+  const path = usePathname();
+  return <Navigation key={path} path={path} {...props} />;
 }

@@ -1,11 +1,16 @@
 # Webix Solutions redesign
 
 1. Preserve the Next.js content registries and existing public routes. Check the preview and canonical domain separately. Keep preview pages out of the index.
-2. Apply the reference video's obsidian, chrome and red palette. Build a robot-led home page, a visual work gallery, a globe for the five confirmed markets and a keyboard-operable services menu.
+2. Apply the reference video's obsidian, chrome and red palette. Build a project-led home page, a visual work gallery, a globe for the five confirmed markets and a keyboard-operable services menu.
 3. Show separate paths for businesses and white-label agencies. Put website builds, custom CRMs and portals, search and AI visibility, and practical automation near the start of the site. Use the approved proof counts and describe the team as remote.
 4. Publish Camz Cleaning and existing public work by name. Add anonymised scope summaries where client permission is unavailable. Use art-directed cover images as illustrations and keep client screenshots, prices and account details out of public assets unless cleared.
 5. Make the booking dialog the main conversion path. Reuse the Karachi schedule and local-time slot engine. Store reservations transactionally, protect the staff dashboard, and test parallel submissions before release.
 6. Verify the production build, responsive layouts, key visitor routes, keyboard navigation, contrast, canonical tags, redirects, crawlable content and booking persistence. Keep production release gated on operational configuration and tests.
+
+## Motion and Earth imagery
+
+- Lenis smooths desktop wheel input. GSAP handles the hero, project reveals, scroll-scrubbed media, platform strip and route wipe. Touch devices use native scrolling, and reduced-motion preferences are respected.
+- The markets globe uses a locally hosted WebP conversion of the [Blue Marble Earth texture used by WebGL Earth](https://github.com/turban/webgl-earth/blob/master/images/2_no_clouds_4k.jpg). The [NASA Earth Observatory collection](https://science.nasa.gov/earth/earth-observatory/the-blue-marble-true-color-global-imagery-at-1km-resolution/) describes the underlying satellite mosaic.
 
 ## Search and outreach
 

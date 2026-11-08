@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { subscribeNewsletterAction } from "@/app/actions/newsletter";
-import { Button } from "@/components/ui/button";
 
 export function NewsletterForm() {
   const [status, setStatus] = React.useState<{
@@ -29,7 +28,7 @@ export function NewsletterForm() {
         htmlFor="footer-newsletter-email"
         className="block text-xs font-medium text-[#A7ACB8]"
       >
-        Practical notes on websites, SEO and AI automation (no spam):
+        Email address
       </label>
       <div className="flex flex-col sm:flex-row gap-2">
         <input
@@ -40,15 +39,9 @@ export function NewsletterForm() {
           placeholder="you@company.com"
           className="h-10 flex-1 rounded-md border border-white/15 bg-[#1C1E24] px-3.5 text-sm text-white placeholder:text-[#a7acb8] focus:border-[#ED1C24] focus:outline-none"
         />
-        <Button
-          type="submit"
-          variant="primary"
-          size="sm"
-          disabled={pending}
-          className="shrink-0"
-        >
+        <button type="submit" disabled={pending} className="studio-button shrink-0">
           {pending ? "Joining..." : "Subscribe"}
-        </Button>
+        </button>
       </div>
       {status?.message && (
         <p
