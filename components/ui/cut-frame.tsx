@@ -26,6 +26,7 @@ export function CutFrame({
   if (glass !== "none") {
     return (
       <div
+        data-cut-frame
         className={cn(
           "relative",
           cutClass,
@@ -34,7 +35,7 @@ export function CutFrame({
         )}
         {...props}
       >
-        <div className={cn("relative w-full h-full", innerClassName)}>
+        <div data-cut-frame-body className={cn("relative w-full h-full", innerClassName)}>
           {children}
         </div>
       </div>
@@ -43,6 +44,7 @@ export function CutFrame({
 
   return (
     <div
+      data-cut-frame
       className={cn(
         "relative p-[1px] bg-[var(--border)] transition-colors duration-200",
         cutClass,
@@ -51,6 +53,7 @@ export function CutFrame({
       {...props}
     >
       <div
+        data-cut-frame-body
         className={cn(
           "relative h-full w-full bg-[var(--surface-elevated)]",
           cutClass,

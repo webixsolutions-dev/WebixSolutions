@@ -10,9 +10,9 @@ export const UNITED_STATES_LOCATION_PAGE: LocationPageContent = {
   h1: "Digital marketing, websites and AI for businesses in the United States",
   heroIntro: [
     "American companies routinely pay $5,000 to $15,000 monthly to domestic marketing agencies that outsource work behind the scenes.",
-    "Webix Solutions cuts out bloated agency overhead by pairing US contractors, founders, and e-commerce brands directly with our senior 20+ person in-house engineering team during American business hours.",
+    "Webix Solutions cuts out bloated agency overhead by pairing US contractors, founders, and e-commerce brands directly with our senior 20+ person remote engineering team during American business hours.",
   ],
-  heroChip: "Direct in-house engineering on US time zones",
+  heroChip: "Direct remote engineering on US time zones",
   currencyCode: "USD",
   currencyHeadline: "Standard transparent billing in United States Dollars (USD)",
   currencyExplanation:
@@ -99,7 +99,7 @@ export const UNITED_STATES_LOCATION_PAGE: LocationPageContent = {
     {
       question: "Why are your service fees substantially lower than American digital agencies?",
       answer:
-        "Our central engineering and creative campus is located in Pakistan, where professional operating overhead is a fraction of New York, Austin, or San Francisco costs. Because our 20+ person team works directly in-house under senior engineering leadership—using the exact same enterprise software stack (Next.js, Tailwind, Meta CAPI, Google Ads, Zapier)—we deliver equal or superior technical quality at a 60% to 75% cost savings.",
+        "Our central engineering and creative campus is located in Pakistan, where professional operating overhead is a fraction of New York, Austin, or San Francisco costs. Because our 20+ person team works directly remote under senior engineering leadership—using the exact same enterprise software stack (Next.js, Tailwind, Meta CAPI, Google Ads, Zapier)—we deliver equal or superior technical quality at a 60% to 75% cost savings.",
     },
     {
       question: "What specific US hours is your engineering team available for live calls?",

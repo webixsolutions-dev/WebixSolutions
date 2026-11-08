@@ -17,14 +17,14 @@ export interface OpenRole {
 
 export const CAREERS_CONTENT = {
   meta: {
-    title: "Careers — Join Our In-House Team | Webix Solutions",
+    title: "Careers — Join Our Remote team | Webix Solutions",
     description:
       "Explore engineering, digital marketing and AI automation roles at Webix Solutions in Dunyapur, Pakistan. Learn how we hire and view open positions.",
     path: "/careers/",
   },
 
   hero: {
-    kicker: "Join our in-house production center",
+    kicker: "Join our remote production center",
     h1: "Build with Webix Solutions",
     lead: "We are an engineering-driven agency with a 20+ person team in Dunyapur, Pakistan. We build high-performance web systems, run high-ROAS marketing campaigns, and deploy production AI workflows for clients in North America, the Gulf, and New Zealand.",
   },

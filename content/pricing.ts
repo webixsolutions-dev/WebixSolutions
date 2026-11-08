@@ -103,7 +103,7 @@ export const BUILD_PRICES: BuildPriceRow[] = [
     id: "build-5-page",
     serviceName: "5-Page Business Website",
     startingPriceUsd: 499,
-    timeline: "10–14 days",
+    timeline: "3 business days to review; launch after testing",
     confirmed: false,
     includes: "Custom mobile-first design, copy polish, contact forms, basic on-page SEO & analytics setup.",
     href: "/web-design-development-service/",
@@ -211,7 +211,7 @@ export const FLAGSHIP_OFFERS: FlagshipOffer[] = [
     priceDisplay: "$499",
     priceUsd: 499,
     billingType: "one-time",
-    deliveryTime: "14 business days",
+    deliveryTime: "Website ready for review in 3 business days; testing before launch",
     confirmed: false,
     whoItsFor: "New businesses or contractors needing a clean website, Google Maps presence and launch posts fast.",
     inclusions: [
@@ -231,7 +231,7 @@ export const FLAGSHIP_OFFERS: FlagshipOffer[] = [
     priceUsd: 399,
     billingType: "monthly",
     minTerm: "6-month minimum term",
-    deliveryTime: "Website live in 14 days; monthly marketing starts immediately",
+    deliveryTime: "Website ready for review in 3 business days; launch after testing",
     confirmed: false,
     whoItsFor: "Service businesses and local brands that want one team managing their website, social, ads and Maps.",
     inclusions: [
@@ -304,4 +304,20 @@ export const MARKET_COMPARISON_RANGES = [
     typicalUsCaRange: "$300 – $500/mo",
     webixGrowthEngine: "Included in $399/mo",
   },
+];
+
+export const PRICING_FAQS = [
+  { question: "How do you price a project?", answer: "We quote after we understand what you need. Your proposal sets out the scope, milestones, price and payment schedule before work begins." },
+  { question: "Can I book one project or get ongoing support?", answer: "Both are available. Choose a one-time build or audit, a monthly care plan, or a growth package. Your proposal explains the term and how to make changes." },
+  { question: "How do international payments work?", answer: "We confirm the invoice currency and available payment methods in your proposal." },
+  { question: "Does my quote include advertising spend?", answer: "You pay advertising platforms directly from your own account. Our proposal lists the management fee separately." },
+  { question: "What if I need help after launch?", answer: "Your project scope sets out the support included at handover. We also offer ongoing care for updates and maintenance." },
+];
+
+export const OFFER_FAQS = [
+  { question: "What is the term for Growth Engine?", answer: "Growth Engine includes an initial six-month term. The proposal explains how the website build and ongoing marketing work are scheduled." },
+  { question: "Can you work with the website I already have?", answer: "Yes. We can scope a redesign, or use the agreed build time for landing pages, tracking or improvements to your existing site." },
+  { question: "Which advertising platforms are included?", answer: "Growth Engine covers one paid channel. Growth Engine Pro covers Meta and Google Ads. You pay advertising spend directly to the platforms." },
+  { question: "Who prepares the content and creative?", answer: "Our team prepares the content included in your package and sends it to you for review before publishing." },
+  { question: "Can I change packages as my needs change?", answer: "Yes. Tell us what you want to change and we’ll agree on the new scope, billing and handover terms in writing." },
 ];

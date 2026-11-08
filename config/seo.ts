@@ -4,7 +4,7 @@ export const SITE_URL = "https://webixsolutions.com";
 export const SITE_NAME = "Webix Solutions";
 export const DEFAULT_TITLE = "Digital Marketing, Web & AI Agency | Webix Solutions";
 export const DEFAULT_DESCRIPTION =
-  "Websites, SEO, paid ads, social media and AI automation from a 20+ person in-house team. Serving Canada, the US, UAE and NZ. Book a free strategy call.";
+  "Websites, SEO, paid ads, social media and AI automation from a remote team of 20+. Serving Canada, the US, UAE and NZ. Book a free strategy call.";
 
 export interface PageMetaInput {
   /** Full title or short title. If it ends with '| Webix Solutions', used as-is; otherwise suffixed. Must be <= 60 chars total. */

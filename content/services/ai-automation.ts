@@ -170,7 +170,7 @@ export const AI_AUTOMATION_PAGE_DATA = {
         stepNumber: "02",
         title: "Staging build & prompt guardrails",
         timeline: "Days 3–6",
-        description: "Our in-house engineers build the n8n or Make pipelines on a private staging environment, write system prompts, and test integrations against sample customer inputs.",
+        description: "Our remote engineers build the n8n or Make pipelines on a private staging environment, write system prompts, and test integrations against sample customer inputs.",
       },
       {
         stepNumber: "03",

@@ -12,7 +12,7 @@
   --color-porcelain-elevated: #FFFFFF;
   --color-steel: #E4E6EB;
   --color-steel-elevated: #ECEEF2;
-  --color-signal-red: #ED1C24;
+  --color-signal-red: #ED1B24;
   --color-signal-red-hover: #C8141B;
   --color-red-ink: #C8101A;
   --red-ink: #C8101A;
@@ -31,9 +31,9 @@
   --text-secondary: #A7ACB8;
   --text-muted: #6C7280;
   --border: rgba(255, 255, 255, 0.09);
-  --accent: #ED1C24;
+  --accent: #ED1B24;
   --accent-hover: #C8141B;
-  --accent-soft: rgba(237, 28, 36, 0.12);
+  --accent-soft: rgba(237, 27, 36, 0.12);
 
   /* Geometry & Spacing Tokens */
   --cut: 14px;
@@ -76,9 +76,9 @@
   --text-secondary: #A7ACB8;
   --text-muted: #6C7280;
   --border: rgba(255, 255, 255, 0.09);
-  --accent: #ED1C24;
+  --accent: #ED1B24;
   --accent-hover: #C8141B;
-  --accent-soft: rgba(237, 28, 36, 0.14);
+  --accent-soft: rgba(237, 27, 36, 0.14);
   background-color: var(--surface);
   color: var(--text-primary);
 }
@@ -90,9 +90,9 @@
   --text-secondary: #454954;
   --text-muted: #6C7280;
   --border: rgba(17, 18, 21, 0.09);
-  --accent: #ED1C24;
+  --accent: #ED1B24;
   --accent-hover: #C8141B;
-  --accent-soft: rgba(237, 28, 36, 0.1);
+  --accent-soft: rgba(237, 27, 36, 0.1);
   background-color: var(--surface);
   color: var(--text-primary);
 }
@@ -104,15 +104,15 @@
   --text-secondary: #454954;
   --text-muted: #5E6472;
   --border: rgba(17, 18, 21, 0.11);
-  --accent: #ED1C24;
+  --accent: #ED1B24;
   --accent-hover: #C8141B;
-  --accent-soft: rgba(237, 28, 36, 0.1);
+  --accent-soft: rgba(237, 27, 36, 0.1);
   background-color: var(--surface);
   color: var(--text-primary);
 }
 
 [data-surface="red"] {
-  --surface: #ED1C24;
+  --surface: #ED1B24;
   --surface-elevated: #C8141B;
   --text-primary: #FFFFFF;
   --text-secondary: rgba(255, 255, 255, 0.9);
@@ -132,9 +132,9 @@
   --text-secondary: #E2C6C8;
   --text-muted: #B88E91;
   --border: rgba(255, 255, 255, 0.14);
-  --accent: #ED1C24;
+  --accent: #ED1B24;
   --accent-hover: #FF3B42;
-  --accent-soft: rgba(237, 28, 36, 0.22);
+  --accent-soft: rgba(237, 27, 36, 0.22);
   background-color: var(--surface);
   color: var(--text-primary);
 }
@@ -159,7 +159,7 @@
   --color-graphite: #141519;
   --color-porcelain: #F4F5F7;
   --color-steel: #E4E6EB;
-  --color-signal-red: #ED1C24;
+  --color-signal-red: #ED1B24;
   --color-oxblood: #5A0B10;
 }
 
@@ -385,7 +385,7 @@ h1, h2, h3, .font-display {
 
 /* Focus Ring Accessibility */
 :focus-visible {
-  outline: 2px solid #ED1C24;
+  outline: 2px solid #ED1B24;
   outline-offset: 2px;
 }
 

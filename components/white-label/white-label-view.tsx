@@ -14,6 +14,7 @@ import {
   Users2,
   Cpu,
 } from "lucide-react";
+import { InteriorLinks } from "@/components/studio/interior-links";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Kicker } from "@/components/ui/kicker";
@@ -120,7 +121,7 @@ const FAQS = [
   {
     question: "Can your team attend client video calls as our internal technical team?",
     answer:
-      "Yes. For select enterprise partners, our senior engineers and technical architects can attend video conferences using your agency's email alias and branded background, acting seamlessly as your in-house engineering department to help scope complex requirements.",
+      "Yes. For select enterprise partners, our senior engineers and technical architects can attend video conferences using your agency's email alias and branded background, acting seamlessly as your remote engineering department to help scope complex requirements.",
   },
   {
     question: "How do partner pricing and invoicing work?",
@@ -183,7 +184,7 @@ export function WhiteLabelView({ nextSlot }: WhiteLabelViewProps) {
               data-hero-ctas="true"
               className="flex flex-col min-[480px]:flex-row min-[480px]:flex-wrap items-stretch min-[480px]:items-center gap-3.5 pt-2"
             >
-              <Button href="/book-a-call/" variant="primary" size="lg">
+              <Button href="/book-a-call/?type=partner" variant="primary" size="lg">
                 Book a partner discovery call
               </Button>
               <Button href="#pilot" variant="secondary" size="lg">
@@ -202,11 +203,17 @@ export function WhiteLabelView({ nextSlot }: WhiteLabelViewProps) {
           </div>
         </Container>
       </Section>
+      <InteriorLinks links={[
+        { id: "partner-scope", label: "What we deliver" },
+        { id: "partner-workflow", label: "How we work" },
+        { id: "partner-rates", label: "Partner rates" },
+        { id: "pilot", label: "Pilot project" },
+      ]} />
 
       {/* =========================================================================
           2. WHAT WE DELIVER WHITE-LABEL (Porcelain with Notch)
          ========================================================================= */}
-      <Section
+      <Section id="partner-scope"
         surface="porcelain"
         previousSurface="graphite"
         notch
@@ -216,7 +223,7 @@ export function WhiteLabelView({ nextSlot }: WhiteLabelViewProps) {
           <div className="max-w-3xl space-y-3 mb-12">
             <Kicker>Capabilities menu</Kicker>
             <h2 className="type-h2 text-[#111215]">
-              Everything your agency needs to scale client retainers
+              Work we can deliver for your agency
             </h2>
             <p className="type-body text-[#454954]">
               High-throughput technical and creative disciplines executed by full-time specialists under one roof.
@@ -249,7 +256,7 @@ export function WhiteLabelView({ nextSlot }: WhiteLabelViewProps) {
       {/* =========================================================================
           3. HOW IT WORKS — 5-STEP FLOW (Steel with Notch)
          ========================================================================= */}
-      <Section
+      <Section id="partner-workflow"
         surface="steel"
         previousSurface="porcelain"
         notch
@@ -303,7 +310,7 @@ export function WhiteLabelView({ nextSlot }: WhiteLabelViewProps) {
           <div className="max-w-3xl space-y-3 mb-12">
             <Kicker>Accountability standards</Kicker>
             <h2 className="type-h2 text-white">
-              Guarantees we actually uphold every single sprint
+              How we protect your client relationships
             </h2>
             <p className="type-lead text-[#A7ACB8]">
               No overseas contractor excuses. Built on professional operational integrity.
@@ -334,7 +341,7 @@ export function WhiteLabelView({ nextSlot }: WhiteLabelViewProps) {
       {/* =========================================================================
           5. PARTNER PRICING (Porcelain with Notch)
          ========================================================================= */}
-      <Section
+      <Section id="partner-rates"
         surface="porcelain"
         previousSurface="graphite"
         notch
@@ -353,7 +360,7 @@ export function WhiteLabelView({ nextSlot }: WhiteLabelViewProps) {
             </div>
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
-              <Button href="/book-a-call/" variant="primary" size="lg">
+              <Button href="/book-a-call/?type=partner" variant="primary" size="lg">
                 Request partner rate card
               </Button>
               <Button href="/contact-us/" variant="secondary" size="lg">
@@ -382,11 +389,11 @@ export function WhiteLabelView({ nextSlot }: WhiteLabelViewProps) {
               Test our engineering with a single pilot project
             </h2>
             <p className="text-base md:text-lg text-white font-semibold leading-relaxed max-w-2xl">
-              Don't take our word for it. Send us one discrete website redesign, complex landing page, or automation sprint at our discounted wholesale partner rate. If you love our communication, speed, and clean code, we'll discuss dedicated monthly capacity.
+              Start with a website redesign, landing page or automation sprint at the partner rate. After the pilot, we can discuss monthly capacity for your agency.
             </p>
 
             <div className="pt-2 flex flex-wrap items-center gap-4">
-              <Button href="/book-a-call/" variant="secondary" size="lg">
+              <Button href="/book-a-call/?type=partner" variant="secondary" size="lg">
                 Schedule a 30-min pilot scoping call
               </Button>
               <Button href="/our-work/" variant="primary" size="lg">

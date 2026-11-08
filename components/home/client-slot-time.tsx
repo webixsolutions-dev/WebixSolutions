@@ -18,27 +18,30 @@ export function ClientSlotTime({
   const [visitorZone, setVisitorZone] = React.useState<string | null>(null);
 
   React.useEffect(() => {
-    try {
-      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-      const date = new Date(slotIso);
-      const dayStr = new Intl.DateTimeFormat("en-US", {
-        timeZone: tz,
-        weekday: "short",
-        month: "short",
-        day: "numeric",
-      }).format(date);
-      const timeStr = new Intl.DateTimeFormat("en-US", {
-        timeZone: tz,
-        hour: "numeric",
-        minute: "2-digit",
-        hour12: true,
-        timeZoneName: "short",
-      }).format(date);
-      setLocalFormatted(`${dayStr} · ${timeStr}`);
-      setVisitorZone(tz);
-    } catch {
-      // Keep Eastern Time fallback
-    }
+    const frame = requestAnimationFrame(() => {
+      try {
+        const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        const date = new Date(slotIso);
+        const dayStr = new Intl.DateTimeFormat("en-US", {
+          timeZone: tz,
+          weekday: "short",
+          month: "short",
+          day: "numeric",
+        }).format(date);
+        const timeStr = new Intl.DateTimeFormat("en-US", {
+          timeZone: tz,
+          hour: "numeric",
+          minute: "2-digit",
+          hour12: true,
+          timeZoneName: "short",
+        }).format(date);
+        setLocalFormatted(`${dayStr} · ${timeStr}`);
+        setVisitorZone(tz);
+      } catch {
+        // Keep Eastern Time fallback
+      }
+    });
+    return () => cancelAnimationFrame(frame);
   }, [slotIso]);
 
   return (

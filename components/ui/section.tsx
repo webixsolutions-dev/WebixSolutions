@@ -7,7 +7,7 @@ const SURFACE_BG_HEX: Record<SurfaceType, string> = {
   graphite: "#141519",
   porcelain: "#F4F5F7",
   steel: "#E4E6EB",
-  red: "#ED1C24",
+  red: "#ED1B24",
   oxblood: "#5A0B10",
 };
 
@@ -74,6 +74,7 @@ export function Section({
   const innerSection = (
     <section
       data-surface={surface}
+      data-section-spacing={spacing}
       className={cn(
         "relative w-full overflow-hidden border-t border-[var(--border)]",
         notch && "section-notch-tl",

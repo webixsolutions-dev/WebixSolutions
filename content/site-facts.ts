@@ -51,7 +51,7 @@ export const SITE_FACTS = {
   disambiguation:
     "Webix Solutions (webixsolutions.com) is a full-service digital marketing, web development and AI automation agency founded by Haroon Sukhera. It is not affiliated with the Webix JavaScript UI library (webix.com).",
   positioningOneLiner:
-    "Webix Solutions is a full-service digital agency with a 20+ person in-house team in Pakistan — we build websites, run growth marketing and ship AI systems for businesses across Canada, the US, the UAE, New Zealand and Pakistan, on your time zone.",
+    "Webix Solutions is a full-service digital agency with a remote team of 20+ in Pakistan — we build websites, run growth marketing and ship AI systems for businesses across Canada, the US, the UAE, New Zealand and Pakistan, on your time zone.",
 
   founder: {
     name: "Haroon Sukhera",
@@ -105,27 +105,34 @@ export const SITE_FACTS = {
   stats: {
     teamSize: {
       value: "20+",
-      label: "20+ person in-house team",
+      label: "Team members",
       detail: "Developers, designers, marketers and AI engineers in Pakistan",
       confirmed: true,
     },
+    websitesDelivered: {
+      value: "280",
+      label: "Websites delivered",
+      detail: "Website projects delivered by Webix Solutions",
+      confirmed: true,
+    },
     customCodedBuilds: {
-      value: "91",
+      value: "94",
       label: "Custom-coded builds",
-      detail: "Across 91 Next.js, React, Node.js and Flutter repositories",
+      detail: "Projects built with Next.js, React, Node.js and Flutter",
       confirmed: true,
     },
     githubContributionsLastYear: {
       value: "1,053",
+      repositoryCount: 91,
       label: "GitHub contributions in the last 12 months",
       detail:
         "1,053 contributions in the last 12 months across 91 Next.js, React, Node.js and Flutter repositories",
       confirmed: true,
     },
     cmsWebsitesBuilt: {
-      value: "50+",
+      value: "150",
       label: "CMS websites delivered",
-      detail: "WordPress, Shopify, Wix, Webflow and Squarespace",
+      detail: "WordPress, Shopify, Webflow and Framer",
       confirmed: true,
     },
     socialAccountsManaged: {
@@ -141,7 +148,7 @@ export const SITE_FACTS = {
       confirmed: true,
     },
     totalClientsServed: {
-      value: "60+",
+      value: "120+",
       label: "Happy clients",
       detail: "Businesses served across web, marketing and AI automation",
       confirmed: true,
@@ -189,28 +196,6 @@ export const SITE_FACTS = {
       spend: "Rs 960.64",
       volume: "64 conversations",
       confirmed: true,
-    },
-    {
-      id: "usd-lead-gen",
-      market: "United States",
-      objective: "Meta lead generation campaigns",
-      metricValue: "$16.39",
-      metricLabel: "Average cost per qualified lead",
-      detail: "1,304 leads across two campaigns ($11.88 & $18.23 CPL)",
-      spend: "$21,375.94",
-      volume: "1,304 leads",
-      confirmed: false,
-    },
-    {
-      id: "cad-messaging-leads",
-      market: "Canada",
-      objective: "Messaging & lead campaigns",
-      metricValue: "CA$3.64",
-      metricLabel: "Best cost per messaging conversation",
-      detail: "488 total conversions/conversations across 6 campaigns",
-      spend: "CA$2,282.34",
-      volume: "488 conversions",
-      confirmed: false,
     },
   ] satisfies AdResultFact[],
 
@@ -266,6 +251,7 @@ export const SITE_FACTS = {
     "WooCommerce",
     "Wix",
     "Webflow",
+    "Framer",
     "Squarespace",
     "Flutter",
   ],

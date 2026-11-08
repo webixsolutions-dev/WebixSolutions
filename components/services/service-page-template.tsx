@@ -1,6 +1,8 @@
 import * as React from "react";
 import Link from "next/link";
 import { Check, ArrowRight, ShieldCheck, Sparkles, Building2, TrendingUp } from "lucide-react";
+import { InteriorLinks } from "@/components/studio/interior-links";
+import { WorkflowDemo } from "@/components/studio/workflow-demo";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Kicker } from "@/components/ui/kicker";
@@ -40,7 +42,7 @@ export function ServicePageTemplate({
   // Lead text
   const introLead = pageContent
     ? `${pageContent.intro[0]} ${pageContent.intro[1]}`
-    : `${service.shortOutcome} Designed, coded and supported by our 20+ person in-house team on your time zone.`;
+    : `${service.shortOutcome} Designed, coded and supported by our team of 20+ on your time zone.`;
 
   // Hero kicker & proof chip
   const heroKicker = pageContent?.heroKicker ?? "In-house service delivery";
@@ -70,7 +72,7 @@ export function ServicePageTemplate({
         "Every project is architected for speed, conversion rate optimization and search visibility across North America, the UAE and Pakistan.",
     },
     {
-      title: "Direct in-house engineering team",
+      title: "Direct remote engineering team",
       detail:
         "You work directly with our project leads in Dunyapur and Lahore during your business hours, without layers of account executives.",
     },
@@ -136,7 +138,7 @@ export function ServicePageTemplate({
       stepNumber: "03",
       title: "Build and review",
       description:
-        "Our in-house team builds on a private staging link for your feedback, verification and testing.",
+        "Our remote team builds on a private staging link for your feedback, verification and testing.",
     },
     {
       stepNumber: "04",
@@ -151,7 +153,7 @@ export function ServicePageTemplate({
     pageContent?.proof.h2 ?? "Delivered with verified code and measurable outcomes";
   const proofLead =
     pageContent?.proof.lead ??
-    "Our in-house production team in Pakistan has delivered 91 custom-coded builds, 50+ CMS sites, and manages 50+ social accounts.";
+    `Our team has delivered ${SITE_FACTS.stats.websitesDelivered.value} websites, built ${SITE_FACTS.stats.customCodedBuilds.value} custom projects and managed ${SITE_FACTS.stats.socialAccountsManaged.value} social accounts.`;
   const proofStatKeys: StatKey[] = pageContent?.proof.statKeys ?? [
     "customCodedBuilds",
     "cmsWebsitesBuilt",
@@ -299,16 +301,16 @@ export function ServicePageTemplate({
                 <div className="flex items-center justify-between border-b border-white/12 pb-3.5 text-xs text-[#A7ACB8]">
                   <span className="inline-flex items-center gap-2 font-medium text-white">
                     <span className="h-2 w-2 rounded-full bg-[#16A34A]" />
-                    <span>Service Overview</span>
+                    <span>Service overview</span>
                   </span>
                   <span className="font-metric text-white">
-                    {service.category} Column
+                    {service.category}
                   </span>
                 </div>
 
                 <div className="space-y-2">
                   <div className="text-xs font-semibold text-[#ED1C24] uppercase tracking-wider">
-                    Core Outcome
+                    What this helps you do
                   </div>
                   <div className="font-display text-base md:text-lg font-semibold text-white leading-snug">
                     {service.shortOutcome}
@@ -317,7 +319,7 @@ export function ServicePageTemplate({
 
                 <div className="grid grid-cols-2 gap-4 border-t border-b border-white/10 py-4">
                   <div>
-                    <div className="text-xs text-[#A7ACB8]">Starting Price</div>
+                    <div className="text-xs text-[#A7ACB8]">Pricing</div>
                     <div className="font-metric text-xl md:text-2xl text-white mt-1">
                       {resolvedPrice ? resolvedPrice.display : "Custom quote"}
                     </div>
@@ -326,7 +328,7 @@ export function ServicePageTemplate({
                     </div>
                   </div>
                   <div>
-                    <div className="text-xs text-[#A7ACB8]">Delivery Model</div>
+                    <div className="text-xs text-[#A7ACB8]">Your team</div>
                     <div className="font-metric text-xl md:text-2xl text-white mt-1">
                       In-house
                     </div>
@@ -339,7 +341,7 @@ export function ServicePageTemplate({
                 <ul className="space-y-2 text-xs text-[#E2C6C8]">
                   <li className="flex items-center gap-2">
                     <Check className="h-3.5 w-3.5 text-[#ED1C24] shrink-0" />
-                    <span>20+ person in-house team in Pakistan</span>
+                    <span>20+ team members in Pakistan</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <Check className="h-3.5 w-3.5 text-[#ED1C24] shrink-0" />
@@ -347,7 +349,7 @@ export function ServicePageTemplate({
                   </li>
                   <li className="flex items-center gap-2">
                     <Check className="h-3.5 w-3.5 text-[#ED1C24] shrink-0" />
-                    <span>Direct WhatsApp or Slack channel with leads</span>
+                    <span>Talk directly with your project lead</span>
                   </li>
                 </ul>
 
@@ -357,18 +359,26 @@ export function ServicePageTemplate({
                   size="sm"
                   className="w-full"
                 >
-                  Schedule 30-min call
+                  Book a strategy call
                 </Button>
               </CutFrame>
             </div>
           </div>
         </Container>
       </Section>
+      <InteriorLinks links={[
+        { id: "outcomes", label: "What you can achieve" },
+        { id: "deliverables", label: "What’s included" },
+        { id: "delivery-process", label: "How we work" },
+        { id: "service-pricing", label: "Pricing" },
+        { id: "service-questions", label: "Questions" },
+      ]} />
+
 
       {/* =========================================================================
           SECTION 2: OUTCOMES (Surface: Porcelain with Notch)
          ========================================================================= */}
-      <Section
+      <Section id="outcomes"
         surface="porcelain"
         previousSurface="graphite"
         notch
@@ -503,7 +513,12 @@ export function ServicePageTemplate({
       {/* =========================================================================
           SECTION 3: WHAT'S INCLUDED / DELIVERABLES (Surface: Graphite with Notch)
          ========================================================================= */}
-      <Section
+      {service.slug === "ai-automation-services" && (
+        <Section surface="graphite" spacing="compact" aria-label="Interactive workflow example">
+          <Container><WorkflowDemo /></Container>
+        </Section>
+      )}
+      <Section id="deliverables"
         surface="graphite"
         previousSurface={hasUnique ? "steel" : "porcelain"}
         notch
@@ -553,7 +568,7 @@ export function ServicePageTemplate({
       {/* =========================================================================
           SECTION 4: HOW IT WORKS / PROCESS (Surface: Steel with Notch)
          ========================================================================= */}
-      <Section
+      <Section id="delivery-process"
         surface="steel"
         previousSurface="graphite"
         notch
@@ -715,7 +730,7 @@ export function ServicePageTemplate({
       {/* =========================================================================
           SECTION 6: PRICING SNAPSHOT (Surface: Signal Red with Monogram Watermark)
          ========================================================================= */}
-      <Section
+      <Section id="service-pricing"
         surface="red"
         previousSurface="porcelain"
         notch
@@ -833,6 +848,7 @@ export function ServicePageTemplate({
           SECTION 8: FAQ ACCORDION (Surface: Porcelain with Notch)
          ========================================================================= */}
       <FaqSection
+        id="service-questions"
         kicker="Frequently asked questions"
         heading={faqHeading}
         subtitle="Every answer is written directly without sales fluff. Need a question answered immediately? WhatsApp us directly."
@@ -858,7 +874,7 @@ export function ServicePageTemplate({
               Explore complementary services and industry solutions
             </h2>
             <p className="type-body text-[#454954]">
-              Combine services under one in-house team without coordinating multiple external agencies or freelancers.
+              Combine services under one remote team without coordinating multiple external agencies or freelancers.
             </p>
           </div>
 

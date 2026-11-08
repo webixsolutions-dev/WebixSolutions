@@ -6,7 +6,7 @@ export const CONVERSION_RATE_OPTIMIZATION_SERVICES: ServicePageContent = {
   heroKicker: "Behavioral heatmaps, speed and form friction audits",
   intro: [
     "We turn more of your existing website visitors into paying customers and qualified enquiries using session heatmaps, form drop-off analytics, speed fixes and copy improvements.",
-    "Delivered by our in-house UX researchers and developers in Pakistan for businesses in Canada, the US, the UAE, New Zealand and Pakistan looking to lower customer acquisition costs.",
+    "Delivered by our remote UX researchers and developers in Pakistan for businesses in Canada, the US, the UAE, New Zealand and Pakistan looking to lower customer acquisition costs.",
   ],
   proofChip: "Conversion audits powered by Microsoft Clarity and GA4 funnel tracking",
 
@@ -27,7 +27,7 @@ export const CONVERSION_RATE_OPTIMIZATION_SERVICES: ServicePageContent = {
       {
         title: "Fixes deployed directly into your live code",
         detail:
-          "Unlike consultants who only deliver slide decks, our in-house engineering team implements and tests the approved design and speed fixes directly.",
+          "Unlike consultants who only deliver slide decks, our remote engineering team implements and tests the approved design and speed fixes directly.",
       },
     ],
   },
@@ -122,7 +122,7 @@ export const CONVERSION_RATE_OPTIMIZATION_SERVICES: ServicePageContent = {
   },
 
   proof: {
-    h2: "Conversion improvements delivered by our in-house team",
+    h2: "Conversion improvements delivered by our remote team",
     lead: "We apply rigorous conversion rate optimization to both our client websites and our own commercial ventures.",
     statKeys: ["customCodedBuilds", "cmsWebsitesBuilt", "totalClientsServed"],
     showOwnBrands: true,
@@ -172,7 +172,7 @@ export const CONVERSION_RATE_OPTIMIZATION_SERVICES: ServicePageContent = {
     {
       question: "Do you only deliver a report, or do you fix the website code?",
       answer:
-        "We fix the code directly. Unlike pure consultancy agencies, our in-house engineering team implements the approved design, copy, and speed improvements directly onto your Next.js, WordPress, or Shopify site.",
+        "We fix the code directly. Unlike pure consultancy agencies, our remote engineering team implements the approved design, copy, and speed improvements directly onto your Next.js, WordPress, or Shopify site.",
     },
     {
       question: "How fast do conversion improvements typically show up?",

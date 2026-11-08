@@ -27,10 +27,11 @@ Never invent a statistic, award, client name, review, certification or year.
 
 | Claim | Value | Status |
 |---|---|---|
-| Custom-coded projects | 91 (repositories on GitHub — say "91 custom-coded builds & repositories", not "91 websites", unless Haroon confirms every repo is a client site) | Confirmed |
-| CMS websites (WordPress, Shopify, Wix, etc.) | 50+ | Confirmed |
+| Websites delivered | 280 | Confirmed |
+| Custom-coded builds | 94 | Confirmed |
+| CMS websites (WordPress, Shopify, Webflow and Framer) | 150 | Confirmed |
 | Social media accounts managed | 50+ | Confirmed |
-| Happy clients | 60+ | Confirmed |
+| Happy clients | 120+ | Confirmed |
 | Years | 3+ | [CONFIRM] |
 | Reviews | Only show a count/rating that matches a public source (Google Business Profile, Clutch, Upwork). Current site claims "20+ reviews" — do not reuse without a public source | [CONFIRM source] |
 

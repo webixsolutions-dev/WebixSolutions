@@ -104,7 +104,7 @@ const TYPE_SPEC_ROWS = [
     className: "type-lead",
     spec: "clamp(1.0625rem, 0.4vw + 0.95rem, 1.25rem) · Switzer 400 · lh 1.55",
     sample:
-      "A 20+ person in-house team in Pakistan building custom websites, search campaigns and AI agents for clients across five countries.",
+      "A 20+ team members in Pakistan building custom websites, search campaigns and AI agents for clients across five countries.",
   },
   {
     token: "--text-body",

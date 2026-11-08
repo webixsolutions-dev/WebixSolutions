@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
+  <rect width="960" height="540" fill="#c8cdd2"/>
+  <path d="M0 540 540 0h166L166 540Zm532 0L960 112v94L626 540Z" fill="#e1e5e8"/>
+  <g transform="translate(130 78)" font-family="system-ui, sans-serif">
+    <path d="M0 0h669l31 31v350H0Z" fill="#15171b" stroke="#4d5159" stroke-width="2"/>
+    <path d="M0 51h700M159 51v330" stroke="#40434b"/>
+    <circle cx="24" cy="24" r="5" fill="#ed1b24"/><circle cx="42" cy="24" r="5" fill="#7f858e"/><circle cx="60" cy="24" r="5" fill="#7f858e"/>
+    <text x="677" y="30" font-size="13" text-anchor="end" fill="#c0c4cb">Workflow illustration</text>
+    <g fill="#c0c4cb" font-size="16"><text x="23" y="103">Clients</text><text x="23" y="145">Projects</text><text x="23" y="187">Team</text><text x="23" y="229">Invoicing</text></g>
+    <path d="M0 119h3v42H0" stroke="#ed1b24" stroke-width="4"/>
+    <text x="188" y="111" fill="#f5f6f8" font-size="30" font-weight="650">Project pipeline</text>
+    <g fill="#25282e" stroke="#50545e"><rect x="188" y="145" width="148" height="169"/><rect x="352" y="145" width="148" height="169"/><rect x="516" y="145" width="148" height="169"/></g>
+    <g fill="#e9ebef" font-size="14"><text x="202" y="172">Brief</text><text x="366" y="172">In progress</text><text x="530" y="172">Handoff</text></g>
+    <g fill="#3a3e46"><rect x="202" y="190" width="119" height="33"/><rect x="202" y="235" width="119" height="33"/><rect x="366" y="190" width="119" height="33"/><rect x="530" y="190" width="119" height="33"/></g>
+    <path d="M202 190v33m164-33v33m164-33v33" stroke="#ed1b24" stroke-width="3"/>
+  </g>
+</svg>

@@ -4,13 +4,13 @@ export const CANADA_LOCATION_PAGE: LocationPageContent = {
   slug: "canada",
   countryName: "Canada",
   shortCode: "CA",
-  title: "Digital Marketing & Web Agency for Canada | Webix Solutions",
+  title: "Web Design, SEO & AI for Canada | Webix Solutions",
   metaDescription:
     "Websites, SEO, Meta and Google ads and AI automation for Canadian businesses — working Eastern and Pacific business hours. Prices in CAD.",
   h1: "Digital marketing, websites and AI for businesses in Canada",
   heroIntro: [
-    "Canadian businesses face steep local agency retainers and sluggish development cycles for standard web and marketing delivery.",
-    "Webix Solutions delivers custom Next.js websites, targeted Google and Meta ads, and automated AI workflows tailored to Canadian regulatory standards, fully synchronized with Eastern and Pacific working hours.",
+    "We work remotely with Canadian businesses and agency partners on websites, local search and customer intake.",
+    "For Calgary home services, Camz Cleaning is a public example of service-area pages, online pricing and booking.",
   ],
   heroChip: "Eastern & Pacific working hours overlap",
   currencyCode: "CAD",
@@ -28,7 +28,7 @@ export const CANADA_LOCATION_PAGE: LocationPageContent = {
     ],
   },
   timezoneSummary:
-    "Our dedicated North American night shift (9:00 PM – 5:00 AM PKT) operates live during your workday: 11:00 AM – 7:00 PM Eastern Time (Toronto/Montreal) and 8:00 AM – 4:00 PM Pacific Time (Vancouver).",
+    "Our Pakistan evening shift overlaps Canadian business hours. The booking calendar displays available times in your local zone.",
   overlapRows: [
     {
       pktWindow: "9:00 PM – 1:00 AM PKT",
@@ -50,7 +50,7 @@ export const CANADA_LOCATION_PAGE: LocationPageContent = {
     {
       title: "CASL & PIPEDA Legal Compliance",
       description:
-        "Canada enforces strict privacy and electronic messaging legislation. We engineer your marketing assets to remain fully compliant with federal standards.",
+        "We can build the consent, preference and unsubscribe controls agreed in your scope for your review.",
       bulletPoints: [
         "Explicit opt-in consent checkboxes and verifiable audit logging on all lead capture forms under CASL",
         "Clear sender identification, Canadian postal contacts, and one-click unsubscribe links in all email templates",

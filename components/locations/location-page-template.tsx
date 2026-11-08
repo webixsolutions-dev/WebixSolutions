@@ -10,6 +10,7 @@ import {
   ArrowUpRight,
   Check,
 } from "lucide-react";
+import { InteriorLinks } from "@/components/studio/interior-links";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Kicker } from "@/components/ui/kicker";
@@ -77,6 +78,7 @@ export function LocationPageTemplate({
               <p className="type-body text-[#A7ACB8] max-w-[62ch]">
                 {content.heroIntro[1]}
               </p>
+              {content.slug === "canada" && <Link className="studio-link" href="/our-work/camz-cleaning-booking/">See the Camz Cleaning project <ArrowUpRight size={16} /></Link>}
             </div>
 
             <div
@@ -103,11 +105,17 @@ export function LocationPageTemplate({
           </div>
         </Container>
       </Section>
+      <InteriorLinks links={[
+        { id: "market-hours", label: "Working hours" },
+        { id: "market-billing", label: "Billing" },
+        { id: "market-services", label: "Popular services" },
+        { id: "market-questions", label: "Questions" },
+      ]} />
 
       {/* =========================================================================
           2. TIME ZONE OVERLAP TABLE (Porcelain with Notch)
          ========================================================================= */}
-      <Section
+      <Section id="market-hours"
         surface="porcelain"
         previousSurface="graphite"
         notch
@@ -167,7 +175,7 @@ export function LocationPageTemplate({
       {/* =========================================================================
           3. MARKET PRICING & CURRENCY (Steel with Notch)
          ========================================================================= */}
-      <Section
+      <Section id="market-billing"
         surface="steel"
         previousSurface="porcelain"
         notch
@@ -237,7 +245,7 @@ export function LocationPageTemplate({
           <div className="max-w-3xl space-y-3 mb-12">
             <Kicker>Local compliance & ecosystem</Kicker>
             <h2 className="type-h2 text-white">
-              Tailored for the {content.countryName} digital ecosystem
+              Working with businesses in {content.countryName}
             </h2>
             <p className="type-lead text-[#A7ACB8]">
               We respect regional data laws, localized payment options, and channel preferences.
@@ -328,6 +336,7 @@ export function LocationPageTemplate({
           6. MARKET-SPECIFIC FAQS (Porcelain with Notch)
          ========================================================================= */}
       <FaqSection
+        id="market-questions"
         kicker="Direct answers"
         heading={`Frequently asked questions for businesses in ${content.countryName}`}
         subtitle="Clear details on our communication workflows, contractual agreements, and payment methods."
@@ -340,7 +349,7 @@ export function LocationPageTemplate({
       {/* =========================================================================
           7. RELATED SERVICES (Steel with Notch)
          ========================================================================= */}
-      <Section
+      <Section id="market-services"
         surface="steel"
         previousSurface="porcelain"
         notch
@@ -350,7 +359,7 @@ export function LocationPageTemplate({
           <div className="max-w-3xl space-y-3 mb-10">
             <Kicker>Core capabilities</Kicker>
             <h2 className="type-h2 text-[#111215]">
-              Popular services deployed for {content.countryName}
+              Popular services for {content.countryName}
             </h2>
             <p className="type-body text-[#454954]">
               Available as individual deliverables or bundled into ongoing growth retainers.

@@ -30,16 +30,16 @@ export function BlogPostView({ post }: BlogPostViewProps) {
       {/* =========================================================================
           1. POST HERO & ANSWER-FIRST INTRO (Porcelain)
          ========================================================================= */}
-      <Section surface="porcelain" className="pt-24 pb-12">
+      <Section surface="graphite" spacing="hero">
         <Container>
           <div className="max-w-3xl mx-auto space-y-6">
             {/* Breadcrumb nav */}
-            <div className="flex items-center gap-2 text-xs text-[#717684]">
+            <div className="flex flex-wrap items-center gap-2 text-xs text-[#c5c9d1]">
               <Link href="/" className="hover:underline">Home</Link>
               <span>/</span>
               <Link href="/blogs/" className="hover:underline">Blog</Link>
               <span>/</span>
-              <span className="text-[#C8101A] font-medium">{post.category}</span>
+              <span className="text-[#ff8185] font-medium">{post.category}</span>
             </div>
 
             <div className="space-y-4">
@@ -47,14 +47,14 @@ export function BlogPostView({ post }: BlogPostViewProps) {
                 {post.category}
               </span>
 
-              <h1 className="type-display text-[#111215]">{post.title}</h1>
+              <h1 className="type-display text-white">{post.title}</h1>
 
-              <div className="flex flex-wrap items-center gap-4 text-xs text-[#717684] pt-1 border-b border-[#E4E6EB] pb-5">
+              <div className="flex flex-wrap items-center gap-4 text-xs text-[#c5c9d1] pt-1 border-b border-white/25 pb-5">
                 <div className="flex items-center gap-2">
                   <div className="h-6 w-6 rounded-full bg-[#121214] text-white flex items-center justify-center text-[10px] font-bold">
                     {post.author.avatarText}
                   </div>
-                  <span className="font-semibold text-[#111215]">{post.author.name}</span>
+                  <span className="font-semibold text-white">{post.author.name}</span>
                 </div>
                 <span>•</span>
                 <span className="inline-flex items-center gap-1">
@@ -98,7 +98,7 @@ export function BlogPostView({ post }: BlogPostViewProps) {
       {/* =========================================================================
           2. TABLE OF CONTENTS & ARTICLE BODY (Porcelain)
          ========================================================================= */}
-      <Section surface="porcelain" previousSurface="porcelain" spacing="compact">
+      <Section surface="porcelain" previousSurface="graphite" notch spacing="compact">
         <Container>
           <div className="max-w-3xl mx-auto space-y-10">
             {/* Table of Contents */}
@@ -192,7 +192,7 @@ export function BlogPostView({ post }: BlogPostViewProps) {
                 Looking to implement this strategy in your business?
               </h3>
               <p className="text-xs text-[#9CA3AF] leading-relaxed max-w-xl">
-                Our in-house engineers, marketers, and AI specialists manage complete delivery on your local time zone with written proposals in 48 hours.
+                Our remote engineers, marketers, and AI specialists manage complete delivery on your local time zone with written proposals in 48 hours.
               </p>
               <div className="pt-2 flex flex-wrap gap-3">
                 <Button href={`/${post.relatedServiceSlug}/`} variant="primary" size="default">

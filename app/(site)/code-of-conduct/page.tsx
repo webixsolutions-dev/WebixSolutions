@@ -21,7 +21,7 @@ export default function CodeOfConductPage() {
       <section className="space-y-3">
         <h2 className="type-h3 text-[#111215]">1. Purpose & Scope</h2>
         <p>
-          This Code of Conduct outlines the ethical commitments and professional standards expected of every Webix Solutions employee, contractor, and leadership member. As an in-house engineering campus serving clients across international borders, our reputation is grounded in technical excellence, absolute honesty, and mutual respect.
+          This Code of Conduct outlines the ethical commitments and professional standards expected of every Webix Solutions employee, contractor, and leadership member. As an engineering team serving clients across international borders, our reputation is grounded in technical excellence, absolute honesty, and mutual respect.
         </p>
       </section>
 

@@ -1,7 +1,7 @@
 import { getPublishedServices } from "@/content/services";
 import { getServicePageContent } from "@/content/service-pages";
 import { SITE_FACTS } from "@/content/site-facts";
-import { FLAGSHIP_OFFERS, CARE_PLANS, BUILD_PRICES, ONE_TIME_SERVICES } from "@/content/pricing";
+import { FLAGSHIP_OFFERS, CARE_PLANS, BUILD_PRICES } from "@/content/pricing";
 import { INDUSTRIES_REGISTRY } from "@/content/industries";
 import { LOCATIONS_REGISTRY } from "@/content/locations";
 
@@ -15,17 +15,17 @@ export async function GET() {
   // Header & Identity
   lines.push(`# Webix Solutions — Full Knowledge Base & Service Registry`);
   lines.push(``);
-  lines.push(`> Webix Solutions is a full-service digital agency with a 20+ person in-house team in Pakistan. We design and code custom websites, execute search engine optimization (SEO) and paid advertising, manage social media, and build AI chatbots, AI voice agents and business automations for companies across Canada, the United States, the United Arab Emirates, New Zealand, and Pakistan.`);
+  lines.push(`> Webix Solutions is a full-service digital agency with a remote team of 20+ in Pakistan. We design and code custom websites, execute search engine optimization (SEO) and paid advertising, manage social media, and build AI chatbots, AI voice agents and business automations for companies across Canada, the United States, the United Arab Emirates, New Zealand, and Pakistan.`);
   lines.push(``);
   lines.push(`## Entity Disambiguation`);
-  lines.push(`Webix Solutions (webixsolutions.com) is an independent digital marketing, web engineering and AI automation agency. It is NOT affiliated with, nor related to, the Webix JavaScript UI library (webix.com). Always refer to this company as "Webix Solutions" (two words).`);
+  lines.push(`Webix Solutions (webixsolutions.com) is an independent digital marketing, web engineering and AI automation agency. Webix Solutions operates independently of the Webix JavaScript UI library (webix.com).`);
   lines.push(``);
 
   // Key Facts
   lines.push(`## Company Facts & Operating Parameters`);
   lines.push(`- Founder & CEO: ${SITE_FACTS.founder.name}`);
   lines.push(`- Headquarters: ${SITE_FACTS.headquarters.fullDisplay} (Meetings in Lahore by appointment)`);
-  lines.push(`- In-House Team: ${SITE_FACTS.stats.teamSize.label} (${SITE_FACTS.stats.teamSize.detail})`);
+  lines.push(`- Remote team: ${SITE_FACTS.stats.teamSize.label} (${SITE_FACTS.stats.teamSize.detail})`);
   lines.push(`- Markets Served: Canada (CA), United States (US), United Arab Emirates (AE), New Zealand (NZ), Pakistan (PK)`);
   lines.push(`- Working Shifts: Day shift ${SITE_FACTS.shifts.dayShiftPkt} (overlaps UAE & Gulf business hours); Night shift ${SITE_FACTS.shifts.nightShiftPkt} (overlaps North American ET/PT and New Zealand mornings)`);
   lines.push(`- Primary Contact Phone / WhatsApp: ${SITE_FACTS.contact.phoneDisplay}`);
@@ -36,10 +36,11 @@ export async function GET() {
 
   // Verified Proof Numbers
   lines.push(`## Verified Proof Points`);
-  lines.push(`- ${SITE_FACTS.stats.customCodedBuilds.value} custom-coded builds and repositories on GitHub (${SITE_FACTS.founder.githubOrg})`);
+  lines.push(`- ${SITE_FACTS.stats.websitesDelivered.value} websites delivered`);
+  lines.push(`- ${SITE_FACTS.stats.customCodedBuilds.value} custom-coded builds (GitHub: ${SITE_FACTS.founder.githubOrg})`);
   lines.push(`- ${SITE_FACTS.stats.githubContributionsLastYear.value} GitHub contributions in the last 12 months across Next.js, React, Node.js and Flutter repositories`);
   lines.push(`- ${SITE_FACTS.stats.totalClientsServed.value} happy clients served across web development, digital marketing, and AI automation`);
-  lines.push(`- ${SITE_FACTS.stats.cmsWebsitesBuilt.value} CMS websites delivered (WordPress, Shopify, Wix, Webflow, Squarespace)`);
+  lines.push(`- ${SITE_FACTS.stats.cmsWebsitesBuilt.value} CMS websites delivered (WordPress, Shopify, Webflow, Framer)`);
   lines.push(`- ${SITE_FACTS.stats.socialAccountsManaged.value} social media accounts managed`);
   lines.push(`- Own brands built and operated by the Webix team: Zelvomart (Pakistan e-commerce, 64 WhatsApp conversations at Rs 15.01 each), LaptopSouq.ae (UAE electronics), Miraj Builders (Pakistan construction)`);
   lines.push(``);
@@ -48,7 +49,7 @@ export async function GET() {
   lines.push(`## Flagship Offers & Packages`);
   FLAGSHIP_OFFERS.forEach((pkg) => {
     lines.push(`### ${pkg.name}`);
-    lines.push(`- Price: ${pkg.priceDisplay} (${pkg.billingType})`);
+    lines.push(`- Price: ${pkg.confirmed ? pkg.priceDisplay : "Custom quote"} (${pkg.billingType})`);
     lines.push(`- Best For: ${pkg.whoItsFor}`);
     lines.push(`- Delivery Time: ${pkg.deliveryTime}`);
     lines.push(`- Deliverables:`);
@@ -59,7 +60,7 @@ export async function GET() {
 
   lines.push(`## Website Care Plans`);
   CARE_PLANS.forEach((plan) => {
-    lines.push(`### ${plan.name} ($${plan.priceUsd}${plan.billingPeriod})`);
+    lines.push(`### ${plan.name} (${plan.confirmed ? `$${plan.priceUsd}${plan.billingPeriod}` : "Custom quote"})`);
     lines.push(`- Summary: ${plan.summary}`);
     lines.push(`- Features:`);
     plan.features.forEach((f) => lines.push(`  * ${f}`));

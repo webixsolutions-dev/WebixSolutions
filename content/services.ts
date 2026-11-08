@@ -186,7 +186,7 @@ export const SERVICES_REGISTRY: ServiceEntry[] = [
     published: false,
     title: "CMS Website Development Services | Webix Solutions",
     metaDescription:
-      "WordPress, WooCommerce, Shopify, Wix, Webflow and Squarespace websites — 50+ CMS builds delivered. Easy to edit, fast and SEO-ready.",
+      "WordPress, WooCommerce, Shopify, Wix, Webflow and Squarespace websites — 150 CMS builds delivered. Easy to edit, fast and SEO-ready.",
     h1: "CMS website development on every major platform",
     primaryKeyword: "CMS website development",
     secondaryKeywords: [
@@ -214,7 +214,7 @@ export const SERVICES_REGISTRY: ServiceEntry[] = [
     published: false,
     title: "WordPress Development Services | Webix Solutions",
     metaDescription:
-      "Custom WordPress and Elementor Pro websites, WooCommerce stores, speed fixes, malware cleanup and ongoing care from a team that has built 50+ CMS sites.",
+      "Custom WordPress and Elementor Pro websites, WooCommerce stores, speed fixes, malware cleanup and ongoing care from a team that has built 150 CMS sites.",
     h1: "WordPress development services",
     primaryKeyword: "WordPress development services",
     secondaryKeywords: [
@@ -235,29 +235,36 @@ export const SERVICES_REGISTRY: ServiceEntry[] = [
   },
   {
     slug: "custom-crm-development",
-    name: "Custom CRM Development",
-    shortName: "Custom CRM",
+    name: "Custom CRM & Client Portal Development",
+    shortName: "CRM & Client Portals",
     category: "Build",
-    wave: "W2",
-    published: false,
-    title: "Custom CRM Development Services | Webix Solutions",
-    metaDescription:
-      "A CRM built around how your team actually sells: pipelines, tasks, invoices, HR and dashboards in one place — no per-seat fees.",
-    h1: "Custom CRM development",
+    wave: "W1",
+    published: true,
+    title: "Custom CRM & Client Portals | Webix Solutions",
+    metaDescription: "Build a custom CRM or client portal for lead tracking, bookings, documents, reporting and team operations. Connect it to your existing tools.",
+    h1: "Custom CRM and client portal development",
     primaryKeyword: "custom CRM development",
-    secondaryKeywords: [
-      "CRM software development",
-      "custom CRM for small business",
-      "CRM integration",
+    secondaryKeywords: ["client portal development", "customer relationship management", "workflow integration"],
+    shortOutcome: "Lead pipelines, client portals, booking dashboards and internal tools that fit your team’s workflow.",
+    introSentences: [
+      "We build custom customer relationship management software and client portals for businesses and agencies.",
+      "We start with your existing workflow and build the dashboards, permissions and integrations that your staff and clients need.",
     ],
-    shortOutcome: "Tailored pipelines, client portals, invoicing and operations without per-seat fees.",
-    startingPrice: "$3,500",
-    priceUnit: "scoped project",
     confirmedPrice: false,
-    relatedSlugs: [
-      "custom-web-application-development",
-      "ai-automation-services",
-      "lead-generation-automation",
+    relatedSlugs: ["web-design-development-service", "ai-automation-services", "ai-chatbot-development"],
+    outcomes: [
+      { title: "Lead and customer records", detail: "See enquiries, owners and follow-ups in one shared view." },
+      { title: "Customer portals", detail: "Give customers role-based access to their own bookings, documents and project status." },
+      { title: "Operational dashboards", detail: "Track appointments, tasks and reports from one place." },
+    ],
+    deliverables: [
+      { groupTitle: "Workflow and access", items: ["Pipeline and permission mapping", "Staff and customer views", "Staging review and test accounts"] },
+      { groupTitle: "Systems and handover", items: ["Approved data migration and integrations", "Mobile and role-based testing", "Documentation and access handover"] },
+    ],
+    faqs: [
+      { question: "Can you connect our current CRM and booking software?", answer: "Yes. We review the APIs and your data access first, then confirm which records can sync reliably." },
+      { question: "Can clients see only their own data?", answer: "Yes. We scope roles and permissions upfront and test access using separate staff and customer accounts." },
+      { question: "Can an agency resell a custom portal under its own brand?", answer: "Yes. We can build and hand over the portal under your agency’s brand as a white-label project." },
     ],
   },
   {
@@ -293,8 +300,8 @@ export const SERVICES_REGISTRY: ServiceEntry[] = [
   // ============================================================================
   {
     slug: "seo-services",
-    name: "SEO Services",
-    shortName: "SEO Services",
+    name: "SEO, AEO & GEO Services",
+    shortName: "SEO & AI Search",
     category: "Grow",
     wave: "W1",
     published: true,
@@ -311,7 +318,7 @@ export const SERVICES_REGISTRY: ServiceEntry[] = [
       "link building",
       "SEO agency for small business",
     ],
-    shortOutcome: "Technical fixes, local rankings and buyer-intent content measured in Search Console.",
+    shortOutcome: "Technical SEO, local search, answer engine optimization (AEO) and generative engine optimization (GEO).",
     startingPrice: "$299",
     priceUnit: "/month",
     confirmedPrice: false,
@@ -717,7 +724,7 @@ export const SERVICES_REGISTRY: ServiceEntry[] = [
       "AI content calendar",
       "AI generated social media content",
     ],
-    shortOutcome: "Monthly batches of carousels, graphics, reels and captions finished by in-house designers.",
+    shortOutcome: "Monthly batches of carousels, graphics, reels and captions finished by remote designers.",
     startingPrice: "$149",
     priceUnit: "/month",
     confirmedPrice: false,
@@ -764,7 +771,7 @@ export const SERVICES_REGISTRY: ServiceEntry[] = [
     published: true,
     title: "Graphic Design & Creative Services | Webix Solutions",
     metaDescription:
-      "Logos, brand kits, social graphics, ad creatives, packaging and video editing from an in-house creative team. Batches from $99.",
+      "Logos, brand kits, social graphics, ad creatives, packaging and video editing from an remote creative team. Batches from $99.",
     h1: "Graphic design and creative studio services",
     primaryKeyword: "graphic design services",
     secondaryKeywords: [

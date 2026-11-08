@@ -11,7 +11,7 @@ import { WhiteLabelView } from "@/components/white-label/white-label-view";
 const WHITE_LABEL_TITLE =
   "White-Label Digital & AI Partner | Webix Solutions";
 const WHITE_LABEL_DESCRIPTION =
-  "Outsource websites, social media, SEO and AI automation to an in-house team that works your hours. Unbranded delivery, NDA, partner pricing.";
+  "Outsource websites, social media, SEO and AI automation to an remote team that works your hours. Unbranded delivery, NDA, partner pricing.";
 
 export const metadata: Metadata = buildMetadata({
   title: WHITE_LABEL_TITLE,
@@ -38,7 +38,7 @@ const FAQS = [
   {
     question: "Can your team attend client video calls as our internal technical team?",
     answer:
-      "Yes. For select enterprise partners, our senior engineers and technical architects can attend video conferences using your agency's email alias and branded background, acting seamlessly as your in-house engineering department to help scope complex requirements.",
+      "Yes. For select enterprise partners, our senior engineers and technical architects can attend video conferences using your agency's email alias and branded background, acting seamlessly as your remote engineering department to help scope complex requirements.",
   },
   {
     question: "How do partner pricing and invoicing work?",

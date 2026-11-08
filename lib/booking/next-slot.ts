@@ -1,10 +1,6 @@
-import { BOOKING_CONFIG } from "@/config/booking";
 import { SITE_FACTS } from "@/content/site-facts";
-import {
-  hasGoogleCalendarCredentials,
-  getCalendarFreeBusy,
-} from "./google-calendar";
 import { generateAvailableSlots } from "./slot-engine";
+import { bookingAvailability } from "./store";
 
 export interface NextSlotResult {
   mode: "slot" | "fallback";
@@ -42,108 +38,28 @@ export function formatSlotInEasternTime(iso: string): string {
   return `${datePart} · ${timePart}`;
 }
 
-/**
- * Server function for Hero Growth Console Signal 4 & Booking Placeholder.
- * Rules (from docs/06 and User Corrections):
- * - Deterministic slot stub is allowed ONLY when NODE_ENV !== "production".
- * - In production without Google Calendar credentials, returns `mode: "fallback"`
- *   (WhatsApp / email direct booking) — never fake slots.
- * - When Google Calendar credentials are present, queries real live availability.
- */
 export async function getNextOpenStrategySlot(): Promise<NextSlotResult> {
-  const hasCredentials = hasGoogleCalendarCredentials();
-  const isProd = process.env.NODE_ENV === "production";
-
-  if (!hasCredentials && isProd) {
-    return {
-      mode: "fallback",
-      durationMinutes: 30,
-      meetingTitle: "Free Strategy Call (30 min)",
-      fallbackMessage:
-        "Pick a time on WhatsApp or email — we work Eastern, Pacific, UAE, NZ and Pakistan hours.",
-      whatsappUrl: SITE_FACTS.contact.whatsappUrl,
-      email: SITE_FACTS.contact.email,
-      phoneDisplay: SITE_FACTS.contact.phoneDisplay,
-    };
-  }
-
-  try {
-    const now = new Date();
-    // Query window: from now up to 14 days ahead
-    const fromStr = now.toISOString().split("T")[0];
-    const futureDate = new Date(now.getTime() + 14 * 24 * 3600 * 1000);
-    const toStr = futureDate.toISOString().split("T")[0];
-
-    let busyIntervals: Array<{ start: string; end: string }> = [];
-    if (hasCredentials) {
-      busyIntervals = await getCalendarFreeBusy(
-        BOOKING_CONFIG.calendarId,
-        now.toISOString(),
-        futureDate.toISOString()
-      );
-    }
-
-    const availableSlots = generateAvailableSlots({
-      meetingTypeSlug: "strategy",
-      fromIsoDate: fromStr,
-      toIsoDate: toStr,
-      visitorTz: "America/New_York",
-      busyIntervals,
-      now,
-    });
-
-    if (availableSlots.length > 0) {
-      const firstSlot = availableSlots[0];
-      return {
-        mode: "slot",
-        slotIso: firstSlot.iso,
-        easternTimeFormatted: formatSlotInEasternTime(firstSlot.iso),
-        durationMinutes: 30,
-        meetingTitle: "Free Strategy Call (30 min)",
-        whatsappUrl: SITE_FACTS.contact.whatsappUrl,
-        email: SITE_FACTS.contact.email,
-        phoneDisplay: SITE_FACTS.contact.phoneDisplay,
-      };
-    }
-  } catch (err) {
-    console.error("Error retrieving next open strategy slot:", err);
-  }
-
-  // If no slots found or error in production, return fallback
-  if (isProd) {
-    return {
-      mode: "fallback",
-      durationMinutes: 30,
-      meetingTitle: "Free Strategy Call (30 min)",
-      fallbackMessage:
-        "Pick a time on WhatsApp or email — we work Eastern, Pacific, UAE, NZ and Pakistan hours.",
-      whatsappUrl: SITE_FACTS.contact.whatsappUrl,
-      email: SITE_FACTS.contact.email,
-      phoneDisplay: SITE_FACTS.contact.phoneDisplay,
-    };
-  }
-
-  // Dev fallback with candidate slot
-  const devNow = new Date();
-  const minStartMs = devNow.getTime() + BOOKING_CONFIG.minNoticeHours * 3600 * 1000;
-  const candidate = new Date(minStartMs);
-  candidate.setUTCHours(16, 0, 0, 0); // 21:00 PKT
-  if (candidate.getTime() <= minStartMs) {
-    candidate.setUTCDate(candidate.getUTCDate() + 1);
-  }
-  while (candidate.getUTCDay() === 0 || candidate.getUTCDay() === 6) {
-    candidate.setUTCDate(candidate.getUTCDate() + 1);
-  }
-  const fallbackIso = candidate.toISOString();
-
-  return {
-    mode: "slot",
-    slotIso: fallbackIso,
-    easternTimeFormatted: formatSlotInEasternTime(fallbackIso),
+  const base = {
     durationMinutes: 30,
-    meetingTitle: "Free Strategy Call (30 min)",
+    meetingTitle: "Free strategy call",
     whatsappUrl: SITE_FACTS.contact.whatsappUrl,
     email: SITE_FACTS.contact.email,
     phoneDisplay: SITE_FACTS.contact.phoneDisplay,
   };
+  try {
+    if (process.env.BOOKING_DATABASE_URL) {
+      const now = new Date();
+      const end = new Date(now.getTime() + 14 * 86400000);
+      const { busyIntervals, fullDays } = await bookingAvailability(now, end);
+      const slot = generateAvailableSlots({
+        meetingTypeSlug: "strategy", now, busyIntervals,
+        fromIsoDate: now.toISOString().slice(0, 10), toIsoDate: end.toISOString().slice(0, 10),
+        visitorTz: "America/New_York",
+      }).find((candidate) => !fullDays.has(candidate.hostDateKey));
+      if (slot) return { ...base, mode: "slot", slotIso: slot.iso, easternTimeFormatted: formatSlotInEasternTime(slot.iso) };
+    }
+  } catch {
+    console.error("Unable to load the next booking slot");
+  }
+  return { ...base, mode: "fallback", fallbackMessage: "Check the booking calendar for available times, or email us for help." };
 }

@@ -3,6 +3,7 @@
  */
 
 export interface IcsEventOptions {
+  uid?: string;
   title: string;
   description: string;
   startIso: string;
@@ -20,7 +21,7 @@ function formatUtcForIcs(isoString: string): string {
 }
 
 export function generateIcsContent(options: IcsEventOptions): string {
-  const uid = `webix-${Date.now()}@webixsolutions.com`;
+  const uid = options.uid ?? `webix-${Date.now()}@webixsolutions.com`;
   const dtStamp = formatUtcForIcs(new Date().toISOString());
   const dtStart = formatUtcForIcs(options.startIso);
   const dtEnd = formatUtcForIcs(options.endIso);

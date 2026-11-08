@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
+  <rect width="960" height="540" fill="#0b1e37"/>
+  <path d="M0 490 720 0h240v56L250 540H0Z" fill="#112d50"/>
+  <path d="M0 529 780 0m-516 540L960 67" stroke="#9fb6d6" opacity=".22"/>
+  <g transform="translate(156 82)" font-family="system-ui, sans-serif">
+    <rect width="648" height="376" rx="12" fill="#f0f5fb" stroke="#b4cce9" stroke-width="2"/>
+    <path d="M0 49h648" stroke="#d2dfef"/>
+    <text x="30" y="34" font-weight="700" font-size="21" fill="#0b284d">Jooblie</text>
+    <text x="617" y="32" font-size="12" text-anchor="end" fill="#3c5674">Product flow illustration</text>
+    <text x="324" y="119" text-anchor="middle" font-size="37" font-weight="700" fill="#102c50">Find your next role</text>
+    <rect x="102" y="148" width="444" height="47" rx="7" fill="#fff" stroke="#b0c3da"/>
+    <path d="M123 172a7 7 0 1 0 14 0 7 7 0 1 0-14 0m11 5 7 6" fill="none" stroke="#385679" stroke-width="2"/>
+    <text x="153" y="177" fill="#3c5674" font-size="14">Search jobs</text>
+    <path d="M192 270h65m134 0h65" stroke="#526d92" stroke-width="2" stroke-dasharray="4 4"/>
+    <g fill="#e0eafa" stroke="#9eb7d8">
+      <rect x="58" y="236" width="134" height="68" rx="7"/><rect x="257" y="236" width="134" height="68" rx="7"/><rect x="456" y="236" width="134" height="68" rx="7"/>
+    </g>
+    <g fill="#102c50" font-size="15" font-weight="650" text-anchor="middle">
+      <text x="125" y="276">Job search</text><text x="324" y="276">Applications</text><text x="523" y="276">Recruiter tools</text>
+    </g>
+  </g>
+</svg>

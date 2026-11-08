@@ -34,6 +34,9 @@ export interface WorkEntry {
   country: string;
   category: Exclude<WorkCategory, "All">;
   summary: string;
+  cover?: string;
+  projectUrl?: string;
+  coverCaption?: string;
   challenge: string;
   solution: string[];
   results: WorkMetric[];
@@ -43,6 +46,7 @@ export interface WorkEntry {
   permission: "named" | "anonymised";
   published: boolean;
   isSample?: boolean;
+  scopeOnly?: boolean;
 }
 
 export const WORK_CATEGORIES: WorkCategory[] = [
@@ -55,38 +59,106 @@ export const WORK_CATEGORIES: WorkCategory[] = [
   "Social media",
 ];
 
+const workImage = (file: string) => `/images/studio/${file}.webp`;
+
+const anonymousWebsiteScopes: WorkEntry[] = [
+  { slug: "property-inspection-site", title: "Property inspection website", summary: "A website build for a property inspection business.", category: "Websites" },
+  { slug: "independent-news-blog", title: "Independent news and blog website", summary: "A CMS website for publishing editorial and news articles.", category: "Websites" },
+  { slug: "coupons-directory", title: "Coupon directory website", summary: "A website build for a directory of offers and coupons.", category: "E-commerce" },
+  { slug: "retail-product-checkout", title: "Retail product and checkout improvements", summary: "Focused page updates for an online retailer, including product information and purchase flow.", category: "E-commerce" },
+  { slug: "hospitality-website", title: "Independent motel website", summary: "A website build for a hospitality business.", category: "Websites" },
+  { slug: "training-and-education-pages", title: "Education website page build", summary: "A scoped engagement to build three pages for an education provider.", category: "Websites" },
+  { slug: "construction-homepage", title: "Building contractor homepage", summary: "A new homepage for a building and renovation business.", category: "Websites" },
+  { slug: "social-media-content-management", title: "Social media content management", summary: "Planning and producing posts, reels and campaign creative for service and retail businesses.", category: "Social media" },
+  { slug: "book-checkout-redesign", title: "Book storefront checkout redesign", summary: "A targeted checkout redesign for a book storefront.", category: "E-commerce" },
+].map((scope) => ({
+  ...scope, category: scope.category as WorkEntry["category"], descriptor: "Anonymised client project",
+  country: "", challenge: scope.summary, solution: [], results: [], stack: [],
+  services: ["web-design-development-service"],
+  cover: workImage(scope.category === "E-commerce" ? "commerce" : "systems"),
+  permission: "anonymised", published: true, scopeOnly: true,
+}));
+
 export const WORK_REGISTRY: WorkEntry[] = [
   {
+    slug: "camz-cleaning-booking",
+    title: "Camz Cleaning",
+    descriptor: "Home services / Calgary, Canada",
+    country: "Canada",
+    category: "Websites",
+    summary: "A cleaning service website with service-area content, instant pricing and an online booking path for Calgary-area households.",
+    challenge: "Help customers in Calgary, Airdrie and Chestermere see the cleaning options and get a price before booking.",
+    solution: ["A service directory covering regular, deep and move-in or move-out cleaning", "An online pricing and booking flow", "Local content for the Calgary area"],
+    results: [],
+    services: ["web-design-development-service", "seo-services"],
+    stack: [],
+    permission: "named",
+    published: true,
+    cover: workImage("camz"),
+    projectUrl: "https://camzcleaning.com/",
+  },
+  {
+    slug: "jooblie",
+    title: "Jooblie",
+    descriptor: "Recruitment platform",
+    country: "",
+    category: "Custom software & CRM",
+    summary: "A recruitment platform with job search, applications, recruiter tools and an admin dashboard.",
+    challenge: "Give job seekers and recruiters separate workspaces while keeping job listings and applications connected.",
+    solution: ["Public job search and listings", "Job seeker applications and recruiter dashboards", "Shared publishing across specialist job portals"],
+    results: [],
+    services: ["custom-crm-development", "web-design-development-service"],
+    stack: ["React", "Vite", "Express", "Supabase"],
+    permission: "named",
+    published: true,
+    cover: "/images/studio/jooblie-cover.svg",
+    coverCaption: "Illustration of the Jooblie product flow",
+  },
+  {
+    slug: "walshkon-consultants",
+    title: "Walshkon Consultants",
+    descriptor: "Multi-region consulting website",
+    country: "",
+    category: "Websites",
+    summary: "A consulting website that directs visitors to relevant services by country or region.",
+    challenge: "Help visitors navigate a range of consulting services that vary by market.",
+    solution: ["Country selection on the homepage", "Market-specific pages and service navigation"],
+    results: [],
+    services: ["web-design-development-service"],
+    stack: ["Next.js", "React"],
+    permission: "named",
+    published: true,
+    cover: workImage("walshkon-cover"),
+    coverCaption: "Walshkon Consultants public website",
+    projectUrl: "https://www.walshkonconsultants.com/",
+  },
+  {
     slug: "zelvomart-ecommerce-platform",
+    cover: workImage("commerce"),
     title: "Zelvomart — Custom E-commerce Platform & WhatsApp Ads",
     descriptor: "E-commerce Retail · Pakistan",
     country: "Pakistan",
     category: "E-commerce",
     summary:
-      "Engineered an automated WhatsApp order verification flow and high-converting storefront that achieved 64 verified customer conversations at Rs 15.01 each.",
+      "A custom storefront with a cash-on-delivery order verification flow and click-to-WhatsApp campaigns.",
     challenge:
-      "Operating a Pakistani direct-to-consumer store faced two critical margins killers: slow mobile checkout causing high ad traffic bounce rates, and a 25%+ return-to-origin (RTO) courier rate caused by unconfirmed Cash-on-Delivery impulse orders.",
+      "Build a mobile storefront and add a way to verify cash-on-delivery orders before dispatch.",
     solution: [
-      "Custom-coded Next.js storefront delivering sub-2.0s mobile LCP across 3G/4G networks",
+      "Custom Next.js storefront with a mobile-first checkout",
       "Automated WhatsApp confirmation bot prompting customers to confirm order address with a single tap before dispatch",
       "Direct API integration with PostEx courier for automated AWB generation and live tracking updates",
       "Click-to-WhatsApp Meta ad campaigns targeted with Roman Urdu copy and optimized for verified sales chats",
     ],
     results: [
       {
-        label: "Cost per verified WhatsApp conversation",
+        label: "Cost per WhatsApp conversation",
         value: "Rs 15.01",
         source: "Meta Ads Manager (30-day verified campaign)",
       },
       {
-        label: "Verified customer conversations",
+        label: "WhatsApp conversations",
         value: "64",
-        source: "Direct WhatsApp Business incoming inquiries",
-      },
-      {
-        label: "Mobile Page Load Speed",
-        value: "< 2.0s",
-        source: "Google PageSpeed Insights on real 4G",
+        source: "Meta Ads Manager campaign reporting",
       },
     ],
     services: [
@@ -108,14 +180,15 @@ export const WORK_REGISTRY: WorkEntry[] = [
   },
   {
     slug: "us-contractor-websites",
-    title: "High-Converting Websites for US Trade Contractors",
+    cover: workImage("trade-cover"),
+    title: "Websites for US Trade Contractors",
     descriptor: "Electrical & Exterior Lighting Contractors · United States",
     country: "United States",
     category: "Websites",
     summary:
       "Custom mobile-first websites with tap-to-call interfaces, city service territory landing pages, and Google LSA optimization for American residential trade businesses.",
     challenge:
-      "The contractors were paying expensive monthly fees to legacy agency directories for slow template sites that buried phone numbers, lacked local city landing pages, and locked the business into proprietary hosting where they did not own their source code.",
+      "Make it easier for homeowners to find local services, call from a mobile device or request an estimate.",
     solution: [
       "Engineered bespoke mobile-first websites with persistent tap-to-call headers and estimate request forms",
       "Built structured suburban service territory silos (e.g. city-specific trade pages) matching Google Maps categories",
@@ -124,19 +197,9 @@ export const WORK_REGISTRY: WorkEntry[] = [
     ],
     results: [
       {
-        label: "Intellectual property ownership",
-        value: "100%",
-        source: "Client-owned GitHub & Cloudflare accounts",
-      },
-      {
         label: "US Trade businesses delivered",
         value: "3 Builds",
         source: "Electrical, exterior lighting & garage leasing",
-      },
-      {
-        label: "Mobile LCP performance",
-        value: "1.6s",
-        source: "Core Web Vitals test across North American nodes",
       },
     ],
     services: [
@@ -152,29 +215,20 @@ export const WORK_REGISTRY: WorkEntry[] = [
       "Jobber",
       "Twilio CallRail",
     ],
-    beforeAfter: {
-      beforeLabel: "Previous agency template",
-      beforeMetric: "5.8s load time · 0 city silos",
-      beforeDescription:
-        "Bloated WordPress page builder with no tap-to-call header, broken contact forms, generic stock photos, and proprietary agency hosting lock-in.",
-      afterLabel: "Webix Next.js custom build",
-      afterMetric: "1.6s load time · 12 city silos",
-      afterDescription:
-        "Fast Next.js static architecture with sticky emergency call buttons, verified before/after project galleries, and direct Jobber CRM scheduling.",
-    },
     permission: "anonymised",
     published: true,
   },
   {
     slug: "custom-crm-agency-operations",
+    cover: "/images/studio/crm-cover.svg",
     title: "Custom Agency Operations & Client Management CRM",
     descriptor: "Agency Infrastructure & Workflow Automation · Pakistan & Remote",
     country: "Pakistan",
     category: "Custom software & CRM",
     summary:
-      "A comprehensive internal agency operations platform uniting client project pipelines, task management, HR, tool access, and invoicing under one roof with zero per-seat licensing fees.",
+      "An internal agency platform for client projects, tasks, HR, tool access and invoicing.",
     challenge:
-      "Coordinating 20+ in-house team members across day and night shifts using disconnected SaaS subscriptions (Asana, Monday, Harvest, Slack bots) resulted in communication gaps, lost file versions, and thousands of dollars annually in per-seat software licensing.",
+      "Give a remote agency team one place to track work, manage access and hand projects over between shifts.",
     solution: [
       "Architected a centralized Next.js web application connected to a secure PostgreSQL database",
       "Built custom role-based modules: Client Management, Project & Task Tracking, HR & Attendance, and Invoicing",
@@ -186,16 +240,6 @@ export const WORK_REGISTRY: WorkEntry[] = [
         label: "Integrated operational modules",
         value: "6 Modules",
         source: "HR, clients, tasks, tools, dashboard, invoices",
-      },
-      {
-        label: "Per-seat monthly subscription fees",
-        value: "$0",
-        source: "100% owned self-hosted software stack",
-      },
-      {
-        label: "Active daily in-house users",
-        value: "20+ Team",
-        source: "Webix internal operations campus",
       },
     ],
     services: [
@@ -215,14 +259,15 @@ export const WORK_REGISTRY: WorkEntry[] = [
   },
   {
     slug: "ai-lead-engine-google-maps",
-    title: "AI Lead Engine: From Google Maps to Qualified Inquiries",
+    cover: "/images/studio/lead-cover.svg",
+    title: "AI-assisted Lead Research and Review",
     descriptor: "B2B Lead Research & Outreach Automation · United States & Canada",
     country: "United States",
     category: "AI & automation",
     summary:
       "An automated prospecting and research workflow that discovers unoptimized local businesses on Google Maps, enriches contact points, drafts custom personalization, and queues records for human review.",
     challenge:
-      "Manual B2B prospecting across target US metropolitan areas required spending dozens of hours collecting business addresses, checking website speeds, locating owner LinkedIn profiles, and typing repetitive introductory emails.",
+      "Give the outreach team a repeatable way to research businesses, prepare outreach drafts and review them before sending.",
     solution: [
       "Engineered an automated data pipeline targeting specific trade niches and geographic cities via Google Places",
       "Automated technical enrichment: auditing website mobile speed, Google Business Profile review status, and SSL certificates",
@@ -230,16 +275,6 @@ export const WORK_REGISTRY: WorkEntry[] = [
       "Enforced a strict Human-in-the-Loop review queue where an editor must approve or edit each email before dispatch",
     ],
     results: [
-      {
-        label: "Editorial review safeguard",
-        value: "100%",
-        source: "Human verification before every dispatch",
-      },
-      {
-        label: "Regulatory compliance",
-        value: "CASL & CAN-SPAM",
-        source: "Mandatory opt-out & physical address footers",
-      },
       {
         label: "Target enrichment stages",
         value: "4 Stages",
@@ -261,6 +296,7 @@ export const WORK_REGISTRY: WorkEntry[] = [
     permission: "anonymised",
     published: true,
   },
+  ...anonymousWebsiteScopes,
   {
     slug: "sample-ecommerce-platform",
     title: "Sample — E-commerce Storefront & WhatsApp Flow",
@@ -289,12 +325,12 @@ export function getPublishedWorkEntries(): WorkEntry[] {
 
 export function getWorkEntryBySlug(slug: string): WorkEntry | undefined {
   return WORK_REGISTRY.find(
-    (entry) => entry.slug === slug && entry.published === true
+    (entry) => entry.slug === slug && entry.published && !entry.scopeOnly
   );
 }
 
 export function getPublishedWorkSlugs(): string[] {
-  return WORK_REGISTRY.filter((entry) => entry.published === true).map(
+  return WORK_REGISTRY.filter((entry) => entry.published && !entry.scopeOnly).map(
     (entry) => entry.slug
   );
 }
