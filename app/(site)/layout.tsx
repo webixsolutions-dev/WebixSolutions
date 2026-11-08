@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/footer";
 import { StudioMotion } from "@/components/studio/studio-motion";
 import { BookingDialog } from "@/components/booking/booking-dialog";
 import { MobileStickyBar } from "@/components/layout/mobile-sticky-bar";
-import { getMegaMenuColumns } from "@/content/navigation";
+import { getFooterColumns, getMegaMenuColumns } from "@/content/navigation";
 
 export default function SiteLayout({
   children,
@@ -15,7 +15,7 @@ export default function SiteLayout({
 
   return (
     <>
-      <Header megaMenuColumns={megaMenuColumns} />
+      <Header megaMenuColumns={megaMenuColumns} industries={getFooterColumns().industries.slice(1)} />
       <StudioMotion />
       <BookingDialog />
       <main id="main" className="flex-1">

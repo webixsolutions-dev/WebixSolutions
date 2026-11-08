@@ -9,7 +9,7 @@ import { Container } from "@/components/ui/container";
 import { Kicker } from "@/components/ui/kicker";
 import { Button } from "@/components/ui/button";
 import { Chip } from "@/components/ui/chip";
-import { CutFrame } from "@/components/ui/cut-frame";
+import { CardSurface } from "@/components/ui/card-surface";
 import { FaqSection } from "@/components/shared/faq-section";
 import { FinalCtaSection } from "@/components/home/final-cta-section";
 import type { ServiceCategory, ServiceEntry } from "@/content/services";
@@ -66,7 +66,7 @@ export function ServicesHubView({ categories, nextSlot }: ServicesHubViewProps) 
       {/* =========================================================================
           HERO SECTION (Graphite)
          ========================================================================= */}
-      <Section surface="graphite" spacing="hero" grid className="relative">
+      <Section surface="graphite" spacing="hero" className="relative">
         <Container>
           {/* Breadcrumbs */}
           <nav aria-label="Breadcrumb" className="mb-6 animate-hero-rise">
@@ -130,8 +130,6 @@ export function ServicesHubView({ categories, nextSlot }: ServicesHubViewProps) 
       <Section
         id="service-directory"
         surface="porcelain"
-        previousSurface="graphite"
-        notch
         spacing="default"
       >
         <Container>
@@ -275,8 +273,6 @@ export function ServicesHubView({ categories, nextSlot }: ServicesHubViewProps) 
          ========================================================================= */}
       <Section
         surface="steel"
-        previousSurface="porcelain"
-        notch
         spacing="default"
       >
         <Container>
@@ -312,14 +308,12 @@ export function ServicesHubView({ categories, nextSlot }: ServicesHubViewProps) 
         subtitle="Transparent answers about our engagement models, delivery timelines and service combinations."
         faqs={FAQS}
         surface="porcelain"
-        previousSurface="steel"
-        notch
       />
 
       {/* =========================================================================
           FINAL CTA SECTION (Oxblood with Notch)
          ========================================================================= */}
-      <FinalCtaSection nextSlot={nextSlot} previousSurface="porcelain" />
+      <FinalCtaSection nextSlot={nextSlot} />
     </div>
   );
 }

@@ -27,7 +27,7 @@ export function ServicesTabs({ columns }: { columns: MegaMenuColumn[] }) {
           <p className="studio-service-panel-intro"><strong>{column.heading}</strong> <span>{column.subtitle}</span></p>
           <div className="studio-service-cards">
             {column.items.map((item) => (
-              <Link className="studio-service studio-cut-frame" key={item.href} href={item.href} data-studio-spotlight>
+              <Link className="studio-service signal-card" key={item.href} href={item.href} data-studio-spotlight>
                 <h3>{item.label}</h3>
                 {item.description && <p>{item.description}</p>}
                 <span>Service details <ArrowUpRight size={17} /></span>

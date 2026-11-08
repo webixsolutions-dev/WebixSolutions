@@ -98,7 +98,7 @@ export function BlogPostView({ post }: BlogPostViewProps) {
       {/* =========================================================================
           2. TABLE OF CONTENTS & ARTICLE BODY (Porcelain)
          ========================================================================= */}
-      <Section surface="porcelain" previousSurface="graphite" notch spacing="compact">
+      <Section surface="porcelain" spacing="compact">
         <Container>
           <div className="max-w-3xl mx-auto space-y-10">
             {/* Table of Contents */}
@@ -246,15 +246,13 @@ export function BlogPostView({ post }: BlogPostViewProps) {
           subtitle="Direct answers on implementation, timelines, and technical requirements."
           faqs={post.faqs}
           surface="steel"
-          previousSurface="porcelain"
-          notch
         />
       )}
 
       {/* =========================================================================
           4. FINAL CTA (Oxblood with Notch)
          ========================================================================= */}
-      <FinalCtaSection previousSurface={post.faqs.length > 0 ? "steel" : "porcelain"} />
+      <FinalCtaSection />
     </div>
   );
 }

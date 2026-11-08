@@ -1,73 +1,36 @@
 "use client";
 
-import * as React from "react";
-import { cn } from "@/lib/utils";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import { WhatsAppIcon } from "@/components/layout/social-icons";
+import { SITE_FACTS } from "@/content/site-facts";
 
-/**
- * Sticky Mobile Bottom Bar (< 768px) — Allowed liquid-glass surface #4 in docs/05.
- * Appears ONLY after the hero CTAs ([data-hero-ctas]) scroll out of view via IntersectionObserver,
- * so it never covers hero content.
- */
 export function MobileStickyBar() {
-  const [visible, setVisible] = React.useState(false);
+  const [visible, setVisible] = useState(false);
+  const path = usePathname();
 
-  React.useEffect(() => {
-    const target = document.querySelector("[data-hero-ctas]");
-
-    if (target && "IntersectionObserver" in window) {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          // Show sticky bar only when hero CTAs have scrolled above the viewport
-          const scrolledPastHeroCtas =
-            !entry.isIntersecting && entry.boundingClientRect.bottom < 0;
-          setVisible(scrolledPastHeroCtas);
-        },
-        {
-          threshold: 0,
-        }
-      );
-
-      observer.observe(target);
-      return () => observer.disconnect();
-    }
-
-    // Fallback for pages without [data-hero-ctas]: show after scrolling 420px
+  useEffect(() => {
     const onScroll = () => {
-      setVisible(window.scrollY > 420);
+      const hero = document.querySelector("[data-hero-ctas]");
+      setVisible(hero ? hero.getBoundingClientRect().bottom < 0 : window.scrollY > 420);
     };
-    onScroll();
+    const frame = requestAnimationFrame(onScroll);
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, [path]);
 
   return (
-    <div
-      aria-hidden={!visible}
-      className={cn(
-        "fixed inset-x-0 bottom-0 z-40 p-2.5 md:hidden transition-all duration-250 ease-out",
-        visible
-          ? "translate-y-0 opacity-100 pointer-events-none"
-          : "translate-y-full opacity-0 pointer-events-none"
+    <div className="studio-mobile-sticky" data-visible={visible} inert={!visible}>
+      <Button href="/book-a-call/" variant="primary" className="flex-1">Book a free call</Button>
+      {path === "/contact-us/" && (
+        <a className="studio-sticky-contact" href={SITE_FACTS.contact.whatsappUrl} aria-label="Message Webix Solutions on WhatsApp" target="_blank" rel="noopener noreferrer">
+          <WhatsAppIcon className="size-5" />
+        </a>
       )}
-    >
-      <div
-        className={cn(
-          "mx-auto flex items-center gap-2 rounded-xl glass-surface-dark p-2",
-          visible ? "pointer-events-auto" : "pointer-events-none"
-        )}
-      >
-        <Button
-          href="/book-a-call/"
-          variant="primary"
-          size="sm"
-          tabIndex={visible ? 0 : -1}
-          className="flex-1"
-        >
-          Book a call
-        </Button>
-
-      </div>
     </div>
   );
 }

@@ -58,7 +58,7 @@ export function OurWorkHubView({ entries, nextSlot }: OurWorkHubViewProps) {
       {/* =========================================================================
           1. HERO SECTION (Graphite)
          ========================================================================= */}
-      <Section surface="graphite" spacing="hero" grid className="relative">
+      <Section surface="graphite" spacing="hero" className="relative">
         <Container>
           {/* Breadcrumbs */}
           <nav aria-label="Breadcrumb" className="mb-6 animate-hero-rise">
@@ -117,8 +117,6 @@ export function OurWorkHubView({ entries, nextSlot }: OurWorkHubViewProps) {
       <Section
         id="work-directory"
         surface="porcelain"
-        previousSurface="graphite"
-        notch
         spacing="default"
       >
         <Container>
@@ -158,7 +156,7 @@ export function OurWorkHubView({ entries, nextSlot }: OurWorkHubViewProps) {
               <div
                 key={study.slug}
                 hidden={selectedCategory !== "All" && selectedCategory !== study.category}
-                className="group studio-cut-frame interior-project-card"
+                className="group signal-card interior-project-card"
               >
                 <ProjectCover study={study} />
                 <div className="p-6 md:p-8 space-y-5">
@@ -237,9 +235,6 @@ export function OurWorkHubView({ entries, nextSlot }: OurWorkHubViewProps) {
          ========================================================================= */}
       <Section
         surface="graphite"
-        previousSurface="porcelain"
-        notch
-        grid
         spacing="default"
       >
         <Container>
@@ -267,7 +262,7 @@ export function OurWorkHubView({ entries, nextSlot }: OurWorkHubViewProps) {
       {/* =========================================================================
           4. FINAL CTA SECTION (Oxblood with Notch)
          ========================================================================= */}
-      <FinalCtaSection nextSlot={nextSlot} previousSurface="graphite" />
+      <FinalCtaSection nextSlot={nextSlot} />
     </div>
   );
 }

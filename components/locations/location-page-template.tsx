@@ -35,7 +35,7 @@ export function LocationPageTemplate({
       {/* =========================================================================
           1. HERO SECTION (Graphite)
          ========================================================================= */}
-      <Section surface="graphite" spacing="hero" grid className="relative">
+      <Section surface="graphite" spacing="hero" className="relative">
         <Container>
           {/* Breadcrumbs */}
           <nav aria-label="Breadcrumb" className="mb-6 animate-hero-rise">
@@ -117,8 +117,6 @@ export function LocationPageTemplate({
          ========================================================================= */}
       <Section id="market-hours"
         surface="porcelain"
-        previousSurface="graphite"
-        notch
         spacing="default"
       >
         <Container>
@@ -177,8 +175,6 @@ export function LocationPageTemplate({
          ========================================================================= */}
       <Section id="market-billing"
         surface="steel"
-        previousSurface="porcelain"
-        notch
         spacing="default"
       >
         <Container>
@@ -236,9 +232,6 @@ export function LocationPageTemplate({
          ========================================================================= */}
       <Section
         surface="graphite"
-        previousSurface="steel"
-        notch
-        grid
         spacing="default"
       >
         <Container>
@@ -291,8 +284,6 @@ export function LocationPageTemplate({
          ========================================================================= */}
       <Section
         surface="porcelain"
-        previousSurface="graphite"
-        notch
         spacing="default"
       >
         <Container>
@@ -342,8 +333,6 @@ export function LocationPageTemplate({
         subtitle="Clear details on our communication workflows, contractual agreements, and payment methods."
         faqs={content.faqs}
         surface="porcelain"
-        previousSurface="porcelain"
-        notch
       />
 
       {/* =========================================================================
@@ -351,8 +340,6 @@ export function LocationPageTemplate({
          ========================================================================= */}
       <Section id="market-services"
         surface="steel"
-        previousSurface="porcelain"
-        notch
         spacing="default"
       >
         <Container>
@@ -394,7 +381,7 @@ export function LocationPageTemplate({
       {/* =========================================================================
           8. FINAL CTA SECTION (Oxblood with Notch)
          ========================================================================= */}
-      <FinalCtaSection nextSlot={nextSlot} previousSurface="steel" />
+      <FinalCtaSection nextSlot={nextSlot} />
     </div>
   );
 }

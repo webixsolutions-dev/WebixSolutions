@@ -3,7 +3,7 @@ import { Check } from "lucide-react";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Kicker } from "@/components/ui/kicker";
-import { CutFrame } from "@/components/ui/cut-frame";
+import { CardSurface } from "@/components/ui/card-surface";
 import { Chip } from "@/components/ui/chip";
 import { Button } from "@/components/ui/button";
 import { HOME_CONTENT } from "@/content/home";
@@ -16,7 +16,7 @@ export function TwoWaysSplit() {
   const { forBusinesses, forAgencies } = HOME_CONTENT.twoWays;
 
   return (
-    <Section surface="steel" previousSurface="porcelain" notch>
+    <Section surface="steel" >
       <Container>
         <div className="max-w-2xl space-y-3">
           <Kicker>{HOME_CONTENT.twoWays.kicker}</Kicker>
@@ -26,8 +26,8 @@ export function TwoWaysSplit() {
         <div className="mt-10 grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* 8 Columns: For Businesses */}
           <div className="lg:col-span-7">
-            <CutFrame
-              cutSize="lg"
+            <CardSurface
+
               innerClassName="p-6 md:p-9 h-full flex flex-col justify-between gap-6"
             >
               <div className="space-y-4">
@@ -57,14 +57,14 @@ export function TwoWaysSplit() {
                   {forBusinesses.ctaLabel}
                 </Button>
               </div>
-            </CutFrame>
+            </CardSurface>
           </div>
 
           {/* 4 Columns: For Agencies & IT Companies (White-Label) */}
           <div className="lg:col-span-5">
             <div
               data-surface="graphite"
-              className="cut-tr-lg bg-[#141519] text-[#F5F6F8] p-6 md:p-9 h-full flex flex-col justify-between gap-6 border border-[#111215]/15"
+              className="rounded-xl bg-[#141519] text-[#F5F6F8] p-6 md:p-9 h-full flex flex-col justify-between gap-6 border border-[#111215]/15"
             >
               <div className="space-y-4">
                 <Chip asSpan>{forAgencies.badge}</Chip>

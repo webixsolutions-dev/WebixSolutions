@@ -3,7 +3,7 @@ import { ChevronDown } from "lucide-react";
 import { Section, type SurfaceType } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Kicker } from "@/components/ui/kicker";
-import { CutFrame } from "@/components/ui/cut-frame";
+import { CardSurface } from "@/components/ui/card-surface";
 import type { ServiceFaq } from "@/content/services";
 
 export interface FaqSectionProps {
@@ -13,8 +13,6 @@ export interface FaqSectionProps {
   subtitle?: string;
   faqs: readonly ServiceFaq[] | ServiceFaq[];
   surface?: SurfaceType;
-  previousSurface?: SurfaceType;
-  notch?: boolean;
 }
 
 /**
@@ -29,16 +27,12 @@ export function FaqSection({
   subtitle,
   faqs,
   surface = "porcelain",
-  previousSurface = "graphite",
-  notch = true,
 }: FaqSectionProps) {
   return (
     <Section
       id={id}
       className="interior-faq"
       surface={surface}
-      previousSurface={previousSurface}
-      notch={notch}
     >
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
@@ -54,7 +48,7 @@ export function FaqSection({
 
           <div className="lg:col-span-7 space-y-3">
             {faqs.map((faq, idx) => (
-              <CutFrame key={faq.question} innerClassName="p-0">
+              <CardSurface key={faq.question} innerClassName="p-0">
                 <details
                   open={idx === 0}
                   className="group p-5 md:p-6 [&_summary::-webkit-details-marker]:hidden"
@@ -70,7 +64,7 @@ export function FaqSection({
                     {faq.answer}
                   </div>
                 </details>
-              </CutFrame>
+              </CardSurface>
             ))}
           </div>
         </div>

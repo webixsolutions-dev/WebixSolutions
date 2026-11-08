@@ -67,7 +67,7 @@ export function getMegaMenuColumns(): MegaMenuColumn[] {
 export const PRIMARY_NAV_LINKS: NavLinkItem[] = [
   { label: "Services", href: "/services/" },
   { label: "AI & Automation", href: "/ai-automation-services/" },
-  { label: "Our Work", href: "/our-work/" },
+  { label: "Our work", href: "/our-work/" },
   { label: "Industries", href: "/industries/" },
   { label: "Pricing", href: "/pricing/" },
   { label: "About", href: "/about-us/" },
@@ -95,7 +95,7 @@ export function getFooterColumns() {
       href: `/${s.slug}/`,
     })),
     industries: [
-      { label: "All Industries (14)", href: "/industries/" },
+      { label: "All industries", href: "/industries/" },
       ...industries.map((i) => ({
         label: i.shortLabel,
         href: `/industries/${i.slug}/`,
@@ -107,7 +107,7 @@ export function getFooterColumns() {
     })),
     company: [
       { label: "About Us", href: "/about-us/" },
-      { label: "Our Work", href: "/our-work/" },
+      { label: "Our work", href: "/our-work/" },
       { label: "Pricing", href: "/pricing/" },
       { label: "Growth Packages", href: "/offers/" },
       { label: "White-Label Partners", href: "/white-label-partners/" },

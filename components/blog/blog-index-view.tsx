@@ -88,7 +88,7 @@ export function BlogIndexView({
       {/* =========================================================================
           2. FEATURED POST & ARTICLE GRID (Porcelain with Notch)
          ========================================================================= */}
-      <Section surface="porcelain" previousSurface="graphite" notch spacing="default">
+      <Section surface="porcelain" spacing="default">
         <Container>
           {filteredPosts.length === 0 ? (
             <div className="p-12 text-center text-[#717684]">
@@ -100,7 +100,7 @@ export function BlogIndexView({
               {featuredPost && (
                 <Link
                   href={`/${featuredPost.slug}/`}
-                  className="group block cut-tr-lg border border-[#E4E6EB] bg-white p-7 sm:p-10 shadow-xs hover:border-[#ED1C24] transition-all"
+                  className="group block rounded-xl border border-[#E4E6EB] bg-white p-7 sm:p-10 shadow-xs hover:border-[#ED1C24] transition-all"
                 >
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     <div className="lg:col-span-8 space-y-4">
@@ -208,7 +208,7 @@ export function BlogIndexView({
       {/* =========================================================================
           3. FINAL CTA (Oxblood with Notch)
          ========================================================================= */}
-      <FinalCtaSection previousSurface="porcelain" />
+      <FinalCtaSection />
     </div>
   );
 }

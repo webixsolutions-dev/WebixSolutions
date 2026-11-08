@@ -81,7 +81,7 @@ export function OffersLandingView({ nextSlot }: OffersLandingViewProps) {
       {/* =========================================================================
           1. SIMPLIFIED LANDING HERO (Graphite)
          ========================================================================= */}
-      <Section surface="graphite" spacing="hero" grid className="relative">
+      <Section surface="graphite" spacing="hero" className="relative">
         <Container>
           <div className="max-w-3xl space-y-6 animate-hero-rise">
             <Kicker>Websites, growth and automation</Kicker>
@@ -134,8 +134,6 @@ export function OffersLandingView({ nextSlot }: OffersLandingViewProps) {
       <Section
         id="packages"
         surface="porcelain"
-        previousSurface="graphite"
-        notch
         spacing="default"
       >
         <Container>
@@ -230,8 +228,6 @@ export function OffersLandingView({ nextSlot }: OffersLandingViewProps) {
          ========================================================================= */}
       <Section
         surface="steel"
-        previousSurface="porcelain"
-        notch
         spacing="default"
       >
         <Container>
@@ -275,9 +271,6 @@ export function OffersLandingView({ nextSlot }: OffersLandingViewProps) {
          ========================================================================= */}
       <Section
         surface="graphite"
-        previousSurface="steel"
-        notch
-        grid
         spacing="default"
       >
         <Container>
@@ -336,8 +329,6 @@ export function OffersLandingView({ nextSlot }: OffersLandingViewProps) {
          ========================================================================= */}
       <Section
         surface="porcelain"
-        previousSurface="graphite"
-        notch
         spacing="default"
       >
         <Container>
@@ -383,14 +374,12 @@ export function OffersLandingView({ nextSlot }: OffersLandingViewProps) {
         subtitle="Transparent terms regarding contract lengths, ad budgets, and ownership transfers."
         faqs={OFFER_FAQS}
         surface="steel"
-        previousSurface="porcelain"
-        notch
       />
 
       {/* =========================================================================
           7. INLINE BOOKING SECTION (Oxblood with Notch)
          ========================================================================= */}
-      <FinalCtaSection nextSlot={nextSlot} previousSurface="steel" />
+      <FinalCtaSection nextSlot={nextSlot} />
     </div>
   );
 }

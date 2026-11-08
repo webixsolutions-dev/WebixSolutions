@@ -15,7 +15,7 @@ import { Container } from "@/components/ui/container";
 import { Kicker } from "@/components/ui/kicker";
 import { Button } from "@/components/ui/button";
 import { Chip } from "@/components/ui/chip";
-import { CutFrame } from "@/components/ui/cut-frame";
+import { CardSurface } from "@/components/ui/card-surface";
 import { FaqSection } from "@/components/shared/faq-section";
 import { FinalCtaSection } from "@/components/home/final-cta-section";
 import type { IndustryPageContent } from "@/content/industry-pages/types";
@@ -35,7 +35,7 @@ export function IndustryPageTemplate({
       {/* =========================================================================
           1. HERO SECTION (Graphite)
          ========================================================================= */}
-      <Section surface="graphite" spacing="hero" grid className="relative">
+      <Section surface="graphite" spacing="hero" className="relative">
         <Container>
           {/* Breadcrumbs */}
           <nav aria-label="Breadcrumb" className="mb-6 animate-hero-rise">
@@ -117,8 +117,6 @@ export function IndustryPageTemplate({
          ========================================================================= */}
       <Section id="industry-needs"
         surface="porcelain"
-        previousSurface="graphite"
-        notch
         spacing="default"
       >
         <Container>
@@ -163,9 +161,6 @@ export function IndustryPageTemplate({
          ========================================================================= */}
       <Section id="industry-plan"
         surface="graphite"
-        previousSurface="porcelain"
-        notch
-        grid
         spacing="default"
       >
         <Container>
@@ -212,8 +207,6 @@ export function IndustryPageTemplate({
          ========================================================================= */}
       <Section
         surface="steel"
-        previousSurface="graphite"
-        notch
         spacing="default"
       >
         <Container>
@@ -260,8 +253,6 @@ export function IndustryPageTemplate({
          ========================================================================= */}
       <Section id="industry-work"
         surface="porcelain"
-        previousSurface="steel"
-        notch
         spacing="default"
       >
         <Container>
@@ -318,8 +309,6 @@ export function IndustryPageTemplate({
          ========================================================================= */}
       <Section id="industry-pricing"
         surface="red"
-        previousSurface="porcelain"
-        notch
         watermark="monogram"
         spacing="default"
       >
@@ -350,9 +339,6 @@ export function IndustryPageTemplate({
          ========================================================================= */}
       <Section
         surface="graphite"
-        previousSurface="red"
-        notch
-        grid
         spacing="compact"
       >
         <Container>
@@ -384,8 +370,6 @@ export function IndustryPageTemplate({
         subtitle="Transparent answers regarding implementation timelines, ad spend, and expected results."
         faqs={content.faqs}
         surface="porcelain"
-        previousSurface="graphite"
-        notch
       />
 
       {/* =========================================================================
@@ -393,8 +377,6 @@ export function IndustryPageTemplate({
          ========================================================================= */}
       <Section
         surface="steel"
-        previousSurface="porcelain"
-        notch
         spacing="default"
       >
         <Container>
@@ -436,7 +418,7 @@ export function IndustryPageTemplate({
       {/* =========================================================================
           10. FINAL CTA SECTION (Oxblood with Notch)
          ========================================================================= */}
-      <FinalCtaSection nextSlot={nextSlot} previousSurface="steel" />
+      <FinalCtaSection nextSlot={nextSlot} />
     </div>
   );
 }

@@ -48,7 +48,7 @@ export function PricingView({ nextSlot }: PricingViewProps) {
       {/* =========================================================================
           1. HERO SECTION (Graphite)
          ========================================================================= */}
-      <Section surface="graphite" spacing="hero" grid className="relative">
+      <Section surface="graphite" spacing="hero" className="relative">
         <Container>
           {/* Breadcrumbs */}
           <nav aria-label="Breadcrumb" className="mb-6 animate-hero-rise">
@@ -110,8 +110,6 @@ export function PricingView({ nextSlot }: PricingViewProps) {
       <Section
         id="pricing-options"
         surface="porcelain"
-        previousSurface="graphite"
-        notch
         spacing="default"
       >
         <Container>
@@ -180,7 +178,7 @@ export function PricingView({ nextSlot }: PricingViewProps) {
                   }`}
                 >
                   {idx === 1 && (
-                    <span className="absolute -top-3 left-8 px-3 py-0.5 rounded-full bg-[#ED1C24] text-white text-[10px] font-bold uppercase tracking-wider">
+                    <span className="absolute -top-3 left-8 px-3 py-0.5 rounded-full bg-[var(--signal-ink)] text-white text-[10px] font-bold uppercase tracking-wider">
                       Featured care plan
                     </span>
                   )}
@@ -311,7 +309,7 @@ export function PricingView({ nextSlot }: PricingViewProps) {
           {/* Integrated Offers Teaser Banner */}
           <div className="mt-16 p-8 md:p-10 rounded-2xl bg-[#141519] border border-white/12 text-white flex flex-col lg:flex-row lg:items-center justify-between gap-8">
             <div className="max-w-2xl space-y-2">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#ED1C24] text-xs font-bold uppercase tracking-wider text-white">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--signal-ink)] text-xs font-bold uppercase tracking-wider text-white">
                 <Sparkles className="h-3.5 w-3.5" />
                 <span>Prefer an integrated growth bundle?</span>
               </span>
@@ -340,8 +338,6 @@ export function PricingView({ nextSlot }: PricingViewProps) {
          ========================================================================= */}
       <Section
         surface="steel"
-        previousSurface="porcelain"
-        notch
         spacing="default"
       >
         <Container>
@@ -414,14 +410,12 @@ export function PricingView({ nextSlot }: PricingViewProps) {
         subtitle="Transparent answers regarding billing cycles, contracts, and currency equivalents."
         faqs={PRICING_FAQS}
         surface="porcelain"
-        previousSurface="steel"
-        notch
       />
 
       {/* =========================================================================
           5. FINAL CTA (Oxblood with Notch)
          ========================================================================= */}
-      <FinalCtaSection nextSlot={nextSlot} previousSurface="porcelain" />
+      <FinalCtaSection nextSlot={nextSlot} />
     </div>
   );
 }

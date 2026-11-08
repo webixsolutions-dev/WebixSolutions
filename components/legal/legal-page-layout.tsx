@@ -34,7 +34,7 @@ export function LegalPageLayout({
           </div>
         </Container>
       </Section>
-      <Section surface="porcelain" previousSurface="graphite" notch spacing="compact">
+      <Section surface="porcelain" spacing="compact">
         <Container size="narrow">
           <div className="interior-legal-document">
             {/* Legal Notice Callout */}
@@ -56,7 +56,7 @@ export function LegalPageLayout({
         </Container>
       </Section>
 
-      <FinalCtaSection previousSurface="porcelain" />
+      <FinalCtaSection />
     </div>
   );
 }

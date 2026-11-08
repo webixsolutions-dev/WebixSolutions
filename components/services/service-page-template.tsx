@@ -8,7 +8,7 @@ import { Container } from "@/components/ui/container";
 import { Kicker } from "@/components/ui/kicker";
 import { Button } from "@/components/ui/button";
 import { Chip } from "@/components/ui/chip";
-import { CutFrame } from "@/components/ui/cut-frame";
+import { CardSurface } from "@/components/ui/card-surface";
 import { FaqSection } from "@/components/shared/faq-section";
 import { FinalCtaSection } from "@/components/home/final-cta-section";
 import { RoiCalculator } from "@/components/services/roi-calculator";
@@ -217,7 +217,7 @@ export function ServicePageTemplate({
       {/* =========================================================================
           SECTION 1: HERO (Surface: Graphite)
          ========================================================================= */}
-      <Section surface="graphite" spacing="hero" grid className="relative">
+      <Section surface="graphite" spacing="hero" className="relative">
         <Container>
           {/* Breadcrumbs */}
           <nav aria-label="Breadcrumb" className="mb-6 animate-hero-rise">
@@ -293,9 +293,7 @@ export function ServicePageTemplate({
 
             {/* Right Column (5 cols): Key Highlights Card */}
             <div className="lg:col-span-5">
-              <CutFrame
-                cutSize="lg"
-                glass="dark"
+              <CardSurface
                 innerClassName="p-6 md:p-8 space-y-5 border border-white/12"
               >
                 <div className="flex items-center justify-between border-b border-white/12 pb-3.5 text-xs text-[#A7ACB8]">
@@ -309,7 +307,7 @@ export function ServicePageTemplate({
                 </div>
 
                 <div className="space-y-2">
-                  <div className="text-xs font-semibold text-[#ED1C24] uppercase tracking-wider">
+                  <div className="text-xs font-semibold text-[var(--accent)] uppercase tracking-wider">
                     What this helps you do
                   </div>
                   <div className="font-display text-base md:text-lg font-semibold text-white leading-snug">
@@ -340,15 +338,15 @@ export function ServicePageTemplate({
 
                 <ul className="space-y-2 text-xs text-[#E2C6C8]">
                   <li className="flex items-center gap-2">
-                    <Check className="h-3.5 w-3.5 text-[#ED1C24] shrink-0" />
+                    <Check className="h-3.5 w-3.5 text-[var(--accent)] shrink-0" />
                     <span>20+ team members in Pakistan</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="h-3.5 w-3.5 text-[#ED1C24] shrink-0" />
+                    <Check className="h-3.5 w-3.5 text-[var(--accent)] shrink-0" />
                     <span>Night shift overlaps North American business hours</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="h-3.5 w-3.5 text-[#ED1C24] shrink-0" />
+                    <Check className="h-3.5 w-3.5 text-[var(--accent)] shrink-0" />
                     <span>Talk directly with your project lead</span>
                   </li>
                 </ul>
@@ -361,7 +359,7 @@ export function ServicePageTemplate({
                 >
                   Book a strategy call
                 </Button>
-              </CutFrame>
+              </CardSurface>
             </div>
           </div>
         </Container>
@@ -380,8 +378,6 @@ export function ServicePageTemplate({
          ========================================================================= */}
       <Section id="outcomes"
         surface="porcelain"
-        previousSurface="graphite"
-        notch
         spacing="default"
       >
         <Container>
@@ -395,9 +391,9 @@ export function ServicePageTemplate({
             {outcomesItems.map((item, idx) => (
               <div
                 key={item.title}
-                className="bg-white p-6 md:p-8 rounded-lg border border-[#E4E6EB] border-l-4 border-l-[#ED1C24] space-y-3 shadow-xs"
+                className="signal-card p-6 md:p-8 space-y-3"
               >
-                <div className="font-metric text-xs text-[#ED1C24] font-semibold tracking-wider uppercase">
+                <div className="font-metric text-xs text-[var(--accent)] font-semibold tracking-wider uppercase">
                   Outcome 0{idx + 1}
                 </div>
                 <h3 className="font-display text-lg font-semibold text-[#111215]">
@@ -418,8 +414,6 @@ export function ServicePageTemplate({
       {hasUnique && uniqueData && (
         <Section
           surface="steel"
-          previousSurface="porcelain"
-          notch
           spacing="default"
         >
           <Container>
@@ -478,7 +472,7 @@ export function ServicePageTemplate({
                     key={c.title}
                     className="p-6 rounded-lg bg-white border border-[#D5D8E0] space-y-2 shadow-xs"
                   >
-                    <div className="font-metric text-xs font-semibold text-[#ED1C24] uppercase tracking-wider">
+                    <div className="font-metric text-xs font-semibold text-[var(--accent)] uppercase tracking-wider">
                       Step 0{idx + 1}
                     </div>
                     <h3 className="font-display text-base font-semibold text-[#111215]">
@@ -502,7 +496,7 @@ export function ServicePageTemplate({
             {/* Note callout */}
             {uniqueData.note && (
               <div className="mt-6 p-4 rounded-lg bg-white/70 border border-[#D5D8E0] text-xs text-[#454954] flex items-start gap-3">
-                <Sparkles className="h-4 w-4 text-[#ED1C24] shrink-0 mt-0.5" />
+                <Sparkles className="h-4 w-4 text-[var(--accent)] shrink-0 mt-0.5" />
                 <span>{uniqueData.note}</span>
               </div>
             )}
@@ -520,9 +514,6 @@ export function ServicePageTemplate({
       )}
       <Section id="deliverables"
         surface="graphite"
-        previousSurface={hasUnique ? "steel" : "porcelain"}
-        notch
-        grid
         spacing="default"
       >
         <Container>
@@ -534,9 +525,9 @@ export function ServicePageTemplate({
 
           <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {includedGroups.map((group) => (
-              <CutFrame
+              <CardSurface
                 key={group.groupTitle}
-                cutSize="lg"
+
                 innerClassName="p-6 md:p-8 h-full flex flex-col justify-between space-y-5"
               >
                 <div className="space-y-4">
@@ -550,7 +541,7 @@ export function ServicePageTemplate({
                       <li key={item} className="flex items-start gap-2.5">
                         <Check
                           strokeWidth={2}
-                          className="h-4 w-4 shrink-0 text-[#ED1C24] mt-0.5"
+                          className="h-4 w-4 shrink-0 text-[var(--accent)] mt-0.5"
                         />
                         <span className="leading-snug text-[#A7ACB8] text-xs md:text-sm">
                           {item}
@@ -559,7 +550,7 @@ export function ServicePageTemplate({
                     ))}
                   </ul>
                 </div>
-              </CutFrame>
+              </CardSurface>
             ))}
           </div>
         </Container>
@@ -570,8 +561,6 @@ export function ServicePageTemplate({
          ========================================================================= */}
       <Section id="delivery-process"
         surface="steel"
-        previousSurface="graphite"
-        notch
         spacing="default"
       >
         <Container>
@@ -588,7 +577,7 @@ export function ServicePageTemplate({
                 className="bg-white p-6 rounded-lg border border-[#D5D8E0] space-y-3 shadow-xs"
               >
                 <div className="flex items-center justify-between text-xs">
-                  <span className="font-metric text-2xl font-bold text-[#ED1C24]">
+                  <span className="font-metric text-2xl font-bold text-[var(--accent)]">
                     {st.stepNumber}
                   </span>
                 </div>
@@ -609,8 +598,6 @@ export function ServicePageTemplate({
          ========================================================================= */}
       <Section
         surface="porcelain"
-        previousSurface="steel"
-        notch
         spacing="default"
       >
         <Container>
@@ -654,7 +641,7 @@ export function ServicePageTemplate({
                   key={sys.title}
                   className="bg-white p-6 rounded-lg border border-[#E4E6EB] space-y-3 shadow-xs"
                 >
-                  <div className="text-xs font-semibold text-[#ED1C24] uppercase tracking-wider">
+                  <div className="text-xs font-semibold text-[var(--accent)] uppercase tracking-wider">
                     Shipped System
                   </div>
                   <h3 className="font-display text-base font-semibold text-[#111215]">
@@ -681,8 +668,8 @@ export function ServicePageTemplate({
           {/* Own Brands Band (Confirmed) */}
           {pageContent?.proof.showOwnBrands && (
             <div className="mt-8 p-6 rounded-lg bg-white border border-[#E4E6EB] space-y-3 shadow-xs">
-              <div className="flex items-center gap-2 text-xs font-semibold text-[#ED1C24] uppercase tracking-wider">
-                <Building2 className="h-4 w-4 text-[#ED1C24]" />
+              <div className="flex items-center gap-2 text-xs font-semibold text-[var(--accent)] uppercase tracking-wider">
+                <Building2 className="h-4 w-4 text-[var(--accent)]" />
                 <span>Our own brands — built and run by the Webix team</span>
               </div>
               <p className="text-xs text-[#454954]">
@@ -732,14 +719,12 @@ export function ServicePageTemplate({
          ========================================================================= */}
       <Section id="service-pricing"
         surface="red"
-        previousSurface="porcelain"
-        notch
         watermark="monogram"
         spacing="default"
       >
         <Container>
           <div className="max-w-2xl space-y-3">
-            <span className="inline-block text-xs font-semibold px-2.5 py-1 rounded-full bg-white/20 text-white uppercase tracking-wider">
+            <span className="inline-block text-xs font-semibold px-2.5 py-1 rounded-full bg-[var(--ink)] text-white">
               Transparent pricing
             </span>
             <h2 className="type-h2 text-white">
@@ -747,19 +732,19 @@ export function ServicePageTemplate({
                 ? `Investment ${resolvedPrice.display}`
                 : "Quoted after a 30-minute discovery call"}
             </h2>
-            <p className="type-lead text-white font-medium max-w-xl">
+            <p className="type-body font-medium max-w-xl">
               Every quote comes with fixed milestones, clear deliverables and zero surprise hourly overages.
             </p>
           </div>
 
           <div className="mt-8 max-w-2xl">
-            <CutFrame
-              cutSize="lg"
-              innerClassName="p-6 md:p-8 bg-[#141519] text-white space-y-5"
+            <CardSurface
+              className="signal-dark-card"
+              innerClassName="p-6 md:p-8 text-white space-y-5"
             >
               <div className="flex items-center justify-between border-b border-white/10 pb-4">
                 <div>
-                  <div className="text-xs text-[#ED1C24] font-medium uppercase tracking-wider">
+                  <div className="text-xs text-[var(--accent)] font-medium uppercase tracking-wider">
                     Package Snapshot
                   </div>
                   <div className="font-display text-xl font-semibold text-white mt-0.5">
@@ -781,7 +766,7 @@ export function ServicePageTemplate({
                   <li key={inc} className="flex items-start gap-2.5">
                     <Check
                       strokeWidth={2}
-                      className="h-4 w-4 shrink-0 text-[#ED1C24] mt-0.5"
+                      className="h-4 w-4 shrink-0 text-[var(--accent)] mt-0.5"
                     />
                     <span className="text-[#A7ACB8] text-xs md:text-sm leading-relaxed">
                       {inc}
@@ -804,7 +789,7 @@ export function ServicePageTemplate({
                   Compare all packages
                 </Button>
               </div>
-            </CutFrame>
+            </CardSurface>
           </div>
         </Container>
       </Section>
@@ -814,9 +799,6 @@ export function ServicePageTemplate({
          ========================================================================= */}
       <Section
         surface="graphite"
-        previousSurface="red"
-        notch
-        grid
         spacing="default"
       >
         <Container>
@@ -854,8 +836,6 @@ export function ServicePageTemplate({
         subtitle="Every answer is written directly without sales fluff. Need a question answered immediately? WhatsApp us directly."
         faqs={faqs}
         surface="porcelain"
-        previousSurface="graphite"
-        notch
       />
 
       {/* =========================================================================
@@ -863,8 +843,6 @@ export function ServicePageTemplate({
          ========================================================================= */}
       <Section
         surface="steel"
-        previousSurface="porcelain"
-        notch
         spacing="default"
       >
         <Container>
@@ -885,11 +863,11 @@ export function ServicePageTemplate({
                 href={`/${rel.slug}/`}
                 className="group p-6 rounded-lg bg-white border border-[#D5D8E0] space-y-3 hover:border-[#ED1C24] transition-colors shadow-xs"
               >
-                <div className="flex items-center justify-between text-xs text-[#ED1C24] font-medium">
+                <div className="flex items-center justify-between text-xs text-[var(--accent)] font-medium">
                   <span>Related service</span>
                   <ArrowRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
                 </div>
-                <h3 className="font-display text-base font-semibold text-[#111215] group-hover:text-[#ED1C24] transition-colors">
+                <h3 className="font-display text-base font-semibold text-[#111215] group-hover:text-[var(--accent)] transition-colors">
                   {rel.name}
                 </h3>
                 <p className="text-xs text-[#454954] leading-relaxed">
@@ -919,7 +897,7 @@ export function ServicePageTemplate({
       {/* =========================================================================
           SECTION 10: FINAL CTA + COMPACT BOOKING (Surface: Oxblood with Notch)
          ========================================================================= */}
-      <FinalCtaSection nextSlot={nextSlot} previousSurface="steel" />
+      <FinalCtaSection nextSlot={nextSlot} />
     </div>
   );
 }

@@ -7,7 +7,7 @@ import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Kicker } from "@/components/ui/kicker";
 import { Button } from "@/components/ui/button";
-import { CutFrame } from "@/components/ui/cut-frame";
+import { CardSurface } from "@/components/ui/card-surface";
 import { FaqSection } from "@/components/shared/faq-section";
 import { FinalCtaSection } from "@/components/home/final-cta-section";
 import { ABOUT_CONTENT } from "@/content/about";
@@ -52,7 +52,7 @@ export function AboutView() {
                   href={SITE_FACTS.contact.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-13 items-center justify-center gap-2.5 cut-tr-sm border border-[#D5D8E0] bg-white px-6 text-base font-medium text-[#111215] hover:border-[#111215] transition-colors"
+                  className="inline-flex h-13 items-center justify-center gap-2.5 rounded-xl border border-[#D5D8E0] bg-white px-6 text-base font-medium text-[#111215] hover:border-[#111215] transition-colors"
                 >
                   <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
                   <span>WhatsApp Haroon</span>
@@ -62,7 +62,7 @@ export function AboutView() {
 
             {/* Right 5 Columns: Founder Card / Brand Emblem */}
             <div className="lg:col-span-5">
-              <div className="cut-tr-lg border border-[#E4E6EB] bg-white p-7 shadow-sm space-y-5">
+              <div className="rounded-xl border border-[#E4E6EB] bg-white p-7 shadow-sm space-y-5">
                 <div className="flex items-center gap-4 border-b border-[#E4E6EB] pb-5">
                   <div className="h-16 w-16 rounded-full bg-[#121214] text-white flex items-center justify-center font-display font-bold text-xl border-2 border-[#ED1C24]">
                     HS
@@ -117,7 +117,7 @@ export function AboutView() {
       {/* =========================================================================
           2. FOUNDER STORY & QUOTE (Graphite with Notch)
          ========================================================================= */}
-      <Section surface="oxblood" previousSurface="graphite" notch spacing="default">
+      <Section surface="oxblood" spacing="default">
         <Container>
           <div className="max-w-4xl mx-auto space-y-8">
             <div className="space-y-3 text-center sm:text-left">
@@ -126,7 +126,7 @@ export function AboutView() {
             </div>
 
             {/* Founder Quote Card */}
-            <div className="cut-tr-lg border border-white/15 bg-white/[0.03] p-6 sm:p-10 space-y-6">
+            <div className="rounded-xl border border-white/15 bg-white/[0.03] p-6 sm:p-10 space-y-6">
               <blockquote className="font-display text-lg sm:text-xl text-[#F5F6F8] italic leading-relaxed">
                 &ldquo;{founderStory.quote}&rdquo;
               </blockquote>
@@ -154,7 +154,7 @@ export function AboutView() {
       {/* =========================================================================
           3. IN-HOUSE TEAM BY DEPARTMENT (Porcelain with Notch)
          ========================================================================= */}
-      <Section surface="porcelain" previousSurface="graphite" notch spacing="default">
+      <Section surface="porcelain" spacing="default">
         <Container>
           <div className="max-w-3xl space-y-3 mb-12">
             <Kicker>Specialized remote teams</Kicker>
@@ -170,7 +170,7 @@ export function AboutView() {
             {departments.map((dept, idx) => (
               <div
                 key={idx}
-                className="cut-tr-sm border border-[#E4E6EB] bg-white p-6 shadow-xs space-y-4 flex flex-col justify-between"
+                className="rounded-xl border border-[#E4E6EB] bg-white p-6 shadow-xs space-y-4 flex flex-col justify-between"
               >
                 <div className="space-y-3">
                   <div className="space-y-1">
@@ -210,7 +210,7 @@ export function AboutView() {
       {/* =========================================================================
           4. TIME ZONE SHIFT DIAGRAM (Steel with Notch)
          ========================================================================= */}
-      <Section surface="steel" previousSurface="porcelain" notch spacing="default">
+      <Section surface="steel" spacing="default">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left 6 Columns: Explanation */}
@@ -241,7 +241,7 @@ export function AboutView() {
 
             {/* Right 6 Columns: Visual 24-Hour Comparison Card */}
             <div className="lg:col-span-6">
-              <div className="cut-tr-lg border border-white/15 bg-[#121214] p-6 sm:p-8 space-y-5 text-white">
+              <div className="rounded-xl border border-white/15 bg-[#121214] p-6 sm:p-8 space-y-5 text-white">
                 <div className="flex items-center justify-between border-b border-white/10 pb-3 text-xs">
                   <span className="font-semibold text-white">Coordinated Shift Coverage</span>
                   <span className="text-[#ED1C24] font-mono">Asia/Karachi Host Time</span>
@@ -297,7 +297,7 @@ export function AboutView() {
       {/* =========================================================================
           5. VERIFIED NUMBERS & STATS (Graphite with Notch)
          ========================================================================= */}
-      <Section surface="graphite" previousSurface="steel" notch spacing="default">
+      <Section surface="graphite" spacing="default">
         <Container>
           <div className="max-w-2xl space-y-3 mb-10">
             <Kicker>Proven track record</Kicker>
@@ -307,7 +307,7 @@ export function AboutView() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="p-6 cut-tr-sm border border-white/10 bg-white/[0.02] space-y-2">
+            <div className="p-6 rounded-xl border border-white/10 bg-white/[0.02] space-y-2">
               <div className="font-display text-4xl font-bold text-white">
                 {SITE_FACTS.stats.teamSize.value}
               </div>
@@ -319,7 +319,7 @@ export function AboutView() {
               </p>
             </div>
 
-            <div className="p-6 cut-tr-sm border border-white/10 bg-white/[0.02] space-y-2">
+            <div className="p-6 rounded-xl border border-white/10 bg-white/[0.02] space-y-2">
               <div className="font-display text-4xl font-bold text-[#ED1C24]">
                 {SITE_FACTS.stats.githubContributionsLastYear.value}
               </div>
@@ -331,7 +331,7 @@ export function AboutView() {
               </p>
             </div>
 
-            <div className="p-6 cut-tr-sm border border-white/10 bg-white/[0.02] space-y-2">
+            <div className="p-6 rounded-xl border border-white/10 bg-white/[0.02] space-y-2">
               <div className="font-display text-4xl font-bold text-white">
                 {SITE_FACTS.stats.customCodedBuilds.value}
               </div>
@@ -343,7 +343,7 @@ export function AboutView() {
               </p>
             </div>
 
-            <div className="p-6 cut-tr-sm border border-white/10 bg-white/[0.02] space-y-2">
+            <div className="p-6 rounded-xl border border-white/10 bg-white/[0.02] space-y-2">
               <div className="font-display text-4xl font-bold text-white">
                 {SITE_FACTS.stats.websitesDelivered.value}
               </div>
@@ -361,7 +361,7 @@ export function AboutView() {
       {/* =========================================================================
           6. OPERATING RULES (Porcelain with Notch)
          ========================================================================= */}
-      <Section surface="porcelain" previousSurface="graphite" notch spacing="default">
+      <Section surface="porcelain" spacing="default">
         <Container>
           <div className="max-w-3xl space-y-3 mb-12">
             <Kicker>Values as operating commitments</Kicker>
@@ -397,7 +397,7 @@ export function AboutView() {
       {/* =========================================================================
           7. WHERE WE ARE (Steel with Notch)
          ========================================================================= */}
-      <Section surface="steel" previousSurface="porcelain" notch spacing="default">
+      <Section surface="steel" spacing="default">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-7 space-y-4">
@@ -429,7 +429,7 @@ export function AboutView() {
             </div>
 
             <div className="lg:col-span-5">
-              <div className="cut-tr-lg border border-white/15 bg-[#121214] p-6 sm:p-8 space-y-4 text-white">
+              <div className="rounded-xl border border-white/15 bg-[#121214] p-6 sm:p-8 space-y-4 text-white">
                 <div className="text-xs font-semibold uppercase tracking-wider text-[#ED1C24]">
                   In-Person Visits
                 </div>
@@ -459,14 +459,12 @@ export function AboutView() {
         subtitle="Learn more about our team background, location, ownership, and operating structure."
         faqs={faqs.map((f) => ({ question: f.q, answer: f.a }))}
         surface="porcelain"
-        previousSurface="steel"
-        notch
       />
 
       {/* =========================================================================
           9. FINAL CTA (Deep Oxblood)
          ========================================================================= */}
-      <FinalCtaSection previousSurface="porcelain" />
+      <FinalCtaSection />
     </div>
   );
 }

@@ -18,10 +18,10 @@ export function Chip({
   ...props
 }: ChipProps) {
   const baseClasses = cn(
-    "inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-medium transition-colors duration-150 border",
+    "inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[13px] font-medium transition-colors duration-150",
     active
-      ? "bg-[#ED1C24] text-white border-[#ED1C24]"
-      : "bg-[var(--surface-elevated)] text-[var(--text-secondary)] border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--text-primary)]",
+      ? "bg-[var(--signal-ink)] text-white"
+      : "bg-[var(--surface-elevated)] text-[var(--text-secondary)] hover:bg-[var(--accent-soft)] hover:text-[var(--text-primary)]",
     className
   );
 

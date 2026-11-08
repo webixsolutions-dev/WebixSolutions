@@ -19,8 +19,6 @@ export function ProofStrip() {
   return (
     <Section
       surface="porcelain"
-      previousSurface="graphite"
-      notch
       spacing="compact"
     >
       <Container>

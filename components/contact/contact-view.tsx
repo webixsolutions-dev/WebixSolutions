@@ -127,7 +127,7 @@ export function ContactView() {
             {/* Tile 1: Book a Call */}
             <Link
               href="/book-a-call/"
-              className="group cut-tr-sm border border-white/12 bg-white/[0.03] hover:border-[#ED1C24] hover:bg-[#ED1C24]/10 p-6 space-y-4 transition-all"
+              className="group rounded-xl border border-white/12 bg-white/[0.03] hover:border-[#ED1C24] hover:bg-[#ED1C24]/10 p-6 space-y-4 transition-all"
             >
               <div className="h-10 w-10 rounded-full bg-[#ED1C24]/15 flex items-center justify-center text-[#ED1C24]">
                 <Calendar className="h-5 w-5" />
@@ -140,7 +140,7 @@ export function ContactView() {
                   30-min Google Meet session in your local time zone. No obligation.
                 </p>
               </div>
-              <div className="text-xs font-semibold text-[#ED1C24] inline-flex items-center gap-1.5 pt-2">
+              <div className="text-xs font-semibold text-[var(--ember)] inline-flex items-center gap-1.5 pt-2">
                 <span>Open calendar</span>
                 <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
               </div>
@@ -151,7 +151,7 @@ export function ContactView() {
               href={SITE_FACTS.contact.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group cut-tr-sm border border-white/12 bg-white/[0.03] hover:border-[#25D366] hover:bg-[#25D366]/10 p-6 space-y-4 transition-all"
+              className="group rounded-xl border border-white/12 bg-white/[0.03] hover:border-[#25D366] hover:bg-[#25D366]/10 p-6 space-y-4 transition-all"
             >
               <div className="h-10 w-10 rounded-full bg-[#25D366]/15 flex items-center justify-center text-[#25D366]">
                 <WhatsAppIcon className="h-5 w-5" />
@@ -173,7 +173,7 @@ export function ContactView() {
             {/* Tile 3: Direct Email */}
             <a
               href={`mailto:${SITE_FACTS.contact.email}`}
-              className="group cut-tr-sm border border-white/12 bg-white/[0.03] hover:border-white hover:bg-white/[0.08] p-6 space-y-4 transition-all"
+              className="group rounded-xl border border-white/12 bg-white/[0.03] hover:border-white hover:bg-white/[0.08] p-6 space-y-4 transition-all"
             >
               <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center text-white">
                 <Mail className="h-5 w-5" />
@@ -198,7 +198,7 @@ export function ContactView() {
       {/* =========================================================================
           2. CONTACT FORM & NAP SIDEBAR (Porcelain with Notch)
          ========================================================================= */}
-      <Section surface="porcelain" previousSurface="graphite" notch spacing="default">
+      <Section surface="porcelain" spacing="default">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             {/* Left 7 Columns: Form */}
@@ -364,7 +364,7 @@ export function ContactView() {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="inline-flex h-11 items-center justify-center gap-2 cut-tr-sm bg-[#C8101A] hover:bg-[#ED1C24] disabled:opacity-60 px-7 text-xs font-semibold text-white transition-colors"
+                        className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-[#C8101A] hover:bg-[#ED1C24] disabled:opacity-60 px-7 text-xs font-semibold text-white transition-colors"
                       >
                         {isSubmitting ? (
                           <>
@@ -466,14 +466,12 @@ export function ContactView() {
         subtitle="Turnaround times, private communication channels, and discovery sessions."
         faqs={FAQS}
         surface="steel"
-        previousSurface="porcelain"
-        notch
       />
 
       {/* =========================================================================
           4. FINAL CTA (Oxblood with Notch)
          ========================================================================= */}
-      <FinalCtaSection previousSurface="steel" />
+      <FinalCtaSection />
     </div>
   );
 }

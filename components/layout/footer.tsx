@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { getFooterColumns } from "@/content/navigation";
@@ -12,39 +11,71 @@ const socialLinks = [
   ["linkedin", "LinkedIn"], ["github", "GitHub"], ["instagram", "Instagram"], ["facebook", "Facebook"], ["youtube", "YouTube"], ["x", "X"],
 ] as const;
 
+const marketHours = {
+  CA: ["🇨🇦", "11 am–7 pm EST / noon–8 pm EDT"],
+  US: ["🇺🇸", "8 am–4 pm PST / 9 am–5 pm PDT"],
+  AE: ["🇦🇪", "From 8 am Gulf time"],
+  NZ: ["🇳🇿", "5 am–1 pm NZST / 6 am–2 pm NZDT"],
+  PK: ["🇵🇰", "From 9 am, plus 9 pm–5 am PKT"],
+} as const;
+
 export function Footer() {
   const columns = getFooterColumns();
   const links = [
     { title: "Services", items: [...STUDIO.services.map(({ title, href }) => ({ label: title, href })), { label: "All services", href: "/services/" }] },
-    { title: "Explore", items: [...columns.company.filter((item) => item.href !== "/book-a-call/"), { label: "Industries", href: "/industries/" }] },
-    { title: "Markets", items: columns.markets },
+    { title: "Company", items: columns.company.filter(({ href }) => !["/book-a-call/", "/blogs/"].includes(href)) },
+    { title: "Resources", items: [{ label: "Blog", href: "/blogs/" }, ...columns.industries] },
   ];
 
   return (
-    <footer className="studio-footer" data-surface="graphite" data-studio-light>
+    <footer className="studio-footer" data-surface="graphite">
       <div className="studio-wrap">
-        <div className="studio-footer-cta studio-cut-frame" data-studio-spotlight>
-          <div className="studio-footer-cta-inner">
-            <div><p className="studio-label"><span /> Let’s talk</p><h2>What are you building?</h2><span>Book a free 30-minute call to talk through your project.</span></div>
-            <Link href="/book-a-call/" className="studio-button">Book a strategy call <ArrowUpRight size={18} /></Link>
+        <div className="studio-footer-cta">
+          <h2>Let’s build what’s next.</h2>
+          <div className="studio-footer-actions">
+            <Link href="/book-a-call/" className="studio-button">Book a free call <ArrowUpRight size={18} /></Link>
+            <a href={`mailto:${SITE_FACTS.contact.email}`}>{SITE_FACTS.contact.email}</a>
           </div>
         </div>
         <div className="studio-footer-main">
-          <div className="studio-footer-identity">
-            <Link href="/" aria-label="Webix Solutions home"><Image src="/images/logo.png" alt="" width={154} height={40} /></Link>
-            <p>Websites, search and software for businesses and agency partners.</p>
-            <address><span>{SITE_FACTS.headquarters.fullDisplay}</span><a href={`mailto:${SITE_FACTS.contact.email}`}>{SITE_FACTS.contact.email}</a><a href={`tel:${SITE_FACTS.contact.phoneE164}`}>{SITE_FACTS.contact.phoneDisplay}</a></address>
-            <div className="studio-footer-social">
-              {socialLinks.map(([key, name]) => <a key={key} href={SITE_FACTS.socials[key]} aria-label={name} target="_blank" rel="noopener noreferrer"><BrandSocialIcon name={key} className="size-4" /></a>)}
-            </div>
-          </div>
           {links.map((column) => <div className="studio-footer-column" key={column.title}>
-            <p>{column.title}</p><ul>{column.items.map((item) => <li key={item.href}><Link href={item.href}>{item.label}</Link></li>)}</ul>
+            <p>{column.title}</p>
+            <ul>{column.items.map((item) => <li key={item.href}><Link href={item.href}>{item.label}</Link></li>)}</ul>
           </div>)}
+          <div className="studio-footer-column studio-footer-markets">
+            <p>Markets</p>
+            <ul>{SITE_FACTS.markets.map((market) => {
+              const [flag, hours] = marketHours[market.shortCode];
+              const page = columns.markets.find((item) => item.href === `/locations/${market.slug}/`);
+              return (
+                <li key={market.slug}>
+                  <span aria-hidden="true">{flag}</span>
+                  <div>
+                    {page ? <Link href={page.href}>{market.name}</Link> : <strong>{market.name}</strong>}
+                    <small>{hours}</small>
+                  </div>
+                </li>
+              );
+            })}</ul>
+          </div>
         </div>
-        <div className="studio-footer-news"><div><p>Notes from the studio</p><span>Occasional updates on web, search and automation.</span></div><NewsletterForm /></div>
-        <div className="studio-footer-wordmark" aria-hidden="true">WEBIX SOLUTIONS</div>
-        <div className="studio-footer-legal"><span>© {new Date().getFullYear()} Webix Solutions</span><div>{columns.legal.map((item) => <Link href={item.href} key={item.href}>{item.label}</Link>)}<CookieSettingsTrigger /></div></div>
+        <div className="studio-footer-news">
+          <address>
+            <span>{SITE_FACTS.headquarters.fullDisplay}</span>
+            <span>{SITE_FACTS.headquarters.secondaryNote}</span>
+            <a href={`tel:${SITE_FACTS.contact.phoneE164}`}>{SITE_FACTS.contact.phoneDisplay}</a>
+            <a href={SITE_FACTS.contact.whatsappUrl} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </address>
+          <div><p>Notes from the studio</p><NewsletterForm /></div>
+        </div>
+        <div className="studio-footer-mark" aria-hidden="true"><div className="studio-footer-wordmark" data-footer-wordmark>webix solutions</div></div>
+        <div className="studio-footer-legal">
+          <span>© {new Date().getFullYear()} Webix Solutions</span>
+          <div>{columns.legal.map((item) => <Link href={item.href} key={item.href}>{item.label}</Link>)}<CookieSettingsTrigger /></div>
+          <div className="studio-footer-social">
+            {socialLinks.map(([key, name]) => <a key={key} href={SITE_FACTS.socials[key]} aria-label={name} target="_blank" rel="noopener noreferrer"><BrandSocialIcon name={key} className="size-4" /></a>)}
+          </div>
+        </div>
       </div>
     </footer>
   );
