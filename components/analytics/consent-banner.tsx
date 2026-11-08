@@ -18,20 +18,20 @@ export function ConsentBanner() {
   const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 
   React.useEffect(() => {
-    const saved = window.localStorage.getItem(CONSENT_STORAGE_KEY);
-    if (saved === "accepted" || saved === "declined") {
-      setConsent(saved);
-      setVisible(false);
-    } else {
-      setVisible(true);
-    }
+    const frame = requestAnimationFrame(() => {
+      const saved = window.localStorage.getItem(CONSENT_STORAGE_KEY);
+      if (saved === "accepted" || saved === "declined") setConsent(saved);
+      else setVisible(true);
+    });
 
     const onOpenSettings = () => {
       setVisible(true);
     };
     window.addEventListener("webix:open-cookie-settings", onOpenSettings);
-    return () =>
+    return () => {
+      cancelAnimationFrame(frame);
       window.removeEventListener("webix:open-cookie-settings", onOpenSettings);
+    };
   }, []);
 
   const handleChoice = (choice: "accepted" | "declined") => {

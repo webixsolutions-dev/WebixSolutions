@@ -6,7 +6,7 @@ export const PAID_ADVERTISING_SERVICES: ServicePageContent = {
   heroKicker: "Meta, Google, TikTok and LinkedIn ads",
   intro: [
     "We plan, launch and optimise paid advertising campaigns on Meta, Google, TikTok and LinkedIn that turn ad spend into qualified enquiries and sales.",
-    "Our in-house team manages campaigns for businesses across Canada, the US, the UAE, New Zealand and Pakistan, with ad spend billed directly to your own accounts.",
+    "Our remote team manages campaigns for businesses across Canada, the US, the UAE, New Zealand and Pakistan, with ad spend billed directly to your own accounts.",
   ],
   proofChip: "64 WhatsApp conversations at Rs 15.01 each on Zelvomart",
 
@@ -169,7 +169,7 @@ export const PAID_ADVERTISING_SERVICES: ServicePageContent = {
     {
       question: "Do you create the ad creatives?",
       answer:
-        "Yes. Our in-house creative team writes the copy, designs static graphics, and edits short video reels from your brand assets or stock footage.",
+        "Yes. Our remote creative team writes the copy, designs static graphics, and edits short video reels from your brand assets or stock footage.",
     },
     {
       question: "What is your management fee?",

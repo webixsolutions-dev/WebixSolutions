@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { WhatsAppIcon } from "@/components/layout/social-icons";
 import { SITE_FACTS } from "@/content/site-facts";
 import {
   PRIMARY_NAV_LINKS,
@@ -26,6 +25,7 @@ export function Header({ megaMenuColumns, simplified = false }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [mobileAccordionOpen, setMobileAccordionOpen] = React.useState<string | null>("Build");
   const megaContainerRef = React.useRef<HTMLDivElement>(null);
+  const servicesTrigger = React.useRef<HTMLButtonElement>(null);
 
   React.useEffect(() => {
     const onScroll = () => {
@@ -37,20 +37,21 @@ export function Header({ megaMenuColumns, simplified = false }: HeaderProps) {
   }, []);
 
   React.useEffect(() => {
-    setMegaOpen(false);
-    setMobileOpen(false);
+    const frame = requestAnimationFrame(() => { setMegaOpen(false); setMobileOpen(false); });
+    return () => cancelAnimationFrame(frame);
   }, [pathname]);
 
   React.useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
+        if (megaOpen && megaContainerRef.current?.contains(document.activeElement)) servicesTrigger.current?.focus();
         setMegaOpen(false);
         setMobileOpen(false);
       }
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, []);
+  }, [megaOpen]);
 
   return (
     <>
@@ -61,13 +62,14 @@ export function Header({ megaMenuColumns, simplified = false }: HeaderProps) {
         )}
       >
         <div
-          onMouseLeave={() => setMegaOpen(false)}
+          onMouseLeave={() => { if (!megaContainerRef.current?.contains(document.activeElement)) setMegaOpen(false); }}
+          onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setMegaOpen(false); }}
           ref={megaContainerRef}
           className={cn(
             "mx-auto transition-all duration-250 ease-[cubic-bezier(0.22,1,0.36,1)]",
             scrolled
-              ? "max-w-[1180px] rounded-2xl glass-surface-dark px-4 md:px-6 h-16"
-              : "max-w-[1280px] px-[var(--gutter)] h-20 bg-transparent border-b border-white/[0.07]"
+              ? "max-w-[1260px] rounded-lg glass-surface-dark px-4 md:px-6 h-16"
+              : "max-w-[1280px] px-[var(--gutter)] h-20 studio-header-shell border-b border-white/[0.07]"
           )}
         >
           <div className="flex h-full items-center justify-between gap-4">
@@ -104,13 +106,14 @@ export function Header({ megaMenuColumns, simplified = false }: HeaderProps) {
                       <div
                         key={item.href}
                         className="relative"
-                        onMouseEnter={() => setMegaOpen(true)}
+                        onMouseEnter={() => { if (!megaOpen) setMegaOpen(true); }}
                       >
                         <button
                           type="button"
                           aria-expanded={megaOpen}
-                          aria-haspopup="true"
-                          onClick={() => setMegaOpen((prev) => !prev)}
+                          ref={servicesTrigger}
+                          aria-controls="services-mega-menu"
+                          onClick={(event) => { if (event.detail === 0) setMegaOpen((prev) => !prev); else setMegaOpen(true); }}
                           className={cn(
                             "inline-flex items-center gap-1.5 px-3.5 py-2 text-sm font-medium rounded-md transition-colors duration-150",
                             megaOpen || isActive
@@ -151,17 +154,6 @@ export function Header({ megaMenuColumns, simplified = false }: HeaderProps) {
 
             {/* Right CTAs */}
             <div className="flex items-center gap-2.5">
-              <a
-                href={SITE_FACTS.contact.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Message Webix Solutions on WhatsApp"
-                title="Chat on WhatsApp"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/15 bg-white/[0.04] text-[#F5F6F8] hover:border-[#ED1C24] hover:text-white transition-colors"
-              >
-                <WhatsAppIcon className="h-4 w-4" />
-              </a>
-
               <div className="hidden sm:block">
                 <Button href="/book-a-call/" variant="primary" size="sm">
                   Book a call
@@ -185,6 +177,7 @@ export function Header({ megaMenuColumns, simplified = false }: HeaderProps) {
           {/* Desktop 4-Column Mega Menu (All links remain in DOM for crawlers) */}
           {!simplified && (
             <div
+              id="services-mega-menu"
               aria-hidden={!megaOpen}
               className={cn(
                 "hidden lg:block absolute left-1/2 -translate-x-1/2 w-[min(1140px,calc(100vw-2rem))] pt-3 transition-all duration-200",
@@ -193,10 +186,10 @@ export function Header({ megaMenuColumns, simplified = false }: HeaderProps) {
                   : "opacity-0 -translate-y-2 pointer-events-none invisible"
               )}
             >
-              <div className="rounded-xl bg-[#141519]/95 backdrop-blur-xl border border-white/12 shadow-2xl p-6">
+              <div className={cn("bg-[#17171b] border border-white/16 p-6", megaOpen && "studio-mega-panel")}>
                 <div className="grid grid-cols-4 gap-6">
                   {megaMenuColumns.map((col) => (
-                    <div key={col.category} className="space-y-3">
+                    <div key={col.category} data-mega-column className="space-y-3">
                       <div className="border-b border-white/10 pb-2.5">
                         <div className="flex items-center gap-2">
                           <span className="inline-block h-2.5 w-2.5 bg-[#ED1C24]" />

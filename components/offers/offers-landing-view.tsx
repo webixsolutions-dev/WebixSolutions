@@ -72,7 +72,7 @@ const FAQS = [
   {
     question: "Who writes the content, captions, and designs the creative assets?",
     answer:
-      "Our in-house team handles 100% of the creative and copywriting work. Designers, video editors, and senior copywriters collaborate directly on your account under senior review. You simply approve the batch before it goes live.",
+      "Our remote team handles 100% of the creative and copywriting work. Designers, video editors, and senior copywriters collaborate directly on your account under senior review. You simply approve the batch before it goes live.",
   },
   {
     question: "What happens after the initial 6-month agreement concludes?",
@@ -90,7 +90,7 @@ export function OffersLandingView({ nextSlot }: OffersLandingViewProps) {
   // Fire analytical events on CTA click
   const trackCtaClick = (offerName: string) => {
     if (typeof window !== "undefined") {
-      const w = window as any;
+      const w = window as Window & { gtag?: (...args: unknown[]) => void; fbq?: (...args: unknown[]) => void };
       if (typeof w.gtag === "function") {
         w.gtag("event", "select_promotion", {
           promotion_name: offerName,
@@ -152,7 +152,7 @@ export function OffersLandingView({ nextSlot }: OffersLandingViewProps) {
 
             <div className="pt-2 flex flex-wrap items-center gap-3">
               <Chip asSpan active>
-                60+ Clients · 91 Builds · CA, US, UAE, NZ & PK
+                120+ Clients · 91 Builds · CA, US, UAE, NZ & PK
               </Chip>
               <span className="text-xs text-[#A7ACB8]">
                 Ad spend paid directly to platforms · Fast 14-day turnaround
@@ -226,7 +226,7 @@ export function OffersLandingView({ nextSlot }: OffersLandingViewProps) {
 
                   <div className="space-y-2 pt-2 border-t border-[#E4E6EB]">
                     <span className="text-[11px] font-semibold text-[#717684] uppercase tracking-wider block">
-                      What's Included:
+                      What’s included
                     </span>
                     <ul className="space-y-2.5">
                       {offer.inclusions.map((inc, i) => (

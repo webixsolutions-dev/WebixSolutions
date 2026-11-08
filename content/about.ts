@@ -22,21 +22,21 @@ export const ABOUT_CONTENT = {
   meta: {
     title: "About Us — In-House Digital & AI Team | Webix Solutions",
     description:
-      "Founded by Haroon Sukhera, Webix Solutions is a 20+ person in-house team building websites, growth marketing and AI systems for clients worldwide.",
+      "Founded by Haroon Sukhera, Webix Solutions is a remote team of 20+ building websites, growth marketing and AI systems for clients worldwide.",
     path: "/about-us/",
   },
 
   hero: {
     kicker: "In-house engineering & marketing center",
     h1: "About Webix Solutions",
-    lead: "Webix Solutions is a full-service digital agency with a 20+ person in-house team in Pakistan. We engineer high-performance websites, run multi-channel growth campaigns, and deploy autonomous AI systems for businesses across Canada, the US, the UAE, New Zealand and Pakistan.",
+    lead: "Webix Solutions is a full-service digital agency with a remote team of 20+ in Pakistan. We engineer high-performance websites, run multi-channel growth campaigns, and deploy autonomous AI systems for businesses across Canada, the US, the UAE, New Zealand and Pakistan.",
   },
 
   founderStory: {
     kicker: "Founded by engineers",
-    h2: "Built from freelance roots into an in-house production center",
+    h2: "Built from freelance roots into an remote production center",
     quote:
-      "We started Webix Solutions with a clear conviction: offshore delivery does not have to mean junior contractors, broken code, or missed deadlines. We built an in-house campus where developers, marketers, and AI engineers collaborate in the same room, work on your time zone, and take complete ownership of measurable outcomes.",
+      "We started Webix Solutions with a clear conviction: offshore delivery does not have to mean junior contractors, broken code, or missed deadlines. We built an remote campus where developers, marketers, and AI engineers collaborate in the same room, work on your time zone, and take complete ownership of measurable outcomes.",
     author: "Haroon Sukhera",
     role: "Founder & CEO, Webix Solutions",
     bio: "Haroon Sukhera founded Webix Solutions as a custom WordPress and CMS developer. Over the past several years, he scaled the team into a 20+ specialist engineering and growth firm. Today, beyond client delivery, Haroon and the Webix team build and run proprietary consumer brands—including Zelvomart (Pakistan e-commerce), LaptopSouq.ae, and Miraj Builders—giving our team daily, hands-on operational experience with ad spend, inventory logistics, and conversion rate optimization.",
@@ -130,7 +130,7 @@ export const ABOUT_CONTENT = {
   faqs: [
     {
       q: "Who founded Webix Solutions and who leads the team?",
-      a: "Webix Solutions was founded by Haroon Sukhera, who serves as Founder & CEO. Haroon leads an in-house team of 20+ software developers, performance marketers, creative designers, and AI automation specialists.",
+      a: "Webix Solutions was founded by Haroon Sukhera, who serves as Founder & CEO. Haroon leads an remote team of 20+ software developers, performance marketers, creative designers, and AI automation specialists.",
     },
     {
       q: "Where is Webix Solutions based?",
@@ -138,7 +138,7 @@ export const ABOUT_CONTENT = {
     },
     {
       q: "Do you outsource any of your client work?",
-      a: "No. 100% of our code, marketing campaigns, video editing, and AI system engineering is delivered by our full-time in-house specialists in Pakistan. We do not broker tasks to third-party freelancers.",
+      a: "No. 100% of our code, marketing campaigns, video editing, and AI system engineering is delivered by our full-time remote specialists in Pakistan. We do not broker tasks to third-party freelancers.",
     },
     {
       q: "Can I meet the Webix team before signing a contract?",

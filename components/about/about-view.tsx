@@ -99,7 +99,7 @@ export function AboutView() {
 
                 <div className="space-y-2 text-xs text-[#454954] leading-relaxed">
                   <p>
-                    • Leads an in-house engineering campus in Dunyapur, Punjab.
+                    • Leads an engineering team in Dunyapur, Punjab.
                   </p>
                   <p>
                     • Built proprietary brands: Zelvomart, LaptopSouq.ae & Miraj Builders.
@@ -157,7 +157,7 @@ export function AboutView() {
       <Section surface="porcelain" previousSurface="graphite" notch spacing="default">
         <Container>
           <div className="max-w-3xl space-y-3 mb-12">
-            <Kicker>Specialized in-house teams</Kicker>
+            <Kicker>Specialized remote teams</Kicker>
             <h2 className="type-h2 text-[#111215]">
               Seven departments collaborating under one roof
             </h2>
@@ -220,7 +220,7 @@ export function AboutView() {
                 How we overlap your local business hours
               </h2>
               <p className="type-body text-[#9CA3AF] leading-relaxed">
-                Offshore delivery is only effective when communication is fast. We eliminate the 12-hour response lag by structuring our in-house production into two coordinated shifts covering North America, the Gulf, New Zealand, and Pakistan.
+                Offshore delivery is only effective when communication is fast. We eliminate the 12-hour response lag by structuring our remote production into two coordinated shifts covering North America, the Gulf, New Zealand, and Pakistan.
               </p>
 
               <div className="space-y-3 pt-2 text-xs text-[#D1D5DB]">
@@ -312,7 +312,7 @@ export function AboutView() {
                 {SITE_FACTS.stats.teamSize.value}
               </div>
               <div className="text-xs font-semibold text-white">
-                In-House Team Members
+                Remote team Members
               </div>
               <p className="text-[11px] text-[#9CA3AF]">
                 Developers, designers, marketers and engineers in Pakistan.

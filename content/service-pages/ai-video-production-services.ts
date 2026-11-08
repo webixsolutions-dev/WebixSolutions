@@ -126,7 +126,7 @@ export const AI_VIDEO_PRODUCTION_SERVICES: ServicePageContent = {
   },
 
   proof: {
-    h2: "Video production backed by in-house editors",
+    h2: "Video production backed by remote editors",
     lead: "Our video editors combine AI generation tools with industry-standard editing software to ensure polished commercial output.",
     statKeys: ["socialAccountsManaged", "teamSize", "totalClientsServed"],
     showOwnBrands: true,

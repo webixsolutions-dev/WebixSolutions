@@ -38,7 +38,7 @@ const FAQS = [
   {
     question: "Who writes the content, captions, and designs the creative assets?",
     answer:
-      "Our in-house team handles 100% of the creative and copywriting work. Designers, video editors, and senior copywriters collaborate directly on your account under senior review. You simply approve the batch before it goes live.",
+      "Our remote team handles 100% of the creative and copywriting work. Designers, video editors, and senior copywriters collaborate directly on your account under senior review. You simply approve the batch before it goes live.",
   },
   {
     question: "What happens after the initial 6-month agreement concludes?",

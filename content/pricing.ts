@@ -103,7 +103,7 @@ export const BUILD_PRICES: BuildPriceRow[] = [
     id: "build-5-page",
     serviceName: "5-Page Business Website",
     startingPriceUsd: 499,
-    timeline: "10–14 days",
+    timeline: "3 business days to review; launch after testing",
     confirmed: false,
     includes: "Custom mobile-first design, copy polish, contact forms, basic on-page SEO & analytics setup.",
     href: "/web-design-development-service/",
@@ -211,7 +211,7 @@ export const FLAGSHIP_OFFERS: FlagshipOffer[] = [
     priceDisplay: "$499",
     priceUsd: 499,
     billingType: "one-time",
-    deliveryTime: "14 business days",
+    deliveryTime: "Website ready for review in 3 business days; testing before launch",
     confirmed: false,
     whoItsFor: "New businesses or contractors needing a clean website, Google Maps presence and launch posts fast.",
     inclusions: [
@@ -231,7 +231,7 @@ export const FLAGSHIP_OFFERS: FlagshipOffer[] = [
     priceUsd: 399,
     billingType: "monthly",
     minTerm: "6-month minimum term",
-    deliveryTime: "Website live in 14 days; monthly marketing starts immediately",
+    deliveryTime: "Website ready for review in 3 business days; launch after testing",
     confirmed: false,
     whoItsFor: "Service businesses and local brands that want one team managing their website, social, ads and Maps.",
     inclusions: [

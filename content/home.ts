@@ -11,7 +11,7 @@ export const HOME_CONTENT = {
   meta: {
     title: "Digital Marketing, Web & AI Agency | Webix Solutions",
     description:
-      "Websites, SEO, paid ads, social media and AI automation from a 20+ person in-house team. Serving Canada, the US, UAE and NZ. Book a free strategy call.",
+      "Websites, SEO, paid ads, social media and AI automation from a remote team of 20+. Serving Canada, the US, UAE and NZ. Book a free strategy call.",
   },
 
   hero: {
@@ -31,7 +31,7 @@ export const HOME_CONTENT = {
 
   servicesSection: {
     kicker: "Services organized by business outcome",
-    h2: "One in-house team for your website, growth marketing and AI systems",
+    h2: "One remote team for your website, growth marketing and AI systems",
     lead:
       "Hire us for a single build or combine web development, search, paid media and AI automation under one team without coordinating multiple freelancers.",
   },
@@ -94,7 +94,7 @@ export const HOME_CONTENT = {
         number: "03",
         title: "Build & launch",
         description:
-          "Our in-house developers, designers, marketers and AI engineers build on a staging link, verify forms and tracking, and launch cleanly.",
+          "Our remote developers, designers, marketers and AI engineers build on a staging link, verify forms and tracking, and launch cleanly.",
       },
       {
         number: "04",
@@ -139,7 +139,7 @@ export const HOME_CONTENT = {
     {
       question: "What does Webix Solutions do?",
       answer:
-        "Webix Solutions is a full-service digital marketing, web development and AI automation agency with a 20+ person in-house team in Pakistan. We build custom-coded and CMS websites, manage SEO, Google Business Profiles, paid ads and social media, and develop AI chatbots, voice agents and workflow automations for businesses in Canada, the United States, the UAE, New Zealand and Pakistan.",
+        "Webix Solutions is a full-service digital marketing, web development and AI automation agency with a remote team of 20+ in Pakistan. We build custom-coded and CMS websites, manage SEO, AEO, GEO, paid ads and social media, and develop custom CRM, client portals and AI workflows for businesses in Canada, the United States, the UAE, New Zealand and Pakistan.",
     },
     {
       question: "How much does a website or monthly marketing package cost?",
@@ -149,12 +149,12 @@ export const HOME_CONTENT = {
     {
       question: "Where is your team located and what hours do you work?",
       answer:
-        "Our headquarters and 20+ person in-house team are in Dunyapur, Punjab, Pakistan, with client meetings available in Lahore by appointment. We run two shifts: a day shift starting at 9:00 AM Pakistan time (overlapping UAE and Pakistani business hours) and a night shift from 9:00 PM to 5:00 AM Pakistan time (overlapping Eastern, Pacific and New Zealand mornings).",
+        "Our headquarters is in Dunyapur, Punjab, Pakistan, and our team works remotely. Meetings in Lahore are available by appointment. We run two shifts: a day shift starting at 9:00 AM Pakistan time (overlapping UAE and Pakistani business hours) and a night shift from 9:00 PM to 5:00 AM Pakistan time (overlapping Eastern, Pacific and New Zealand mornings).",
     },
     {
-      question: "Do you build with WordPress and Shopify or custom code?",
+      question: "Do you build with WordPress, Shopify, Webflow or Framer?",
       answer:
-        "We build both. Our team has delivered 91 custom-coded builds and repositories using Next.js, React, Node.js and Flutter, as well as 50+ CMS websites across WordPress, WooCommerce, Shopify, Wix, Webflow and Squarespace. On our strategy call, we recommend the right stack based on your speed, editing and budget needs.",
+        "Yes. We build on WordPress, Shopify, Webflow and Framer, and we build custom sites and software with Next.js, React, Node.js and Flutter. On our strategy call, we recommend the right stack based on your speed, editing and budget needs.",
     },
     {
       question: "Can you build a custom AI chatbot or voice agent for my business?",
@@ -168,8 +168,7 @@ export const HOME_CONTENT = {
     },
     {
       question: "How long does a typical project take?",
-      answer:
-        "A standard 5-page business website or an AI automation sprint typically takes 10 to 14 business days once content and access are confirmed. Larger Shopify stores, custom Next.js websites, CRMs and Flutter mobile apps take 3 to 8 weeks depending on scope, with a staging link shared in the first week.",
+      answer: "A straightforward website can be ready for review in three business days after we receive the content and access. We test and review it with you before launch and handover. Larger sites and custom software follow a scoped schedule.",
     },
     {
       question: "Who owns the website, code and ad accounts?",

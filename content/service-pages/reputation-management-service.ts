@@ -118,7 +118,7 @@ export const REPUTATION_MANAGEMENT_SERVICE: ServicePageContent = {
   },
 
   proof: {
-    h2: "Reputation management handled by in-house specialists",
+    h2: "Reputation management handled by remote specialists",
     lead: "We protect the online reputation of healthcare providers, legal firms, home contractors and e-commerce stores.",
     statKeys: ["totalClientsServed", "teamSize", "cmsWebsitesBuilt"],
     showOwnBrands: true,

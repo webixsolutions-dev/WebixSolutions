@@ -20,7 +20,7 @@ export default function PrivacyPolicyPage() {
       <section className="space-y-3">
         <h2 className="type-h3 text-[#111215]">1. Overview & Data Controller</h2>
         <p>
-          Webix Solutions (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) is an in-house digital marketing, web engineering, and AI automation agency headquartered in {SITE_FACTS.headquarters.fullDisplay}. We respect your fundamental right to privacy and are committed to safeguarding personal data in transparent compliance with global privacy standards, including:
+          Webix Solutions (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) is an remote digital marketing, web engineering, and AI automation agency headquartered in {SITE_FACTS.headquarters.fullDisplay}. We respect your fundamental right to privacy and are committed to safeguarding personal data in transparent compliance with global privacy standards, including:
         </p>
         <ul className="list-disc list-inside space-y-1 pl-2">
           <li><strong>Canada:</strong> Personal Information Protection and Electronic Documents Act (PIPEDA)</li>
@@ -44,7 +44,7 @@ export default function PrivacyPolicyPage() {
 
       <section className="space-y-3">
         <h2 className="type-h3 text-[#111215]">3. Named Third-Party Data Processors</h2>
-        <p>We partner only with enterprise-grade data processors that maintain verified security certifications (SOC 2, ISO 27001) to run our agency operations:</p>
+        <p>These providers support our website and agency operations.</p>
         <div className="overflow-x-auto">
           <table className="w-full text-xs text-left border border-[#E4E6EB] divide-y divide-[#E4E6EB]">
             <thead className="bg-[#F9FAFB] text-[#111215] font-semibold">
@@ -57,8 +57,13 @@ export default function PrivacyPolicyPage() {
             <tbody className="divide-y divide-[#E4E6EB]">
               <tr>
                 <td className="p-2.5 font-medium">Google Workspace & Calendar</td>
-                <td className="p-2.5">Video strategy calls (Google Meet), email hosting, calendar availability queries</td>
+                <td className="p-2.5">Video calls and email hosting</td>
                 <td className="p-2.5">US / Global (SOC 2 / ISO 27001)</td>
+              </tr>
+              <tr>
+                <td className="p-2.5 font-medium">Neon</td>
+                <td className="p-2.5">Online booking storage, including appointment and contact details</td>
+                <td className="p-2.5">United States</td>
               </tr>
               <tr>
                 <td className="p-2.5 font-medium">Cloudflare Inc.</td>

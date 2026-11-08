@@ -6,9 +6,9 @@ export const WEB_DESIGN_DEVELOPMENT: ServicePageContent = {
   heroKicker: "Business websites and redesigns",
   intro: [
     "We design and build websites that load fast, rank in search and turn visitors into enquiries — custom-coded in Next.js or built on WordPress, Shopify and other CMS platforms.",
-    "Our in-house team builds for businesses in Canada, the US, the UAE, New Zealand and Pakistan, from 5-page company sites to full redesigns.",
+    "Our remote team builds for businesses in Canada, the US, the UAE, New Zealand and Pakistan, from 5-page company sites to full redesigns.",
   ],
-  proofChip: "91 custom-coded builds and 50+ CMS websites delivered",
+  proofChip: "91 custom-coded builds and 150+ CMS websites delivered",
 
   outcomes: {
     h2: "A website that does a job for your business",

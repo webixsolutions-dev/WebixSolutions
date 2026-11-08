@@ -83,7 +83,7 @@ export default function OpenGraphImage() {
               lineHeight: 1.4,
             }}
           >
-            20+ in-house specialists · 91 custom-coded builds · 50+ CMS sites ·
+            20+ team members · 91 custom-coded builds · 150+ CMS sites ·
             50+ social accounts managed.
           </div>
         </div>

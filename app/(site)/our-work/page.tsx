@@ -11,7 +11,7 @@ import { OurWorkHubView } from "@/components/work/our-work-hub-view";
 
 const OUR_WORK_TITLE = "Our Work — Projects, Proof & Results | Webix Solutions";
 const OUR_WORK_DESCRIPTION =
-  "Case studies from 91 custom-coded builds, 50+ CMS websites and 50+ managed social accounts: websites, Shopify, CRM, AI agents and ad campaigns.";
+  "Case studies from 91 custom-coded builds, 150+ CMS websites and 50+ managed social accounts: websites, Shopify, CRM, AI agents and ad campaigns.";
 
 export const metadata: Metadata = buildMetadata({
   title: OUR_WORK_TITLE,

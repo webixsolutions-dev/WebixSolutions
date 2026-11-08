@@ -28,7 +28,7 @@ export async function generateMetadata({
   params,
 }: LocationPageProps): Promise<Metadata> {
   const { locationSlug } = await params;
-  const content = getLocationPageContent(locationSlug as any);
+  const content = getLocationPageContent(locationSlug);
 
   if (!content) {
     return {
@@ -48,7 +48,7 @@ export default async function DedicatedLocationPage({
   params,
 }: LocationPageProps) {
   const { locationSlug } = await params;
-  const content = getLocationPageContent(locationSlug as any);
+  const content = getLocationPageContent(locationSlug);
 
   if (!content) {
     notFound();
@@ -58,7 +58,6 @@ export default async function DedicatedLocationPage({
 
   const breadcrumbs = [
     { name: "Home", path: "/" },
-    { name: "Locations", path: `/${content.slug}/` },
     { name: content.countryName, path: `/locations/${content.slug}/` },
   ];
   const breadcrumbJsonLd = buildBreadcrumbJsonLd(breadcrumbs);

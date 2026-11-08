@@ -70,7 +70,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       "@id": ORG_ID,
     },
     genre: study.category,
-    countryOfOrigin: study.country,
+    ...(study.country ? { countryOfOrigin: study.country } : {}),
   };
 
   return (

@@ -40,7 +40,7 @@ export function ServicePageTemplate({
   // Lead text
   const introLead = pageContent
     ? `${pageContent.intro[0]} ${pageContent.intro[1]}`
-    : `${service.shortOutcome} Designed, coded and supported by our 20+ person in-house team on your time zone.`;
+    : `${service.shortOutcome} Designed, coded and supported by our team of 20+ on your time zone.`;
 
   // Hero kicker & proof chip
   const heroKicker = pageContent?.heroKicker ?? "In-house service delivery";
@@ -70,7 +70,7 @@ export function ServicePageTemplate({
         "Every project is architected for speed, conversion rate optimization and search visibility across North America, the UAE and Pakistan.",
     },
     {
-      title: "Direct in-house engineering team",
+      title: "Direct remote engineering team",
       detail:
         "You work directly with our project leads in Dunyapur and Lahore during your business hours, without layers of account executives.",
     },
@@ -136,7 +136,7 @@ export function ServicePageTemplate({
       stepNumber: "03",
       title: "Build and review",
       description:
-        "Our in-house team builds on a private staging link for your feedback, verification and testing.",
+        "Our remote team builds on a private staging link for your feedback, verification and testing.",
     },
     {
       stepNumber: "04",
@@ -151,7 +151,7 @@ export function ServicePageTemplate({
     pageContent?.proof.h2 ?? "Delivered with verified code and measurable outcomes";
   const proofLead =
     pageContent?.proof.lead ??
-    "Our in-house production team in Pakistan has delivered 91 custom-coded builds, 50+ CMS sites, and manages 50+ social accounts.";
+    "Our remote team in Pakistan has delivered 91 custom-coded builds, 150+ CMS sites, and manages 50+ social accounts.";
   const proofStatKeys: StatKey[] = pageContent?.proof.statKeys ?? [
     "customCodedBuilds",
     "cmsWebsitesBuilt",
@@ -339,7 +339,7 @@ export function ServicePageTemplate({
                 <ul className="space-y-2 text-xs text-[#E2C6C8]">
                   <li className="flex items-center gap-2">
                     <Check className="h-3.5 w-3.5 text-[#ED1C24] shrink-0" />
-                    <span>20+ person in-house team in Pakistan</span>
+                    <span>20+ team members in Pakistan</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <Check className="h-3.5 w-3.5 text-[#ED1C24] shrink-0" />
@@ -858,7 +858,7 @@ export function ServicePageTemplate({
               Explore complementary services and industry solutions
             </h2>
             <p className="type-body text-[#454954]">
-              Combine services under one in-house team without coordinating multiple external agencies or freelancers.
+              Combine services under one remote team without coordinating multiple external agencies or freelancers.
             </p>
           </div>
 

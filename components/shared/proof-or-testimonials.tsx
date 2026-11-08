@@ -61,7 +61,7 @@ function StaticGithubContributionSvg() {
  * - Renders client testimonials ONLY when >= 3 items have `verified: true` && `permission: true`.
  * - Otherwise renders the Proof Wall:
  *   - Confirmed GitHub activity ("1,053 contributions in the last 12 months across 91 Next.js, React, Node.js and Flutter repositories")
- *   - Confirmed team & delivery numbers ("20+ person in-house team", "50+ CMS websites", "50+ social accounts")
+ *   - Confirmed team & delivery numbers ("20+ team members", "150+ CMS websites", "50+ social accounts")
  *   - Own brands (Zelvomart, LaptopSouq.ae, Miraj Builders) and ad metrics (Rs 15.01, etc.) are gated behind `isConfirmed()` so they stay hidden in production until confirmed.
  */
 export function ProofOrTestimonials() {
@@ -117,7 +117,7 @@ export function ProofOrTestimonials() {
           </h2>
           <p className="type-body text-[#A7ACB8]">
             Rather than anonymous five-star quotes, here is the verifiable
-            activity across our GitHub organization and in-house production
+            activity across our GitHub organization and remote production
             teams.
           </p>
         </div>
@@ -256,7 +256,7 @@ export function ProofOrTestimonials() {
                   Our own brands — built and run by the Webix team
                 </div>
                 <h3 className="type-h3 text-white">
-                  Live platforms engineered, marketed and operated by our in-house team
+                  Live platforms engineered, marketed and operated by our remote team
                 </h3>
               </div>
               <p className="text-xs text-[#A7ACB8] max-w-md">
@@ -308,7 +308,7 @@ export function ProofOrTestimonials() {
                       64 WhatsApp conversations at Rs 15.01 each
                     </h4>
                     <p className="text-sm text-[#A7ACB8] leading-relaxed">
-                      Click-to-WhatsApp e-commerce campaign in Pakistan running on Meta Ads Manager over the last 30 days. Tested, managed and optimized by our in-house growth marketing team.
+                      Click-to-WhatsApp e-commerce campaign in Pakistan running on Meta Ads Manager over the last 30 days. Tested, managed and optimized by our remote growth marketing team.
                     </p>
                   </div>
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8 border-t lg:border-t-0 lg:border-l border-white/10 pt-4 lg:pt-0 lg:pl-8 shrink-0">

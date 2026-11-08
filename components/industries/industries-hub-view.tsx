@@ -27,7 +27,7 @@ const FAQS = [
   {
     question: "Have you worked with businesses in my exact niche?",
     answer:
-      "Across 91 repositories and 60+ clients, our in-house team has delivered projects for online retailers, roofers, electrical contractors, equipment leasing companies, real estate developers, healthcare clinics, and B2B consultancies across North America, the UAE, and Pakistan. On our strategy call, we share relevant live examples and case studies.",
+      "Across 91 repositories and 120+ clients, our remote team has delivered projects for online retailers, roofers, electrical contractors, equipment leasing companies, real estate developers, healthcare clinics, and B2B consultancies across North America, the UAE, and Pakistan. On our strategy call, we share relevant live examples and case studies.",
   },
   {
     question: "Do you work with early-stage startups and new businesses?",
@@ -81,7 +81,7 @@ export function IndustriesHubView({ industries, nextSlot }: IndustriesHubViewPro
             </h1>
 
             <p className="type-lead text-[#A7ACB8] max-w-[62ch]">
-              Marketing, websites and AI automation built around how your customers actually buy — engineered by our 20+ person in-house team across 14 distinct commercial verticals.
+              Marketing, websites and AI automation built around how your customers actually buy — engineered by our team of 20+ across 14 distinct commercial verticals.
             </p>
 
             <div
@@ -328,7 +328,7 @@ export function IndustriesHubView({ industries, nextSlot }: IndustriesHubViewPro
             <div className="max-w-2xl space-y-3">
               <Kicker>Cross-industry engineering</Kicker>
               <h2 className="type-h2 text-[#111215]">
-                Don't see your exact industry vertical listed?
+                Is your industry missing from the list?
               </h2>
               <p className="type-body text-[#454954]">
                 While client businesses vary, high-performance digital foundations remain consistent: sub-2.5s website load times, frictionless inquiry forms, transparent ad tracking, and instant automated response. Schedule a discovery call and our team will map out a bespoke strategy for your niche.

@@ -1,3 +1,4 @@
+import { ProjectCover } from "@/components/studio/project-cover";
 import * as React from "react";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, ShieldCheck, ArrowUpRight, Check, AlertCircle } from "lucide-react";
@@ -55,7 +56,7 @@ export function CaseStudyTemplate({ study, nextSlot }: CaseStudyTemplateProps) {
 
           <div className="max-w-3xl space-y-6 animate-hero-rise">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="px-2.5 py-0.5 rounded bg-[#ED1C24] text-white text-xs font-bold uppercase tracking-wider">
+              <span className="px-2.5 py-0.5 rounded bg-[#b51520] text-white text-xs font-bold uppercase tracking-wider">
                 {study.category}
               </span>
               <span className="text-xs font-mono text-[#A7ACB8]">
@@ -64,6 +65,8 @@ export function CaseStudyTemplate({ study, nextSlot }: CaseStudyTemplateProps) {
             </div>
 
             <h1 className="type-display text-white">{study.title}</h1>
+            {study.projectUrl && <a className="studio-link" href={study.projectUrl} target="_blank" rel="noreferrer">Visit the live website ↗</a>}
+
 
             <p className="type-lead text-[#A7ACB8] max-w-[62ch]">
               {study.summary}
@@ -87,16 +90,19 @@ export function CaseStudyTemplate({ study, nextSlot }: CaseStudyTemplateProps) {
                 Verified Commercial Case Study
               </Chip>
               <span className="text-xs text-[#A7ACB8]">
-                Delivered by Webix in-house engineering campus
+                Delivered by Webix engineering team
               </span>
             </div>
           </div>
         </Container>
       </Section>
+      {study.cover && <Section surface="steel" spacing="compact"><Container><ProjectCover study={study} sizes="(max-width: 760px) 94vw, 1100px" /><p className="mt-2 text-sm text-fg-secondary">Illustrative cover image</p></Container></Section>}
+
 
       {/* =========================================================================
           2. METRICS SHOWCASE (Porcelain with Notch)
          ========================================================================= */}
+      {study.results.length > 0 && (
       <Section
         surface="porcelain"
         previousSurface="graphite"
@@ -124,6 +130,7 @@ export function CaseStudyTemplate({ study, nextSlot }: CaseStudyTemplateProps) {
           </div>
         </Container>
       </Section>
+      )}
 
       {/* =========================================================================
           3. CHALLENGE & SOLUTION (Steel with Notch)

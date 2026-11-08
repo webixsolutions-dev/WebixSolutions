@@ -12,7 +12,7 @@ const HAROON_AUTHOR: AuthorProfile = {
 const TECH_TEAM_AUTHOR: AuthorProfile = {
   name: "Webix Engineering Team",
   role: "Senior Full-Stack & Growth Leads",
-  bio: "The in-house engineering and performance marketing leads at Webix Solutions in Dunyapur, Pakistan.",
+  bio: "The remote engineering and performance marketing leads at Webix Solutions in Dunyapur, Pakistan.",
   linkedin: SITE_FACTS.founder.linkedin,
   avatarText: "WX",
 };

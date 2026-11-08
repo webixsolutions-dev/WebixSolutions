@@ -127,7 +127,7 @@ export const GOOGLE_BUSINESS_PROFILE_OPTIMIZATION: ServicePageContent = {
   },
 
   proof: {
-    h2: "Local visibility delivered by our in-house team",
+    h2: "Local visibility delivered by our remote team",
     lead: "We manage local search visibility and Google Business Profiles for contractors, clinics, retailers and service businesses.",
     statKeys: ["totalClientsServed", "teamSize", "cmsWebsitesBuilt"],
     showOwnBrands: true,

@@ -37,7 +37,7 @@ export function GithubActivityBlock() {
             1,053 Contributions across 91 Repositories
           </h3>
           <p className="text-xs text-[#A7ACB8]">
-            Next.js, React, Node.js and Flutter codebases committed by our in-house engineering campus over the past 12 months.
+            Next.js, React, Node.js and Flutter codebases committed by our engineering team over the past 12 months.
           </p>
         </div>
 

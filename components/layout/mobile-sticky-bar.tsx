@@ -3,8 +3,6 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { WhatsAppIcon } from "@/components/layout/social-icons";
-import { SITE_FACTS } from "@/content/site-facts";
 
 /**
  * Sticky Mobile Bottom Bar (< 768px) — Allowed liquid-glass surface #4 in docs/05.
@@ -68,16 +66,7 @@ export function MobileStickyBar() {
         >
           Book a call
         </Button>
-        <a
-          href={SITE_FACTS.contact.whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          tabIndex={visible ? 0 : -1}
-          className="inline-flex h-10 items-center justify-center gap-2 rounded-md border border-white/15 bg-white/[0.06] px-4 text-sm font-medium text-white hover:border-[#ED1C24] transition-colors"
-        >
-          <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
-          <span>WhatsApp</span>
-        </a>
+
       </div>
     </div>
   );

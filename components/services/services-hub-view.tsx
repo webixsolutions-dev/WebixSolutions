@@ -95,7 +95,7 @@ export function ServicesHubView({ categories, nextSlot }: ServicesHubViewProps) 
             </h1>
 
             <p className="type-lead text-[#A7ACB8] max-w-[62ch]">
-              Websites, Shopify stores, mobile apps, SEO, paid advertising, and custom AI automation — engineered by an in-house 20+ person team on your time zone.
+              Websites, Shopify stores, mobile apps, SEO, paid advertising, and custom AI automation — engineered by an remote team of 20+ on your time zone.
             </p>
 
             <div

@@ -97,7 +97,7 @@ export function IndustryPageTemplate({
                 {content.heroProofChip}
               </Chip>
               <span className="text-xs text-[#A7ACB8]">
-                20+ person in-house team serving CA, US, UAE, NZ and PK
+                20+ team members serving CA, US, UAE, NZ and PK
               </span>
             </div>
           </div>

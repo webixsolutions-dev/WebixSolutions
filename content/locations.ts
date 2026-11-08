@@ -164,7 +164,7 @@ export const LOCATIONS_REGISTRY: LocationEntry[] = [
       "Local project and retainer quotes available in PKR on request. Meetings available via video call or in Lahore by appointment.",
     confirmedRates: false,
     timezoneSummary:
-      "Headquartered in Dunyapur, Punjab with a 20+ person in-house team online 9:00 AM – 6:00 PM PKT (plus night shift until 5:00 AM PKT).",
+      "Headquartered in Dunyapur, Punjab with a remote team of 20+ online 9:00 AM – 6:00 PM PKT (plus night shift until 5:00 AM PKT).",
     overlapRows: [
       {
         pktWindow: "9:00 AM – 1:00 PM PKT",

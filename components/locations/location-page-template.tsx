@@ -77,6 +77,7 @@ export function LocationPageTemplate({
               <p className="type-body text-[#A7ACB8] max-w-[62ch]">
                 {content.heroIntro[1]}
               </p>
+              {content.slug === "canada" && <Link className="studio-link" href="/our-work/camz-cleaning-booking/">See the Camz Cleaning project <ArrowUpRight size={16} /></Link>}
             </div>
 
             <div

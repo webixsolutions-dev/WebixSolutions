@@ -6,7 +6,7 @@ export const MOBILE_APP_DEVELOPMENT_SERVICES: ServicePageContent = {
   heroKicker: "Cross-platform iOS and Android apps in Flutter",
   intro: [
     "We design, build and deploy native-performing mobile applications for iOS and Android from a single Flutter codebase — complete with custom backends, web admin portals and full App Store and Google Play submission.",
-    "Engineered by our in-house mobile engineering team in Pakistan for startups and businesses across Canada, the US, the UAE, New Zealand and Pakistan.",
+    "Engineered by our remote mobile engineering team in Pakistan for startups and businesses across Canada, the US, the UAE, New Zealand and Pakistan.",
   ],
   proofChip: "Cross-platform iOS & Android mobile apps built with Flutter",
 
@@ -127,7 +127,7 @@ export const MOBILE_APP_DEVELOPMENT_SERVICES: ServicePageContent = {
   },
 
   proof: {
-    h2: "Mobile engineering delivered by our in-house developers",
+    h2: "Mobile engineering delivered by our remote developers",
     lead: "Our engineers have built cross-platform mobile apps for logistics, healthcare, on-demand services and internal business tools.",
     statKeys: ["customCodedBuilds", "teamSize", "totalClientsServed"],
     showOwnBrands: true,

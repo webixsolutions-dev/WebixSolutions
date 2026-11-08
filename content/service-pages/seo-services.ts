@@ -1,17 +1,17 @@
 import type { ServicePageContent } from "./types";
 
-/** /seo-services/ — Google organic SEO. AI-answer visibility belongs to /ai-search-optimization/. */
+/** Search visibility services for web search and AI answers. */
 export const SEO_SERVICES: ServicePageContent = {
   slug: "seo-services",
-  heroKicker: "Technical, on-page, local and content SEO",
+  heroKicker: "SEO, AEO & GEO",
   intro: [
-    "We run technical, on-page, local and content SEO so more of the right people find you on Google and get in touch.",
+    "We improve technical SEO, local visibility and the pages customers rely on for answers. Answer engine optimization (AEO) and generative engine optimization (GEO) help make those pages easier to interpret and reference.",
     "It is a monthly service for businesses in Canada, the US, the UAE, New Zealand and Pakistan, reported from your own Search Console and GA4 data.",
   ],
   proofChip: "Monthly reporting from your Search Console and GA4",
 
   outcomes: {
-    h2: "SEO measured in leads, not just rankings",
+    h2: "Search visibility measured against enquiries",
     lead: "We focus on the searches your buyers make, then fix whatever stops those pages from ranking and converting.",
     items: [
       {
@@ -86,7 +86,7 @@ export const SEO_SERVICES: ServicePageContent = {
 
   proof: {
     h2: "Who does your SEO",
-    lead: "SEO is handled by our in-house SEO team in Pakistan, alongside the developers who can ship technical fixes directly.",
+    lead: "SEO is handled by our remote SEO team in Pakistan, alongside the developers who can ship technical fixes directly.",
     statKeys: ["teamSize", "totalClientsServed", "cmsWebsitesBuilt"],
   },
 
@@ -139,7 +139,7 @@ export const SEO_SERVICES: ServicePageContent = {
     },
     {
       question: "Do you also optimise for ChatGPT and AI Overviews?",
-      answer: "Yes, as a separate AI search optimisation service. It makes sure AI assistants can reach, read and correctly describe your business; nobody can force an assistant to recommend you.",
+      answer: "Yes. We strengthen crawlability, clarify your service information and add useful, verifiable examples so search engines and AI answer tools can interpret your business accurately.",
     },
   ],
 

@@ -192,7 +192,7 @@ export function BlogPostView({ post }: BlogPostViewProps) {
                 Looking to implement this strategy in your business?
               </h3>
               <p className="text-xs text-[#9CA3AF] leading-relaxed max-w-xl">
-                Our in-house engineers, marketers, and AI specialists manage complete delivery on your local time zone with written proposals in 48 hours.
+                Our remote engineers, marketers, and AI specialists manage complete delivery on your local time zone with written proposals in 48 hours.
               </p>
               <div className="pt-2 flex flex-wrap gap-3">
                 <Button href={`/${post.relatedServiceSlug}/`} variant="primary" size="default">

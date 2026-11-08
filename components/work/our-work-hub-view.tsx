@@ -2,16 +2,16 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowRight, Sparkles, CheckCircle2, ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Kicker } from "@/components/ui/kicker";
 import { Button } from "@/components/ui/button";
 import { Chip } from "@/components/ui/chip";
-import { CutFrame } from "@/components/ui/cut-frame";
 import { FinalCtaSection } from "@/components/home/final-cta-section";
 import { GithubActivityBlock } from "./github-activity-block";
 import { OwnBrandsBand } from "./own-brands-band";
+import { ProjectCover } from "@/components/studio/project-cover";
 import type { WorkEntry, WorkCategory } from "@/content/work";
 import type { NextSlotResult } from "@/lib/booking/next-slot";
 
@@ -26,6 +26,8 @@ const CATEGORIES: WorkCategory[] = [
   "E-commerce",
   "Custom software & CRM",
   "AI & automation",
+  "Paid ads",
+  "Social media",
 ];
 
 const PLATFORMS = [
@@ -84,7 +86,7 @@ export function OurWorkHubView({ entries, nextSlot }: OurWorkHubViewProps) {
             <h1 className="type-display text-white">Our work</h1>
 
             <p className="type-lead text-[#A7ACB8] max-w-[62ch]">
-              Case studies from 91 custom-coded builds, 50+ CMS websites and 50+ managed social accounts: websites, Shopify, CRM, AI agents and ad campaigns.
+              Case studies from 91 custom-coded builds, 150+ CMS websites and 50+ managed social accounts: websites, Shopify, CRM, AI agents and ad campaigns.
             </p>
 
             <div
@@ -102,7 +104,7 @@ export function OurWorkHubView({ entries, nextSlot }: OurWorkHubViewProps) {
 
             <div className="pt-2 flex flex-wrap items-center gap-3">
               <Chip asSpan active>
-                91 Custom builds · 1,053 GitHub commits · 60+ Clients
+                91 Custom builds · 1,053 GitHub commits · 120+ Clients
               </Chip>
               <span className="text-xs text-[#A7ACB8]">
                 Only real commercial results and verified own-brand metrics
@@ -129,19 +131,20 @@ export function OurWorkHubView({ entries, nextSlot }: OurWorkHubViewProps) {
                 Filter by discipline:
               </span>
               <span className="text-xs text-[#717684]">
-                Showing {filteredEntries.length} published case studies
+                Showing {filteredEntries.length} projects
               </span>
             </div>
 
             <div className="flex flex-wrap items-center gap-2">
-              {CATEGORIES.map((cat) => (
+              {CATEGORIES.filter((cat) => cat === "All" || entries.some((entry) => entry.category === cat)).map((cat) => (
                 <button
                   key={cat}
                   type="button"
                   onClick={() => setSelectedCategory(cat)}
+                  aria-pressed={selectedCategory === cat}
                   className={`px-4 py-2 rounded-full text-xs font-medium border transition-colors ${
                     selectedCategory === cat
-                      ? "bg-[#ED1C24] text-white border-[#ED1C24]"
+                      ? "bg-[#be1421] text-white border-[#be1421]"
                       : "bg-white text-[#454954] border-[#D5D8E0] hover:border-[#111215] hover:text-[#111215]"
                   }`}
                 >
@@ -152,15 +155,18 @@ export function OurWorkHubView({ entries, nextSlot }: OurWorkHubViewProps) {
           </div>
 
           {/* Stacked Case Studies Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-            {filteredEntries.map((study) => (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-16" data-studio-gallery>
+            {entries.map((study) => (
               <div
                 key={study.slug}
-                className="group p-8 md:p-10 rounded-2xl bg-white border border-[#E4E6EB] hover:border-[#ED1C24] transition-all shadow-xs flex flex-col justify-between space-y-6"
+                hidden={selectedCategory !== "All" && selectedCategory !== study.category}
+                className="group cut-tr-lg bg-white border border-[#d7d7dc] hover:border-[#be1421] transition-colors overflow-hidden"
               >
+                <ProjectCover study={study} />
+                <div className="p-6 md:p-8 space-y-5">
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="inline-block text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-[#F4F5F7] text-[#ED1C24]">
+                    <span className="inline-block text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-[#F4F5F7] text-[#b51520]">
                       {study.category}
                     </span>
                     <span className="text-xs font-mono text-[#717684]">
@@ -168,7 +174,7 @@ export function OurWorkHubView({ entries, nextSlot }: OurWorkHubViewProps) {
                     </span>
                   </div>
 
-                  <h2 className="font-display text-2xl font-bold text-[#111215] group-hover:text-[#ED1C24] transition-colors leading-snug">
+                  <h2 className="font-display text-2xl font-bold text-[#111215] group-hover:text-[#b51520] transition-colors leading-snug">
                     {study.title}
                   </h2>
 
@@ -210,13 +216,14 @@ export function OurWorkHubView({ entries, nextSlot }: OurWorkHubViewProps) {
                   <span className="text-xs text-[#717684]">
                     {study.permission === "named" ? "Public Brand Proof" : "Anonymized Client Delivery"}
                   </span>
-                  <Link
+                  {!study.scopeOnly && <Link
                     href={`/our-work/${study.slug}/`}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#ED1C24] group-hover:translate-x-1 transition-transform"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#b51520] group-hover:translate-x-1 transition-transform"
                   >
                     <span>Read case study</span>
                     <ArrowRight className="h-4 w-4" />
-                  </Link>
+                  </Link>}
+                </div>
                 </div>
               </div>
             ))}

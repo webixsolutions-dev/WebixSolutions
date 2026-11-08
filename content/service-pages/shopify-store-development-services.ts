@@ -6,9 +6,9 @@ export const SHOPIFY_STORE_DEVELOPMENT: ServicePageContent = {
   heroKicker: "E-commerce stores and migrations",
   intro: [
     "We design, build and launch Shopify stores built for sales — from initial setup and custom theme styling to payment gateways, catalog migration and checkout optimization.",
-    "Our in-house team builds stores for retail and direct-to-consumer brands in Canada, the US, the UAE, New Zealand and Pakistan, including multi-currency and Cash on Delivery support.",
+    "Our remote team builds stores for retail and direct-to-consumer brands in Canada, the US, the UAE, New Zealand and Pakistan, including multi-currency and Cash on Delivery support.",
   ],
-  proofChip: "50+ CMS and e-commerce websites delivered",
+  proofChip: "150+ CMS and e-commerce websites delivered",
 
   outcomes: {
     h2: "A Shopify store engineered for conversions and speed",
