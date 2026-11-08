@@ -28,7 +28,7 @@ body { --surface: var(--studio-black); }
 .studio-label { display: inline-flex; align-items: center; gap: 9px; font-size: .76rem; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; }
 .studio-label > span { width: 7px; height: 7px; background: var(--studio-red); }
 .studio-hero .studio-label { color: var(--studio-silver); }
-.studio-hero h1 { font-size: clamp(4rem, 7.5vw, 8.4rem); letter-spacing: -.075em; line-height: .91; margin-block: 26px 24px; font-weight: 600; }
+.studio-hero h1 { font-size: clamp(4rem, 7.5vw, 8.4rem); letter-spacing: -.055em; line-height: .93; margin-block: 26px 24px; font-weight: 600; }
 .studio-line-mask { display: block; overflow: hidden; padding-bottom: .12em; margin-bottom: -.12em; }
 .studio-line-mask > span { display: block; }
 .studio-hero-lead { color: #cacad1; font-size: clamp(1rem, 1.5vw, 1.21rem); line-height: 1.55; max-width: 435px; }

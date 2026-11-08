@@ -38,7 +38,7 @@ export function NewsletterForm() {
           type="email"
           required
           placeholder="you@company.com"
-          className="h-10 flex-1 rounded-md border border-white/15 bg-[#1C1E24] px-3.5 text-sm text-white placeholder:text-[#6C7280] focus:border-[#ED1C24] focus:outline-none"
+          className="h-10 flex-1 rounded-md border border-white/15 bg-[#1C1E24] px-3.5 text-sm text-white placeholder:text-[#a7acb8] focus:border-[#ED1C24] focus:outline-none"
         />
         <Button
           type="submit"
@@ -54,7 +54,7 @@ export function NewsletterForm() {
         <p
           role="status"
           className={
-            status.ok ? "text-xs text-[#16A34A]" : "text-xs text-[#ED1C24]"
+            status.ok ? "text-xs text-[#6ed58a]" : "text-xs text-[#ff777e]"
           }
         >
           {status.message}

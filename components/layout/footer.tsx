@@ -168,7 +168,7 @@ export function Footer() {
               <br />
               {SITE_FACTS.headquarters.fullDisplay}
               <br />
-              <span className="text-[#6C7280]">
+              <span className="text-[#a7acb8]">
                 ({SITE_FACTS.headquarters.secondaryNote})
               </span>
             </address>
@@ -223,7 +223,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Legal & Socials Bar */}
-        <div className="pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-xs text-[#6C7280]">
+        <div className="pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-xs text-[#a7acb8]">
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
             <span>
               © {currentYear} {SITE_FACTS.brandName}. All rights reserved.
@@ -265,15 +265,6 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Giant Cropped Wordmark (docs/05-design-system.md) */}
-        <div
-          aria-hidden="true"
-          className="mt-10 pt-4 select-none pointer-events-none overflow-hidden"
-        >
-          <div className="font-display font-semibold lowercase tracking-[-0.04em] leading-[0.82] text-[clamp(3.2rem,11.5vw,10.5rem)] text-white/[0.05] whitespace-nowrap">
-            webix solutions
-          </div>
-        </div>
       </Container>
     </footer>
   );
