@@ -92,7 +92,8 @@ export function StudioMotion() {
           hero.from("[data-studio-hero-line]", { yPercent: 96, opacity: 0.18, stagger: 0.12, duration: 0.9 }, 0);
           hero.from("[data-hero-intro]", { y: 20, opacity: 0.2, stagger: 0.11, duration: 0.65 }, 0.18);
           hero.from("[data-hero-card]", { y: 70, scale: 0.93, opacity: 0.25, stagger: 0.14, duration: 1 }, 0.12);
-          hero.from("[data-hero-slab]", { xPercent: -5, yPercent: -7, opacity: 0, duration: 0.9 }, 0.45);
+          hero.from("[data-hero-slab]", { scaleX: 0, opacity: 0, duration: 1.1 }, 0.5);
+          hero.from("[data-hero-float]", { y: 40, opacity: 0, stagger: 0.16, duration: 0.8 }, 0.75);
         }
 
         for (const group of gsap.utils.toArray<HTMLElement>("[data-studio-reveal], [data-studio-stagger]")) {
@@ -186,9 +187,9 @@ export function StudioMotion() {
             stage.removeEventListener("pointermove", move);
             stage.removeEventListener("pointerleave", reset);
           };
-          gsap.to(stage, {
-            y: 25, ease: "none",
-            scrollTrigger: { trigger: stage, start: "top top", end: "bottom top", scrub: 0.5 },
+          gsap.fromTo(stage, { rotationX: 16, scale: 0.92, transformPerspective: 1400, transformOrigin: "50% 0%" }, {
+            rotationX: 0, scale: 1, ease: "none",
+            scrollTrigger: { trigger: stage, start: "top 95%", end: "top 34%", scrub: 0.6 },
           });
         }
       });
