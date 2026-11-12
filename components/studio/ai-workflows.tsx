@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowDownRight, ArrowUpRight, CalendarDays, Database, Globe2, Headphones, MapPin, MessageCircle, Phone, Send, Workflow } from "lucide-react";
+import { ArrowUpRight, CalendarDays, Database, Globe2, Headphones, MapPin, MessageCircle, Phone, Send, Workflow } from "lucide-react";
 import { HOME_CONTENT } from "@/content/home";
 import { WorkflowDemo } from "./workflow-demo";
 
@@ -28,13 +28,12 @@ export function AiWorkflows() {
   return (
     <section id="ai-workflows" className="studio-section studio-ai" aria-labelledby="studio-ai-title" data-studio-light>
       <div className="studio-wrap">
-        <div className="studio-ai-lamp" data-studio-lamp>
-          <div className="studio-ai-light" aria-hidden="true"><i /></div>
-          <div className="studio-ai-heading" data-studio-reveal>
-            <p className="studio-label"><span /> AI systems in production</p>
-            <h2 id="studio-ai-title">Put AI to work<br />where enquiries come in.</h2>
-            <p>Connect your website, WhatsApp and phone to the tools your team already uses. Automate the routine steps and hand off the conversations that need a person.</p>
+        <div className="studio-section-head" data-studio-reveal>
+          <div>
+            <h2 id="studio-ai-title">Put AI to work where enquiries come in.</h2>
+            <p className="studio-section-lead">Connect your website, WhatsApp and phone to the tools your team already uses. Automate the routine steps and hand off the conversations that need a person.</p>
           </div>
+          <Link href="/ai-automation-services/" className="studio-link">View AI automation services <ArrowUpRight size={17} /></Link>
         </div>
         <div className="studio-ai-network" data-studio-network aria-label="Example AI workflow from enquiry channels to business tools">
           <svg viewBox="0 0 900 288" preserveAspectRatio="none" aria-hidden="true">
@@ -58,7 +57,6 @@ export function AiWorkflows() {
             </article>
           ))}
         </div>
-        <Link href="/ai-automation-services/" className="studio-button studio-button-outline studio-ai-cta">View AI automation services <ArrowDownRight size={17} /></Link>
       </div>
     </section>
   );

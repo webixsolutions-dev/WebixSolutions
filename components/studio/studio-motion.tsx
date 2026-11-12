@@ -92,6 +92,7 @@ export function StudioMotion() {
           hero.from("[data-studio-hero-line]", { yPercent: 96, opacity: 0.18, stagger: 0.12, duration: 0.9 }, 0);
           hero.from("[data-hero-intro]", { y: 20, opacity: 0.2, stagger: 0.11, duration: 0.65 }, 0.18);
           hero.from("[data-hero-card]", { y: 70, scale: 0.93, opacity: 0.25, stagger: 0.14, duration: 1 }, 0.12);
+          hero.from("[data-hero-slab]", { xPercent: -5, yPercent: -7, opacity: 0, duration: 0.9 }, 0.45);
         }
 
         for (const group of gsap.utils.toArray<HTMLElement>("[data-studio-reveal], [data-studio-stagger]")) {
@@ -122,6 +123,10 @@ export function StudioMotion() {
         });
         const proofBand = document.querySelector("[data-studio-proof-band]");
         if (proofBand) {
+          gsap.fromTo(proofBand, { "--studio-proof-cut": `${Math.round(window.innerWidth * 0.1)}px` }, {
+            "--studio-proof-cut": "0px", ease: "none",
+            scrollTrigger: { trigger: proofBand, start: "top bottom", end: "top 30%", scrub: 0.5 },
+          });
           gsap.to(proofBand.querySelector("[data-studio-proof-track]"), {
             xPercent: -28, ease: "none",
             scrollTrigger: { trigger: proofBand, start: "top bottom", end: "bottom top", scrub: 0.65 },
@@ -131,7 +136,14 @@ export function StudioMotion() {
             scrollTrigger: { trigger: proofBand, start: "top 95%", end: "bottom 83%", scrub: 0.75 },
           });
         }
-        for (const surface of gsap.utils.toArray<HTMLElement>("[data-studio-light], #main section[data-surface], #main .studio-section")) {
+        const footerCall = document.querySelector("[data-studio-footer-cta] h2");
+        if (footerCall) gsap.from(footerCall, {
+          xPercent: -6, ease: "none",
+          scrollTrigger: { trigger: footerCall, start: "top bottom", end: "top 55%", scrub: 0.6 },
+        });
+        // The home page uses flat logo surfaces, so the travelling section light only runs on interior pages.
+        const lit = document.querySelector("#main > .studio-hero") ? [] : gsap.utils.toArray<HTMLElement>("[data-studio-light], #main section[data-surface], #main .studio-section");
+        for (const surface of lit) {
           gsap.timeline({
             defaults: { ease: "none" },
             scrollTrigger: { trigger: surface, start: "top bottom", end: "bottom top", scrub: 0.65 },

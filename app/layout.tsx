@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import "./studio.css";
 import "./interior.css";
+import "./studio-home.css";
 import "lenis/dist/lenis.css";
 import {
   DEFAULT_DESCRIPTION,
