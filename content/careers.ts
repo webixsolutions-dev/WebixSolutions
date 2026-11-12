@@ -79,7 +79,7 @@ export const CAREERS_CONTENT = {
       id: "fullstack-nextjs",
       title: "Senior Full-Stack Developer",
       department: "Custom Web & App Engineering",
-      location: "Dunyapur, Punjab (In-House)",
+      location: "Dunyapur, Punjab (On-site)",
       type: "Full-Time (Night Shift)",
       experience: "3+ years production experience",
       overview:
@@ -99,7 +99,7 @@ export const CAREERS_CONTENT = {
       id: "flutter-engineer",
       title: "Mobile Application Developer (Flutter)",
       department: "Custom Web & App Engineering",
-      location: "Dunyapur, Punjab (In-House)",
+      location: "Dunyapur, Punjab (On-site)",
       type: "Full-Time (Day Shift)",
       experience: "2+ years Flutter experience",
       overview:
@@ -119,7 +119,7 @@ export const CAREERS_CONTENT = {
       id: "paid-media-specialist",
       title: "Paid Media & Performance Marketing Buyer",
       department: "Performance Marketing",
-      location: "Dunyapur, Punjab (In-House)",
+      location: "Dunyapur, Punjab (On-site)",
       type: "Full-Time (Night Shift)",
       experience: "2+ years managing >$10k/mo ad spend",
       overview:
@@ -139,7 +139,7 @@ export const CAREERS_CONTENT = {
       id: "ai-automation-engineer",
       title: "AI Automation & Workflow Engineer",
       department: "AI & Autonomous Systems",
-      location: "Dunyapur, Punjab (In-House)",
+      location: "Dunyapur, Punjab (On-site)",
       type: "Full-Time (Flexible)",
       experience: "1+ years automation engineering",
       overview:

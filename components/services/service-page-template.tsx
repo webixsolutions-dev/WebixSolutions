@@ -45,7 +45,7 @@ export function ServicePageTemplate({
     : `${service.shortOutcome} Designed, coded and supported by our team of 20+ on your time zone.`;
 
   // Hero kicker & proof chip
-  const heroKicker = pageContent?.heroKicker ?? "In-house service delivery";
+  const heroKicker = pageContent?.heroKicker ?? "Delivered by the Webix team";
   const proofChip =
     pageContent?.proofChip ??
     (service.shortOutcome.length > 50
@@ -330,7 +330,7 @@ export function ServicePageTemplate({
                   <div>
                     <div className="text-xs text-[#A7ACB8]">Your team</div>
                     <div className="font-metric text-xl md:text-2xl text-white mt-1">
-                      In-house
+                      20+ specialists
                     </div>
                     <div className="text-[11px] text-[#A7ACB8]">
                       Dedicated team lead

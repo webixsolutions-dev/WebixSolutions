@@ -1,4 +1,5 @@
 import type { LocationPageContent } from "./types";
+import { SITE_FACTS } from "@/content/site-facts";
 
 export const CANADA_LOCATION_PAGE: LocationPageContent = {
   slug: "canada",
@@ -13,6 +14,7 @@ export const CANADA_LOCATION_PAGE: LocationPageContent = {
     "For Calgary home services, Camz Cleaning is a public example of service-area pages, online pricing and booking.",
   ],
   heroChip: "Eastern & Pacific working hours overlap",
+  partnerNote: SITE_FACTS.canadaPartner.statement,
   currencyCode: "CAD",
   currencyHeadline: "Transparent project pricing with approximate CAD equivalents",
   currencyExplanation:

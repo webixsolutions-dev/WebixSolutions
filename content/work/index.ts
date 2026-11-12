@@ -262,7 +262,7 @@ export const WORK_REGISTRY: WorkEntry[] = [
     cover: "/images/studio/lead-cover.svg",
     title: "Webix Lead Desk",
     descriptor: "Internal lead research and outreach workspace",
-    country: "Built and used in-house",
+    country: "Built and used by our team",
     category: "AI & automation",
     summary:
       "Our own workspace for finding businesses, checking their websites, drafting outreach and following up on replies. Nothing is sent until a person approves the exact message.",

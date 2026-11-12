@@ -20,14 +20,14 @@ export interface OperatingRule {
 
 export const ABOUT_CONTENT = {
   meta: {
-    title: "About Us — In-House Digital & AI Team | Webix Solutions",
+    title: "About Us — Digital & AI Team of 20+ | Webix Solutions",
     description:
       "Founded by Haroon Sukhera, Webix Solutions is a remote team of 20+ building websites, growth marketing and AI systems for clients worldwide.",
     path: "/about-us/",
   },
 
   hero: {
-    kicker: "In-house engineering & marketing center",
+    kicker: "Engineering & marketing team of 20+",
     h1: "About Webix Solutions",
     lead: "Webix Solutions is a full-service digital agency with a remote team of 20+ in Pakistan. We engineer high-performance websites, run multi-channel growth campaigns, and deploy autonomous AI systems for businesses across Canada, the US, the UAE, New Zealand and Pakistan.",
   },

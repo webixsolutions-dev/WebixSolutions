@@ -194,7 +194,7 @@ export function ProofOrTestimonials() {
               innerClassName="p-6 md:p-8 h-full flex flex-col justify-between gap-6"
             >
               <div className="space-y-5">
-                <Chip asSpan>In-house production team</Chip>
+                <Chip asSpan>Production team</Chip>
                 <div className="space-y-4">
                   <div className="border-b border-white/10 pb-4">
                     <div className="font-metric text-3xl text-white">
@@ -269,7 +269,7 @@ export function ProofOrTestimonials() {
                 <CutFrame key={brand.name} innerClassName="p-6 flex flex-col justify-between gap-4 h-full">
                   <div className="space-y-2">
                     <div className="text-xs font-medium text-[#ED1C24]">
-                      In-house venture · {brand.market}
+                      Our own brand · {brand.market}
                     </div>
                     <h4 className="font-display text-xl font-semibold text-white">
                       {brand.name}

@@ -53,6 +53,12 @@ export const SITE_FACTS = {
   positioningOneLiner:
     "Webix Solutions is a full-service digital agency with a remote team of 20+ in Pakistan — we build websites, run growth marketing and ship AI systems for businesses across Canada, the US, the UAE, New Zealand and Pakistan, on your time zone.",
 
+  /** Owner-confirmed 12 Nov 2026. Named as a partnership only; no office claim in Canada. */
+  canadaPartner: {
+    name: "Camizo Tech",
+    statement: "In Canada we work in partnership with Camizo Tech.",
+  },
+
   founder: {
     name: "Haroon Sukhera",
     role: "Founder & CEO",
@@ -67,6 +73,10 @@ export const SITE_FACTS = {
     hrEmail: "hr@webixsolutions.com",
     phoneDisplay: "+92 322 9472354",
     phoneE164: "+923229472354",
+    uaePhoneDisplay: "+971 50 406 8312",
+    uaePhoneE164: "+971504068312",
+    nzPhoneDisplay: "+64 22 611 5072",
+    nzPhoneE164: "+64226115072",
     whatsappNumber: "923229472354",
     whatsappUrl:
       "https://wa.me/923229472354?text=Hi%20Webix%20Solutions%20%E2%80%94%20I%27d%20like%20to%20discuss%20a%20project.",

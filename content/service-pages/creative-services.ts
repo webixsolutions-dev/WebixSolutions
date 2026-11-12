@@ -8,7 +8,7 @@ export const CREATIVE_SERVICES: ServicePageContent = {
     "We provide professional graphic design and creative studio services — from memorable logo designs and brand identity kits to high-converting ad creative batches, packaging and short-form video edits.",
     "Delivered by our dedicated remote creative team in Pakistan for growing brands across Canada, the US, the UAE, New Zealand and Pakistan.",
   ],
-  proofChip: "In-house graphic design studio with unlimited revisions on brand kits",
+  proofChip: "Graphic design studio with unlimited revisions on brand kits",
 
   outcomes: {
     h2: "Visual design that gets attention and strengthens your brand",

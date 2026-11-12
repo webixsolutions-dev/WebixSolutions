@@ -25,6 +25,10 @@ export interface LocationPageContent {
   h1: string;
   heroIntro: [string, string];
   heroChip: string;
+  /** Local phone line for this market, shown in the hero and in structured data */
+  localPhone?: { label: string; display: string; e164: string };
+  /** One-line note about a local partner, shown in the hero */
+  partnerNote?: string;
   currencyCode: "CAD" | "USD" | "AED" | "PKR";
   currencyHeadline: string;
   currencyExplanation: string;
