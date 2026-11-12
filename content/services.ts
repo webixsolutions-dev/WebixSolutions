@@ -771,7 +771,7 @@ export const SERVICES_REGISTRY: ServiceEntry[] = [
     published: true,
     title: "Graphic Design & Creative Services | Webix Solutions",
     metaDescription:
-      "Logos, brand kits, social graphics, ad creatives, packaging and video editing from an remote creative team. Batches from $99.",
+      "Logos, brand kits, social graphics, ad creatives, packaging and video editing from a remote creative team. Batches from $99.",
     h1: "Graphic design and creative studio services",
     primaryKeyword: "graphic design services",
     secondaryKeywords: [

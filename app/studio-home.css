@@ -74,12 +74,12 @@
   background: linear-gradient(90deg,transparent,var(--studio-red) 22%,#fff 50%,var(--studio-red) 78%,transparent);
   box-shadow: 0 0 34px 6px #ed1b2499;
 }
-.studio-growth-console { --studio-frame-line: #ffffff4d; --studio-frame-cut: 26px; background: #111216; box-shadow: 0 40px 90px #000000b3; }
+.studio-growth-console { --studio-frame-line: #ffffff4d; border-radius: 20px; background: #111216; box-shadow: 0 40px 90px #000000b3; }
 .growth-console-panel,.growth-console-controls { background: #111216; }
 .studio-hero-float {
   position: absolute; z-index: 5; display: none; width: 204px; padding: 16px 18px 18px;
   border: 1px solid #ffffff3d; background: #17181d; color: #fff; text-align: left;
-  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
+  border-radius: 14px;
   box-shadow: 0 22px 50px #000000a6;
 }
 .studio-hero-float p { padding-bottom: 9px; margin-bottom: 11px; border-bottom: 2px solid var(--studio-red); font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
@@ -119,7 +119,6 @@
   background: var(--studio-red); color: #fff;
   padding-top: clamp(118px, 13vw, 214px);
   padding-bottom: clamp(96px, 13vw, 200px);
-  clip-path: polygon(0 var(--studio-proof-cut, 0px), 100% 0, 100% 100%, 0 100%);
 }
 .studio-proof-ribbon { background: var(--home-black); border: 0; box-shadow: none; }
 .studio-proof-ribbon-track span { color: #fff; }
@@ -230,7 +229,6 @@
 .studio-footer { padding-top: 0; background: var(--home-black); }
 .studio-footer-cta {
   background: var(--studio-red); border: 0; color: #fff;
-  clip-path: polygon(var(--notch) 0, 100% 0, 100% 100%, 0 100%, 0 var(--notch));
 }
 .studio-footer-cta-inner { align-items: center; padding: clamp(44px,6vw,88px) 0; }
 .studio-footer-cta h2 { letter-spacing: -.035em; margin-block: 0 14px; }
@@ -263,3 +261,61 @@
 @media (max-width: 560px) {
   .studio-footer-wordmark { font-size: 8.6vw; }
 }
+
+/* ==================================================================
+   Interior pages: same flat logo surfaces as the home page
+   ================================================================== */
+#main:not(:has(> .studio-hero)) :is(section[data-surface], .studio-section, [data-studio-light])::before { display: none; }
+#main:not(:has(> .studio-hero)) :is([data-section-spacing="hero"], .interior-booking-hero),
+.studio-error-page { --surface: var(--home-black); background-color: var(--home-black); }
+#main:not(:has(> .studio-hero)) :is([data-section-spacing="hero"], .interior-booking-hero) h1,
+.studio-error-page h1 { letter-spacing: -.03em; line-height: 1; }
+#main:not(:has(> .studio-hero)) .type-h2 { letter-spacing: -.028em; }
+#main:not(:has(> .studio-hero)) [data-surface="porcelain"] { --surface: #fff; --surface-elevated: #f4f5f7; background-color: #fff; }
+#main:not(:has(> .studio-hero)) [data-surface="porcelain"] :is(div, article)[class*="bg-white"] { background-color: #f6f7f9; }
+.interior-links { background: var(--home-graphite); border-color: #ffffff24; }
+.interior-proof-strip { background: #ffffff38; }
+.interior-proof-strip > div { background: var(--home-graphite); }
+
+/* Small text colours that miss AA contrast on these surfaces */
+#main :is([data-surface="porcelain"],[data-surface="steel"]) .text-\[\#ED1C24\] { color: var(--red-ink); }
+#main :is([data-surface="graphite"],[data-surface="oxblood"]) .text-\[\#ED1C24\],
+#main .text-white .text-\[\#ED1C24\] { color: var(--studio-ember); }
+#main :is([data-surface="porcelain"],[data-surface="steel"]) .text-\[\#717684\] { color: #5b606b; }
+#main :is([data-surface="graphite"],[data-surface="oxblood"]) .text-\[\#717684\] { color: #a3a8b3; }
+#main :is([data-surface="porcelain"],[data-surface="steel"]) .text-\[\#16A34A\] { color: #15803d; }
+#main .bg-\[\#ED1C24\] { background-color: var(--red-ink); }
+
+/* Closing call: one full-width red band per page, replacing the footer band */
+.interior-closing[data-surface="oxblood"] {
+  --surface: var(--studio-red); --text-primary: #fff;
+  background-color: var(--studio-red); border: 0; padding-block: clamp(44px,6vw,88px);
+}
+.interior-closing-panel { padding: 0; border: 0; background: none; clip-path: none; }
+.interior-closing-panel::before { display: none; }
+.interior-closing-panel .type-h1 { color: #fff; font-size: clamp(2.3rem, 5vw, 4.8rem); letter-spacing: -.035em; line-height: 1; }
+.interior-closing-panel .type-lead { color: #fff; font-size: 1.1875rem; font-weight: 700; }
+.interior-closing-panel .interior-closing-button,.interior-closing-button > span[aria-hidden] { background-color: var(--home-black); color: #fff; }
+body:has(.interior-closing) .studio-footer-cta { display: none; }
+
+/* Cards that flip the surface: light cards inside dark sections and the reverse */
+#main [class*="bg-white"]:not([class*="bg-white/"]) .text-\[\#ED1C24\] { color: var(--red-ink); }
+#main [class*="bg-white"]:not([class*="bg-white/"]) .text-\[\#717684\] { color: #5b606b; }
+#main .text-white .text-\[\#16A34A\] { color: #4ade80; }
+#main [data-surface="red"] :is(a, button) > span.relative { color: #fff; }
+
+/* ==================================================================
+   Shape: soft rounded corners across the site (no cut corners)
+   ================================================================== */
+.studio-nav-shell,.studio-nav-panel { border-radius: 14px; }
+.studio-nav-toggle,.studio-footer-social a,.studio-project-arrow,.studio-market-picker button { border-radius: 10px; }
+.studio-service-tabs { border-radius: 12px; }
+.studio-service-tabs button,.studio-package-top > span,.studio-cover > span { border-radius: 8px; }
+.studio-ai-nodes li,.studio-ai-hub,.studio-ai-card-visual,.studio-earth,.studio-workflow-editor,.studio-workflow-placeholder { border-radius: 12px; }
+.studio-questions .studio-faq details,.studio-question-grid aside,.studio-audiences article { border-radius: 16px; overflow: hidden; }
+.studio-question-grid aside { border-top: 0; }
+.studio-proof-ribbon { rotate: 0deg; margin-inline: 0; }
+.booking-panel,.booking-dialog { border-radius: 16px; }
+.booking-dates button,.booking-times button,.booking-dates-head button,.booking-dialog-head button { border-radius: 8px; }
+.interior-proof-strip { border-bottom: 0; border-radius: 14px; overflow: hidden; }
+#main [data-cut-frame] { overflow: hidden; }

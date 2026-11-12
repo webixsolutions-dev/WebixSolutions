@@ -11,7 +11,7 @@ export const CREATIVE_SERVICES: ServicePageContent = {
   proofChip: "In-house graphic design studio with unlimited revisions on brand kits",
 
   outcomes: {
-    h2: "Visual design that commands attention and elevates your brand",
+    h2: "Visual design that gets attention and strengthens your brand",
     lead: "Amateur graphics destroy buyer trust before they ever read your copy. Our designers create consistent visual identities that make your business look established and authoritative.",
     items: [
       {

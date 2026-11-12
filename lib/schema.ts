@@ -66,6 +66,8 @@ export function buildSiteGraphJsonLd() {
         "@id": FOUNDER_ID,
         name: SITE_FACTS.founder.name,
         jobTitle: SITE_FACTS.founder.role,
+        image: `${SITE_URL}${SITE_FACTS.founder.photo}`,
+        url: `${SITE_URL}/about-us/`,
         worksFor: {
           "@id": ORG_ID,
         },

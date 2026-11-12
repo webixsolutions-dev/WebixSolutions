@@ -46,7 +46,7 @@ export const SHOPIFY_STORE_DEVELOPMENT: ServicePageContent = {
         ],
         [
           "Checkout Speed",
-          "World-class global checkout with Shop Pay built in",
+          "Global checkout with Shop Pay built in",
           "Depends on your hosting server and database caching",
           "Fastest possible custom checkout API flows",
         ],

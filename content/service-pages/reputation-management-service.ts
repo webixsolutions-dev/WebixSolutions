@@ -91,7 +91,7 @@ export const REPUTATION_MANAGEMENT_SERVICE: ServicePageContent = {
   },
 
   process: {
-    h2: "How we protect and elevate your reputation",
+    h2: "How we protect and improve your reputation",
     lead: "Four structured steps from sentiment audit to automated review generation.",
     steps: [
       {

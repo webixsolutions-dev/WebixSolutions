@@ -356,12 +356,12 @@ export default function StyleguidePage() {
                   <span className="font-metric">01 / 04</span>
                 </div>
                 <div className="pt-2">
-                  <div className="font-metric text-5xl text-white">91</div>
+                  <div className="font-metric text-5xl text-white">96</div>
                   <div className="mt-1 font-display text-lg font-medium text-white">
                     Custom-coded builds shipped
                   </div>
                   <p className="mt-1 text-sm text-[#A7ACB8]">
-                    1,053 contributions in the last 12 months across 91 Next.js,
+                    1,385 contributions in the last 12 months across 96 Next.js,
                     React, Node.js and Flutter repositories.
                   </p>
                 </div>

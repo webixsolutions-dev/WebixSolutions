@@ -126,11 +126,11 @@
 }
 
 [data-surface="oxblood"] {
-  --surface: #5A0B10;
-  --surface-elevated: #6E0E15;
+  --surface: #0A0A0C;
+  --surface-elevated: #17181D;
   --text-primary: #F5F6F8;
-  --text-secondary: #E2C6C8;
-  --text-muted: #B88E91;
+  --text-secondary: #C1C6D0;
+  --text-muted: #A3A8B3;
   --border: rgba(255, 255, 255, 0.14);
   --accent: #ED1B24;
   --accent-hover: #FF3B42;
@@ -265,51 +265,16 @@ h1, h2, h3, .font-display {
 }
 
 /* ============================================================================
-   SHAPES: TOP-RIGHT-ONLY 45° CUT CORNER & SECTION NOTCH (docs/05)
+   SHAPES: ROUNDED CORNERS
    ============================================================================ */
 
-.cut-tr {
-  clip-path: polygon(
-    0 0,
-    calc(100% - var(--cut)) 0,
-    100% var(--cut),
-    100% 100%,
-    0 100%
-  );
-}
+/* Corners are softly rounded. The class names are kept so existing markup needs no change. */
+.cut-tr { border-radius: 14px; }
+.cut-tr-sm { border-radius: 10px; }
+.cut-tr-lg { border-radius: 18px; }
 
-.cut-tr-sm {
-  --cut: var(--cut-sm);
-  clip-path: polygon(
-    0 0,
-    calc(100% - var(--cut)) 0,
-    100% var(--cut),
-    100% 100%,
-    0 100%
-  );
-}
-
-.cut-tr-lg {
-  --cut: var(--cut-lg);
-  clip-path: polygon(
-    0 0,
-    calc(100% - var(--cut)) 0,
-    100% var(--cut),
-    100% 100%,
-    0 100%
-  );
-}
-
-/* Section top-left 45° notch transition */
-.section-notch-tl {
-  clip-path: polygon(
-    var(--notch) 0,
-    100% 0,
-    100% 100%,
-    0 100%,
-    0 var(--notch)
-  );
-}
+/* Sections join with a straight edge. */
+.section-notch-tl { clip-path: none; }
 
 /* ============================================================================
    LIQUID GLASS SURFACES (Restricted to the 4 allowed places)

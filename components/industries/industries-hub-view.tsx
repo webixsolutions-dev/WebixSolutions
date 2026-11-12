@@ -121,6 +121,14 @@ export function IndustriesHubView({ industries, nextSlot }: IndustriesHubViewPro
         spacing="default"
       >
         <Container>
+          <nav aria-label="Industry guides" className="mb-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+            <span className="font-semibold text-[#111215]">Industry guides:</span>
+            {industries.filter((ind) => (ind.hasDedicatedPage && ind.published)).map((ind) => (
+              <Link key={ind.slug} href={`/industries/${ind.slug}/`} className="underline underline-offset-4 hover:text-[#C8101A]">
+                {ind.name}
+              </Link>
+            ))}
+          </nav>
           {/* Horizontal Industry Selector Bar */}
           <div className="space-y-4 mb-8">
             <div className="flex items-center justify-between">
@@ -148,7 +156,7 @@ export function IndustriesHubView({ industries, nextSlot }: IndustriesHubViewPro
                       }`}
                     >
                       <span>{ind.shortLabel}</span>
-                      {ind.hasDedicatedPage && (
+                      {(ind.hasDedicatedPage && ind.published) && (
                         <span
                           className={`text-[10px] px-1.5 py-0.2 rounded-full ${
                             isSelected
@@ -156,7 +164,7 @@ export function IndustriesHubView({ industries, nextSlot }: IndustriesHubViewPro
                               : "bg-[#F4F5F7] text-[#ED1C24] font-medium"
                           }`}
                         >
-                          W1 Page
+                          Guide
                         </span>
                       )}
                     </button>
@@ -177,7 +185,7 @@ export function IndustriesHubView({ industries, nextSlot }: IndustriesHubViewPro
                       <Building2 className="h-3.5 w-3.5" />
                       <span>{activeIndustry.shortLabel} Playbook</span>
                     </span>
-                    {activeIndustry.hasDedicatedPage && (
+                    {(activeIndustry.hasDedicatedPage && activeIndustry.published) && (
                       <span className="inline-flex items-center gap-1 text-xs text-[#16A34A] font-medium">
                         <span className="h-1.5 w-1.5 rounded-full bg-[#16A34A]" />
                         <span>Comprehensive guide available</span>
@@ -188,7 +196,7 @@ export function IndustriesHubView({ industries, nextSlot }: IndustriesHubViewPro
                 </div>
 
                 <div className="flex flex-wrap items-center gap-3">
-                  {activeIndustry.hasDedicatedPage ? (
+                  {(activeIndustry.hasDedicatedPage && activeIndustry.published) ? (
                     <Button
                       href={`/industries/${activeIndustry.slug}/`}
                       variant="primary"

@@ -32,7 +32,7 @@ Every fact, metric, policy, and technical detail marked `[CONFIRM]` across `docs
 - [ ] **[CONFIRM-10] Launch Case Studies (`docs/08-portfolio-proof.md` & `docs/04-page-briefs-industries.md`)**:
   - `zelvomart-ecommerce-platform`: Confirm ads account tie-in, storefront screenshots, and named permission.
   - `custom-crm-agency-operations`: Provide screens re-shot exclusively with demo data (never real P&L/salaries).
-  - `ai-lead-engine-google-maps`: Confirm real volume numbers (leads/day, reply rate) and stack (n8n/Make/custom).
+  - `webix-lead-desk`: Confirm real volume numbers (leads/day, reply rate) and stack (n8n/Make/custom).
   - `ai-voice-receptionist`: Confirm voice stack used (e.g., Twilio/Vapi/Retell/OpenAI) and any real call stats.
   - `us-contractor-websites`: Confirm anonymised vs. named permission for the US electrical contractor, exterior/holiday-lighting installer, and garage-bay leasing sites, plus the personal-training one-page site for `/industries/fitness-wellness/`.
 - [ ] **[CONFIRM-11] Verified Client Testimonials**: Provide real client reviews (`quote`, `name`, `role`, `company`, `country`, `source`, `sourceUrl`) with written permission. Until at least 3 verified quotes are added to `content/testimonials.ts`, the site will automatically render the **Proof Wall** (GitHub activity + own brands + anonymised ad results).

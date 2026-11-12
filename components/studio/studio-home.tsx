@@ -15,7 +15,7 @@ import { HeroShowcase } from "./hero-showcase";
 
 export function StudioHome({ nextSlot }: { nextSlot: NextSlotResult }) {
   const projects = getPublishedWorkEntries();
-  const featured = ["camz-cleaning-booking", "jooblie", "walshkon-consultants", "zelvomart-ecommerce-platform", "custom-crm-agency-operations", "us-contractor-websites", "ai-lead-engine-google-maps"]
+  const featured = ["camz-cleaning-booking", "jooblie", "walshkon-consultants", "zelvomart-ecommerce-platform", "custom-crm-agency-operations", "us-contractor-websites", "webix-lead-desk"]
     .flatMap((slug) => projects.filter((project) => project.slug === slug));
   const proof = SITE_FACTS.stats;
   const ways = HOME_CONTENT.twoWays;

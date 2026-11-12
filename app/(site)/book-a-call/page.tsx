@@ -3,6 +3,7 @@ import { INTERIOR } from "@/content/interior";
 import { BookingWidget } from "@/components/booking/booking-widget";
 import { buildMetadata } from "@/config/seo";
 import { SITE_FACTS } from "@/content/site-facts";
+import { buildBreadcrumbJsonLd } from "@/lib/schema";
 
 export const metadata = buildMetadata({
   title: "Book a Strategy Call | Webix Solutions",
@@ -13,6 +14,7 @@ export const metadata = buildMetadata({
 export default function BookACallPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Book a call", path: "/book-a-call/" }])) }} />
       <section className="studio-section studio-dark booking-page interior-booking-hero">
         <div className="studio-wrap studio-service-grid">
           <div>

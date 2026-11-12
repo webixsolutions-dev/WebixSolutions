@@ -25,7 +25,7 @@ export const AI_CHATBOT_DEVELOPMENT: ServicePageContent = {
           "Strict system prompts, knowledge grounding and refusal boundaries prevent hallucinated answers or rogue pricing promises.",
       },
       {
-        title: "Seamless handover to your real team",
+        title: "Clean handover to your real team",
         detail:
           "When a conversation requests custom negotiation or flags an urgent issue, the bot alerts your team on Slack or WhatsApp instantly.",
       },

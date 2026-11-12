@@ -176,7 +176,7 @@ export const ECOMMERCE_PAGE: IndustryPageContent = {
     {
       name: "Paid Advertising Services",
       slug: "paid-advertising-services",
-      shortOutcome: "Meta Advantage+ and Google Shopping campaigns built for net profitable ROAS.",
+      shortOutcome: "Meta Advantage+ and Google Shopping campaigns built around cost per purchase.",
     },
     {
       name: "Conversion Rate Optimization",

@@ -3,7 +3,7 @@
 Full spec: `docs/05-design-system.md`. These are the rules you must never break.
 
 ## Identity in one sentence
-The Webix logo is built from angular strokes with 45° cuts — so corners are **cut, not rounded**, sections join with a **45° notch**, red is used as **whole surfaces** (not only small accents), and glass appears in only four places.
+Signal red, white and graphite from the Webix logo, used as flat whole surfaces. Corners are **softly rounded**, sections join with a **straight edge**, and glass appears in only four places. (Owner decision, 12 Nov 2026: the earlier cut-corner frames and 45° section notches were removed across the site. Do not bring them back.)
 
 ## Tokens (CSS variables in `app/globals.css`)
 ```
@@ -20,7 +20,6 @@ The Webix logo is built from angular strokes with 45° cuts — so corners are *
 ## Surfaces
 - Surface families: Graphite, Porcelain, Steel, Signal Red, Oxblood. `<Section surface="graphite|porcelain|steel|red|oxblood" notch>`.
 - **Two neighbouring sections never share a surface.** Signal Red max twice per page, Oxblood max once (final CTA).
-- Dark → light transitions get the 45° notch on the lower section's top-left.
 - Graphite may use the faint 64px engineered grid (4% white, radial mask). Signal Red may use one outlined monogram watermark.
 
 ## Typography
@@ -29,8 +28,8 @@ The Webix logo is built from angular strokes with 45° cuts — so corners are *
 - Sentence case. Paragraphs ≤ 68ch. **Do not** colour a single word of a headline red. **Do not** put an ALL-CAPS tracked label above every heading (max 3 sentence-case kickers per page). No "A · B · C" meta strings, no "→" appended to every link, no em-dash "WORD — fragment" labels.
 
 ## Shape
-- Cut corner (`--cut`, top-right) on media frames, case cards, primary buttons, booking panel — via `clip-path` + pseudo-element border.
-- Inputs 10px radius; chips are pills. Different elements, different shapes — never one radius everywhere.
+- Cards, media frames and panels use a 14 to 16px radius; buttons 10px; inputs 10px; chips are pills.
+- No `clip-path` cut corners, no diagonal section notches, no maroon or oxblood surfaces or glows.
 
 ## Glass — only these four
 Header pill (after 80px scroll), hero Growth Console, booking panel, mobile sticky bar. `backdrop-filter: blur(18px) saturate(160%)`, solid fallback.

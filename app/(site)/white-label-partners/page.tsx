@@ -11,7 +11,7 @@ import { WhiteLabelView } from "@/components/white-label/white-label-view";
 const WHITE_LABEL_TITLE =
   "White-Label Digital & AI Partner | Webix Solutions";
 const WHITE_LABEL_DESCRIPTION =
-  "Outsource websites, social media, SEO and AI automation to an remote team that works your hours. Unbranded delivery, NDA, partner pricing.";
+  "Outsource websites, social media, SEO and AI automation to a remote team that works your hours. Unbranded delivery, NDA, partner pricing.";
 
 export const metadata: Metadata = buildMetadata({
   title: WHITE_LABEL_TITLE,

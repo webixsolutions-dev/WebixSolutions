@@ -264,7 +264,7 @@ export function WhiteLabelView({ nextSlot }: WhiteLabelViewProps) {
       >
         <Container>
           <div className="max-w-3xl space-y-3 mb-12">
-            <Kicker>Seamless integration</Kicker>
+            <Kicker>Working together</Kicker>
             <h2 className="type-h2 text-[#111215]">
               How we plug into your agency operations
             </h2>

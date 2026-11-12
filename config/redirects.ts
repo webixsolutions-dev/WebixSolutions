@@ -17,6 +17,8 @@ export const EXACT_301_REDIRECTS: Record<string, string> = {
   "/contact/": "/contact-us/",
   "/category/restaurant": "/industries/",
   "/category/restaurant/": "/industries/",
+  "/our-work/ai-lead-engine-google-maps": "/our-work/webix-lead-desk/",
+  "/our-work/ai-lead-engine-google-maps/": "/our-work/webix-lead-desk/",
   "/ai-automation-agency-business-model": "/ai-automation-services/",
   "/ai-automation-agency-business-model/": "/ai-automation-services/",
 };

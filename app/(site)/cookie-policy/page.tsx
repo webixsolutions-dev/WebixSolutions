@@ -13,6 +13,7 @@ export const metadata: Metadata = buildMetadata({
 export default function CookiePolicyPage() {
   return (
     <LegalPageLayout
+      path="/cookie-policy/"
       title="Cookie Policy"
       kicker="Cookies & Tracking"
       lastUpdated="October 2026"

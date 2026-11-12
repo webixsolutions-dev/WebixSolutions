@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { buildMetadata, SITE_URL, ensureTrailingSlash } from "@/config/seo";
 import { ABOUT_CONTENT } from "@/content/about";
 import { SITE_FACTS } from "@/content/site-facts";
-import { buildFaqJsonLd, ORG_ID, FOUNDER_ID } from "@/lib/schema";
+import { buildBreadcrumbJsonLd, buildFaqJsonLd, ORG_ID, FOUNDER_ID } from "@/lib/schema";
 import { AboutView } from "@/components/about/about-view";
 
 export const metadata: Metadata = buildMetadata({
@@ -32,6 +32,7 @@ export default function AboutPage() {
         "@id": FOUNDER_ID,
         name: SITE_FACTS.founder.name,
         jobTitle: SITE_FACTS.founder.role,
+        image: `${SITE_URL}${SITE_FACTS.founder.photo}`,
         sameAs: [
           SITE_FACTS.founder.linkedin,
           SITE_FACTS.founder.githubPersonal,
@@ -42,6 +43,7 @@ export default function AboutPage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "About us", path: "/about-us/" }])) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }}

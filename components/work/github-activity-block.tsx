@@ -8,7 +8,7 @@ export function GithubActivityBlock() {
     <div className="studio-engineering-card studio-cut-frame">
       <div className="studio-engineering-header">
         <span className="studio-chip"><GitFork size={16} aria-hidden="true" /> GitHub activity</span>
-        <span>October 2026 snapshot</span>
+        <span>November 2026 snapshot</span>
       </div>
       <h2 className="type-h2 mt-4">The engineering behind our work</h2>
       <dl className="studio-engineering-metrics">

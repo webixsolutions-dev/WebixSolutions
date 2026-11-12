@@ -5,11 +5,14 @@ import { Kicker } from "@/components/ui/kicker";
 import { SITE_FACTS } from "@/content/site-facts";
 import { FinalCtaSection } from "@/components/home/final-cta-section";
 import { AlertCircle } from "lucide-react";
+import { buildBreadcrumbJsonLd } from "@/lib/schema";
 
 export interface LegalPageLayoutProps {
   title: string;
   kicker?: string;
   lastUpdated: string;
+  /** Page path, used for breadcrumb structured data */
+  path?: string;
   children: React.ReactNode;
 }
 
@@ -17,10 +20,12 @@ export function LegalPageLayout({
   title,
   kicker = "Legal & Compliance",
   lastUpdated,
+  path,
   children,
 }: LegalPageLayoutProps) {
   return (
     <div className="flex flex-col min-h-screen">
+      {path ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumbJsonLd([{ name: "Home", path: "/" }, { name: title, path }])) }} /> : null}
       <Section surface="graphite" spacing="hero">
         <Container size="narrow">
           <div className="space-y-4">

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { buildMetadata, SITE_URL } from "@/config/seo";
 import { SITE_FACTS } from "@/content/site-facts";
-import { ORG_ID } from "@/lib/schema";
+import { buildBreadcrumbJsonLd, ORG_ID } from "@/lib/schema";
 import { ContactView } from "@/components/contact/contact-view";
 
 export const metadata: Metadata = buildMetadata({
@@ -44,6 +44,7 @@ export default function ContactPage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Contact us", path: "/contact-us/" }])) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(contactJsonLd) }}

@@ -124,10 +124,6 @@ export function StudioMotion() {
         });
         const proofBand = document.querySelector("[data-studio-proof-band]");
         if (proofBand) {
-          gsap.fromTo(proofBand, { "--studio-proof-cut": `${Math.round(window.innerWidth * 0.1)}px` }, {
-            "--studio-proof-cut": "0px", ease: "none",
-            scrollTrigger: { trigger: proofBand, start: "top bottom", end: "top 30%", scrub: 0.5 },
-          });
           gsap.to(proofBand.querySelector("[data-studio-proof-track]"), {
             xPercent: -28, ease: "none",
             scrollTrigger: { trigger: proofBand, start: "top bottom", end: "bottom top", scrub: 0.65 },
@@ -142,18 +138,13 @@ export function StudioMotion() {
           xPercent: -6, ease: "none",
           scrollTrigger: { trigger: footerCall, start: "top bottom", end: "top 55%", scrub: 0.6 },
         });
-        // The home page uses flat logo surfaces, so the travelling section light only runs on interior pages.
-        const lit = document.querySelector("#main > .studio-hero") ? [] : gsap.utils.toArray<HTMLElement>("[data-studio-light], #main section[data-surface], #main .studio-section");
-        for (const surface of lit) {
-          gsap.timeline({
-            defaults: { ease: "none" },
-            scrollTrigger: { trigger: surface, start: "top bottom", end: "bottom top", scrub: 0.65 },
-          })
-            .fromTo(surface, { "--studio-spread": 0.18, "--studio-light-opacity": 0.05, "--studio-light-travel": "-6%" }, {
-              "--studio-spread": 1, "--studio-light-opacity": 0.9, "--studio-light-travel": "12%", duration: 0.55,
-            })
-            .to(surface, { "--studio-spread": 1.25, "--studio-light-opacity": 0.16, "--studio-light-travel": "27%", duration: 0.45 });
-        }
+        const interiorHero = document.querySelector<HTMLElement>("#main [data-section-spacing='hero'] h1, .interior-booking-hero h1");
+        if (interiorHero) gsap.from(interiorHero, { y: 36, opacity: 0, duration: 0.8, ease: "power3.out" });
+        const closing = document.querySelector(".interior-closing-panel h2");
+        if (closing) gsap.from(closing, {
+          xPercent: -6, ease: "none",
+          scrollTrigger: { trigger: closing, start: "top bottom", end: "top 55%", scrub: 0.6 },
+        });
         const lamp = document.querySelector("[data-studio-lamp]");
         if (lamp) {
           gsap.fromTo(lamp.querySelector(".studio-ai-light"), { scaleX: 0.12, scaleY: 0.4, opacity: 0.12 }, {

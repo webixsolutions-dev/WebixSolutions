@@ -184,7 +184,7 @@ export const AI_DIGITAL_MARKETING_AGENCY: ServicePageContent = {
     {
       question: "Which AI tools do you use for marketing?",
       answer:
-        "We utilize state-of-the-art models including OpenAI GPT-4o, Anthropic Claude 3.5, n8n, Make, and specialized video and voice generation engines, tailored to each specific task.",
+        "We use current models including OpenAI GPT-4o, Anthropic Claude 3.5, n8n, Make, and specialized video and voice generation engines, tailored to each specific task.",
     },
     {
       question: "How do you maintain our brand tone and avoid generic copy?",

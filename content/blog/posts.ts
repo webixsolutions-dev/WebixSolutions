@@ -286,7 +286,7 @@ export const BLOG_POSTS: BlogPost[] = [
       { id: "llms-txt-standard", label: "Why Every Business Website Needs /llms.txt" },
       { id: "schema-graphs", label: "Connecting Knowledge Graphs with JSON-LD" },
     ],
-    relatedServiceSlug: "ai-search-optimization",
+    relatedServiceSlug: "seo-services",
     relatedServiceCtaLabel: "Learn About Generative Engine Optimization",
     author: TECH_TEAM_AUTHOR,
     faqs: [

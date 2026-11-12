@@ -10,7 +10,7 @@ Before any task:
 Hard rules (short version):
 - Server-render every piece of meaningful text (AI crawlers don't run JavaScript).
 - Never invent facts, reviews, testimonials or client names.
-- Neighbouring sections never share a background; corners are cut, not rounded; glass only in four places.
+- Neighbouring sections never share a background; corners are softly rounded (no cut corners or section notches); glass only in four places.
 - Keep existing WordPress URLs; 410 for `/market/*`.
 - Screenshots at 390 / 768 / 1440 px after every page, reviewed against `docs/05-design-system.md`.
 
