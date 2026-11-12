@@ -8,7 +8,7 @@ export const STUDIO = {
     { number: "03", title: "CRM & client portals", detail: "Give your team one place to manage leads, bookings and customer records. Connect the tools you already use and give clients access to what they need.", href: "/custom-crm-development/" },
     { number: "04", title: "AI & workflow automation", detail: "Route enquiries, answer routine questions and follow up faster. Build in clear handoffs for the conversations your team needs to handle.", href: "/ai-automation-services/" },
   ],
-  platforms: ["Next.js", "React", "Node.js", "Python", "FastAPI", "PostgreSQL", "Flutter", "OpenAI", "n8n", "WordPress", "Shopify", "Webflow", "Framer"],
+  platforms: ["Next.js", "React", "Node.js", "MongoDB", "Express", "Python", "FastAPI", "PostgreSQL", "Flutter", "OpenAI", "n8n", "WordPress", "Shopify", "Webflow", "Framer"],
   process: [
     { title: "Set the brief", detail: "We map the problem, agree on the scope and tell you what we need from your team." },
     { title: "Review a working build", detail: "For a straightforward website, the first build can be ready to review in three business days after we have the content and access." },

@@ -20,7 +20,7 @@ export default function CareersPage() {
     url: `${SITE_URL}/careers/`,
     mainEntity: {
       "@type": "ItemList",
-      itemListElement: CAREERS_CONTENT.openRoles.map((role, idx) => ({
+      itemListElement: (CAREERS_CONTENT.hiringOpen ? CAREERS_CONTENT.openRoles : []).map((role, idx) => ({
         "@type": "JobPosting",
         position: idx + 1,
         title: role.title,

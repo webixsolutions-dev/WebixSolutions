@@ -2,7 +2,6 @@ import Link from "next/link";
 import { ArrowUpRight, Check, GitFork } from "lucide-react";
 import { SITE_FACTS } from "@/content/site-facts";
 import { FLAGSHIP_OFFERS } from "@/content/pricing";
-import { getPublishedWorkEntries } from "@/content/work";
 import { getVerifiedTestimonials } from "@/content/testimonials";
 
 const featuredOffers = new Set(["launch-kit", "growth-engine", "ai-automation-sprint"]);
@@ -38,7 +37,6 @@ export function StudioPackages() {
 export function StudioProofWall() {
   const testimonials = getVerifiedTestimonials();
   const brands = SITE_FACTS.ownBrands.filter((brand) => brand.confirmed && brand.name !== "Miraj Builders");
-  const builds = getPublishedWorkEntries().filter((entry) => ["camz-cleaning-booking", "jooblie"].includes(entry.slug));
   const { githubContributionsLastYear, customCodedBuilds, teamSize, cmsWebsitesBuilt, socialAccountsManaged } = SITE_FACTS.stats;
 
   return (
@@ -59,7 +57,7 @@ export function StudioProofWall() {
               </dl>
               <div className="studio-engineering-pattern" aria-hidden="true" />
               <div className="studio-engineering-footer">
-                <ul aria-label="Technologies">{["Next.js", "React", "Node.js", "Flutter"].map((tool) => <li className="studio-chip" key={tool}>{tool}</li>)}</ul>
+                <ul aria-label="Technologies">{["Next.js", "React", "Node.js", "MERN", "Python", "Flutter"].map((tool) => <li className="studio-chip" key={tool}>{tool}</li>)}</ul>
                 <a className="studio-link" href={SITE_FACTS.socials.github} target="_blank" rel="noreferrer">View GitHub profile <ArrowUpRight size={16} /></a>
               </div>
             </article>
@@ -76,19 +74,14 @@ export function StudioProofWall() {
       <section className="studio-section studio-light studio-proof-wall" id="proof" data-studio-light>
         <div className="studio-wrap">
           <div className="studio-section-head" data-studio-reveal>
-            <div><h2>What we build and run.</h2><p>Explore our own platforms and selected client projects.</p></div>
-            <Link className="studio-link" href="/our-work/">View all projects <ArrowUpRight size={16} /></Link>
+            <div><h2>Brands we own and run.</h2><p>We build, market and operate these platforms ourselves.</p></div>
+            <Link className="studio-link" href="/our-work/">See client projects <ArrowUpRight size={16} /></Link>
           </div>
           <div className="studio-owned-brands" data-studio-stagger>
             {brands.map((brand) => <article key={brand.name} className="studio-owned-brand studio-cut-frame">
               <p className="studio-label">{brand.market} <span className="studio-chip">Our platform</span></p>
               <h3>{brand.name}</h3><p>{brand.description}</p>
               {"url" in brand && <a href={brand.url} className="studio-link" target="_blank" rel="noreferrer">Visit platform <ArrowUpRight size={15} /></a>}
-            </article>)}
-            {builds.map((build) => <article key={build.slug} className="studio-owned-brand studio-cut-frame">
-              <p className="studio-label">{build.country || build.category} <span className="studio-chip">Client project</span></p>
-              <h3>{build.title}</h3><p>{build.summary}</p>
-              <Link href={`/our-work/${build.slug}/`} className="studio-link">View project <ArrowUpRight size={15} /></Link>
             </article>)}
           </div>
           {testimonials.length >= 3 && <div className="studio-owned-brands studio-testimonials">

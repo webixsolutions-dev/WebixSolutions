@@ -19,7 +19,7 @@ export const CAREERS_CONTENT = {
   meta: {
     title: "Careers — Join Our Team | Webix Solutions",
     description:
-      "Explore engineering, digital marketing and AI automation roles at Webix Solutions in Punjab, Pakistan. Learn how we hire and view open positions.",
+      "Explore engineering, digital marketing and AI automation roles at Webix Solutions in Punjab, Pakistan. See how we hire and how to send your CV for future roles.",
     path: "/careers/",
   },
 
@@ -73,6 +73,9 @@ export const CAREERS_CONTENT = {
         "Every team member operates under our published Code of Conduct, ensuring client confidentiality, responsible AI deployment, and mutual workplace respect.",
     },
   ],
+
+  /** Set to true when roles are open again. While false, the page shows a "no open positions" panel and no job markup. */
+  hiringOpen: false,
 
   openRoles: [
     {
