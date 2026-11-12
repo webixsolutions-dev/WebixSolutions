@@ -32,7 +32,7 @@ export function StudioHome({ nextSlot }: { nextSlot: NextSlotResult }) {
               <a href="#selected-work" className="studio-button studio-button-outline">Explore our work <ArrowDown size={16} /></a>
             </div>
           </div>
-          <HeroShowcase nextSlot={nextSlot} />
+          <HeroShowcase nextSlot={nextSlot} platforms={STUDIO.platforms} markets={SITE_FACTS.markets.map((market) => market.name)} />
           <div className="studio-hero-index"><a href="#studio-proof-title"><ArrowDown size={15} /> Scroll to explore</a><span>{STUDIO.heroNote}</span></div>
         </div>
       </section>
@@ -64,7 +64,7 @@ export function StudioHome({ nextSlot }: { nextSlot: NextSlotResult }) {
       <section className="studio-section studio-light" id="selected-work" data-studio-light>
         <div className="studio-wrap">
           <div className="studio-section-head" data-studio-reveal>
-            <div><h2>See what we’ve built.</h2></div>
+            <div><p className="studio-label"><span /> Selected projects</p><h2>See what we’ve built.</h2></div>
             <Link className="studio-link" href="/our-work/">View all projects <ArrowUpRight size={18} /></Link>
           </div>
           <div className="studio-bento" data-studio-gallery>
@@ -113,7 +113,7 @@ export function StudioHome({ nextSlot }: { nextSlot: NextSlotResult }) {
       </section>
       <section className="studio-section studio-dark studio-market-section" id="our-markets" data-studio-light>
         <div className="studio-wrap studio-market-grid">
-          <div data-studio-reveal><h2>Based in Pakistan. Working worldwide.</h2><p className="studio-section-lead">Our remote team works with clients in Canada, the United States, the United Arab Emirates, New Zealand and Pakistan. We plan calls and handovers around your time zone.</p></div>
+          <div data-studio-reveal><p className="studio-label"><span /> Where we work</p><h2>Based in Pakistan. Working worldwide.</h2><p className="studio-section-lead">Our remote team works with clients in Canada, the United States, the United Arab Emirates, New Zealand and Pakistan. We plan calls and handovers around your time zone.</p></div>
           <MarketGlobe />
         </div>
       </section>

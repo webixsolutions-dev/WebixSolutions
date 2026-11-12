@@ -24,7 +24,7 @@ export function Footer() {
     <footer className="studio-footer" data-surface="graphite">
       <div className="studio-footer-cta" data-studio-footer-cta>
         <div className="studio-wrap studio-footer-cta-inner">
-          <div><h2>What are you building?</h2><span>Book a free 30-minute call to talk through your project.</span></div>
+          <div><p className="studio-label"><span /> Let’s talk</p><h2>What are you building?</h2><span>Book a free 30-minute call to talk through your project.</span></div>
           <Link href="/book-a-call/" className="studio-button">Book a strategy call <ArrowUpRight size={18} /></Link>
         </div>
       </div>

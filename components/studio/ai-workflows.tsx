@@ -30,10 +30,10 @@ export function AiWorkflows() {
       <div className="studio-wrap">
         <div className="studio-section-head" data-studio-reveal>
           <div>
+            <p className="studio-label"><span /> AI systems in production</p>
             <h2 id="studio-ai-title">Put AI to work where enquiries come in.</h2>
             <p className="studio-section-lead">Connect your website, WhatsApp and phone to the tools your team already uses. Automate the routine steps and hand off the conversations that need a person.</p>
           </div>
-          <Link href="/ai-automation-services/" className="studio-link">View AI automation services <ArrowUpRight size={17} /></Link>
         </div>
         <div className="studio-ai-network" data-studio-network aria-label="Example AI workflow from enquiry channels to business tools">
           <svg viewBox="0 0 900 288" preserveAspectRatio="none" aria-hidden="true">
@@ -57,6 +57,7 @@ export function AiWorkflows() {
             </article>
           ))}
         </div>
+        <Link href="/ai-automation-services/" className="studio-button studio-ai-cta">View AI automation services <ArrowUpRight size={17} /></Link>
       </div>
     </section>
   );
