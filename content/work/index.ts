@@ -287,7 +287,7 @@ export const WORK_REGISTRY: WorkEntry[] = [
     ],
     services: [
       "ai-automation-services",
-      "custom-crm-development",
+      "custom-web-application-development",
     ],
     stack: [
       "Python 3.12",
