@@ -1,4 +1,5 @@
 import type { LocationPageContent } from "./types";
+import { SITE_FACTS } from "@/content/site-facts";
 
 export const UAE_LOCATION_PAGE: LocationPageContent = {
   slug: "uae",
@@ -13,6 +14,11 @@ export const UAE_LOCATION_PAGE: LocationPageContent = {
     "Webix Solutions engineers bilingual Arabic/English web stores, WhatsApp sales automations, and paid media campaigns with a near-zero time difference on Gulf Standard Time.",
   ],
   heroChip: "1-hour GST time difference with Dubai & Abu Dhabi",
+  localPhone: {
+    label: "Dubai line",
+    display: SITE_FACTS.contact.uaePhoneDisplay,
+    e164: SITE_FACTS.contact.uaePhoneE164,
+  },
   currencyCode: "AED",
   currencyHeadline: "Predictable budgeting pegged to United Arab Emirates Dirhams (AED)",
   currencyExplanation:

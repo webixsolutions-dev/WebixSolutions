@@ -51,6 +51,20 @@ export function buildSiteGraphJsonLd() {
             contactType: "sales",
             availableLanguage: ["English", "Urdu"],
           },
+          {
+            "@type": "ContactPoint",
+            telephone: SITE_FACTS.contact.uaePhoneE164,
+            contactType: "sales",
+            areaServed: "AE",
+            availableLanguage: ["English", "Urdu"],
+          },
+          {
+            "@type": "ContactPoint",
+            telephone: SITE_FACTS.contact.nzPhoneE164,
+            contactType: "sales",
+            areaServed: "NZ",
+            availableLanguage: ["English", "Urdu"],
+          },
         ],
         sameAs: [
           SITE_FACTS.socials.facebook,

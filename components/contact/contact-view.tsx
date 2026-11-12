@@ -445,6 +445,18 @@ export function ContactView() {
                     </a>
                   </div>
                   <div>
+                    <strong>Dubai line:</strong>{" "}
+                    <a href={`tel:${SITE_FACTS.contact.uaePhoneE164}`} className="text-[#111215] hover:underline">
+                      {SITE_FACTS.contact.uaePhoneDisplay}
+                    </a>
+                  </div>
+                  <div>
+                    <strong>Auckland line:</strong>{" "}
+                    <a href={`tel:${SITE_FACTS.contact.nzPhoneE164}`} className="text-[#111215] hover:underline">
+                      {SITE_FACTS.contact.nzPhoneDisplay}
+                    </a>
+                  </div>
+                  <div>
                     <strong>HR & Careers:</strong>{" "}
                     <a href={`mailto:${SITE_FACTS.contact.hrEmail}`} className="text-[#717684] hover:underline">
                       {SITE_FACTS.contact.hrEmail}

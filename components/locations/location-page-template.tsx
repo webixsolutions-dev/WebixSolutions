@@ -102,6 +102,17 @@ export function LocationPageTemplate({
                 Quotes in {content.currencyCode} · Team in Dunyapur, Pakistan
               </span>
             </div>
+            {content.partnerNote && (
+              <p className="pt-1 text-base font-medium text-white">{content.partnerNote}</p>
+            )}
+            {content.localPhone && (
+              <p className="pt-1 text-base text-white">
+                <span className="text-[#A7ACB8]">{content.localPhone.label}: </span>
+                <a href={`tel:${content.localPhone.e164}`} className="font-semibold underline underline-offset-4">
+                  {content.localPhone.display}
+                </a>
+              </p>
+            )}
           </div>
         </Container>
       </Section>

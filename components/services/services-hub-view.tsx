@@ -257,7 +257,7 @@ export function ServicesHubView({ categories, nextSlot }: ServicesHubViewProps) 
                           </span>
                           <span className="text-[#16A34A] font-medium flex items-center gap-1">
                             <span className="h-1.5 w-1.5 rounded-full bg-[#16A34A]" />
-                            <span>In-house delivery</span>
+                            <span>Delivered by our team</span>
                           </span>
                         </div>
                       </Link>

@@ -51,7 +51,7 @@ export const AI_CONTENT_CREATION_SERVICES: ServicePageContent = {
         [
           "3. Human Fact-Check & Edit",
           "Rewriting tone, cutting fluff, verifying numbers and adding practical examples",
-          "In-House Human Editor",
+          "Human Editor",
         ],
         [
           "4. Technical Optimization",

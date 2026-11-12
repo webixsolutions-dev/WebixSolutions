@@ -8,6 +8,8 @@
 - Headquarters: Dunyapur, Punjab, Pakistan
 - Clients in: Canada, the United States, the United Arab Emirates, New Zealand and Pakistan
 - Contact: info@webixsolutions.com, +92 322 9472354 (phone and WhatsApp)
+- Dubai line: +971 50 406 8312. Auckland line: +64 22 611 5072
+- Canada: works in partnership with Camizo Tech
 - Code: github.com/webixsolutions-dev
 
 ## Services
@@ -35,7 +37,7 @@
 - [Portfolio](https://webixsolutions.com/our-work/)
 - [Camz Cleaning](https://webixsolutions.com/our-work/camz-cleaning-booking/): booking website for a Calgary cleaning company.
 - [Jooblie](https://webixsolutions.com/our-work/jooblie/): recruitment platform.
-- [Webix Lead Desk](https://webixsolutions.com/our-work/webix-lead-desk/): in-house lead research and outreach workspace where every message needs human approval.
+- [Webix Lead Desk](https://webixsolutions.com/our-work/webix-lead-desk/): our own lead research and outreach workspace where every message needs human approval.
 
 ## Markets
 
