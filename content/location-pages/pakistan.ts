@@ -92,7 +92,7 @@ export const PAKISTAN_LOCATION_PAGE: LocationPageContent = {
       "Proven track record lowering acquisition costs and managing COD fulfillment across Pakistani urban centers",
       "Headquartered in Dunyapur with scheduled in-person client discovery meetings in Lahore",
       "Direct technical team access via phone and WhatsApp in both Urdu and English",
-      "Over 1,053 contributions across 91 repositories reflecting serious engineering discipline",
+      "Over 1,385 contributions across 96 repositories reflecting serious engineering discipline",
     ],
   },
   faqs: [

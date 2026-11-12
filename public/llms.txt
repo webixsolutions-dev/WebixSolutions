@@ -1,19 +1,53 @@
 # Webix Solutions
 
-> Webix Solutions builds websites, custom CRM software, client portals and AI workflows. It also provides search and marketing services and white-label delivery for agencies.
+> Webix Solutions (webixsolutions.com) is a full-service digital agency founded by Haroon Sukhera. A remote team of 20+ in Pakistan builds websites, online stores, custom CRM software and client portals, runs SEO and paid advertising, and sets up AI automation. It works directly with businesses and as a white-label partner for agencies. It is not affiliated with the Webix JavaScript UI library (webix.com).
+
+## Key facts
+
+- Founder and CEO: Haroon Sukhera
+- Headquarters: Dunyapur, Punjab, Pakistan
+- Clients in: Canada, the United States, the United Arab Emirates, New Zealand and Pakistan
+- Contact: info@webixsolutions.com, +92 322 9472354 (phone and WhatsApp)
+- Code: github.com/webixsolutions-dev
 
 ## Services
 
-- [Website design and development](https://webixsolutions.com/web-design-development-service/): custom websites and builds using WordPress, Shopify, Webflow and Framer.
-- [SEO, AEO and GEO](https://webixsolutions.com/seo-services/): technical SEO, local search and content that answers customers’ questions.
+- [Website design and development](https://webixsolutions.com/web-design-development-service/): custom-coded Next.js sites and builds on WordPress, Shopify, Webflow and Framer.
+- [Shopify store development](https://webixsolutions.com/shopify-store-development-services/): storefronts, migrations and checkout flows.
+- [Mobile app development](https://webixsolutions.com/mobile-app-development-services/): iOS and Android apps built with Flutter.
 - [Custom CRM and client portals](https://webixsolutions.com/custom-crm-development/): lead pipelines, booking dashboards, customer portals and internal tools.
-- [AI automation](https://webixsolutions.com/ai-automation-services/): customer intake, support assistants and workflow integrations.
-- [White-label agency partnerships](https://webixsolutions.com/white-label-partners/): project delivery for agency partners.
+- [SEO, AEO and GEO](https://webixsolutions.com/seo-services/): technical SEO, local search and content that answers customers' questions.
+- [Google Business Profile optimisation](https://webixsolutions.com/google-business-profile-optimization/): local listings and Maps visibility.
+- [Paid advertising](https://webixsolutions.com/paid-advertising-services/): Google, Meta and TikTok campaigns. Ad spend is paid by the client directly to the platform.
+- [Social media management](https://webixsolutions.com/social-media-management/): content planning, posts and reels.
+- [AI automation](https://webixsolutions.com/ai-automation-services/): customer intake, support assistants and workflow integrations with human approval steps.
+- [AI chatbot development](https://webixsolutions.com/ai-chatbot-development/): website and WhatsApp assistants.
+- [White-label agency partnerships](https://webixsolutions.com/white-label-partners/): unbranded delivery for agencies and IT companies.
+- [All services](https://webixsolutions.com/services/)
 
-## Work and booking
+## Pricing and packages
+
+- [Pricing](https://webixsolutions.com/pricing/)
+- [Growth packages](https://webixsolutions.com/offers/)
+
+## Work
 
 - [Portfolio](https://webixsolutions.com/our-work/)
-- [Camz Cleaning](https://webixsolutions.com/our-work/camz-cleaning-booking/)
-- [Book a call](https://webixsolutions.com/book-a-call/)
+- [Camz Cleaning](https://webixsolutions.com/our-work/camz-cleaning-booking/): booking website for a Calgary cleaning company.
+- [Jooblie](https://webixsolutions.com/our-work/jooblie/): recruitment platform.
+- [Webix Lead Desk](https://webixsolutions.com/our-work/webix-lead-desk/): in-house lead research and outreach workspace where every message needs human approval.
 
-The team works remotely from Pakistan and serves Canada, the United States, the UAE, New Zealand and Pakistan.
+## Markets
+
+- [Canada](https://webixsolutions.com/locations/canada/)
+- [United States](https://webixsolutions.com/locations/united-states/)
+- [United Arab Emirates](https://webixsolutions.com/locations/uae/)
+- [Pakistan](https://webixsolutions.com/locations/pakistan/)
+
+## Company
+
+- [About Webix Solutions](https://webixsolutions.com/about-us/)
+- [Industries](https://webixsolutions.com/industries/)
+- [Blog](https://webixsolutions.com/blogs/)
+- [Contact](https://webixsolutions.com/contact-us/)
+- [Book a strategy call](https://webixsolutions.com/book-a-call/)

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { buildMetadata, SITE_URL } from "@/config/seo";
 import { CAREERS_CONTENT } from "@/content/careers";
 import { SITE_FACTS } from "@/content/site-facts";
-import { ORG_ID } from "@/lib/schema";
+import { buildBreadcrumbJsonLd, ORG_ID } from "@/lib/schema";
 import { CareersView } from "@/components/careers/careers-view";
 
 export const metadata: Metadata = buildMetadata({
@@ -47,6 +47,7 @@ export default function CareersPage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Careers", path: "/careers/" }])) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd) }}

@@ -6,6 +6,9 @@ export const DEFAULT_TITLE = "Digital Marketing, Web & AI Agency | Webix Solutio
 export const DEFAULT_DESCRIPTION =
   "Websites, SEO, paid ads, social media and AI automation from a remote team of 20+. Serving Canada, the US, UAE and NZ. Book a free strategy call.";
 
+export const OG_IMAGE_URL = `${SITE_URL}/opengraph-image`;
+export const OG_IMAGE_ALT = "Webix Solutions: websites, growth marketing and AI automation";
+
 export interface PageMetaInput {
   /** Full title or short title. If it ends with '| Webix Solutions', used as-is; otherwise suffixed. Must be <= 60 chars total. */
   title: string;
@@ -62,12 +65,14 @@ export function buildMetadata(input: PageMetaInput): Metadata {
       siteName: SITE_NAME,
       locale: "en_US",
       type: input.ogType ?? "website",
+      images: [{ url: OG_IMAGE_URL, width: 1200, height: 630, alt: OG_IMAGE_ALT }],
       ...(input.publishedTime ? { publishedTime: input.publishedTime } : {}),
       ...(input.modifiedTime ? { modifiedTime: input.modifiedTime } : {}),
     },
     twitter: {
       card: "summary_large_image",
       title: fullTitle,
+      images: [OG_IMAGE_URL],
       description: input.description,
     },
   };

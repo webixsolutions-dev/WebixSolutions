@@ -37,7 +37,7 @@ function StaticGithubContributionSvg() {
     <svg
       viewBox="0 0 362 68"
       role="img"
-      aria-label="Static summary graph representing 1,053 GitHub contributions across 91 repositories in the last 12 months"
+      aria-label="Static summary graph representing 1,385 GitHub contributions across 96 repositories in the last 12 months"
       className="w-full max-w-[420px] h-auto"
     >
       {cells.map((cell, i) => (
@@ -60,7 +60,7 @@ function StaticGithubContributionSvg() {
  * Rules (Rule 04 & Corrections #5 and #7):
  * - Renders client testimonials ONLY when >= 3 items have `verified: true` && `permission: true`.
  * - Otherwise renders the Proof Wall:
- *   - Confirmed GitHub activity (October 2026 snapshot)
+ *   - Confirmed GitHub activity (November 2026 snapshot)
  *   - Confirmed team & delivery numbers ("20+ team members", "150 CMS websites", "50+ social accounts")
  *   - Own brands (Zelvomart, LaptopSouq.ae, Miraj Builders) and ad metrics (Rs 15.01, etc.) are gated behind `isConfirmed()` so they stay hidden in production until confirmed.
  */

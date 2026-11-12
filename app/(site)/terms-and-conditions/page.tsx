@@ -13,6 +13,7 @@ export const metadata: Metadata = buildMetadata({
 export default function TermsAndConditionsPage() {
   return (
     <LegalPageLayout
+      path="/terms-and-conditions/"
       title="Terms and Conditions"
       kicker="Commercial Terms"
       lastUpdated="October 2026"

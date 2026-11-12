@@ -72,7 +72,7 @@ export const CANADA_LOCATION_PAGE: LocationPageContent = {
     {
       title: "Bilingual English & French Capability",
       description:
-        "Businesses serving Quebec, Ottawa, or national Canadian markets require seamless linguistic and localized user experiences.",
+        "Businesses serving Quebec, Ottawa, or national Canadian markets need a fully localized experience in both languages.",
       bulletPoints: [
         "Multilingual Next.js and Shopify store architectures with sub-path routing (/fr/) and hreflang tag tags",
         "Culturally natural French translations for headings, product descriptions, and checkout trust badges",

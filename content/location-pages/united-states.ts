@@ -84,7 +84,7 @@ export const UNITED_STATES_LOCATION_PAGE: LocationPageContent = {
   proof: {
     title: "Proven American Commercial Deployments",
     subtitle: "Real trade, exterior lighting, and commercial garage platform builds",
-    metric: "91 Repos",
+    metric: "96 Repos",
     metricLabel: "Active codebases maintained across Next.js, React and Node",
     narrative:
       "We have delivered custom web applications and lead acquisition funnels for American contractors, including an electrical contractor, an exterior holiday-lighting installation company, and a commercial garage-bay leasing operation, helping them replace expensive domestic monthly software subscriptions with fully owned digital infrastructure.",

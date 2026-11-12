@@ -56,6 +56,7 @@ export const SITE_FACTS = {
   founder: {
     name: "Haroon Sukhera",
     role: "Founder & CEO",
+    photo: "/images/team/haroon-sukhera.webp",
     linkedin: "https://www.linkedin.com/in/haroon-sukhera/",
     githubOrg: "https://github.com/webixsolutions-dev",
     githubPersonal: "https://github.com/Haroon-Sukhera",
@@ -122,11 +123,11 @@ export const SITE_FACTS = {
       confirmed: true,
     },
     githubContributionsLastYear: {
-      value: "1,053",
-      repositoryCount: 91,
+      value: "1,385",
+      repositoryCount: 96,
       label: "GitHub contributions in the last 12 months",
       detail:
-        "1,053 contributions in the last 12 months across 91 Next.js, React, Node.js and Flutter repositories",
+        "1,385 contributions in the last 12 months across 96 Next.js, React, Node.js and Flutter repositories",
       confirmed: true,
     },
     cmsWebsitesBuilt: {

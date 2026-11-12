@@ -21,7 +21,7 @@ Never invent a statistic, award, client name, review, certification or year.
 | In-house team | 20+ people across SMM, SEO, paid ads, video, graphic design, WordPress, full-stack, Flutter, CRM, Google Maps/GBP, product management | Confirmed (profile). Note: internal CRM shows 10 active employees — use "20+" only if true today [CONFIRM] |
 | Working hours | Two shifts. Day shift from 9:00 AM PKT. Night shift 9:00 PM – 5:00 AM PKT (= 11 AM–7 PM Eastern in winter, 8 AM–4 PM Pacific, 5 AM–1 PM New Zealand) | Confirmed (verify the timezone maths at launch; DST changes it by 1 hour) |
 | Socials | Facebook (webixsolutions1), Instagram (web.ixsolutions), LinkedIn, X, YouTube — exact URLs [CONFIRM] | Partly confirmed |
-| GitHub | github.com/webixsolutions-dev — 91 repositories, 1,053 contributions in the last 12 months (as of Oct 27, 2026) | Confirmed from screenshot |
+| GitHub | github.com/webixsolutions-dev — 96 repositories, 1,385 contributions in the last 12 months (as of Nov 12, 2026) | Confirmed from screenshot |
 
 ## Proof numbers (use exactly these)
 

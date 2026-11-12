@@ -26,7 +26,7 @@ export const CAREERS_CONTENT = {
   hero: {
     kicker: "Join our remote production center",
     h1: "Build with Webix Solutions",
-    lead: "We are an engineering-driven agency with a 20+ person team in Dunyapur, Pakistan. We build high-performance web systems, run high-ROAS marketing campaigns, and deploy production AI workflows for clients in North America, the Gulf, and New Zealand.",
+    lead: "We are an engineering-driven agency with a 20+ person team in Dunyapur, Pakistan. We build high-performance web systems, run paid marketing campaigns, and deploy production AI workflows for clients in North America, the Gulf, and New Zealand.",
   },
 
   howWeHire: [

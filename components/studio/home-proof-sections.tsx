@@ -53,7 +53,7 @@ export function StudioProofWall() {
           </div>
           <div className="studio-engineering-grid" data-studio-stagger>
             <article className="studio-engineering-card studio-cut-frame" data-studio-spotlight>
-              <div className="studio-engineering-header"><span className="studio-chip"><GitFork size={16} aria-hidden="true" /> GitHub activity</span><span>October 2026 snapshot</span></div>
+              <div className="studio-engineering-header"><span className="studio-chip"><GitFork size={16} aria-hidden="true" /> GitHub activity</span><span>November 2026 snapshot</span></div>
               <dl className="studio-engineering-metrics">
                 {[githubContributionsLastYear, customCodedBuilds].map((stat) => <div key={stat.label}><dt>{stat.label}</dt><dd>{stat.value}</dd></div>)}
               </dl>

@@ -309,10 +309,10 @@ export function OffersLandingView({ nextSlot }: OffersLandingViewProps) {
                 Engineering Campus
               </span>
               <div className="font-display text-3xl font-bold text-white">
-                1,053 Commits
+                1,385 contributions
               </div>
               <p className="text-xs text-[#A7ACB8] leading-relaxed">
-                Pushed across 91 Next.js, React, Node.js and Flutter repositories over the last 12 months with clean architectural hygiene.
+                Made across 96 Next.js, React, Node.js and Flutter repositories over the last 12 months with clean architectural hygiene.
               </p>
             </div>
 

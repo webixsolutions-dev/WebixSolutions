@@ -26,7 +26,7 @@ body { --surface: var(--studio-black); }
 .studio-line-mask { display: block; overflow: hidden; padding-bottom: .12em; margin-bottom: -.12em; }
 .studio-line-mask > span { display: block; }
 .studio-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
-.studio-button { display: inline-flex; align-items: center; justify-content: center; gap: 14px; min-height: 51px; padding: 12px 20px; background: var(--studio-action); color: white; font-weight: 600; font-size: .94rem; clip-path: polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,0 100%); transition: background .2s ease; }
+.studio-button { display: inline-flex; align-items: center; justify-content: center; gap: 14px; min-height: 51px; padding: 12px 20px; background: var(--studio-action); color: white; font-weight: 600; font-size: .94rem; border-radius: 10px; transition: background .2s ease; }
 .studio-button:hover { background: #aa1015; }
 .studio-button:focus-visible { outline-offset: -4px; }
 .studio-button-outline { background: #18181c; border: 1px solid #45454c; }
@@ -56,7 +56,7 @@ body { --surface: var(--studio-black); }
 .studio-link { display: inline-flex; align-items: center; gap: 9px; min-height: 44px; font-size: .95rem; font-weight: 600; white-space: nowrap; }
 .studio-link:hover { text-decoration: underline; text-underline-offset: .3em; }
 .studio-bento { display: grid; grid-template-columns: 1.22fr 1fr; gap: 14px; }
-.studio-project { min-width: 0; position: relative; display: flex; flex-direction: column; justify-content: end; isolation: isolate; min-height: 242px; overflow: hidden; color: #fff; background: #232327; clip-path: polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,0 100%); }
+.studio-project { min-width: 0; position: relative; display: flex; flex-direction: column; justify-content: end; isolation: isolate; min-height: 242px; overflow: hidden; color: #fff; background: #232327; border-radius: 16px; }
 .studio-project-0 { grid-row: span 2; }
 .studio-cover { position: relative; isolation: isolate; overflow: hidden; width: 100%; aspect-ratio: 16/9; background: #25252b; }
 .studio-cover img { object-fit: cover; object-position: center; }
@@ -484,24 +484,12 @@ body:has(.booking-dialog[open]) { overflow: hidden; }
 
 /* Logo geometry and lighting across studio surfaces */
 .studio-cut-frame {
-  --studio-frame-cut: 17px;
   --studio-frame-line: var(--studio-line);
   position: relative;
   isolation: isolate;
+  overflow: hidden;
   border: 1px solid var(--studio-frame-line);
-  clip-path: polygon(0 0, calc(100% - var(--studio-frame-cut)) 0, 100% var(--studio-frame-cut), 100% 100%, 0 100%);
-}
-.studio-cut-frame::before {
-  content: "";
-  position: absolute;
-  z-index: 3;
-  top: -1px;
-  right: -1px;
-  width: calc(var(--studio-frame-cut) + 1px);
-  height: calc(var(--studio-frame-cut) + 1px);
-  background: var(--studio-frame-line);
-  clip-path: polygon(0 0, 100% 100%, calc(100% - 2px) 100%, 0 2px);
-  pointer-events: none;
+  border-radius: 16px;
 }
 .studio-cut-frame:focus-visible { outline-offset: -4px; }
 [data-studio-light] {
@@ -560,7 +548,7 @@ body:has(.booking-dialog[open]) { overflow: hidden; }
 .studio-bento { grid-template-columns: repeat(2, minmax(0,1fr)); gap: clamp(12px,1.6vw,21px); }
 .studio-project { --studio-frame-line: #777b84; --studio-frame-cut: 20px; min-height: clamp(240px,23vw,340px); }
 .studio-project .studio-cover[data-project="walshkon-consultants"] img { object-position: center top; }
-.studio-project .studio-cover[data-project="ai-lead-engine-google-maps"] img { object-position: center 28%; }
+.studio-project .studio-cover[data-project="webix-lead-desk"] img { object-position: center 28%; }
 .studio-project-arrow { background: #1113179c; border-color: #bec2cc85; }
 .studio-project::after { background: linear-gradient(0deg,#08090afa 0%,#08090aca 20%,#08090a0d 65%); }
 .studio-project .studio-cover > span { border: 1px solid #646872; }

@@ -34,9 +34,9 @@ export const ABOUT_CONTENT = {
 
   founderStory: {
     kicker: "Founded by engineers",
-    h2: "Built from freelance roots into an remote production center",
+    h2: "Built from freelance roots into a remote production center",
     quote:
-      "We started Webix Solutions with a clear conviction: offshore delivery does not have to mean junior contractors, broken code, or missed deadlines. We built an remote campus where developers, marketers, and AI engineers collaborate in the same room, work on your time zone, and take complete ownership of measurable outcomes.",
+      "We started Webix Solutions with a clear conviction: offshore delivery does not have to mean junior contractors, broken code, or missed deadlines. We built a remote campus where developers, marketers, and AI engineers collaborate in the same room, work on your time zone, and take complete ownership of measurable outcomes.",
     author: "Haroon Sukhera",
     role: "Founder & CEO, Webix Solutions",
     bio: "Haroon Sukhera founded Webix Solutions as a custom WordPress and CMS developer. Over the past several years, he scaled the team into a 20+ specialist engineering and growth firm. Today, beyond client delivery, Haroon and the Webix team build and run proprietary consumer brands—including Zelvomart (Pakistan e-commerce), LaptopSouq.ae, and Miraj Builders—giving our team daily, hands-on operational experience with ad spend, inventory logistics, and conversion rate optimization.",
@@ -55,7 +55,7 @@ export const ABOUT_CONTENT = {
       focus: "WordPress, Shopify & Custom Headless Stores",
       technologies: ["Shopify Liquid", "Shopify APIs", "WordPress", "WooCommerce", "Webflow"],
       description:
-        "Builds conversion-tuned Shopify stores, corporate WordPress themes, and high-volume e-commerce checkouts designed for seamless merchant management.",
+        "Builds conversion-tuned Shopify stores, corporate WordPress themes, and high-volume e-commerce checkouts designed for simple merchant management.",
     },
     {
       name: "Growth SEO & Search Visibility",
@@ -69,7 +69,7 @@ export const ABOUT_CONTENT = {
       focus: "Meta Ads, Google PPC & Multi-Channel Acquisition",
       technologies: ["Meta CAPI", "Google Ads", "TikTok Ads", "GA4", "Triple Whale"],
       description:
-        "Designs, launches, and optimizes high-ROAS paid search, shopping, and click-to-WhatsApp social campaigns, tracking verified cost per lead and conversion data.",
+        "Designs, launches, and optimizes paid search, shopping, and click-to-WhatsApp social campaigns, tracking verified cost per lead and conversion data.",
     },
     {
       name: "AI Agents & Autonomous Workflows",
@@ -130,7 +130,7 @@ export const ABOUT_CONTENT = {
   faqs: [
     {
       q: "Who founded Webix Solutions and who leads the team?",
-      a: "Webix Solutions was founded by Haroon Sukhera, who serves as Founder & CEO. Haroon leads an remote team of 20+ software developers, performance marketers, creative designers, and AI automation specialists.",
+      a: "Webix Solutions was founded by Haroon Sukhera, who serves as Founder & CEO. Haroon leads a remote team of 20+ software developers, performance marketers, creative designers, and AI automation specialists.",
     },
     {
       q: "Where is Webix Solutions based?",

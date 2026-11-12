@@ -15,7 +15,7 @@
   background-color: var(--surface);
   background-image: linear-gradient(#ffffff0b 1px, transparent 1px), linear-gradient(90deg, #ffffff0b 1px, transparent 1px);
   background-size: 64px 64px;
-  border-bottom: 4px solid #ed1b24;
+  border-bottom: 0;
 }
 
 :where(#main:not(:has(> .studio-hero))) [data-section-spacing="hero"]::after,
@@ -27,7 +27,7 @@
   width: clamp(12px, 3.2vw, 52px);
   height: min(65%, 370px);
   background: #ed1b24;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 38px));
+  border-bottom-left-radius: 12px;
   pointer-events: none;
 }
 
@@ -76,13 +76,12 @@
 }
 
 :where(#main:not(:has(> .studio-hero))) [data-cut-frame-body] {
-  border-top: 2px solid #ed1b24;
+  border-top: 0;
 }
 
 :where(#main:not(:has(> .studio-hero))) :is(div, article)[class*="shadow-"][class*="border"][class*="rounded-"] {
-  border-radius: 0;
+  border-radius: 14px;
   border-color: var(--border, #aeb5c1);
-  border-top: 2px solid #ed1b24;
   box-shadow: none;
 }
 
@@ -144,7 +143,7 @@
 .interior-proof-strip dd { order: -1; font: 600 clamp(1.65rem, 3.7vw, 3.7rem)/1 var(--font-clash-grotesk), sans-serif; }
 .interior-project-card { --studio-frame-line: #aeb5c1; background: white; }
 .interior-project-card:hover { --studio-frame-line: #c8101a; }
-.interior-project-card .studio-cover { border-bottom: 3px solid #ed1b24; }
+.interior-project-card .studio-cover { border-bottom: 1px solid #d5d7dd; }
 .interior-project-card .studio-cover > span { display: none; }
 
 .interior-closing[data-surface="oxblood"] {
@@ -171,7 +170,7 @@
 .interior-booking-agenda svg { flex: none; margin-top: 4px; color: #ff8185; }
 
 .interior-document-meta { display: flex; flex-wrap: wrap; gap: 8px 16px; color: #d0d4dc; font-size: .88rem; }
-.interior-legal-document { background: #fff; border: 1px solid #bbc0cb; border-top: 3px solid #ed1b24; padding: clamp(16px, 3.7vw, 40px); }
+.interior-legal-document { background: #fff; border: 1px solid #bbc0cb; border-radius: 16px; padding: clamp(16px, 3.7vw, 40px); }
 .interior-legal-document h2 { color: #111215; }
 .interior-faq details[open] summary { color: #a40c15; }
 .interior-faq[data-surface="graphite"] details[open] summary,

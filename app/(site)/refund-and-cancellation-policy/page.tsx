@@ -13,6 +13,7 @@ export const metadata: Metadata = buildMetadata({
 export default function RefundPolicyPage() {
   return (
     <LegalPageLayout
+      path="/refund-and-cancellation-policy/"
       title="Refund & Cancellation Policy"
       kicker="Commercial Guarantees"
       lastUpdated="October 2026"

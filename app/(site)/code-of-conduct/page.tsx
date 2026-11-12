@@ -14,6 +14,7 @@ export const metadata: Metadata = buildMetadata({
 export default function CodeOfConductPage() {
   return (
     <LegalPageLayout
+      path="/code-of-conduct/"
       title="Code of Conduct"
       kicker="Internal Ethics & Standards"
       lastUpdated="October 2026"

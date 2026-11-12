@@ -124,10 +124,6 @@ export function StudioMotion() {
         });
         const proofBand = document.querySelector("[data-studio-proof-band]");
         if (proofBand) {
-          gsap.fromTo(proofBand, { "--studio-proof-cut": `${Math.round(window.innerWidth * 0.1)}px` }, {
-            "--studio-proof-cut": "0px", ease: "none",
-            scrollTrigger: { trigger: proofBand, start: "top bottom", end: "top 30%", scrub: 0.5 },
-          });
           gsap.to(proofBand.querySelector("[data-studio-proof-track]"), {
             xPercent: -28, ease: "none",
             scrollTrigger: { trigger: proofBand, start: "top bottom", end: "bottom top", scrub: 0.65 },

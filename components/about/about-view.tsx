@@ -64,9 +64,14 @@ export function AboutView() {
             <div className="lg:col-span-5">
               <div className="cut-tr-lg border border-[#E4E6EB] bg-white p-7 shadow-sm space-y-5">
                 <div className="flex items-center gap-4 border-b border-[#E4E6EB] pb-5">
-                  <div className="h-16 w-16 rounded-full bg-[#121214] text-white flex items-center justify-center font-display font-bold text-xl border-2 border-[#ED1C24]">
-                    HS
-                  </div>
+                  <Image
+                    src={SITE_FACTS.founder.photo}
+                    alt={`${SITE_FACTS.founder.name}, ${SITE_FACTS.founder.role} of Webix Solutions`}
+                    width={96}
+                    height={96}
+                    priority
+                    className="h-24 w-24 shrink-0 rounded-2xl object-cover"
+                  />
                   <div>
                     <h3 className="font-display text-lg font-bold text-[#111215]">
                       {SITE_FACTS.founder.name}
@@ -131,11 +136,20 @@ export function AboutView() {
                 &ldquo;{founderStory.quote}&rdquo;
               </blockquote>
               <div className="border-t border-white/10 pt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs text-[#9CA3AF]">
-                <div>
-                  <span className="font-semibold text-white block">
-                    {founderStory.author}
-                  </span>
-                  <span>{founderStory.role}</span>
+                <div className="flex items-center gap-3">
+                  <Image
+                    src={SITE_FACTS.founder.photo}
+                    alt=""
+                    width={48}
+                    height={48}
+                    className="h-12 w-12 shrink-0 rounded-full object-cover"
+                  />
+                  <div>
+                    <span className="font-semibold text-white block">
+                      {founderStory.author}
+                    </span>
+                    <span>{founderStory.role}</span>
+                  </div>
                 </div>
                 <div className="inline-flex items-center gap-2">
                   <span className="h-2 w-2 rounded-full bg-[#16A34A]" />
@@ -324,7 +338,7 @@ export function AboutView() {
                 {SITE_FACTS.stats.githubContributionsLastYear.value}
               </div>
               <div className="text-xs font-semibold text-white">
-                GitHub contributions in the October 2026 snapshot
+                GitHub contributions in the November 2026 snapshot
               </div>
               <p className="text-[11px] text-[#9CA3AF]">
                 Across {SITE_FACTS.stats.githubContributionsLastYear.repositoryCount} repositories in the reporting period.
