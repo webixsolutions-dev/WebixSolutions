@@ -17,7 +17,7 @@ function Navigation({ megaMenuColumns, simplified, path }: HeaderProps & { path:
   const mobileToggle = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    const sync = () => setScrolled(window.scrollY > 36);
+    const sync = () => setScrolled(window.scrollY > 80);
     const frame = requestAnimationFrame(sync);
     window.addEventListener("scroll", sync, { passive: true });
     return () => { cancelAnimationFrame(frame); window.removeEventListener("scroll", sync); };

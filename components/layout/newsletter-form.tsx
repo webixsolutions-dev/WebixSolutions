@@ -23,7 +23,7 @@ export function NewsletterForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-2">
+    <form onSubmit={handleSubmit} className="w-full space-y-2 sm:w-auto">
       <label
         htmlFor="footer-newsletter-email"
         className="block text-xs font-medium text-[#A7ACB8]"
@@ -37,7 +37,7 @@ export function NewsletterForm() {
           type="email"
           required
           placeholder="you@company.com"
-          className="h-10 flex-1 rounded-md border border-white/15 bg-[#1C1E24] px-3.5 text-sm text-white placeholder:text-[#a7acb8] focus:border-[#ED1C24] focus:outline-none"
+          className="h-11 w-full shrink-0 rounded-md sm:w-auto sm:flex-1 border border-white/15 bg-[#1C1E24] px-3.5 text-sm text-white placeholder:text-[#a7acb8] focus:border-[#ED1C24] focus:outline-none"
         />
         <button type="submit" disabled={pending} className="studio-button shrink-0">
           {pending ? "Joining..." : "Subscribe"}

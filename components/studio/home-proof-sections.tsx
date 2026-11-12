@@ -13,7 +13,7 @@ export function StudioPackages() {
     <section className="studio-section studio-dark studio-packages-section" id="packages" data-studio-light>
       <div className="studio-wrap">
         <div className="studio-section-head" data-studio-reveal>
-          <div><p className="studio-label"><span /> Packages</p><h2>Pick a starting point.</h2><p className="studio-section-lead">Launch a website, grow month to month, or automate a specific workflow.</p></div>
+          <div><h2>Pick a starting point.</h2><p className="studio-section-lead">Launch a website, grow month to month, or automate a specific workflow.</p></div>
           <Link className="studio-link" href="/offers/">Compare all packages <ArrowUpRight size={17} /></Link>
         </div>
         <div className="studio-packages" data-studio-stagger>
@@ -43,11 +43,10 @@ export function StudioProofWall() {
 
   return (
     <>
-      <section className="studio-section studio-dark studio-engineering" aria-labelledby="studio-engineering-title" data-studio-light>
+      <section className="studio-section studio-engineering" aria-labelledby="studio-engineering-title" data-studio-light>
         <div className="studio-wrap">
           <div className="studio-section-head" data-studio-reveal>
             <div>
-              <p className="studio-label"><span /> Verifiable engineering & delivery proof</p>
               <h2 id="studio-engineering-title">Measured by code shipped, sites launched and accounts managed</h2>
             </div>
           </div>
