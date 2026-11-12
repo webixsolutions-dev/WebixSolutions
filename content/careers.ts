@@ -19,7 +19,7 @@ export const CAREERS_CONTENT = {
   meta: {
     title: "Careers — Join Our Team | Webix Solutions",
     description:
-      "Explore engineering, digital marketing and AI automation roles at Webix Solutions in Punjab, Pakistan. See how we hire and how to send your CV for future roles.",
+      "Engineering, marketing and AI automation careers at Webix Solutions in Punjab, Pakistan. See how we hire and how to send your CV for future roles.",
     path: "/careers/",
   },
 

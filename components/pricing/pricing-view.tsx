@@ -1,5 +1,3 @@
-"use client";
-
 import { PRICING_FAQS } from "@/content/pricing";
 
 import * as React from "react";
@@ -9,10 +7,6 @@ import {
   ArrowRight,
   ShieldCheck,
   AlertCircle,
-  HelpCircle,
-  ArrowUpRight,
-  Sparkles,
-  Zap,
 } from "lucide-react";
 import { INTERIOR } from "@/content/interior";
 import { Section } from "@/components/ui/section";
@@ -21,6 +15,7 @@ import { Kicker } from "@/components/ui/kicker";
 import { Button } from "@/components/ui/button";
 import { Chip } from "@/components/ui/chip";
 import { FaqSection } from "@/components/shared/faq-section";
+import { InteriorLinks } from "@/components/studio/interior-links";
 import { FinalCtaSection } from "@/components/home/final-cta-section";
 import {
   CARE_PLANS,
@@ -41,7 +36,6 @@ type PricingSegment = "care" | "builds" | "onetime";
 
 
 export function PricingView({ nextSlot }: PricingViewProps) {
-  const [segment, setSegment] = React.useState<PricingSegment>("care");
 
   return (
     <div className="w-full">
@@ -87,7 +81,7 @@ export function PricingView({ nextSlot }: PricingViewProps) {
               <Button href="/book-a-call/" variant="primary" size="lg">
                 Book a strategy call
               </Button>
-              <Button href="#pricing-options" variant="secondary" size="lg">
+              <Button href="#care-plans" variant="secondary" size="lg">
                 Explore pricing options
               </Button>
             </div>
@@ -104,232 +98,89 @@ export function PricingView({ nextSlot }: PricingViewProps) {
         </Container>
       </Section>
 
-      {/* =========================================================================
-          2. SEGMENTED CONTROL + PRICING TABLES (Porcelain with Notch)
-         ========================================================================= */}
-      <Section
-        id="pricing-options"
-        surface="porcelain"
-        previousSurface="graphite"
-        notch
-        spacing="default"
-      >
+      <InteriorLinks links={[
+        { id: "care-plans", label: "Care plans" },
+        { id: "builds", label: "Builds" },
+        { id: "one-time", label: "One-time work" },
+        { id: "payment-terms", label: "Payment terms" },
+      ]} />
+
+      {/* 2. Monthly care plans */}
+      <Section id="care-plans" surface="porcelain" previousSurface="graphite" spacing="default">
         <Container>
-          {/* Segmented Control Bar */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10 pb-6 border-b border-[#E4E6EB]">
-            <div>
-              <span className="text-xs font-semibold text-[#717684] uppercase tracking-wider block">
-                Choose pricing category:
-              </span>
-              <h2 className="type-h2 text-[#111215] mt-1">
-                {segment === "care" && "Monthly Website & App Care Plans"}
-                {segment === "builds" && "Custom Website, Store & App Builds"}
-                {segment === "onetime" && "One-Time Audits & Creative Sprints"}
-              </h2>
-            </div>
-
-            <div className="inline-flex p-1.5 rounded-xl bg-[#E4E6EB] border border-[#D5D8E0]">
-              <button
-                type="button"
-                onClick={() => setSegment("care")}
-                aria-pressed={segment === "care"}
-                className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all ${
-                  segment === "care"
-                    ? "bg-white text-[#111215] shadow-xs"
-                    : "text-[#454954] hover:text-[#111215]"
-                }`}
-              >
-                Care plans
-              </button>
-              <button
-                type="button"
-                onClick={() => setSegment("builds")}
-                aria-pressed={segment === "builds"}
-                className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all ${
-                  segment === "builds"
-                    ? "bg-white text-[#111215] shadow-xs"
-                    : "text-[#454954] hover:text-[#111215]"
-                }`}
-              >
-                Builds
-              </button>
-              <button
-                type="button"
-                onClick={() => setSegment("onetime")}
-                aria-pressed={segment === "onetime"}
-                className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all ${
-                  segment === "onetime"
-                    ? "bg-white text-[#111215] shadow-xs"
-                    : "text-[#454954] hover:text-[#111215]"
-                }`}
-              >
-                One-time services
-              </button>
-            </div>
+          <div className="price-head">
+            <Kicker>Monthly</Kicker>
+            <h2 className="type-h2 text-[#111215]">Website and app care plans</h2>
+            <p className="type-body text-[#454954]">Ongoing updates, monitoring and edits for a site or app that is already live.</p>
           </div>
+          <div className="price-plans">
+            {CARE_PLANS.map((plan, index) => (
+              <article key={plan.id} className="price-plan" data-featured={index === 1}>
+                {index === 1 && <span className="price-plan-flag">Most chosen</span>}
+                <h3>{plan.name}</h3>
+                <p className="price-plan-summary">{plan.summary}</p>
+                <p className="price-amount">
+                  {plan.confirmed ? <>{`$${plan.priceUsd}`}<span>{plan.billingPeriod}</span></> : "Custom quote"}
+                </p>
+                <ul>{plan.features.map((feature) => <li key={feature}><Check className="h-4 w-4" aria-hidden="true" />{feature}</li>)}</ul>
+                <Button href="/book-a-call/" variant={index === 1 ? "primary" : "secondary"} size="default">Ask about {plan.name}</Button>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </Section>
 
-          {/* VIEW A: CARE PLANS */}
-          <div data-pricing-panel hidden={segment !== "care"} className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {CARE_PLANS.map((plan, idx) => (
-                <div
-                  key={plan.id}
-                  className={`p-8 rounded-2xl bg-white border flex flex-col justify-between space-y-6 shadow-xs ${
-                    idx === 1
-                      ? "border-[#ED1C24] ring-1 ring-[#ED1C24]/20 relative"
-                      : "border-[#E4E6EB]"
-                  }`}
-                >
-                  {idx === 1 && (
-                    <span className="absolute -top-3 left-8 px-3 py-0.5 rounded-full bg-[#ED1C24] text-white text-[10px] font-bold uppercase tracking-wider">
-                      Featured care plan
-                    </span>
-                  )}
-
-                  <div className="space-y-4">
-                    <div>
-                      <h3 className="font-display text-xl font-bold text-[#111215]">
-                        {plan.name}
-                      </h3>
-                      <p className="text-xs text-[#717684] mt-1">
-                        {plan.summary}
-                      </p>
-                    </div>
-
-                    <div className="flex items-baseline gap-1 pt-2 border-t border-[#E4E6EB]">
-                      <span className="font-display text-4xl font-bold text-[#111215]">
-                        {plan.confirmed ? `$${plan.priceUsd}` : "Custom quote"}
-                      </span>
-                      <span className="text-xs font-semibold text-[#717684]">
-                        {plan.confirmed ? plan.billingPeriod : "Monthly care"}
-                      </span>
-                    </div>
-
-                    <ul className="space-y-3 pt-2">
-                      {plan.features.map((feat, fIdx) => (
-                        <li key={fIdx} className="flex items-start gap-2.5 text-xs text-[#454954]">
-                          <Check className="h-4 w-4 text-[#16A34A] shrink-0 mt-0.5" />
-                          <span className="leading-relaxed">{feat}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="pt-4 border-t border-[#E4E6EB]">
-                    <Button href="/book-a-call/" variant={idx === 1 ? "primary" : "secondary"} size="default" className="w-full">
-                      Ask about {plan.name}
-                    </Button>
-                  </div>
+      {/* 3. Builds */}
+      <Section id="builds" surface="graphite" previousSurface="porcelain" spacing="default">
+        <Container>
+          <div className="price-head">
+            <Kicker>One-time projects</Kicker>
+            <h2 className="type-h2 text-white">Website, store and app builds</h2>
+            <p className="type-body text-[#C1C6D0]">Each build is scoped in writing before work starts. You own the site, code and accounts.</p>
+          </div>
+          <div className="price-builds">
+            {BUILD_PRICES.map((row, index) => (
+              <article key={row.id} className="price-build">
+                <span className="price-build-num">{String(index + 1).padStart(2, "0")}</span>
+                <div>
+                  <h3>{row.serviceName}</h3>
+                  <p>{row.includes}</p>
                 </div>
-              ))}
+                <p className="price-build-time">{row.timeline}</p>
+                <p className="price-build-amount">{row.confirmed ? `From $${row.startingPriceUsd.toLocaleString("en-US")}` : "Custom quote"}</p>
+                <Link href={row.href} aria-label={`${row.serviceName} details`}><ArrowRight className="h-5 w-5" aria-hidden="true" /></Link>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* 4. One-time services and packages */}
+      <Section id="one-time" surface="steel" previousSurface="graphite" spacing="default">
+        <Container>
+          <div className="price-head">
+            <Kicker>Single pieces of work</Kicker>
+            <h2 className="type-h2 text-[#111215]">Audits and creative sprints</h2>
+            <p className="type-body text-[#454954]">Useful when you need one thing done well without a monthly plan.</p>
+          </div>
+          <div className="price-onetime">
+            {ONE_TIME_SERVICES.map((item) => (
+              <article key={item.id}>
+                <p className="price-onetime-amount">{item.confirmed ? item.priceDisplay : "Custom quote"}</p>
+                <h3>{item.name}</h3>
+                <p>{item.description}</p>
+                <Link href={item.href}>Service details <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
+              </article>
+            ))}
+          </div>
+          <div className="price-bundle">
+            <div>
+              <h3>Website, marketing and automation packages</h3>
+              <p>Combine a website build or redesign with monthly SEO, social media and paid advertising in one plan.</p>
             </div>
-
-          {/* VIEW B: BUILDS TABLE */}
-          <div data-pricing-panel hidden={segment !== "builds"} className="rounded-xl border border-[#E4E6EB] bg-white overflow-hidden shadow-xs">
-              <div className="overflow-x-auto">
-                <table className="w-full text-left text-sm border-collapse">
-                  <thead>
-                    <tr className="border-b border-[#E4E6EB] bg-[#F8F9FA] text-[#717684] text-xs font-semibold uppercase tracking-wider">
-                      <th scope="col" className="p-4 sm:p-5">Service Deliverable</th>
-                      <th scope="col" className="p-4 sm:p-5">Starting Price</th>
-                      <th scope="col" className="p-4 sm:p-5">Typical Delivery</th>
-                      <th scope="col" className="p-4 sm:p-5">Inclusions Summary</th>
-                      <th scope="col" className="p-4 sm:p-5 text-right">Action</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-[#E4E6EB]">
-                    {BUILD_PRICES.map((b) => (
-                      <tr key={b.id} className="hover:bg-[#F8F9FA]/50 transition-colors">
-                        <td className="p-4 sm:p-5 font-display font-semibold text-[#111215]">
-                          <Link href={b.href} className="hover:text-[#ED1C24] transition-colors flex items-center gap-1.5">
-                            <span>{b.serviceName}</span>
-                            <ArrowRight className="h-3 w-3 text-[#ED1C24]" />
-                          </Link>
-                        </td>
-                        <td className="p-4 sm:p-5 font-mono font-bold text-[#C8101A] whitespace-nowrap">
-                          {b.confirmed ? `From $${b.startingPriceUsd}` : "Custom quote"}
-                        </td>
-                        <td className="p-4 sm:p-5 text-xs text-[#717684] whitespace-nowrap">
-                          {b.timeline}
-                        </td>
-                        <td className="p-4 sm:p-5 text-xs text-[#454954] max-w-md leading-relaxed">
-                          {b.includes}
-                        </td>
-                        <td className="p-4 sm:p-5 text-right whitespace-nowrap">
-                          <Button href="/book-a-call/" variant="secondary" size="sm">
-                            Get written quote
-                          </Button>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-          {/* VIEW C: ONE-TIME SERVICES */}
-          <div data-pricing-panel hidden={segment !== "onetime"} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {ONE_TIME_SERVICES.map((item) => (
-                <div
-                  key={item.id}
-                  className="p-7 rounded-xl bg-white border border-[#E4E6EB] shadow-xs flex flex-col justify-between space-y-4"
-                >
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <span className="font-mono text-xs px-2 py-0.5 rounded bg-[#FAF0F0] text-[#C8101A] font-semibold">
-                        One-time service
-                      </span>
-                      <span className="font-display text-xl font-bold text-[#111215]">
-                        {item.confirmed ? item.priceDisplay : "Custom quote"}
-                      </span>
-                    </div>
-
-                    <h3 className="font-display text-base font-bold text-[#111215]">
-                      {item.name}
-                    </h3>
-
-                    <p className="text-xs text-[#454954] leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-
-                  <div className="pt-3 border-t border-[#E4E6EB] flex items-center justify-between">
-                    <Link
-                      href={item.href}
-                      className="text-xs text-[#717684] hover:text-[#111215] flex items-center gap-1 transition-colors"
-                    >
-                      <span>Service details</span>
-                      <ArrowRight className="h-3 w-3" />
-                    </Link>
-                    <Button href="/book-a-call/" variant="secondary" size="sm">
-                      Request a quote
-                    </Button>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-          {/* Integrated Offers Teaser Banner */}
-          <div className="mt-16 p-8 md:p-10 rounded-2xl bg-[#141519] border border-white/12 text-white flex flex-col lg:flex-row lg:items-center justify-between gap-8">
-            <div className="max-w-2xl space-y-2">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#ED1C24] text-xs font-bold uppercase tracking-wider text-white">
-                <Sparkles className="h-3.5 w-3.5" />
-                <span>Prefer an integrated growth bundle?</span>
-              </span>
-              <h3 className="font-display text-2xl font-bold text-white">
-                Website, marketing and automation packages
-              </h3>
-              <p className="text-xs text-[#A7ACB8] leading-relaxed">
-                Combine custom website builds or redesigns, monthly SEO fixes, social media management, and paid advertising campaigns under a single predictable investment.
-              </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
-              <Button href="/offers/" variant="primary" size="lg">
-                Explore growth packages
-              </Button>
-              <Button href="/white-label-partners/" variant="secondary" size="lg">
-                White-label agency partner
-              </Button>
+            <div>
+              <Button href="/offers/" variant="primary" size="lg">Explore growth packages</Button>
+              <Button href="/white-label-partners/" variant="secondary" size="lg">White-label agency partner</Button>
             </div>
           </div>
         </Container>
@@ -339,9 +190,9 @@ export function PricingView({ nextSlot }: PricingViewProps) {
           3. PAYMENT TERMS & EXCLUSIONS (Steel with Notch)
          ========================================================================= */}
       <Section
-        surface="steel"
-        previousSurface="porcelain"
-        notch
+        id="payment-terms"
+        surface="porcelain"
+        previousSurface="steel"
         spacing="default"
       >
         <Container>
@@ -413,9 +264,8 @@ export function PricingView({ nextSlot }: PricingViewProps) {
         heading="Frequently asked questions about our pricing"
         subtitle="Transparent answers regarding billing cycles, contracts, and currency equivalents."
         faqs={PRICING_FAQS}
-        surface="porcelain"
-        previousSurface="steel"
-        notch
+        surface="steel"
+        previousSurface="porcelain"
       />
 
       {/* =========================================================================

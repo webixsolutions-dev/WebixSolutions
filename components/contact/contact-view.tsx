@@ -114,7 +114,9 @@ export function ContactView() {
          ========================================================================= */}
       <Section surface="graphite" spacing="hero">
         <Container>
-          <div className="max-w-3xl space-y-4 mb-12">
+          <div className="contact-hero">
+          <div>
+          <div className="max-w-3xl space-y-4 mb-8">
             <Kicker>Connect directly with our team</Kicker>
             <h1 className="type-display text-white">Contact Webix Solutions</h1>
             <p className="type-lead text-[#9CA3AF]">
@@ -122,7 +124,7 @@ export function ContactView() {
             </p>
           </div>
 
-          {/* Three Direct Action Tiles */}
+          <div className="contact-methods">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Tile 1: Book a Call */}
             <Link
@@ -192,17 +194,9 @@ export function ContactView() {
               </div>
             </a>
           </div>
-        </Container>
-      </Section>
-
-      {/* =========================================================================
-          2. CONTACT FORM & NAP SIDEBAR (Porcelain with Notch)
-         ========================================================================= */}
-      <Section surface="porcelain" previousSurface="graphite" notch spacing="default">
-        <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            {/* Left 7 Columns: Form */}
-            <div className="lg:col-span-7">
+          </div>
+          </div>
+          <div className="contact-form-wrap">
               <div className="bg-white p-7 sm:p-9 rounded-xl border border-[#E4E6EB] shadow-xs space-y-6">
                 <div>
                   <h2 className="type-h2 text-[#111215]">Send a project inquiry</h2>
@@ -382,10 +376,22 @@ export function ContactView() {
                   </form>
                 )}
               </div>
-            </div>
+          </div>
+          </div>
+        </Container>
+      </Section>
 
-            {/* Right 5 Columns: Working Hours & NAP Sidebar */}
-            <div className="lg:col-span-5 space-y-6">
+      {/* =========================================================================
+          2. CONTACT FORM & NAP SIDEBAR (Porcelain with Notch)
+         ========================================================================= */}
+      <Section id="contact-hours" surface="porcelain" previousSurface="graphite" spacing="default">
+        <Container>
+          <div className="contact-info-head">
+            <h2 className="type-h2 text-[#111215]">Hours and direct lines</h2>
+            <p className="type-body text-[#454954]">When we are online in your time zone, and who to reach for what.</p>
+          </div>
+          <div>
+            <div className="contact-info">
               {/* Working Hours Card */}
               <div className="p-6 rounded-xl border border-[#E4E6EB] bg-white space-y-4 shadow-xs">
                 <div className="flex items-center gap-2 text-xs font-semibold text-[#C8101A] uppercase tracking-wider">
