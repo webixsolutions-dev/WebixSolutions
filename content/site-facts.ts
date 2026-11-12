@@ -93,7 +93,7 @@ export const SITE_FACTS = {
     addressCountry: "PK",
     addressCountryName: "Pakistan",
     fullDisplay: "Punjab, Pakistan",
-    secondaryNote: "Meetings in Lahore by appointment",
+    secondaryNote: "In-person meetings by appointment",
   },
 
   shifts: {

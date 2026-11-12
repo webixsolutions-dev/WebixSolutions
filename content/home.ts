@@ -149,7 +149,7 @@ export const HOME_CONTENT = {
     {
       question: "Where is your team located and what hours do you work?",
       answer:
-        "Our headquarters is in Punjab, Pakistan. Meetings in Lahore are available by appointment. We run two shifts: a day shift starting at 9:00 AM Pakistan time (overlapping UAE and Pakistani business hours) and a night shift from 9:00 PM to 5:00 AM Pakistan time (overlapping Eastern, Pacific and New Zealand mornings).",
+        "Our headquarters is in Punjab, Pakistan. In-person meetings are available by appointment. We run two shifts: a day shift starting at 9:00 AM Pakistan time (overlapping UAE and Pakistani business hours) and a night shift from 9:00 PM to 5:00 AM Pakistan time (overlapping Eastern, Pacific and New Zealand mornings).",
     },
     {
       question: "Do you build with WordPress, Shopify, Webflow or Framer?",

@@ -431,7 +431,7 @@ export function AboutView() {
                   </span>
                 </div>
                 <div className="flex items-center gap-2 pl-6 text-[#9CA3AF]">
-                  <span>Meetings in Lahore arranged by prior appointment.</span>
+                  <span>In-person meetings by prior appointment.</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Globe className="h-4 w-4 text-[#ED1C24]" />
@@ -445,13 +445,13 @@ export function AboutView() {
             <div className="lg:col-span-5">
               <div className="cut-tr-lg border border-white/15 bg-[#121214] p-6 sm:p-8 space-y-4 text-white">
                 <div className="text-xs font-semibold uppercase tracking-wider text-[#ED1C24]">
-                  In-Person Visits
+                  In person
                 </div>
                 <h3 className="type-h3 text-white">
                   Meeting us in person
                 </h3>
                 <p className="text-xs text-[#9CA3AF] leading-relaxed">
-                  Clients and partner agencies visiting Pakistan are welcome to meet us in Lahore by appointment.
+                  Clients and partner agencies are welcome to meet us in person by appointment. Contact us to arrange a time and place.
                 </p>
                 <div className="pt-2">
                   <Button href="/contact-us/" variant="secondary" size="sm">

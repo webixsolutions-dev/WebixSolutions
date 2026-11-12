@@ -24,7 +24,7 @@ export async function GET() {
   // Key Facts
   lines.push(`## Company Facts & Operating Parameters`);
   lines.push(`- Founder & CEO: ${SITE_FACTS.founder.name}`);
-  lines.push(`- Headquarters: ${SITE_FACTS.headquarters.fullDisplay} (Meetings in Lahore by appointment)`);
+  lines.push(`- Headquarters: ${SITE_FACTS.headquarters.fullDisplay} (in-person meetings by appointment)`);
   lines.push(`- Team: ${SITE_FACTS.stats.teamSize.label} (${SITE_FACTS.stats.teamSize.detail})`);
   lines.push(`- Markets Served: Canada (CA), United States (US), United Arab Emirates (AE), New Zealand (NZ), Pakistan (PK)`);
   lines.push(`- Working Shifts: Day shift ${SITE_FACTS.shifts.dayShiftPkt} (overlaps UAE & Gulf business hours); Night shift ${SITE_FACTS.shifts.nightShiftPkt} (overlaps North American ET/PT and New Zealand mornings)`);
