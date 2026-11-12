@@ -17,14 +17,14 @@ export interface OpenRole {
 
 export const CAREERS_CONTENT = {
   meta: {
-    title: "Careers — Join Our Remote team | Webix Solutions",
+    title: "Careers — Join Our Team | Webix Solutions",
     description:
       "Explore engineering, digital marketing and AI automation roles at Webix Solutions in Dunyapur, Pakistan. Learn how we hire and view open positions.",
     path: "/careers/",
   },
 
   hero: {
-    kicker: "Join our remote production center",
+    kicker: "Join our team",
     h1: "Build with Webix Solutions",
     lead: "We are an engineering-driven agency with a 20+ person team in Dunyapur, Pakistan. We build high-performance web systems, run paid marketing campaigns, and deploy production AI workflows for clients in North America, the Gulf, and New Zealand.",
   },
@@ -52,7 +52,7 @@ export const CAREERS_CONTENT = {
       step: "04",
       title: "Offer & Fast Onboarding",
       description:
-        "Transparent compensation packages, immediate workstation setup at our Dunyapur campus, and direct integration into our Slack and ClickUp channels.",
+        "Transparent compensation packages, fast onboarding, and direct integration into our Slack and ClickUp channels.",
     },
   ],
 
@@ -159,9 +159,9 @@ export const CAREERS_CONTENT = {
 
   faqs: [
     {
-      question: "Are these roles remote or based at your Dunyapur campus?",
+      question: "Where is the team based?",
       answer:
-        "Our primary team collaborates in-person at our central engineering headquarters in Dunyapur, Punjab. We also offer dedicated night-shift options for senior engineers with demonstrated remote autonomy.",
+        "Our team is led from Dunyapur, Punjab. Working arrangements for each role, including shift and location, are agreed during hiring.",
     },
     {
       question: "How do I apply for an open position?",

@@ -121,7 +121,7 @@ export function WorkSlider({ publishedEntries }: WorkSliderProps) {
           <div className="max-w-2xl space-y-3">
             <Kicker>Selected work & verified output</Kicker>
             <h2 className="type-h2">
-              Built remote across {SITE_FACTS.stats.customCodedBuilds.value}{" "}
+              Built across {SITE_FACTS.stats.customCodedBuilds.value}{" "}
               custom-coded repositories and{" "}
               {SITE_FACTS.stats.cmsWebsitesBuilt.value} CMS sites
             </h2>

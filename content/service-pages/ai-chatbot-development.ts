@@ -122,7 +122,7 @@ export const AI_CHATBOT_DEVELOPMENT: ServicePageContent = {
   },
 
   proof: {
-    h2: "AI systems engineered by our remote team",
+    h2: "AI systems engineered by our team",
     lead: "We engineer custom conversational flows for client websites, WhatsApp channels, and internal agency operations.",
     statKeys: ["customCodedBuilds", "teamSize", "totalClientsServed"],
     showOwnBrands: true,

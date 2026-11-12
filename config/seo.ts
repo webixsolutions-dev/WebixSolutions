@@ -4,7 +4,7 @@ export const SITE_URL = "https://webixsolutions.com";
 export const SITE_NAME = "Webix Solutions";
 export const DEFAULT_TITLE = "Digital Marketing, Web & AI Agency | Webix Solutions";
 export const DEFAULT_DESCRIPTION =
-  "Websites, SEO, paid ads, social media and AI automation from a remote team of 20+. Serving Canada, the US, UAE and NZ. Book a free strategy call.";
+  "Websites, SEO, paid ads, social media and AI automation from a team of 20+. Serving Canada, the US, UAE and NZ. Book a free strategy call.";
 
 export const OG_IMAGE_URL = `${SITE_URL}/opengraph-image`;
 export const OG_IMAGE_ALT = "Webix Solutions: websites, growth marketing and AI automation";

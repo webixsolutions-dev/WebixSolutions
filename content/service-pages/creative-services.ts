@@ -6,7 +6,7 @@ export const CREATIVE_SERVICES: ServicePageContent = {
   heroKicker: "Logos, brand kits, ad creatives and packaging",
   intro: [
     "We provide professional graphic design and creative studio services — from memorable logo designs and brand identity kits to high-converting ad creative batches, packaging and short-form video edits.",
-    "Delivered by our dedicated remote creative team in Pakistan for growing brands across Canada, the US, the UAE, New Zealand and Pakistan.",
+    "Delivered by our dedicated creative team in Pakistan for growing brands across Canada, the US, the UAE, New Zealand and Pakistan.",
   ],
   proofChip: "Graphic design studio with unlimited revisions on brand kits",
 
@@ -122,7 +122,7 @@ export const CREATIVE_SERVICES: ServicePageContent = {
   },
 
   proof: {
-    h2: "Design work delivered by our remote creative team",
+    h2: "Design work delivered by our creative team",
     lead: "Our designers craft visual identities and marketing assets for retail brands, tech companies, property developments and healthcare providers.",
     statKeys: ["teamSize", "totalClientsServed", "customCodedBuilds"],
     showOwnBrands: true,

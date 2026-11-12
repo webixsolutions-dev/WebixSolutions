@@ -222,13 +222,13 @@ export const WORK_REGISTRY: WorkEntry[] = [
     slug: "custom-crm-agency-operations",
     cover: "/images/studio/crm-cover.svg",
     title: "Custom Agency Operations & Client Management CRM",
-    descriptor: "Agency Infrastructure & Workflow Automation · Pakistan & Remote",
+    descriptor: "Agency Infrastructure & Workflow Automation · Pakistan",
     country: "Pakistan",
     category: "Custom software & CRM",
     summary:
       "An internal agency platform for client projects, tasks, HR, tool access and invoicing.",
     challenge:
-      "Give a remote agency team one place to track work, manage access and hand projects over between shifts.",
+      "Give an agency team one place to track work, manage access and hand projects over between shifts.",
     solution: [
       "Architected a centralized Next.js web application connected to a secure PostgreSQL database",
       "Built custom role-based modules: Client Management, Project & Task Tracking, HR & Attendance, and Invoicing",

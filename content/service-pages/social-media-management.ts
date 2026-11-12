@@ -6,7 +6,7 @@ export const SOCIAL_MEDIA_MANAGEMENT: ServicePageContent = {
   heroKicker: "Instagram, Facebook, TikTok and LinkedIn",
   intro: [
     "We plan, create, post and manage your social media on Instagram, Facebook, TikTok and LinkedIn, so your accounts stay active without taking your team's time.",
-    "Our remote team manages 50+ social accounts for businesses in Canada, the US, the UAE, New Zealand and Pakistan.",
+    "Our team manages 50+ social accounts for businesses in Canada, the US, the UAE, New Zealand and Pakistan.",
   ],
   proofChip: "50+ social media accounts managed",
 
@@ -87,7 +87,7 @@ export const SOCIAL_MEDIA_MANAGEMENT: ServicePageContent = {
 
   proof: {
     h2: "Social media is one of our largest teams",
-    lead: "Social media managers, designers and video editors work together remotely, in the same team as our ads and web developers.",
+    lead: "Social media managers, designers and video editors work together in the same team as our ads and web developers.",
     statKeys: ["socialAccountsManaged", "teamSize", "totalClientsServed"],
   },
 
@@ -123,7 +123,7 @@ export const SOCIAL_MEDIA_MANAGEMENT: ServicePageContent = {
     },
     {
       question: "Do you make reels and videos?",
-      answer: "Yes. Our remote video editors make reels and short videos from your footage, stock footage or AI-generated visuals.",
+      answer: "Yes. Our video editors make reels and short videos from your footage, stock footage or AI-generated visuals.",
     },
     {
       question: "Who approves content before posting?",

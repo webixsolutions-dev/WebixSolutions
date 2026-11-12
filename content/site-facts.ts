@@ -51,12 +51,12 @@ export const SITE_FACTS = {
   disambiguation:
     "Webix Solutions (webixsolutions.com) is a full-service digital marketing, web development and AI automation agency founded by Haroon Sukhera. It is not affiliated with the Webix JavaScript UI library (webix.com).",
   positioningOneLiner:
-    "Webix Solutions is a full-service digital agency with a remote team of 20+ in Pakistan — we build websites, run growth marketing and ship AI systems for businesses across Canada, the US, the UAE, New Zealand and Pakistan, on your time zone.",
+    "Webix Solutions is a full-service digital agency with a team of 20+ in Pakistan — we build websites, run growth marketing and ship AI systems for businesses across Canada, the US, the UAE, New Zealand and Pakistan, on your time zone.",
 
   /** Owner-confirmed 12 Nov 2026. Named as a partnership only; no office claim in Canada. */
   canadaPartner: {
-    name: "Camizo Tech",
-    statement: "In Canada we work in partnership with Camizo Tech.",
+    name: "Camzio Tech",
+    statement: "In Canada we work in partnership with Camzio Tech.",
   },
 
   founder: {

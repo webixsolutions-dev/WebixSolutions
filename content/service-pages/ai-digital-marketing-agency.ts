@@ -6,9 +6,9 @@ export const AI_DIGITAL_MARKETING_AGENCY: ServicePageContent = {
   heroKicker: "Human strategy augmented by AI systems",
   intro: [
     "We combine senior marketing strategists with custom AI systems to deliver faster campaigns, sharper creative testing, smarter SEO research and instant lead follow-up.",
-    "Our remote team of 20+ in Pakistan serves growing businesses across Canada, the US, the UAE, New Zealand and Pakistan on your business hours.",
+    "Our team of 20+ in Pakistan serves growing businesses across Canada, the US, the UAE, New Zealand and Pakistan on your business hours.",
   ],
-  proofChip: "20+ person remote team with proprietary AI workflows",
+  proofChip: "20+ person team with proprietary AI workflows",
 
   outcomes: {
     h2: "Marketing that moves faster without sacrificing quality",
@@ -27,7 +27,7 @@ export const AI_DIGITAL_MARKETING_AGENCY: ServicePageContent = {
       {
         title: "Rigorous human verification on every asset",
         detail:
-          "Every ad, blog post, email and automation step is vetted and edited by our remote specialists before it ever goes live to the public.",
+          "Every ad, blog post, email and automation step is vetted and edited by our specialists before it ever goes live to the public.",
       },
     ],
   },
@@ -146,7 +146,7 @@ export const AI_DIGITAL_MARKETING_AGENCY: ServicePageContent = {
 
   tools: {
     h2: "Our integrated marketing and AI stack",
-    lead: "The battle-tested technologies our remote specialists use every day.",
+    lead: "The battle-tested technologies our specialists use every day.",
     items: [
       { name: "OpenAI GPT-4o", role: "Drafting, prompt workflows and conversational agents" },
       { name: "Claude 3.5 Sonnet", role: "Complex copy editing and tone-of-voice alignment" },

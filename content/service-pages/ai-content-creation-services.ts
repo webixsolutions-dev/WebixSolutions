@@ -127,7 +127,7 @@ export const AI_CONTENT_CREATION_SERVICES: ServicePageContent = {
   },
 
   proof: {
-    h2: "Content engineered by our remote publishing team",
+    h2: "Content engineered by our publishing team",
     lead: "Our team writes content across B2B technology, e-commerce, home services, healthcare and digital marketing.",
     statKeys: ["cmsWebsitesBuilt", "totalClientsServed", "teamSize"],
     showOwnBrands: true,

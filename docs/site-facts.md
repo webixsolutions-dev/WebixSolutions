@@ -18,7 +18,7 @@ Never invent a statistic, award, client name, review, certification or year.
 | Phone | +92 322 9472354 | Confirmed |
 | UAE phone (Dubai) | +971 50 406 8312 | Confirmed by owner, 12 Nov 2026. Shown on /locations/uae/ and /contact-us/ |
 | New Zealand phone (Auckland) | +64 22 611 5072 | Confirmed by owner, 12 Nov 2026. Shown on /contact-us/ (no NZ location page published yet) |
-| Canada partner | Camizo Tech — partnership | Confirmed by owner, 12 Nov 2026. Say "in partnership with"; do not claim a Webix office in Canada |
+| Canada partner | Camzio Tech — partnership | Confirmed by owner, 12 Nov 2026. Say "in partnership with"; do not claim a Webix office in Canada |
 | Email | info@webixsolutions.com | Confirmed |
 | Founded | 2023 — current site says "3+ years delivering results" | [CONFIRM exact year] |
 | In-house team | 20+ people across SMM, SEO, paid ads, video, graphic design, WordPress, full-stack, Flutter, CRM, Google Maps/GBP, product management | Confirmed (profile). Note: internal CRM shows 10 active employees — use "20+" only if true today [CONFIRM] |

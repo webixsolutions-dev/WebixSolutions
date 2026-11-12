@@ -159,7 +159,7 @@ export const HOME_SERVICES_CONTRACTORS_PAGE: IndustryPageContent = {
     {
       question: "How fast can you launch a complete contractor website?",
       answer:
-        "Our standard turnaround is 10 to 14 business days from receipt of your photos, license details, and service list. Because our 20+ person team works under one roof, copywriting, UI design, mobile development, and Google Maps setup happen in parallel sprints without subcontractor delays.",
+        "Our standard turnaround is 10 to 14 business days from receipt of your photos, license details, and service list. Because our 20+ person team works as one unit, copywriting, UI design, mobile development, and Google Maps setup happen in parallel sprints without subcontractor delays.",
     },
   ],
   relatedServices: [

@@ -21,7 +21,7 @@ export default function PrivacyPolicyPage() {
       <section className="space-y-3">
         <h2 className="type-h3 text-[#111215]">1. Overview & Data Controller</h2>
         <p>
-          Webix Solutions (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) is a remote digital marketing, web engineering, and AI automation agency headquartered in {SITE_FACTS.headquarters.fullDisplay}. We respect your fundamental right to privacy and are committed to safeguarding personal data in transparent compliance with global privacy standards, including:
+          Webix Solutions (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) is a digital marketing, web engineering, and AI automation agency headquartered in {SITE_FACTS.headquarters.fullDisplay}. We respect your fundamental right to privacy and are committed to safeguarding personal data in transparent compliance with global privacy standards, including:
         </p>
         <ul className="list-disc list-inside space-y-1 pl-2">
           <li><strong>Canada:</strong> Personal Information Protection and Electronic Documents Act (PIPEDA)</li>

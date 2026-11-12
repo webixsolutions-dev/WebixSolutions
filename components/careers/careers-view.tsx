@@ -42,7 +42,7 @@ export function CareersView() {
           <div className="flex flex-wrap items-center gap-4 text-xs text-[#D1D5DB] pt-2 border-t border-white/10">
             <span className="inline-flex items-center gap-1.5">
               <MapPin className="h-4 w-4 text-[#ED1C24]" />
-              <span>Campus in Dunyapur, Punjab</span>
+              <span>Based in Dunyapur, Punjab</span>
             </span>
             <span>•</span>
             <span className="inline-flex items-center gap-1.5">

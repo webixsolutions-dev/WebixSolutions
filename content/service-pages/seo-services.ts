@@ -86,7 +86,7 @@ export const SEO_SERVICES: ServicePageContent = {
 
   proof: {
     h2: "Who does your SEO",
-    lead: "SEO is handled by our remote SEO team in Pakistan, alongside the developers who can ship technical fixes directly.",
+    lead: "SEO is handled by our SEO team in Pakistan, alongside the developers who can ship technical fixes directly.",
     statKeys: ["teamSize", "totalClientsServed", "cmsWebsitesBuilt"],
   },
 

@@ -12,7 +12,7 @@ export const PAKISTAN_LOCATION_PAGE: LocationPageContent = {
     "Pakistani businesses frequently struggle with unreliable freelance developers, generic templates, and expensive ad spend wasted on unconfirmed Cash on Delivery (COD) orders.",
     "Headquartered in Dunyapur with in-person meetings in Lahore by appointment, our team of 20+ engineers international-grade web platforms, WhatsApp automation flows, and high-converting paid campaigns built specifically for Pakistani consumers.",
   ],
-  heroChip: "20+ person remote team headquartered in Dunyapur, Punjab",
+  heroChip: "20+ person team headquartered in Dunyapur, Punjab",
   currencyCode: "PKR",
   currencyHeadline: "Direct billing in Pakistani Rupees (PKR) with local payment methods",
   currencyExplanation:
@@ -99,7 +99,7 @@ export const PAKISTAN_LOCATION_PAGE: LocationPageContent = {
     {
       question: "Where is your office located, and can we meet your leadership in person?",
       answer:
-        "Our central engineering and production campus is located in Dunyapur, Punjab. We regularly host prospective corporate clients and founders for in-person strategy consultations in Lahore by advance appointment, as well as conducting high-definition video discovery calls daily.",
+        "Our team is headquartered in Dunyapur, Punjab. We regularly host prospective corporate clients and founders for in-person strategy consultations in Lahore by advance appointment, as well as conducting high-definition video discovery calls daily.",
     },
     {
       question: "Do you quote projects and accept payments in Pakistani Rupees (PKR)?",

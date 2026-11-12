@@ -724,7 +724,7 @@ export const SERVICES_REGISTRY: ServiceEntry[] = [
       "AI content calendar",
       "AI generated social media content",
     ],
-    shortOutcome: "Monthly batches of carousels, graphics, reels and captions finished by remote designers.",
+    shortOutcome: "Monthly batches of carousels, graphics, reels and captions finished by designers.",
     startingPrice: "$149",
     priceUnit: "/month",
     confirmedPrice: false,
@@ -771,7 +771,7 @@ export const SERVICES_REGISTRY: ServiceEntry[] = [
     published: true,
     title: "Graphic Design & Creative Services | Webix Solutions",
     metaDescription:
-      "Logos, brand kits, social graphics, ad creatives, packaging and video editing from a remote creative team. Batches from $99.",
+      "Logos, brand kits, social graphics, ad creatives, packaging and video editing from a creative team. Batches from $99.",
     h1: "Graphic design and creative studio services",
     primaryKeyword: "graphic design services",
     secondaryKeywords: [

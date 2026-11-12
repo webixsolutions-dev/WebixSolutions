@@ -98,7 +98,7 @@ export function ContactView() {
     {
       question: "Do you have an office I can visit in person?",
       answer:
-        "Our central headquarters and production campus is located in Dunyapur, Punjab, Pakistan. We also host in-person meetings in Lahore by prior appointment, and run all client discovery sessions via Google Meet video calls.",
+        "Our headquarters is in Dunyapur, Punjab, Pakistan. We also host in-person meetings in Lahore by prior appointment, and run all client discovery sessions via Google Meet video calls.",
     },
     {
       question: "What should I prepare before our initial discussion?",

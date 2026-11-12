@@ -171,9 +171,9 @@ export function AboutView() {
       <Section surface="porcelain" previousSurface="graphite" notch spacing="default">
         <Container>
           <div className="max-w-3xl space-y-3 mb-12">
-            <Kicker>Specialized remote teams</Kicker>
+            <Kicker>Specialized teams</Kicker>
             <h2 className="type-h2 text-[#111215]">
-              Seven departments collaborating under one roof
+              Seven departments working as one team
             </h2>
             <p className="type-body text-[#454954]">
               We do not broker projects out to freelancers. Every deliverable is executed by our full-time developers, designers, copywriters, and paid media buyers in Pakistan.
@@ -326,7 +326,7 @@ export function AboutView() {
                 {SITE_FACTS.stats.teamSize.value}
               </div>
               <div className="text-xs font-semibold text-white">
-                Remote team Members
+                Team members
               </div>
               <p className="text-[11px] text-[#9CA3AF]">
                 Developers, designers, marketers and engineers in Pakistan.
@@ -417,7 +417,7 @@ export function AboutView() {
             <div className="lg:col-span-7 space-y-4">
               <Kicker>Headquarters & physical location</Kicker>
               <h2 className="type-h2 text-white">
-                Our central production campus in Dunyapur, Pakistan
+                Our base in Dunyapur, Pakistan
               </h2>
               <p className="type-body text-[#9CA3AF] leading-relaxed">
                 Operating outside high-cost metropolitan centers like New York, Toronto, or London allows us to pass substantial structural cost savings to clients while offering competitive, highly rewarding career paths to top technical talent in Pakistan.
@@ -448,10 +448,10 @@ export function AboutView() {
                   In-Person Visits
                 </div>
                 <h3 className="type-h3 text-white">
-                  Visiting our engineering campus
+                  Meeting us in person
                 </h3>
                 <p className="text-xs text-[#9CA3AF] leading-relaxed">
-                  Clients and partner agencies visiting Pakistan are welcome to tour our operations center in Dunyapur or schedule executive meetings in Lahore.
+                  Clients and partner agencies visiting Pakistan are welcome to meet us in Dunyapur or schedule executive meetings in Lahore.
                 </p>
                 <div className="pt-2">
                   <Button href="/contact-us/" variant="secondary" size="sm">
