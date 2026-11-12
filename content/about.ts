@@ -134,7 +134,7 @@ export const ABOUT_CONTENT = {
     },
     {
       q: "Where is Webix Solutions based?",
-      a: "Our central engineering and creative headquarters is located in Dunyapur, Punjab, Pakistan. We also host in-person meetings in Lahore by appointment, and serve clients globally across Canada, the US, the UAE, New Zealand, and Pakistan.",
+      a: "Our central engineering and creative headquarters is located in Punjab, Pakistan. We also host in-person meetings in Lahore by appointment, and serve clients globally across Canada, the US, the UAE, New Zealand, and Pakistan.",
     },
     {
       q: "Do you outsource any of your client work?",

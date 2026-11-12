@@ -87,11 +87,12 @@ export const SITE_FACTS = {
   },
 
   headquarters: {
-    addressLocality: "Dunyapur",
+    /** City is left out on purpose until the Lahore move; add it here and it flows to schema and copy. */
+    addressLocality: undefined as string | undefined,
     addressRegion: "Punjab",
     addressCountry: "PK",
     addressCountryName: "Pakistan",
-    fullDisplay: "Dunyapur, Punjab, Pakistan",
+    fullDisplay: "Punjab, Pakistan",
     secondaryNote: "Meetings in Lahore by appointment",
   },
 

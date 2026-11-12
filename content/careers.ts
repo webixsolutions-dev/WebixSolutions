@@ -19,14 +19,14 @@ export const CAREERS_CONTENT = {
   meta: {
     title: "Careers — Join Our Team | Webix Solutions",
     description:
-      "Explore engineering, digital marketing and AI automation roles at Webix Solutions in Dunyapur, Pakistan. Learn how we hire and view open positions.",
+      "Explore engineering, digital marketing and AI automation roles at Webix Solutions in Punjab, Pakistan. Learn how we hire and view open positions.",
     path: "/careers/",
   },
 
   hero: {
     kicker: "Join our team",
     h1: "Build with Webix Solutions",
-    lead: "We are an engineering-driven agency with a 20+ person team in Dunyapur, Pakistan. We build high-performance web systems, run paid marketing campaigns, and deploy production AI workflows for clients in North America, the Gulf, and New Zealand.",
+    lead: "We are an engineering-driven agency with a 20+ person team in Punjab, Pakistan. We build high-performance web systems, run paid marketing campaigns, and deploy production AI workflows for clients in North America, the Gulf, and New Zealand.",
   },
 
   howWeHire: [
@@ -79,7 +79,7 @@ export const CAREERS_CONTENT = {
       id: "fullstack-nextjs",
       title: "Senior Full-Stack Developer",
       department: "Custom Web & App Engineering",
-      location: "Dunyapur, Punjab (On-site)",
+      location: "Punjab, Pakistan",
       type: "Full-Time (Night Shift)",
       experience: "3+ years production experience",
       overview:
@@ -99,7 +99,7 @@ export const CAREERS_CONTENT = {
       id: "flutter-engineer",
       title: "Mobile Application Developer (Flutter)",
       department: "Custom Web & App Engineering",
-      location: "Dunyapur, Punjab (On-site)",
+      location: "Punjab, Pakistan",
       type: "Full-Time (Day Shift)",
       experience: "2+ years Flutter experience",
       overview:
@@ -119,7 +119,7 @@ export const CAREERS_CONTENT = {
       id: "paid-media-specialist",
       title: "Paid Media & Performance Marketing Buyer",
       department: "Performance Marketing",
-      location: "Dunyapur, Punjab (On-site)",
+      location: "Punjab, Pakistan",
       type: "Full-Time (Night Shift)",
       experience: "2+ years managing >$10k/mo ad spend",
       overview:
@@ -139,7 +139,7 @@ export const CAREERS_CONTENT = {
       id: "ai-automation-engineer",
       title: "AI Automation & Workflow Engineer",
       department: "AI & Autonomous Systems",
-      location: "Dunyapur, Punjab (On-site)",
+      location: "Punjab, Pakistan",
       type: "Full-Time (Flexible)",
       experience: "1+ years automation engineering",
       overview:
@@ -161,7 +161,7 @@ export const CAREERS_CONTENT = {
     {
       question: "Where is the team based?",
       answer:
-        "Our team is led from Dunyapur, Punjab. Working arrangements for each role, including shift and location, are agreed during hiring.",
+        "Our team is led from Punjab, Pakistan. Working arrangements for each role, including shift and location, are agreed during hiring.",
     },
     {
       question: "How do I apply for an open position?",

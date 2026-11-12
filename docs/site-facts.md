@@ -11,7 +11,8 @@ Never invent a statistic, award, client name, review, certification or year.
 | Legal / brand name | Webix Solutions (always two words — never "Webix" alone in titles, to separate us from the Webix UI library at webix.com) | Confirmed |
 | Founder & CEO | Haroon Sukhera | Confirmed |
 | Founder story | Started as a freelance WordPress/CMS developer, then built Webix Solutions into a full-service agency | Confirmed |
-| Headquarters (NAP) | Dunyapur, Punjab, Pakistan | Confirmed (matches current contact page + Google Business Profile — keep identical everywhere) |
+| Headquarters (NAP) | Punjab, Pakistan (shown on site). Current city: Dunyapur; moving to Lahore in early 2027 | Owner decision 12 Nov 2026: the site names the region only, so nothing changes at the move. When the Lahore address is final, set `headquarters.addressLocality` in `content/site-facts.ts` and update the Google Business Profile to match |
+| Team description | "Team of 20+" | Owner decision 12 Nov 2026: do not write "remote", "in-house", "campus" or "under one roof" in site copy |
 | Meetings in Lahore | Available by appointment | Confirmed by Haroon (a team member is in Lahore) |
 | Planned move | HQ moves to Lahore within ~6 months — when it happens, update NAP here, on GBP and in schema on the same day | Internal only, do not publish |
 | Markets served | Canada, United States, United Arab Emirates, New Zealand, Pakistan | Confirmed |

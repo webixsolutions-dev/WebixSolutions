@@ -10,9 +10,9 @@ export const PAKISTAN_LOCATION_PAGE: LocationPageContent = {
   h1: "Digital marketing, websites and AI for businesses in Pakistan",
   heroIntro: [
     "Pakistani businesses frequently struggle with unreliable freelance developers, generic templates, and expensive ad spend wasted on unconfirmed Cash on Delivery (COD) orders.",
-    "Headquartered in Dunyapur with in-person meetings in Lahore by appointment, our team of 20+ engineers international-grade web platforms, WhatsApp automation flows, and high-converting paid campaigns built specifically for Pakistani consumers.",
+    "Headquartered in Punjab with in-person meetings in Lahore by appointment, our team of 20+ engineers international-grade web platforms, WhatsApp automation flows, and high-converting paid campaigns built specifically for Pakistani consumers.",
   ],
-  heroChip: "20+ person team headquartered in Dunyapur, Punjab",
+  heroChip: "20+ person team headquartered in Punjab, Pakistan",
   currencyCode: "PKR",
   currencyHeadline: "Direct billing in Pakistani Rupees (PKR) with local payment methods",
   currencyExplanation:
@@ -90,7 +90,7 @@ export const PAKISTAN_LOCATION_PAGE: LocationPageContent = {
       "We prove our strategies on our own Pakistani commercial projects before offering them to clients. Our retail brand Zelvomart achieved 64 verified customer WhatsApp conversations at just Rs 15.01 each in a 30-day campaign, and our Miraj Builders platform provides an authoritative benchmark for Pakistani construction and real estate presentation.",
     takeaways: [
       "Proven track record lowering acquisition costs and managing COD fulfillment across Pakistani urban centers",
-      "Headquartered in Dunyapur with scheduled in-person client discovery meetings in Lahore",
+      "Headquartered in Punjab with scheduled in-person client discovery meetings in Lahore",
       "Direct technical team access via phone and WhatsApp in both Urdu and English",
       "Over 1,385 contributions across 96 repositories reflecting serious engineering discipline",
     ],
@@ -99,7 +99,7 @@ export const PAKISTAN_LOCATION_PAGE: LocationPageContent = {
     {
       question: "Where is your office located, and can we meet your leadership in person?",
       answer:
-        "Our team is headquartered in Dunyapur, Punjab. We regularly host prospective corporate clients and founders for in-person strategy consultations in Lahore by advance appointment, as well as conducting high-definition video discovery calls daily.",
+        "Our team is headquartered in Punjab, Pakistan. We regularly host prospective corporate clients and founders for in-person strategy consultations in Lahore by advance appointment, as well as conducting high-definition video discovery calls daily.",
     },
     {
       question: "Do you quote projects and accept payments in Pakistani Rupees (PKR)?",

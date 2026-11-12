@@ -104,7 +104,7 @@ export function AboutView() {
 
                 <div className="space-y-2 text-xs text-[#454954] leading-relaxed">
                   <p>
-                    • Leads the Webix Solutions team from Dunyapur, Punjab.
+                    • Leads the Webix Solutions team from Punjab, Pakistan.
                   </p>
                   <p>
                     • Built proprietary brands: Zelvomart, LaptopSouq.ae & Miraj Builders.
@@ -268,7 +268,7 @@ export function AboutView() {
                       <span className="text-[#16A34A]">9:00 AM – 1:00 PM & 9:00 PM – 5:00 AM</span>
                     </div>
                     <p className="text-[11px] text-[#9CA3AF]">
-                      Central HQ operations in Dunyapur & Lahore
+                      Led from Punjab, Pakistan
                     </p>
                   </div>
 
@@ -417,7 +417,7 @@ export function AboutView() {
             <div className="lg:col-span-7 space-y-4">
               <Kicker>Headquarters & physical location</Kicker>
               <h2 className="type-h2 text-white">
-                Our base in Dunyapur, Pakistan
+                Our base in Punjab, Pakistan
               </h2>
               <p className="type-body text-[#9CA3AF] leading-relaxed">
                 Operating outside high-cost metropolitan centers like New York, Toronto, or London allows us to pass substantial structural cost savings to clients while offering competitive, highly rewarding career paths to top technical talent in Pakistan.
@@ -451,7 +451,7 @@ export function AboutView() {
                   Meeting us in person
                 </h3>
                 <p className="text-xs text-[#9CA3AF] leading-relaxed">
-                  Clients and partner agencies visiting Pakistan are welcome to meet us in Dunyapur or schedule executive meetings in Lahore.
+                  Clients and partner agencies visiting Pakistan are welcome to meet us in Lahore by appointment.
                 </p>
                 <div className="pt-2">
                   <Button href="/contact-us/" variant="secondary" size="sm">

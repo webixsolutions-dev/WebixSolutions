@@ -36,7 +36,7 @@ export default function CareersPage() {
           "@type": "Place",
           address: {
             "@type": "PostalAddress",
-            addressLocality: SITE_FACTS.headquarters.addressLocality,
+            ...(SITE_FACTS.headquarters.addressLocality ? { addressLocality: SITE_FACTS.headquarters.addressLocality } : {}),
             addressRegion: SITE_FACTS.headquarters.addressRegion,
             addressCountry: SITE_FACTS.headquarters.addressCountry,
           },

@@ -20,7 +20,7 @@ ChatGPT's GPTBot, ClaudeBot and PerplexityBot do **not** run JavaScript. If text
 - Brand is always "Webix Solutions" (two words) in titles, schema, OG — never "Webix" alone (collides with the Webix UI library).
 
 ## Structured data (JSON-LD, server-rendered)
-- Layout: `@graph` with Organization (+ProfessionalService) `#organization`, Person `#founder` (Haroon Sukhera), WebSite `#website`. NAP = Dunyapur, Punjab, PK; phone +92-322-9472354; email info@webixsolutions.com; `areaServed` CA, US, AE, NZ, PK.
+- Layout: `@graph` with Organization (+ProfessionalService) `#organization`, Person `#founder` (Haroon Sukhera), WebSite `#website`. NAP = Punjab, PK (region only until the Lahore move; see `docs/site-facts.md`); phone +92-322-9472354; email info@webixsolutions.com; `areaServed` CA, US, AE, NZ, PK.
 - Service pages: Service + BreadcrumbList + FAQPage. Pricing/offers: Offer items (confirmed prices only). Blog: BlogPosting. Case studies: CreativeWork. Contact: ContactPage. About: AboutPage.
 - Only mark up content that is visible and true. **Never** AggregateRating/Review for our own business. Never fake addresses for CA/US/AE/NZ.
 - Build JSON-LD with typed helpers in `lib/schema.ts`; validate with `schema-dts` types.

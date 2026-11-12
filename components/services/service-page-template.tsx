@@ -74,7 +74,7 @@ export function ServicePageTemplate({
     {
       title: "Direct engineering team",
       detail:
-        "You work directly with our project leads in Dunyapur and Lahore during your business hours, without layers of account executives.",
+        "You work directly with our project leads in Pakistan during your business hours, without layers of account executives.",
     },
     {
       title: "100% full account and code ownership",
