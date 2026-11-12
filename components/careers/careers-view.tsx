@@ -104,7 +104,7 @@ export function CareersView() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
               <Kicker>Operating culture</Kicker>
-              <h2 className="type-h2 text-white">
+              <h2 className="type-h2 text-[var(--text-primary)]">
                 Engineering excellence with respect for your life outside work
               </h2>
 
@@ -112,13 +112,13 @@ export function CareersView() {
                 {workplaceValues.map((val, idx) => (
                   <div
                     key={idx}
-                    className="p-5 cut-tr-sm border border-white/10 bg-white/[0.03] space-y-1.5"
+                    className="p-5 cut-tr-sm border border-[var(--border)] bg-white space-y-1.5"
                   >
-                    <h3 className="font-display text-sm font-bold text-white flex items-center gap-2">
+                    <h3 className="font-display text-sm font-bold text-[var(--text-primary)] flex items-center gap-2">
                       <CheckCircle2 className="h-4 w-4 text-[#ED1C24]" />
                       <span>{val.title}</span>
                     </h3>
-                    <p className="text-xs text-[#9CA3AF] leading-relaxed pl-6">
+                    <p className="text-sm text-[var(--text-secondary)] leading-relaxed pl-6">
                       {val.description}
                     </p>
                   </div>

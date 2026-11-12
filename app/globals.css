@@ -126,11 +126,11 @@
 }
 
 [data-surface="oxblood"] {
-  --surface: #5A0B10;
-  --surface-elevated: #6E0E15;
+  --surface: #0A0A0C;
+  --surface-elevated: #17181D;
   --text-primary: #F5F6F8;
-  --text-secondary: #E2C6C8;
-  --text-muted: #B88E91;
+  --text-secondary: #C1C6D0;
+  --text-muted: #A3A8B3;
   --border: rgba(255, 255, 255, 0.14);
   --accent: #ED1B24;
   --accent-hover: #FF3B42;

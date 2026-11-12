@@ -263,3 +263,45 @@
 @media (max-width: 560px) {
   .studio-footer-wordmark { font-size: 8.6vw; }
 }
+
+/* ==================================================================
+   Interior pages: same flat logo surfaces as the home page
+   ================================================================== */
+#main:not(:has(> .studio-hero)) :is(section[data-surface], .studio-section, [data-studio-light])::before { display: none; }
+#main:not(:has(> .studio-hero)) :is([data-section-spacing="hero"], .interior-booking-hero),
+.studio-error-page { --surface: var(--home-black); background-color: var(--home-black); }
+#main:not(:has(> .studio-hero)) :is([data-section-spacing="hero"], .interior-booking-hero) h1,
+.studio-error-page h1 { letter-spacing: -.03em; line-height: 1; }
+#main:not(:has(> .studio-hero)) .type-h2 { letter-spacing: -.028em; }
+#main:not(:has(> .studio-hero)) [data-surface="porcelain"] { --surface: #fff; --surface-elevated: #f4f5f7; background-color: #fff; }
+#main:not(:has(> .studio-hero)) [data-surface="porcelain"] :is(div, article)[class*="bg-white"] { background-color: #f6f7f9; }
+.interior-links { background: var(--home-graphite); border-color: #ffffff24; }
+.interior-proof-strip { background: #ffffff38; }
+.interior-proof-strip > div { background: var(--home-graphite); }
+
+/* Small text colours that miss AA contrast on these surfaces */
+#main :is([data-surface="porcelain"],[data-surface="steel"]) .text-\[\#ED1C24\] { color: var(--red-ink); }
+#main :is([data-surface="graphite"],[data-surface="oxblood"]) .text-\[\#ED1C24\],
+#main .text-white .text-\[\#ED1C24\] { color: var(--studio-ember); }
+#main :is([data-surface="porcelain"],[data-surface="steel"]) .text-\[\#717684\] { color: #5b606b; }
+#main :is([data-surface="graphite"],[data-surface="oxblood"]) .text-\[\#717684\] { color: #a3a8b3; }
+#main :is([data-surface="porcelain"],[data-surface="steel"]) .text-\[\#16A34A\] { color: #15803d; }
+#main .bg-\[\#ED1C24\] { background-color: var(--red-ink); }
+
+/* Closing call: one full-width red band per page, replacing the footer band */
+.interior-closing[data-surface="oxblood"] {
+  --surface: var(--studio-red); --text-primary: #fff;
+  background-color: var(--studio-red); border: 0; padding-block: clamp(44px,6vw,88px);
+}
+.interior-closing-panel { padding: 0; border: 0; background: none; clip-path: none; }
+.interior-closing-panel::before { display: none; }
+.interior-closing-panel .type-h1 { color: #fff; font-size: clamp(2.3rem, 5vw, 4.8rem); letter-spacing: -.035em; line-height: 1; }
+.interior-closing-panel .type-lead { color: #fff; font-size: 1.1875rem; font-weight: 700; }
+.interior-closing-panel .interior-closing-button,.interior-closing-button > span[aria-hidden] { background-color: var(--home-black); color: #fff; }
+body:has(.interior-closing) .studio-footer-cta { display: none; }
+
+/* Cards that flip the surface: light cards inside dark sections and the reverse */
+#main [class*="bg-white"]:not([class*="bg-white/"]) .text-\[\#ED1C24\] { color: var(--red-ink); }
+#main [class*="bg-white"]:not([class*="bg-white/"]) .text-\[\#717684\] { color: #5b606b; }
+#main .text-white .text-\[\#16A34A\] { color: #4ade80; }
+#main [data-surface="red"] :is(a, button) > span.relative { color: #fff; }
