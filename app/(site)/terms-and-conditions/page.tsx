@@ -78,7 +78,7 @@ export default function TermsAndConditionsPage() {
       <section className="space-y-3">
         <h2 className="type-h3 text-[#111215]">8. Governing Law & Dispute Resolution</h2>
         <p>
-          These Terms shall be governed by and construed in accordance with the laws of Pakistan. The parties agree to make good-faith efforts to resolve any disputes amicably through executive negotiations before pursuing formal arbitration in Dunyapur or Lahore, Punjab, Pakistan.
+          These Terms shall be governed by and construed in accordance with the laws of Pakistan. The parties agree to make good-faith efforts to resolve any disputes amicably through executive negotiations before pursuing formal arbitration in Punjab, Pakistan.
         </p>
       </section>
 

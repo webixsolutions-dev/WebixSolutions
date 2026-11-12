@@ -15,7 +15,7 @@ export async function GET() {
   // Header & Identity
   lines.push(`# Webix Solutions — Full Knowledge Base & Service Registry`);
   lines.push(``);
-  lines.push(`> Webix Solutions is a full-service digital agency with a remote team of 20+ in Pakistan. We design and code custom websites, execute search engine optimization (SEO) and paid advertising, manage social media, and build AI chatbots, AI voice agents and business automations for companies across Canada, the United States, the United Arab Emirates, New Zealand, and Pakistan.`);
+  lines.push(`> Webix Solutions is a full-service digital agency with a team of 20+ in Pakistan. We design and code custom websites, execute search engine optimization (SEO) and paid advertising, manage social media, and build AI chatbots, AI voice agents and business automations for companies across Canada, the United States, the United Arab Emirates, New Zealand, and Pakistan.`);
   lines.push(``);
   lines.push(`## Entity Disambiguation`);
   lines.push(`Webix Solutions (webixsolutions.com) is an independent digital marketing, web engineering and AI automation agency. Webix Solutions operates independently of the Webix JavaScript UI library (webix.com).`);
@@ -24,8 +24,8 @@ export async function GET() {
   // Key Facts
   lines.push(`## Company Facts & Operating Parameters`);
   lines.push(`- Founder & CEO: ${SITE_FACTS.founder.name}`);
-  lines.push(`- Headquarters: ${SITE_FACTS.headquarters.fullDisplay} (Meetings in Lahore by appointment)`);
-  lines.push(`- Remote team: ${SITE_FACTS.stats.teamSize.label} (${SITE_FACTS.stats.teamSize.detail})`);
+  lines.push(`- Headquarters: ${SITE_FACTS.headquarters.fullDisplay} (in-person meetings by appointment)`);
+  lines.push(`- Team: ${SITE_FACTS.stats.teamSize.label} (${SITE_FACTS.stats.teamSize.detail})`);
   lines.push(`- Markets Served: Canada (CA), United States (US), United Arab Emirates (AE), New Zealand (NZ), Pakistan (PK)`);
   lines.push(`- Working Shifts: Day shift ${SITE_FACTS.shifts.dayShiftPkt} (overlaps UAE & Gulf business hours); Night shift ${SITE_FACTS.shifts.nightShiftPkt} (overlaps North American ET/PT and New Zealand mornings)`);
   lines.push(`- Primary Contact Phone / WhatsApp: ${SITE_FACTS.contact.phoneDisplay}`);

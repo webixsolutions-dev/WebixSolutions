@@ -29,7 +29,7 @@ const FAQS = [
   {
     question: "Have you worked with businesses in my exact niche?",
     answer:
-      "Across 94 custom-coded builds and 120+ clients, our remote team has delivered projects for online retailers, roofers, electrical contractors, equipment leasing companies, real estate developers, healthcare clinics, and B2B consultancies across North America, the UAE, and Pakistan. On our strategy call, we share relevant live examples and case studies.",
+      "Across 94 custom-coded builds and 120+ clients, our team has delivered projects for online retailers, roofers, electrical contractors, equipment leasing companies, real estate developers, healthcare clinics, and B2B consultancies across North America, the UAE, and Pakistan. On our strategy call, we share relevant live examples and case studies.",
   },
   {
     question: "Do you work with early-stage startups and new businesses?",

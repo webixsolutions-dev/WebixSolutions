@@ -306,7 +306,7 @@ export function OffersLandingView({ nextSlot }: OffersLandingViewProps) {
 
             <div className="p-8 rounded-xl bg-[#1C1E24] border border-white/10 space-y-4">
               <span className="text-xs font-semibold uppercase tracking-wider text-[#16A34A]">
-                Engineering Campus
+                Engineering team
               </span>
               <div className="font-display text-3xl font-bold text-white">
                 1,385 contributions

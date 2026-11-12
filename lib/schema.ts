@@ -9,7 +9,7 @@ export const WEBSITE_ID = `${SITE_URL}/#website`;
 /**
  * Site-wide JSON-LD @graph injected once in app/layout.tsx:
  * Organization + Person (Haroon Sukhera) + WebSite.
- * Address is city-level only (Dunyapur, Punjab, PK) — no streetAddress or postalCode.
+ * Address is city-level only (Punjab, Pakistan, PK) — no streetAddress or postalCode.
  */
 export function buildSiteGraphJsonLd() {
   return {
@@ -32,7 +32,7 @@ export function buildSiteGraphJsonLd() {
         },
         address: {
           "@type": "PostalAddress",
-          addressLocality: SITE_FACTS.headquarters.addressLocality,
+          ...(SITE_FACTS.headquarters.addressLocality ? { addressLocality: SITE_FACTS.headquarters.addressLocality } : {}),
           addressRegion: SITE_FACTS.headquarters.addressRegion,
           addressCountry: SITE_FACTS.headquarters.addressCountry,
         },

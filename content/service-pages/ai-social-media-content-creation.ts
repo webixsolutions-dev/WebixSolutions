@@ -3,12 +3,12 @@ import type { ServicePageContent } from "./types";
 /** /ai-social-media-content-creation/ — brief: docs/03 "AI social media content". */
 export const AI_SOCIAL_MEDIA_CONTENT_CREATION: ServicePageContent = {
   slug: "ai-social-media-content-creation",
-  heroKicker: "Monthly social batches designed remote",
+  heroKicker: "Monthly social batches designed by our team",
   intro: [
     "We produce monthly batches of branded social media carousels, graphics, short reels and captions using AI ideation finished by experienced graphic designers.",
     "A full month of on-brand content planned, designed and approved before anything is scheduled, for businesses in Canada, the US, the UAE, New Zealand and Pakistan.",
   ],
-  proofChip: "50+ social accounts managed by our remote team",
+  proofChip: "50+ social accounts managed by our team",
 
   outcomes: {
     h2: "Consistent social presence without creative burnout",
@@ -22,7 +22,7 @@ export const AI_SOCIAL_MEDIA_CONTENT_CREATION: ServicePageContent = {
       {
         title: "Polished by human graphic designers",
         detail:
-          "AI generates the concept angles and initial hooks, while our remote design team applies your exact brand typography, hex codes and layout standards.",
+          "AI generates the concept angles and initial hooks, while our design team applies your exact brand typography, hex codes and layout standards.",
       },
       {
         title: "Platform-specific formatting that performs",
@@ -117,7 +117,7 @@ export const AI_SOCIAL_MEDIA_CONTENT_CREATION: ServicePageContent = {
   },
 
   proof: {
-    h2: "Creative produced by our remote media team",
+    h2: "Creative produced by our media team",
     lead: "Our team manages social feeds for retail brands, professional services, property developers and our own ventures.",
     statKeys: ["socialAccountsManaged", "teamSize", "totalClientsServed"],
     showOwnBrands: true,
@@ -152,7 +152,7 @@ export const AI_SOCIAL_MEDIA_CONTENT_CREATION: ServicePageContent = {
     {
       question: "Will the content look robotic or obviously AI-generated?",
       answer:
-        "No. We never post unedited AI output. AI is used behind the scenes for audience research and draft hooks, while our experienced remote graphic designers and video editors craft every visual element using your official brand assets and typography.",
+        "No. We never post unedited AI output. AI is used behind the scenes for audience research and draft hooks, while our experienced graphic designers and video editors craft every visual element using your official brand assets and typography.",
     },
     {
       question: "Do you schedule and post the content for us?",

@@ -48,7 +48,7 @@ export default function CodeOfConductPage() {
       <section className="space-y-3">
         <h2 className="type-h3 text-[#111215]">4. Workplace Culture & Equal Opportunity</h2>
         <p>
-          We provide a safe, merit-based, and inclusive work environment at our Dunyapur campus and across remote shifts. Discrimination, harassment, or intimidation based on gender, ethnicity, religion, or background is strictly prohibited and subject to immediate termination.
+          We provide a safe, merit-based, and inclusive work environment across every team and shift. Discrimination, harassment, or intimidation based on gender, ethnicity, religion, or background is strictly prohibited and subject to immediate termination.
         </p>
       </section>
 

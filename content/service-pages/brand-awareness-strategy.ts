@@ -8,7 +8,7 @@ export const BRAND_AWARENESS_STRATEGY: ServicePageContent = {
     "We build clear brand positioning, core messaging frameworks and multichannel awareness campaigns that make your business recognizable, distinct and easy to recommend.",
     "Designed for growing companies across Canada, the US, the UAE, New Zealand and Pakistan who want to escape competing on price alone.",
   ],
-  proofChip: "Strategic brand positioning backed by remote campaign execution",
+  proofChip: "Strategic brand positioning backed by campaign execution",
 
   outcomes: {
     h2: "A brand that stands out clearly in a crowded market",

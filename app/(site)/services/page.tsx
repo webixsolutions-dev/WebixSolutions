@@ -63,7 +63,7 @@ const FAQS = [
   {
     question: "Can I combine services across different categories?",
     answer:
-      "Yes. Most of our clients combine Build and Grow services (e.g. a Next.js or Shopify redesign paired with ongoing SEO and paid ads). Because our 20+ person team works under one roof in Pakistan, developers, ad specialists, and AI engineers collaborate directly on your project without external subcontractor delays.",
+      "Yes. Most of our clients combine Build and Grow services (e.g. a Next.js or Shopify redesign paired with ongoing SEO and paid ads). Because our 20+ person team works as one unit, developers, ad specialists, and AI engineers collaborate directly on your project without external subcontractor delays.",
   },
   {
     question: "Do you offer monthly growth packages?",

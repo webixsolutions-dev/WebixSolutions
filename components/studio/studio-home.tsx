@@ -113,7 +113,7 @@ export function StudioHome({ nextSlot }: { nextSlot: NextSlotResult }) {
       </section>
       <section className="studio-section studio-dark studio-market-section" id="our-markets" data-studio-light>
         <div className="studio-wrap studio-market-grid">
-          <div data-studio-reveal><p className="studio-label"><span /> Where we work</p><h2>Based in Pakistan. Working worldwide.</h2><p className="studio-section-lead">Our remote team works with clients in Canada, the United States, the United Arab Emirates, New Zealand and Pakistan. We plan calls and handovers around your time zone.</p></div>
+          <div data-studio-reveal><p className="studio-label"><span /> Where we work</p><h2>Based in Pakistan. Working worldwide.</h2><p className="studio-section-lead">Our team works with clients in Canada, the United States, the United Arab Emirates, New Zealand and Pakistan. We plan calls and handovers around your time zone.</p></div>
           <MarketGlobe />
         </div>
       </section>

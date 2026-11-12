@@ -10,7 +10,7 @@ export const CANADA_LOCATION_PAGE: LocationPageContent = {
     "Websites, SEO, Meta and Google ads and AI automation for Canadian businesses — working Eastern and Pacific business hours. Prices in CAD.",
   h1: "Digital marketing, websites and AI for businesses in Canada",
   heroIntro: [
-    "We work remotely with Canadian businesses and agency partners on websites, local search and customer intake.",
+    "We work with Canadian businesses and agency partners on websites, local search and customer intake.",
     "For Calgary home services, Camz Cleaning is a public example of service-area pages, online pricing and booking.",
   ],
   heroChip: "Eastern & Pacific working hours overlap",

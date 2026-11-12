@@ -99,7 +99,7 @@ export function LocationPageTemplate({
                 {content.heroChip}
               </Chip>
               <span className="text-xs text-[#A7ACB8]">
-                Quotes in {content.currencyCode} · Team in Dunyapur, Pakistan
+                Quotes in {content.currencyCode} · Team in Punjab, Pakistan
               </span>
             </div>
             {content.partnerNote && (

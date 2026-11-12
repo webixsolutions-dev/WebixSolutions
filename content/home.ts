@@ -11,7 +11,7 @@ export const HOME_CONTENT = {
   meta: {
     title: "Digital Marketing, Web & AI Agency | Webix Solutions",
     description:
-      "Websites, SEO, paid ads, social media and AI automation from a remote team of 20+. Serving Canada, the US, UAE and NZ. Book a free strategy call.",
+      "Websites, SEO, paid ads, social media and AI automation from a team of 20+. Serving Canada, the US, UAE and NZ. Book a free strategy call.",
   },
 
   hero: {
@@ -31,7 +31,7 @@ export const HOME_CONTENT = {
 
   servicesSection: {
     kicker: "Services organized by business outcome",
-    h2: "One remote team for your website, growth marketing and AI systems",
+    h2: "One team for your website, growth marketing and AI systems",
     lead:
       "Hire us for a single build or combine web development, search, paid media and AI automation under one team without coordinating multiple freelancers.",
   },
@@ -94,7 +94,7 @@ export const HOME_CONTENT = {
         number: "03",
         title: "Build & launch",
         description:
-          "Our remote developers, designers, marketers and AI engineers build on a staging link, verify forms and tracking, and launch cleanly.",
+          "Our developers, designers, marketers and AI engineers build on a staging link, verify forms and tracking, and launch cleanly.",
       },
       {
         number: "04",
@@ -139,7 +139,7 @@ export const HOME_CONTENT = {
     {
       question: "What does Webix Solutions do?",
       answer:
-        "Webix Solutions is a full-service digital marketing, web development and AI automation agency with a remote team of 20+ in Pakistan. We build custom-coded and CMS websites, manage SEO, AEO, GEO, paid ads and social media, and develop custom CRM, client portals and AI workflows for businesses in Canada, the United States, the UAE, New Zealand and Pakistan.",
+        "Webix Solutions is a full-service digital marketing, web development and AI automation agency with a team of 20+ in Pakistan. We build custom-coded and CMS websites, manage SEO, AEO, GEO, paid ads and social media, and develop custom CRM, client portals and AI workflows for businesses in Canada, the United States, the UAE, New Zealand and Pakistan.",
     },
     {
       question: "How much does a website or monthly marketing package cost?",
@@ -149,7 +149,7 @@ export const HOME_CONTENT = {
     {
       question: "Where is your team located and what hours do you work?",
       answer:
-        "Our headquarters is in Dunyapur, Punjab, Pakistan, and our team works remotely. Meetings in Lahore are available by appointment. We run two shifts: a day shift starting at 9:00 AM Pakistan time (overlapping UAE and Pakistani business hours) and a night shift from 9:00 PM to 5:00 AM Pakistan time (overlapping Eastern, Pacific and New Zealand mornings).",
+        "Our headquarters is in Punjab, Pakistan. In-person meetings are available by appointment. We run two shifts: a day shift starting at 9:00 AM Pakistan time (overlapping UAE and Pakistani business hours) and a night shift from 9:00 PM to 5:00 AM Pakistan time (overlapping Eastern, Pacific and New Zealand mornings).",
     },
     {
       question: "Do you build with WordPress, Shopify, Webflow or Framer?",

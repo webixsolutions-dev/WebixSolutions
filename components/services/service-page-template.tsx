@@ -72,9 +72,9 @@ export function ServicePageTemplate({
         "Every project is architected for speed, conversion rate optimization and search visibility across North America, the UAE and Pakistan.",
     },
     {
-      title: "Direct remote engineering team",
+      title: "Direct engineering team",
       detail:
-        "You work directly with our project leads in Dunyapur and Lahore during your business hours, without layers of account executives.",
+        "You work directly with our project leads in Pakistan during your business hours, without layers of account executives.",
     },
     {
       title: "100% full account and code ownership",
@@ -138,7 +138,7 @@ export function ServicePageTemplate({
       stepNumber: "03",
       title: "Build and review",
       description:
-        "Our remote team builds on a private staging link for your feedback, verification and testing.",
+        "Our team builds on a private staging link for your feedback, verification and testing.",
     },
     {
       stepNumber: "04",
@@ -874,7 +874,7 @@ export function ServicePageTemplate({
               Explore complementary services and industry solutions
             </h2>
             <p className="type-body text-[#454954]">
-              Combine services under one remote team without coordinating multiple external agencies or freelancers.
+              Combine services under one team without coordinating multiple external agencies or freelancers.
             </p>
           </div>
 

@@ -11,7 +11,7 @@ import { WhiteLabelView } from "@/components/white-label/white-label-view";
 const WHITE_LABEL_TITLE =
   "White-Label Digital & AI Partner | Webix Solutions";
 const WHITE_LABEL_DESCRIPTION =
-  "Outsource websites, social media, SEO and AI automation to a remote team that works your hours. Unbranded delivery, NDA, partner pricing.";
+  "Outsource websites, social media, SEO and AI automation to a team that works your hours. Unbranded delivery, NDA, partner pricing.";
 
 export const metadata: Metadata = buildMetadata({
   title: WHITE_LABEL_TITLE,
@@ -23,7 +23,7 @@ const FAQS = [
   {
     question: "Will my agency's clients ever know that Webix Solutions exists?",
     answer:
-      "No. We operate strictly as your behind-the-scenes engineering and creative production campus. All Git commit histories, staging links, Figma files, and code comments are completely unbranded or tagged with your agency credentials. We sign strict non-disclosure and non-solicitation agreements before receiving any project files.",
+      "No. We operate strictly as your behind-the-scenes engineering and creative production team. All Git commit histories, staging links, Figma files, and code comments are completely unbranded or tagged with your agency credentials. We sign strict non-disclosure and non-solicitation agreements before receiving any project files.",
   },
   {
     question: "How do you guarantee code quality and design standards?",
@@ -38,7 +38,7 @@ const FAQS = [
   {
     question: "Can your team attend client video calls as our internal technical team?",
     answer:
-      "Yes. For select enterprise partners, our senior engineers and technical architects can attend video conferences using your agency's email alias and branded background, acting seamlessly as your remote engineering department to help scope complex requirements.",
+      "Yes. For select enterprise partners, our senior engineers and technical architects can attend video conferences using your agency's email alias and branded background, acting as your extended engineering department to help scope complex requirements.",
   },
   {
     question: "How do partner pricing and invoicing work?",
