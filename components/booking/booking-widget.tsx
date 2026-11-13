@@ -3,7 +3,7 @@
 import * as React from "react";
 import { useEffect, useId, useMemo, useRef, useState, type FormEvent } from "react";
 import Script from "next/script";
-import { CalendarDays, Check, ChevronLeft, ChevronRight } from "lucide-react";
+import { CalendarDays, Check, ChevronLeft, ChevronRight, Globe } from "lucide-react";
 import { BOOKING_CONFIG } from "@/config/booking";
 import { getPublishedServices } from "@/content/services";
 import { SITE_FACTS } from "@/content/site-facts";
@@ -50,6 +50,7 @@ export function BookingWidget({
   const [loading, setLoading] = useState(true);
   const [unavailable, setUnavailable] = useState(false);
   const [requestOnly, setRequestOnly] = useState(false);
+  const [zoneOpen, setZoneOpen] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
   const [refresh, setRefresh] = useState(0);
@@ -144,6 +145,16 @@ export function BookingWidget({
   const timezoneOptions = COMMON_TIMEZONES.some((zone) => zone.value === timezone)
     ? COMMON_TIMEZONES : [{ value: timezone, label: timezone }, ...COMMON_TIMEZONES];
 
+  // Name the detected zone the way a visitor would: city plus the current abbreviation.
+  const zoneLabel = useMemo(() => {
+    const known = COMMON_TIMEZONES.find((zone) => zone.value === timezone)?.label;
+    if (known) return known;
+    const city = timezone.split("/").pop()?.replace(/_/g, " ") ?? timezone;
+    const abbr = new Intl.DateTimeFormat("en-US", { timeZone: timezone, timeZoneName: "short" })
+      .formatToParts(new Date()).find((part) => part.type === "timeZoneName")?.value;
+    return abbr ? `${city} (${abbr})` : city;
+  }, [timezone]);
+
   function reloadAvailability() {
     setLoading(true);
     setUnavailable(false);
@@ -187,6 +198,9 @@ export function BookingWidget({
 
   const appointment = selected && `${labelDay(selected.visitorDateKey, { weekday: "long", month: "long", day: "numeric" })}, ${selected.visitorTimeFormatted} ${selected.visitorTzAbbr}`;
 
+  const hostNote = selected && timezone !== BOOKING_CONFIG.hostTimeZone
+    ? ` (${selected.hostTimeFormatted} on ${labelDay(selected.hostDateKey, { month: "short", day: "numeric" })}, Pakistan time)` : "";
+
   function addToCalendar() {
     if (!reserved) return;
     downloadIcsFile("webix-solutions-call.ics", generateIcsContent({
@@ -216,9 +230,9 @@ export function BookingWidget({
           <p>Send the time to our team on WhatsApp or by email. We reply to confirm it or suggest the nearest free time.</p>
           <div className="booking-request-actions">
             <a className="studio-button" target="_blank" rel="noopener noreferrer"
-              href={`https://wa.me/${SITE_FACTS.contact.whatsappNumber}?text=${encodeURIComponent(`Hi Webix Solutions, I would like to book a ${meeting.title} on ${appointment}.`)}`}>Send on WhatsApp</a>
+              href={`https://wa.me/${SITE_FACTS.contact.whatsappNumber}?text=${encodeURIComponent(`Hi Webix Solutions, I would like to book a ${meeting.title} on ${appointment}${hostNote}.`)}`}>Send on WhatsApp</a>
             <a className="studio-button studio-button-outline"
-              href={`mailto:${SITE_FACTS.contact.email}?subject=${encodeURIComponent(`${meeting.title} request`)}&body=${encodeURIComponent(`Hi Webix Solutions,\n\nI would like to book a ${meeting.title} on ${appointment}.\n\nName:\nCompany or website:\n`)}`}>Send by email</a>
+              href={`mailto:${SITE_FACTS.contact.email}?subject=${encodeURIComponent(`${meeting.title} request`)}&body=${encodeURIComponent(`Hi Webix Solutions,\n\nI would like to book a ${meeting.title} on ${appointment}${hostNote}.\n\nName:\nCompany or website:\n`)}`}>Send by email</a>
           </div>
         </div>
       ) : selected ? (
@@ -240,17 +254,25 @@ export function BookingWidget({
         </form>
       ) : (
         <>
-          <div className="booking-field-row">
-            <label htmlFor={`${baseId}-type`}>Call type</label>
-            <select id={`${baseId}-type`} value={type} onChange={(event) => { setLoading(true); setType(event.target.value as MeetingType); }}>
-              {BOOKING_CONFIG.meetingTypes.map((item) => <option value={item.slug} key={item.slug}>{item.title} · {item.minutes} min</option>)}
-            </select>
+          <div className="booking-types" role="group" aria-label="Call type">
+            {BOOKING_CONFIG.meetingTypes.map((item) => (
+              <button key={item.slug} type="button" aria-pressed={type === item.slug}
+                onClick={() => { if (type !== item.slug) { setLoading(true); setType(item.slug as MeetingType); } }}>
+                <strong>{item.title}</strong><span>{item.minutes} min</span>
+              </button>
+            ))}
           </div>
-          <div className="booking-field-row">
-            <label htmlFor={`${baseId}-zone`}>Time zone</label>
-            <select id={`${baseId}-zone`} value={timezone} onChange={(event) => { setLoading(true); setTimezone(event.target.value); }}>
-              {timezoneOptions.map((zone) => <option key={zone.value} value={zone.value}>{zone.label}</option>)}
-            </select>
+          <div className="booking-zone">
+            <Globe size={16} aria-hidden="true" />
+            <p>Times are shown in your time zone: <strong>{zoneLabel}</strong></p>
+            <button type="button" className="booking-zone-change" aria-expanded={zoneOpen} aria-controls={`${baseId}-zone`} onClick={() => setZoneOpen(!zoneOpen)}>
+              {zoneOpen ? "Done" : "Change"}
+            </button>
+            {zoneOpen && (
+              <select id={`${baseId}-zone`} aria-label="Time zone" value={timezone} onChange={(event) => { setLoading(true); setTimezone(event.target.value); setZoneOpen(false); }}>
+                {timezoneOptions.map((zone) => <option key={zone.value} value={zone.value}>{zone.label}</option>)}
+              </select>
+            )}
           </div>
           {loading ? <p role="status">Checking available times…</p> : unavailable ? (
             <div role="status" className="booking-unavailable">

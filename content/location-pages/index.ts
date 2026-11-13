@@ -2,6 +2,7 @@ import { CANADA_LOCATION_PAGE } from "./canada";
 import { UNITED_STATES_LOCATION_PAGE } from "./united-states";
 import { UAE_LOCATION_PAGE } from "./uae";
 import { PAKISTAN_LOCATION_PAGE } from "./pakistan";
+import { NEW_ZEALAND_LOCATION_PAGE } from "./new-zealand";
 import type { LocationPageContent } from "./types";
 
 export * from "./types";
@@ -11,6 +12,7 @@ const LOCATION_PAGES: Record<string, LocationPageContent> = {
   "united-states": UNITED_STATES_LOCATION_PAGE,
   uae: UAE_LOCATION_PAGE,
   pakistan: PAKISTAN_LOCATION_PAGE,
+  "new-zealand": NEW_ZEALAND_LOCATION_PAGE,
 };
 
 export function getLocationPageContent(

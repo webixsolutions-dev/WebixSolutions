@@ -9,7 +9,7 @@ const markets = [
   { lat: 51.05, lon: -114.07, code: "CA", name: "Canada", href: "/locations/canada/" },
   { lat: 38.9, lon: -77.04, code: "US", name: "United States", href: "/locations/united-states/" },
   { lat: 25.2, lon: 55.27, code: "AE", name: "United Arab Emirates", href: "/locations/uae/" },
-  { lat: -36.85, lon: 174.76, code: "NZ", name: "New Zealand", href: null },
+  { lat: -36.85, lon: 174.76, code: "NZ", name: "New Zealand", href: "/locations/new-zealand/" },
   { lat: 29.8, lon: 71.7, code: "PK", name: "Pakistan", href: "/locations/pakistan/" },
 ];
 

@@ -19,7 +19,7 @@ Never invent a statistic, award, client name, review, certification or year.
 | Markets served | Canada, United States, United Arab Emirates, New Zealand, Pakistan | Confirmed |
 | Phone | +92 322 9472354 | Confirmed |
 | UAE phone (Dubai) | +971 50 406 8312 | Confirmed by owner, 12 Nov 2026. Shown on /locations/uae/ and /contact-us/ |
-| New Zealand phone (Auckland) | +64 22 611 5072 | Confirmed by owner, 12 Nov 2026. Shown on /contact-us/ (no NZ location page published yet) |
+| New Zealand phone (Auckland) | +64 22 611 5072 | Confirmed by owner, 12 Nov 2026. Shown on /locations/new-zealand/ and /contact-us/. The page claims no NZ office and no NZ clients by name |
 | Canada partner | Camzio Tech — partnership | Confirmed by owner, 12 Nov 2026. Say "in partnership with"; do not claim a Webix office in Canada |
 | Email | info@webixsolutions.com | Confirmed |
 | Founded | 2023 — current site says "3+ years delivering results" | [CONFIRM exact year] |
