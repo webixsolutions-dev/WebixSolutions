@@ -68,7 +68,7 @@ const FAQS = [
   {
     question: "Do you offer monthly growth packages?",
     answer:
-      "Yes. We offer integrated monthly growth packages starting from $399/month on our /offers/ page. These combine website maintenance, SEO fixes, social media content, and paid advertising management under a single predictable monthly investment.",
+      "Yes. We offer integrated monthly growth packages with a written quote based on scope. These combine website maintenance, SEO fixes, social media content, and paid advertising management under a single predictable monthly investment.",
   },
   {
     question: "Do you sign non-disclosure agreements (NDAs)?",

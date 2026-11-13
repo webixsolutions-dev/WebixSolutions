@@ -63,7 +63,8 @@ export async function generateMetadata({
       path: `/${blogPost.slug}/`,
       ogType: "article",
       publishedTime: blogPost.publishedDate,
-      modifiedTime: blogPost.lastUpdated,
+      modifiedTime: blogPost.modifiedDate,
+      image: { ...blogPost.cover, width: 1200, height: 630 },
     });
   }
 
@@ -95,7 +96,7 @@ export default async function DynamicSlugPage({ params }: RouteParams) {
         ? pageContent.faqs
         : service.faqs || [];
 
-    const faqJsonLd = buildFaqJsonLd(effectiveFaqs);
+    const faqJsonLd = effectiveFaqs.length ? buildFaqJsonLd(effectiveFaqs) : null;
 
     return (
       <>
@@ -107,14 +108,15 @@ export default async function DynamicSlugPage({ params }: RouteParams) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
         />
-        <script
+        {faqJsonLd && <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-        />
+        />}
 
         <ServicePageTemplate
           service={service}
           pageContent={pageContent}
+          faqs={effectiveFaqs}
           nextSlot={nextSlot}
         />
       </>
@@ -136,13 +138,11 @@ export default async function DynamicSlugPage({ params }: RouteParams) {
       headline: blogPost.title,
       description: blogPost.metaDescription,
       datePublished: blogPost.publishedDate,
-      dateModified: blogPost.lastUpdated,
-      author: {
-        "@type": "Person",
-        name: blogPost.author.name,
-        jobTitle: blogPost.author.role,
-        sameAs: [blogPost.author.linkedin],
-      },
+      ...(blogPost.modifiedDate ? { dateModified: blogPost.modifiedDate } : {}),
+      image: `${SITE_URL}${blogPost.cover.path}`,
+      author: blogPost.author.organization
+        ? { "@id": ORG_ID }
+        : { "@id": FOUNDER_ID, "@type": "Person", name: blogPost.author.name, url: `${SITE_URL}/about-us/` },
       publisher: {
         "@type": "Organization",
         "@id": ORG_ID,
@@ -176,7 +176,10 @@ export default async function DynamicSlugPage({ params }: RouteParams) {
             dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
           />
         )}
-        <BlogPostView post={blogPost} />
+        <BlogPostView post={blogPost} related={getPublishedBlogPosts()
+          .filter((post) => post.slug !== blogPost.slug && (post.category === blogPost.category || post.relatedServiceSlug === blogPost.relatedServiceSlug))
+          .slice(0, 3)
+          .map(({ title, slug }) => ({ title, slug }))} />
       </>
     );
   }

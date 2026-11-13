@@ -25,7 +25,7 @@ export function middleware(req: NextRequest) {
   const lowerPath = pathname.toLowerCase();
 
   // 1. WordPress ?p=* query parameter -> 410 Gone
-  if (searchParams.has("p")) {
+  if (pathname === "/" && (searchParams.has("p") || searchParams.has("s"))) {
     return new NextResponse(GONE_HTML, {
       status: 410,
       headers: {
@@ -58,7 +58,8 @@ export function middleware(req: NextRequest) {
   }
 
   // 4. Prefix 301 Redirects (/category/*, /tag/*, /author/*, /feed* -> /blogs/)
-  if (PREFIX_301_TO_BLOGS.some((prefix) => lowerPath.startsWith(prefix))) {
+  const restoredCategory = /^\/category\/(blog|restaurant)\/?$/.test(lowerPath);
+  if (!restoredCategory && PREFIX_301_TO_BLOGS.some((prefix) => lowerPath.startsWith(prefix))) {
     const dest = new URL("/blogs/", req.url);
     return NextResponse.redirect(dest, 301);
   }
@@ -75,9 +76,14 @@ export function middleware(req: NextRequest) {
 
   // 6. Continue request & attach X-Robots-Tag: noindex, nofollow on non-production hosts
   const res = NextResponse.next();
-  const host = req.headers.get("host") ?? "";
-  const isProdHost =
-    host === "webixsolutions.com" || host === "www.webixsolutions.com";
+  const host = (req.headers.get("host") ?? "").split(":")[0].toLowerCase();
+  if (host === "webixsolutions.com") {
+    const canonical = new URL(req.url);
+    canonical.host = "www.webixsolutions.com";
+    canonical.protocol = "https:";
+    return NextResponse.redirect(canonical, 308);
+  }
+  const isProdHost = host === "www.webixsolutions.com";
 
   if (!isProdHost) {
     res.headers.set("X-Robots-Tag", "noindex, nofollow");
@@ -88,6 +94,6 @@ export function middleware(req: NextRequest) {
 
 export const config = {
   matcher: [
-    "/((?!_next/static|_next/image|favicon.ico|fonts/|images/|robots.txt|sitemap.xml|llms.txt|llms-full.txt).*)",
+    "/((?!_next/static|_next/image|favicon.ico|fonts/|images/).*)",
   ],
 };

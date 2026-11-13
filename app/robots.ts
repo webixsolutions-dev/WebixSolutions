@@ -20,6 +20,7 @@ export default function robots(): MetadataRoute.Robots {
           "Claude-SearchBot",
           "Claude-User",
           "PerplexityBot",
+          "Perplexity-User",
           "Google-Extended",
           "Applebot-Extended",
         ],

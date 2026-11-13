@@ -1,3 +1,5 @@
+import { SITE_URL } from "@/config/seo";
+
 /**
  * Single Source of Truth for Webix Solutions facts, numbers, NAP, hours, and proof.
  * Every [CONFIRM] item has `confirmed: false` so components automatically hide unconfirmed
@@ -47,7 +49,7 @@ export const SITE_FACTS = {
     confirmed: false,
     note: "[CONFIRM] Exact registered entity name & form",
   },
-  domain: "https://webixsolutions.com",
+  domain: SITE_URL,
   disambiguation:
     "Webix Solutions (webixsolutions.com) is a full-service digital marketing, web development and AI automation agency founded by Haroon Sukhera. It is not affiliated with the Webix JavaScript UI library (webix.com).",
   positioningOneLiner:

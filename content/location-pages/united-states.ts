@@ -9,7 +9,7 @@ export const UNITED_STATES_LOCATION_PAGE: LocationPageContent = {
     "Custom websites, SEO, Google and Meta ads, and AI receptionists for US businesses and contractors — on your business hours, at offshore prices.",
   h1: "Digital marketing, websites and AI for businesses in the United States",
   heroIntro: [
-    "American companies routinely pay $5,000 to $15,000 monthly to domestic marketing agencies that outsource work behind the scenes.",
+    "We scope websites, search and lead handling around the jobs your team wants to win.",
     "Webix Solutions cuts out bloated agency overhead by pairing US contractors, founders, and e-commerce brands directly with our senior 20+ person engineering team during American business hours.",
   ],
   heroChip: "Direct engineering on US time zones",
@@ -18,7 +18,7 @@ export const UNITED_STATES_LOCATION_PAGE: LocationPageContent = {
   currencyExplanation:
     "All project estimates, care plans, and retainer tiers are quoted directly in USD with zero hidden foreign exchange fees. Your media budget is funded directly from your company's domestic US bank cards into your own Google and Meta accounts.",
   pricingCard: {
-    startingRate: "From $499 USD one-time / $399 USD/mo",
+    startingRate: "Custom USD quote",
     description: "Enterprise-grade technical execution at sustainable offshore rates",
     terms: [
       "No long-term lock-in contracts or multi-year agency retaining clauses",
@@ -32,12 +32,12 @@ export const UNITED_STATES_LOCATION_PAGE: LocationPageContent = {
   overlapRows: [
     {
       pktWindow: "9:00 PM – 1:00 AM PKT",
-      localWindow: "11:00 AM – 3:00 PM ET (10:00 AM – 2:00 PM CT)",
+      localWindow: "11:00 AM–3:00 PM EST / 12:00 PM–4:00 PM EDT (10:00 AM–2:00 PM CST / 11:00 AM–3:00 PM CDT)",
       activity: "Live discovery calls, sprint reviews, Google LSA optimization, and active Slack collaboration.",
     },
     {
       pktWindow: "1:00 AM – 5:00 AM PKT",
-      localWindow: "3:00 PM – 7:00 PM ET (12:00 PM – 4:00 PM PT)",
+      localWindow: "3:00 PM–7:00 PM EST / 4:00 PM–8:00 PM EDT (12:00 PM–4:00 PM PST / 1:00 PM–5:00 PM PDT)",
       activity: "Pacific coast onboarding, end-of-day campaign adjustments, emergency bug fixes, and next-day briefing.",
     },
     {
@@ -97,14 +97,14 @@ export const UNITED_STATES_LOCATION_PAGE: LocationPageContent = {
   },
   faqs: [
     {
-      question: "Why are your service fees substantially lower than American digital agencies?",
+      question: "How do you price work for US businesses?",
       answer:
-        "Our team is based in Pakistan, where professional operating overhead is a fraction of New York, Austin, or San Francisco costs. Because our 20+ person team works directly under senior engineering leadership—using the exact same enterprise software stack (Next.js, Tailwind, Meta CAPI, Google Ads, Zapier)—we deliver equal or superior technical quality at a 60% to 75% cost savings.",
+        "You work directly with our project leads in Pakistan. We provide a written scope that shows what is included and how milestones are billed.",
     },
     {
       question: "What specific US hours is your engineering team available for live calls?",
       answer:
-        "Our senior developers, project managers, and media buyers operate on a dedicated night shift that synchronizes with 11:00 AM – 7:00 PM Eastern Time. This guarantees full afternoon overlap for businesses in New York, Chicago, Dallas, Denver, and Los Angeles, enabling live video conferences and instant Slack communication.",
+        "Our evening shift in Pakistan overlaps 11:00 AM–7:00 PM EST or noon–8:00 PM EDT. The booking calendar shows available times in your own time zone.",
     },
     {
       question: "Will our business own all source code, design files, and advertising data?",
@@ -114,7 +114,7 @@ export const UNITED_STATES_LOCATION_PAGE: LocationPageContent = {
     {
       question: "Can you assist our home service company in setting up Google Local Services Ads (LSA)?",
       answer:
-        "Yes. We guide you through the complete Google Guaranteed background check process, configure your trade categories and service territory boundaries, install call tracking scripts, and actively manage lead disputes with Google so you never pay for out-of-area or spam phone calls.",
+        "Yes. We guide you through the complete Google Guaranteed background check process, configure your trade categories and service territory boundaries, install call tracking scripts, and review lead quality and explain what can be flagged in your account.",
     },
     {
       question: "How do US corporations execute payment and contractual agreements with Webix?",
@@ -126,7 +126,7 @@ export const UNITED_STATES_LOCATION_PAGE: LocationPageContent = {
     {
       name: "Google Business Profile Optimization",
       slug: "google-business-profile-optimization",
-      shortBenefit: "Drive top 3 Map Pack rankings across your local US service territory.",
+      shortBenefit: "Manage your profile and improve how local customers find your services.",
     },
     {
       name: "Paid Advertising Services",

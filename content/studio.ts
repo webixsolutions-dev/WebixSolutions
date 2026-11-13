@@ -1,6 +1,6 @@
 export const STUDIO = {
   headline: ["Hire one team", "for web, growth", "and AI."],
-  lead: "We design websites and stores, help customers find you through search and ads, and build CRM tools and AI workflows that keep enquiries moving.",
+  lead: "Webix Solutions is a digital agency for web development, SEO, paid advertising and AI automation. We build the websites, CRM tools and workflows that turn enquiries into work.",
   heroNote: "Websites, commerce, search and automation for businesses and agency partners.",
   services: [
     { number: "01", title: "Websites & online stores", detail: "Give customers a clear route from the first visit to a booking or sale. We build on WordPress, Shopify, Webflow, Framer and custom code.", href: "/web-design-development-service/" },

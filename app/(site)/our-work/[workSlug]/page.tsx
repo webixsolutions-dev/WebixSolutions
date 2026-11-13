@@ -38,6 +38,7 @@ export async function generateMetadata({
     title,
     description: study.summary.slice(0, 155),
     path: `/our-work/${study.slug}/`,
+    ...(study.cover && !study.cover.endsWith(".svg") ? { image: { path: study.cover, alt: study.coverCaption ?? study.title } } : {}),
   });
 }
 
@@ -70,7 +71,8 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       "@id": ORG_ID,
     },
     genre: study.category,
-    ...(study.country ? { countryOfOrigin: study.country } : {}),
+    ...(study.cover ? { image: `${SITE_URL}${study.cover}` } : {}),
+    ...(study.country ? { countryOfOrigin: { "@type": "Country", name: study.country } } : {}),
   };
 
   return (

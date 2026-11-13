@@ -119,7 +119,7 @@ export const ECOMMERCE_PAGE: IndustryPageContent = {
   pricingNote: {
     headline: "Transparent store builds and performance growth packages",
     subline:
-      "Custom Shopify stores start from $499. Ongoing monthly growth packages combining paid ads, store CRO, and WhatsApp automation start from $399/month on /offers/.",
+      "Store builds and monthly growth packages are quoted separately after we review your catalog, checkout, advertising and automation requirements.",
     ctaLabel: "View e-commerce packages",
     ctaHref: "/offers/",
   },

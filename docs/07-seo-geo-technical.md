@@ -20,14 +20,14 @@ Therefore:
 5. Check with `curl -A "GPTBot" https://<preview>/<page>/ | grep "<some H2 text>"` for every template — this is in the QA checklist.
 
 ## Metadata (Next.js Metadata API)
-- `metadataBase: https://webixsolutions.com`; per-page `title`, `description`, `alternates.canonical` (absolute, trailing slash), `openGraph` (type `website` for pages, `article` for blog posts), `twitter: summary_large_image`.
+- `metadataBase: https://www.webixsolutions.com`; per-page `title`, `description`, `alternates.canonical` (absolute, trailing slash), `openGraph` (type `website` for pages, `article` for blog posts), `twitter: summary_large_image`.
 - Title template: `%s | Webix Solutions`; home uses an absolute title.
 - OG images generated per page with `next/og` (graphite background, red cut corner, page H1) — 1200×630.
 - `robots`: index/follow by default; `noindex, follow` for `/code-of-conduct/`, `/lp/*`, `/book-a-call/success`, `/admin/*`, 404.
 - **Preview/staging domains** (e.g. `*.pages.dev`, `*.vercel.app`, `*.workers.dev`): send `X-Robots-Tag: noindex` from middleware when `host !== "webixsolutions.com"`. This prevents the duplicate-domain indexing that often hurts Next.js migrations.
 
 ## Structured data (JSON-LD, server-rendered, only for visible + true content)
-One `@graph` per page. Shared ids: `https://webixsolutions.com/#organization`, `#website`, `#founder`.
+One `@graph` per page. Shared ids: `https://www.webixsolutions.com/#organization`, `#website`, `#founder`.
 
 Organization (every page, via layout):
 ```json
@@ -36,13 +36,13 @@ Organization (every page, via layout):
   "@graph": [
     {
       "@type": ["Organization", "ProfessionalService"],
-      "@id": "https://webixsolutions.com/#organization",
+      "@id": "https://www.webixsolutions.com/#organization",
       "name": "Webix Solutions",
       "alternateName": "Webix Solutions Digital Agency",
-      "url": "https://webixsolutions.com/",
-      "logo": "https://webixsolutions.com/brand/webix-solutions-logo.png",
+      "url": "https://www.webixsolutions.com/",
+      "logo": "https://www.webixsolutions.com/brand/webix-solutions-logo.png",
       "description": "Full-service digital agency with an in-house team building websites, SEO, paid ads, social media and AI automation for businesses in Canada, the United States, the UAE, New Zealand and Pakistan.",
-      "founder": { "@id": "https://webixsolutions.com/#founder" },
+      "founder": { "@id": "https://www.webixsolutions.com/#founder" },
       "email": "info@webixsolutions.com",
       "telephone": "+92-322-9472354",
       "address": {
@@ -60,18 +60,18 @@ Organization (every page, via layout):
     },
     {
       "@type": "Person",
-      "@id": "https://webixsolutions.com/#founder",
+      "@id": "https://www.webixsolutions.com/#founder",
       "name": "Haroon Sukhera",
       "jobTitle": "Founder & CEO",
-      "worksFor": { "@id": "https://webixsolutions.com/#organization" }
+      "worksFor": { "@id": "https://www.webixsolutions.com/#organization" }
       /* "sameAs": [LinkedIn URL] [CONFIRM] */
     },
     {
       "@type": "WebSite",
-      "@id": "https://webixsolutions.com/#website",
-      "url": "https://webixsolutions.com/",
+      "@id": "https://www.webixsolutions.com/#website",
+      "url": "https://www.webixsolutions.com/",
       "name": "Webix Solutions",
-      "publisher": { "@id": "https://webixsolutions.com/#organization" }
+      "publisher": { "@id": "https://www.webixsolutions.com/#organization" }
     }
   ]
 }
@@ -89,10 +89,10 @@ Note: Google shows FAQ rich results only for a few authoritative government/heal
 See `public-files/robots.txt`. Allows all search and AI crawlers, blocks only `/api/` and `/admin/`. Do NOT block `/code-of-conduct/` (it must be crawled to see `noindex`).
 
 ## llms.txt
-See `public-files/llms.txt`. Serve at `/llms.txt` (static file). Keep facts identical to `site-facts.md`. It's a young convention (not a ranking factor) — cheap to maintain, helps assistants summarise us correctly. Optional: `/llms-full.txt` generated at build from the service registry (plain-text version of every service page).
+Both `/llms.txt` and `/llms-full.txt` are generated from approved company facts and published content registries in `lib/llms.ts`. They provide optional reference links to services, articles and case studies.
 
 ## Sitemaps
-`app/sitemap.ts` generated from the content registry: only indexable, published pages, with `lastModified` from content files. Exclude noindex pages, `/lp/*`, W2 pages that aren't built yet. Submit `https://webixsolutions.com/sitemap.xml` in GSC and Bing Webmaster Tools (also enable IndexNow via Bing).
+`app/sitemap.ts` generated from the content registry: only indexable, published pages, with `lastModified` from content files. Exclude noindex pages, `/lp/*`, W2 pages that aren't built yet. Submit `https://www.webixsolutions.com/sitemap.xml` in GSC and Bing Webmaster Tools (also enable IndexNow via Bing).
 
 ## Content rules for SEO + assistants
 - Answer-first: the first two sentences under every H1/H2 answer the question the heading implies (assistants quote openings).

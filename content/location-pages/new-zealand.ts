@@ -7,7 +7,7 @@ export const NEW_ZEALAND_LOCATION_PAGE: LocationPageContent = {
   shortCode: "NZ",
   title: "Web & Digital Marketing Agency for NZ | Webix Solutions",
   metaDescription:
-    "Websites, Google Maps, SEO, ads and AI automation for New Zealand businesses, with a team online during your mornings. Quotes available in NZD.",
+    "Websites, Google Maps, SEO, ads and AI automation for New Zealand businesses, with a team online during your mornings. NZD estimates on request.",
   h1: "Digital marketing, websites and AI for businesses in New Zealand",
   heroIntro: [
     "We build websites and online stores, run local search and ads, and set up AI automation for businesses in Auckland and across New Zealand.",
@@ -24,7 +24,7 @@ export const NEW_ZEALAND_LOCATION_PAGE: LocationPageContent = {
   currencyExplanation:
     "Proposals are written in USD, and we add an approximate NZD figure on request so you can budget in your own currency. Ad spend is paid by your business directly to Google, Meta or TikTok in New Zealand Dollars.",
   pricingCard: {
-    startingRate: "From $499 USD, NZD estimate on request",
+    startingRate: "Custom USD quote with an NZD estimate",
     description: "Fixed project scopes and monthly plans agreed in writing",
     terms: [
       "Written scope and quote before any work starts",
@@ -93,9 +93,9 @@ export const NEW_ZEALAND_LOCATION_PAGE: LocationPageContent = {
     metric: "4 hrs",
     metricLabel: "Live overlap each New Zealand morning",
     narrative:
-      "New Zealand is one of the five markets we serve. You deal with the project leads doing the work, during your morning, and anything agreed on a call is done by the time you start the next day.",
+      "New Zealand is one of the five markets we serve. You deal with the project leads doing the work, during your morning, and we agree a delivery time for changes during the call.",
     takeaways: [
-      "Calls and reviews between 8:00 AM and 12:00 PM New Zealand time",
+      "Calls and reviews from 8:00 AM–noon NZST or 9:00 AM–1:00 PM NZDT",
       "A staging link to review before anything goes live",
       "Written scope and quote for every project",
       "Domain, source code and ad accounts stay in your name",
@@ -105,7 +105,7 @@ export const NEW_ZEALAND_LOCATION_PAGE: LocationPageContent = {
     {
       question: "When is your team available for New Zealand businesses?",
       answer:
-        "We are online from 8:00 AM to 12:00 PM New Zealand Standard Time (9:00 AM to 1:00 PM during daylight saving). That is when we hold calls and make live changes. Work agreed in the morning is built during your night and ready the next morning.",
+        "We are online from 8:00 AM to 12:00 PM New Zealand Standard Time (9:00 AM to 1:00 PM during daylight saving). That is when we hold calls and make live changes. We agree a delivery time when we review the requested changes.",
     },
     {
       question: "Can you quote in New Zealand Dollars?",

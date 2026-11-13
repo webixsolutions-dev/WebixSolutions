@@ -40,7 +40,7 @@ export const AI_ECOMMERCE_AUTOMATION: ServicePageContent = {
       rows: [
         [
           "WhatsApp COD Verification",
-          "Confirms intent, flags fake phone numbers and cuts courier return rates by up to 25%",
+          "Confirms intent, flags fake phone numbers and helps your team review orders before dispatch",
           "Shopify, WooCommerce, WhatsApp Business API",
         ],
         [

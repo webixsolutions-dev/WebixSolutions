@@ -1,5 +1,7 @@
 "use client";
 
+import { trackAnalyticsEvent } from "@/components/analytics/events";
+
 import * as React from "react";
 import { useEffect, useId, useMemo, useRef, useState, type FormEvent } from "react";
 import Script from "next/script";
@@ -186,6 +188,7 @@ export function BookingWidget({
       }
       if (!response.ok) throw new Error(result.error || "We couldn’t save your booking.");
       setReserved(result as Reservation);
+      trackAnalyticsEvent("booking_completed", { meeting_type: type, source_page: sourcePage });
     } catch (err) {
       setError(err instanceof Error ? err.message : "We couldn’t save your booking. Please try again.");
       const turnstile = (window as Window & { turnstile?: Turnstile }).turnstile;

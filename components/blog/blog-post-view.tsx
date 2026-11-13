@@ -1,30 +1,24 @@
-"use client";
-
-import * as React from "react";
 import Link from "next/link";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
-import { Kicker } from "@/components/ui/kicker";
 import { Button } from "@/components/ui/button";
 import { FaqSection } from "@/components/shared/faq-section";
 import { FinalCtaSection } from "@/components/home/final-cta-section";
-import type { BlogPost } from "@/content/blog/types";
+import { formatBlogDate, type BlogPost } from "@/content/blog/types";
+import { BlogCover } from "./blog-cover";
 import { BrandSocialIcon } from "@/components/layout/social-icons";
 import {
-  Calendar,
   Clock,
-  ArrowRight,
   CheckCircle2,
   Sparkles,
-  Share2,
-  Bookmark,
 } from "lucide-react";
 
 export interface BlogPostViewProps {
   post: BlogPost;
+  related: Pick<BlogPost, "slug" | "title">[];
 }
 
-export function BlogPostView({ post }: BlogPostViewProps) {
+export function BlogPostView({ post, related }: BlogPostViewProps) {
   return (
     <div className="flex flex-col min-h-screen">
       {/* =========================================================================
@@ -54,7 +48,7 @@ export function BlogPostView({ post }: BlogPostViewProps) {
                   <div className="h-6 w-6 rounded-full bg-[#121214] text-white flex items-center justify-center text-[10px] font-bold">
                     {post.author.avatarText}
                   </div>
-                  <span className="font-semibold text-white">{post.author.name}</span>
+                  <Link href={post.author.linkedin ?? "/about-us/"} className="font-semibold text-white underline-offset-4 hover:underline">{post.author.name}</Link>
                 </div>
                 <span>•</span>
                 <span className="inline-flex items-center gap-1">
@@ -62,9 +56,11 @@ export function BlogPostView({ post }: BlogPostViewProps) {
                   <span>{post.readingTimeMinutes} min read</span>
                 </span>
                 <span>•</span>
-                <span>Last updated: {post.lastUpdated}</span>
+                <time dateTime={post.modifiedDate ?? post.publishedDate}>{post.modifiedDate ? "Updated " : "Published "}{formatBlogDate(post.modifiedDate ?? post.publishedDate)}</time>
               </div>
             </div>
+
+            <BlogCover cover={post.cover} sizes="(min-width: 768px) 768px, 92vw" eager />
 
             {/* Answer-First Box */}
             <div className="p-6 rounded-xl bg-white border border-[#E4E6EB] shadow-xs space-y-2">
@@ -102,20 +98,20 @@ export function BlogPostView({ post }: BlogPostViewProps) {
         <Container>
           <div className="max-w-3xl mx-auto space-y-10">
             {/* Table of Contents */}
-            {post.tableOfContents.length > 0 && (
+            {post.contentSections.length > 0 && (
               <div className="p-6 rounded-xl bg-[#F9FAFB] border border-[#E4E6EB] space-y-3">
                 <div className="text-xs font-bold text-[#111215] uppercase tracking-wider">
                   Table of Contents
                 </div>
                 <ul className="space-y-1.5 text-xs">
-                  {post.tableOfContents.map((toc) => (
+                  {post.contentSections.map((toc) => (
                     <li key={toc.id}>
                       <a
                         href={`#${toc.id}`}
                         className="text-[#454954] hover:text-[#ED1C24] transition-colors inline-flex items-center gap-2"
                       >
                         <span className="text-[#C8101A]">→</span>
-                        <span>{toc.label}</span>
+                        <span>{toc.heading}</span>
                       </a>
                     </li>
                   ))}
@@ -183,6 +179,23 @@ export function BlogPostView({ post }: BlogPostViewProps) {
               ))}
             </div>
 
+            {post.sources?.length ? (
+              <section className="space-y-3">
+                <h2 className="type-h3">Sources</h2>
+                <ul className="list-disc space-y-2 pl-5">
+                  {post.sources.map((source) => <li key={source.href}><a className="underline underline-offset-4" href={source.href}>{source.label}</a></li>)}
+                </ul>
+              </section>
+            ) : null}
+            {related.length ? (
+              <section className="space-y-3">
+                <h2 className="type-h3">Related guides</h2>
+                <ul className="list-disc space-y-2 pl-5">
+                  {related.map((article) => <li key={article.slug}><Link className="underline underline-offset-4" href={`/${article.slug}/`}>{article.title}</Link></li>)}
+                </ul>
+              </section>
+            ) : null}
+
             {/* Related Service CTA Card */}
             <div className="p-8 rounded-xl bg-[#121214] text-white space-y-4">
               <div className="text-xs font-bold text-[#ED1C24] uppercase tracking-wider">
@@ -192,7 +205,7 @@ export function BlogPostView({ post }: BlogPostViewProps) {
                 Looking to implement this strategy in your business?
               </h3>
               <p className="text-xs text-[#9CA3AF] leading-relaxed max-w-xl">
-                Our engineers, marketers, and AI specialists manage complete delivery on your local time zone with written proposals in 48 hours.
+                Our engineers, marketers, and AI specialists can review your goals and recommend the next step.
               </p>
               <div className="pt-2 flex flex-wrap gap-3">
                 <Button href={`/${post.relatedServiceSlug}/`} variant="primary" size="default">
@@ -214,7 +227,7 @@ export function BlogPostView({ post }: BlogPostViewProps) {
                   <h4 className="font-display text-base font-bold text-[#111215]">
                     {post.author.name}
                   </h4>
-                  <a
+                  {post.author.linkedin && <a
                     href={post.author.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -222,7 +235,7 @@ export function BlogPostView({ post }: BlogPostViewProps) {
                   >
                     <BrandSocialIcon name="linkedin" className="h-3.5 w-3.5" />
                     <span>LinkedIn</span>
-                  </a>
+                  </a>}
                 </div>
                 <p className="text-xs text-[#717684] font-medium">
                   {post.author.role}

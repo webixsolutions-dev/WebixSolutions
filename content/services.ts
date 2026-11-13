@@ -70,7 +70,7 @@ export const SERVICES_REGISTRY: ServiceEntry[] = [
     published: true,
     title: "Custom Web Design & Development | Webix Solutions",
     metaDescription:
-      "Custom-coded and CMS websites that load fast, rank and convert. Next.js, WordPress, Shopify. From $499 for a 5-page site. Book a free call.",
+      "Custom-coded and CMS websites that load fast, rank and convert. Next.js, WordPress, Shopify. Book a free call.",
     h1: "Custom web design and development services",
     primaryKeyword: "custom web design and development services",
     secondaryKeywords: [
@@ -397,7 +397,7 @@ export const SERVICES_REGISTRY: ServiceEntry[] = [
     published: true,
     title: "Social Media Management Services | Webix Solutions",
     metaDescription:
-      "Strategy, content, posting and community management for Instagram, Facebook, TikTok and LinkedIn. 50+ accounts managed. Plans from $149/month.",
+      "Strategy, content, posting and community management for Instagram, Facebook, TikTok and LinkedIn. 50+ accounts managed.",
     h1: "Social media management services",
     primaryKeyword: "social media management services",
     secondaryKeywords: [
@@ -427,7 +427,7 @@ export const SERVICES_REGISTRY: ServiceEntry[] = [
     published: true,
     title: "Conversion Rate Optimization Services | Webix Solutions",
     metaDescription:
-      "Turn more visitors into leads and sales with research, heatmaps (Microsoft Clarity), A/B tests and faster pages. Audit from $99.",
+      "Turn more visitors into leads and sales with research, heatmaps (Microsoft Clarity), A/B tests and faster pages.",
     h1: "Conversion rate optimization services",
     primaryKeyword: "conversion rate optimization services",
     secondaryKeywords: [
@@ -515,7 +515,7 @@ export const SERVICES_REGISTRY: ServiceEntry[] = [
     published: true,
     title: "AI Automation Services & AI Agents | Webix Solutions",
     metaDescription:
-      "We build AI agents and automations that answer leads, update your CRM, follow up and report — using OpenAI, n8n, Make and Zapier. Sprints from $999.",
+      "We build AI agents and automations that answer leads, update your CRM, follow up and report — using OpenAI, n8n, Make and Zapier.",
     h1: "AI automation services and AI agents for business",
     primaryKeyword: "AI automation services",
     secondaryKeywords: [
@@ -773,7 +773,7 @@ export const SERVICES_REGISTRY: ServiceEntry[] = [
     published: true,
     title: "Graphic Design & Creative Services | Webix Solutions",
     metaDescription:
-      "Logos, brand kits, social graphics, ad creatives, packaging and video editing from a creative team. Batches from $99.",
+      "Logos, brand kits, social graphics, ad creatives, packaging and video editing from a creative team.",
     h1: "Graphic design and creative studio services",
     primaryKeyword: "graphic design services",
     secondaryKeywords: [

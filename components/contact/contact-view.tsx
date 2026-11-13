@@ -1,5 +1,7 @@
 "use client";
 
+import { trackAnalyticsEvent } from "@/components/analytics/events";
+
 import * as React from "react";
 import Link from "next/link";
 import { INTERIOR } from "@/content/interior";
@@ -76,6 +78,7 @@ export function ContactView() {
       }
 
       setIsSuccess(true);
+      trackAnalyticsEvent("form_submit", { form_name: "contact", source_page: window.location.pathname });
     } catch (err) {
       console.error("Contact form error:", err);
       setErrorMessage("Network connection error. Please message us directly on WhatsApp.");

@@ -75,7 +75,8 @@ const anonymousWebsiteScopes: WorkEntry[] = [
   ...scope, category: scope.category as WorkEntry["category"], descriptor: "Anonymised client project",
   country: "", challenge: scope.summary, solution: [], results: [], stack: [],
   services: ["web-design-development-service"],
-  cover: workImage(scope.category === "E-commerce" ? "commerce" : "systems"),
+  cover: `/images/work/${scope.slug}.webp`,
+  coverCaption: "Project illustration",
   permission: "anonymised", published: true, scopeOnly: true,
 }));
 
@@ -136,7 +137,7 @@ export const WORK_REGISTRY: WorkEntry[] = [
     slug: "zelvomart-ecommerce-platform",
     cover: workImage("commerce"),
     title: "Zelvomart — Custom E-commerce Platform & WhatsApp Ads",
-    descriptor: "E-commerce Retail · Pakistan",
+    descriptor: "Webix-owned e-commerce store · Pakistan",
     country: "Pakistan",
     category: "E-commerce",
     summary:
@@ -243,6 +244,7 @@ export const WORK_REGISTRY: WorkEntry[] = [
       },
     ],
     services: [
+      "custom-crm-development",
       "ai-automation-services",
       "web-design-development-service",
     ],
@@ -262,7 +264,7 @@ export const WORK_REGISTRY: WorkEntry[] = [
     cover: "/images/studio/lead-cover.svg",
     title: "Webix Lead Desk",
     descriptor: "Internal lead research and outreach workspace",
-    country: "Built and used by our team",
+    country: "",
     category: "AI & automation",
     summary:
       "Our own workspace for finding businesses, checking their websites, drafting outreach and following up on replies. Nothing is sent until a person approves the exact message.",
