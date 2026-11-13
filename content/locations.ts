@@ -187,8 +187,8 @@ export const LOCATIONS_REGISTRY: LocationEntry[] = [
     slug: "new-zealand",
     countryName: "New Zealand",
     shortCode: "NZ",
-    wave: "W2",
-    published: false,
+    wave: "W1",
+    published: true,
     title: "Web & Digital Marketing Agency for NZ | Webix Solutions",
     metaDescription:
       "Websites, Google Maps, SEO and ads for New Zealand businesses, with a team online during your mornings. Prices in NZD.",

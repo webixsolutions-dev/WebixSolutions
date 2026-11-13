@@ -17,9 +17,9 @@ export interface LocationProof {
 }
 
 export interface LocationPageContent {
-  slug: "canada" | "united-states" | "uae" | "pakistan";
+  slug: "canada" | "united-states" | "uae" | "pakistan" | "new-zealand";
   countryName: string;
-  shortCode: "CA" | "US" | "AE" | "PK";
+  shortCode: "CA" | "US" | "AE" | "PK" | "NZ";
   title: string;
   metaDescription: string;
   h1: string;
@@ -29,7 +29,7 @@ export interface LocationPageContent {
   localPhone?: { label: string; display: string; e164: string };
   /** One-line note about a local partner, shown in the hero */
   partnerNote?: string;
-  currencyCode: "CAD" | "USD" | "AED" | "PKR";
+  currencyCode: "CAD" | "USD" | "AED" | "PKR" | "NZD";
   currencyHeadline: string;
   currencyExplanation: string;
   pricingCard: {
