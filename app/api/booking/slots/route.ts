@@ -17,10 +17,21 @@ export async function GET(request: Request) {
   });
   if (!parsed.success) return NextResponse.json({ error: "Choose a valid call type and time zone." }, { status: 400 });
 
-  if (!process.env.BOOKING_DATABASE_URL) return NextResponse.json({ fallback: true, slots: [] }, { status: 503 });
   const { type, tz } = parsed.data;
   const now = new Date();
   const end = new Date(now.getTime() + (BOOKING_CONFIG.maxDaysAhead + 2) * 86400000);
+  if (!process.env.BOOKING_DATABASE_URL) {
+    // No reservation store: show the working schedule and let the visitor send the time as a request.
+    const slots = generateAvailableSlots({
+      meetingTypeSlug: type,
+      fromIsoDate: formatInTimeZone(now, tz).dateKey,
+      toIsoDate: formatInTimeZone(end, tz).dateKey,
+      visitorTz: tz, now, busyIntervals: [],
+    });
+    return NextResponse.json({ slots, requestOnly: true, meetingType: type, visitorTz: tz }, {
+      headers: { "Cache-Control": "no-store" },
+    });
+  }
   const start = new Date(now.getTime() - 2 * 86400000);
 
   try {
