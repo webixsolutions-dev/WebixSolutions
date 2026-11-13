@@ -546,3 +546,16 @@ body:has(.interior-closing) .studio-footer-cta { display: none; }
 .contact-info > * { margin-top: 0 !important; border-radius: 16px; }
 @media (max-width: 980px) { .contact-hero,.contact-info { grid-template-columns: 1fr; } }
 @media (max-width: 560px) { .contact-methods a { grid-template-columns: auto 1fr; } .contact-methods a > :last-child { grid-column: 2; } }
+
+/* Hero side cards: separate floating cards on wide screens, the strip inside the board on smaller ones */
+.studio-hero-float-start { top: 9%; left: max(-180px, calc((1060px - 100vw) / 2 + 12px)); }
+.studio-hero-float-end { top: 5%; bottom: auto; right: max(-180px, calc((1060px - 100vw) / 2 + 12px)); }
+@media (max-width: 1399px) { .proof-board-head > span:last-child { display: none; } }
+@media (min-width: 1280px) {
+  .studio-hero-float { display: block; animation: studio-hero-float 7s ease-in-out infinite alternate; }
+  .studio-hero-float-end { animation-delay: -3.5s; }
+  .proof-board-strip { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .studio-hero-float { animation: none; }
+}
