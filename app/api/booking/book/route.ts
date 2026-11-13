@@ -1,9 +1,10 @@
 import { createHmac } from "node:crypto";
-import { NextResponse } from "next/server";
+import { after, NextResponse } from "next/server";
 import { z } from "zod";
 import { BOOKING_CONFIG } from "@/config/booking";
 import { formatInTimeZone, generateAvailableSlots, isValidTimeZone } from "@/lib/booking/slot-engine";
 import { bookingDb } from "@/lib/booking/store";
+import { fixedMeetUrl, onBookingCreated } from "@/lib/booking/lifecycle";
 
 const bookSchema = z.object({
   requestId: z.uuid(),
@@ -80,7 +81,12 @@ export async function POST(request: Request) {
     `;
     if (row.outcome === "limited") return NextResponse.json({ error: "Too many bookings. Please try again in an hour." }, { status: 429 });
     if (row.outcome === "conflict") return NextResponse.json({ error: "That time was just taken. Please pick another." }, { status: 409 });
-    return NextResponse.json({ success: true, eventId: requestId, startIso: slot.iso, endIso: slot.endIso }, { status: row.outcome === "created" ? 201 : 200 });
+    // Emails and the staff notice go out after the response so the visitor is not kept waiting.
+    if (row.outcome === "created") after(() => onBookingCreated(requestId));
+    return NextResponse.json(
+      { success: true, eventId: requestId, startIso: slot.iso, endIso: slot.endIso, confirmed: Boolean(fixedMeetUrl()) },
+      { status: row.outcome === "created" ? 201 : 200 },
+    );
   } catch {
     console.error("Booking reservation failed");
     return NextResponse.json({ error: "We couldn’t save your booking. Please try again or email us." }, { status: 503 });

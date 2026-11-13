@@ -5,7 +5,8 @@ import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import { hasAdminSession, sessionCookie, sessionSeconds, signAdminSession, validAdminPassword } from "@/lib/booking/admin-session";
-import { bookingDb } from "@/lib/booking/store";
+import { MOVE_TARGETS } from "@/lib/booking/pipeline";
+import { moveStage, saveFollowUp, saveNotes, sendConfirmation, setMeetingLink } from "@/lib/booking/lifecycle";
 
 const route = "/admin/bookings/";
 
@@ -26,17 +27,49 @@ export async function signOut() {
   redirect(route);
 }
 
-export async function changeBookingStatus(form: FormData) {
+async function requireAdmin() {
   if (!(await hasAdminSession())) redirect(route);
-  const data = z.object({ id: z.uuid(), status: z.enum(["confirmed", "cancelled"]) }).safeParse({
-    id: form.get("id"), status: form.get("status"),
-  });
+}
+
+const id = z.uuid();
+
+export async function moveBookingStage(form: FormData) {
+  await requireAdmin();
+  const data = z.object({ id, stage: z.enum(MOVE_TARGETS as [string, ...string[]]) }).safeParse({ id: form.get("id"), stage: form.get("stage") });
   if (!data.success) return;
-  const { id, status } = data.data;
-  const sql = bookingDb();
-  await sql`
-    UPDATE webix_bookings SET status = ${status}
-    WHERE id = ${id}::uuid AND (status = 'pending' OR (status = 'confirmed' AND ${status} = 'cancelled'))
-  `;
+  await moveStage(data.data.id, data.data.stage as (typeof MOVE_TARGETS)[number]);
+  revalidatePath(route);
+}
+
+export async function saveBookingLink(form: FormData) {
+  await requireAdmin();
+  const data = z.object({ id, url: z.url({ protocol: /^https$/ }).max(500) }).safeParse({ id: form.get("id"), url: String(form.get("url") ?? "").trim() });
+  if (!data.success) return;
+  await setMeetingLink(data.data.id, data.data.url);
+  revalidatePath(route);
+}
+
+export async function resendBookingConfirmation(form: FormData) {
+  await requireAdmin();
+  const data = id.safeParse(form.get("id"));
+  if (!data.success) return;
+  await sendConfirmation(data.data, true);
+  revalidatePath(route);
+}
+
+export async function saveBookingFollowUp(form: FormData) {
+  await requireAdmin();
+  const data = z.object({ id, date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).or(z.literal("")) }).safeParse({ id: form.get("id"), date: String(form.get("date") ?? "") });
+  if (!data.success) return;
+  // Follow-ups are due at 9:00 AM Pakistan time on the chosen day.
+  await saveFollowUp(data.data.id, data.data.date ? new Date(`${data.data.date}T09:00:00+05:00`) : null);
+  revalidatePath(route);
+}
+
+export async function saveBookingNotes(form: FormData) {
+  await requireAdmin();
+  const data = z.object({ id, notes: z.string().max(4000) }).safeParse({ id: form.get("id"), notes: String(form.get("notes") ?? "").trim() });
+  if (!data.success) return;
+  await saveNotes(data.data.id, data.data.notes);
   revalidatePath(route);
 }

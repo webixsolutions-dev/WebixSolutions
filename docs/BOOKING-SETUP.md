@@ -1,5 +1,8 @@
 # Booking System Setup Guide — Google Calendar & Meet
 
+> **Current status:** bookings are stored in Neon and emailed through Resend; see `docs/BOOKING-OPERATIONS.md`. This guide covers the Google Calendar step, which is not connected yet.
+
+
 This document explains step-by-step how to generate the OAuth credentials needed for Webix Solutions' live booking engine (`/book-a-call/` and `/api/booking/`).
 
 ---

@@ -21,7 +21,7 @@ interface Turnstile {
 }
 
 type MeetingType = "strategy" | "intro" | "partner";
-type Reservation = { eventId: string; startIso: string; endIso: string };
+type Reservation = { eventId: string; startIso: string; endIso: string; confirmed?: boolean };
 const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 const services = getPublishedServices().map(({ slug, shortName }) => ({ slug, shortName }));
 
@@ -219,7 +219,7 @@ export function BookingWidget({
           <Check size={27} />
           <h3>Your time is reserved</h3>
           <p>{appointment}</p>
-          <p>Our team will email you the meeting details. Your reference is <strong>{reserved.eventId.slice(0, 8).toUpperCase()}</strong>.</p>
+          <p>{reserved.confirmed ? "We are emailing you a confirmation with the meeting link and a calendar file." : "We are emailing you a confirmation. Our team will send the meeting link shortly."} Your reference is <strong>{reserved.eventId.slice(0, 8).toUpperCase()}</strong>.</p>
           <button type="button" className="studio-button studio-button-outline" onClick={addToCalendar}>Add to calendar</button>
         </div>
       ) : selected && requestOnly ? (

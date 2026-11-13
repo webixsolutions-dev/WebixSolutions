@@ -581,3 +581,34 @@ body:has(.interior-closing) .studio-footer-cta { display: none; }
 .booking-zone-change { min-height: 44px; padding-inline: 4px; color: #fff; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
 .booking-zone select { flex-basis: 100%; }
 @media (max-width: 420px) { .booking-types strong { font-size: .82rem; } .booking-types button { padding-inline: 9px; } }
+
+/* Booking admin: pipeline dashboard */
+.admin-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.admin-tabs a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 6px 14px; border: 1px solid #555560; border-radius: 999px; color: #fff; font-size: .88rem; font-weight: 600; }
+.admin-tabs a span { padding: 1px 8px; border-radius: 999px; background: #ffffff1f; font-size: .78rem; }
+.admin-tabs a[aria-current="page"] { background: var(--studio-action); border-color: var(--studio-action); }
+.admin-tabs a[data-alert="true"] span { background: var(--studio-red); }
+.admin-card { display: grid; gap: 12px; }
+.admin-card-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; }
+.admin-card-when { display: grid; gap: 2px; text-align: right; font-size: .88rem; }
+.admin-card-when span { color: #c7c8cf; }
+.admin-stage { width: fit-content; padding: 3px 10px; border-radius: 999px; background: #ffffff1f; font-size: .74rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.admin-stage[data-stage="confirmed"],.admin-stage[data-stage="won"] { background: #14532d; color: #bbf7d0; }
+.admin-stage[data-stage="no_show"],.admin-stage[data-stage="lost"],.admin-stage[data-stage="cancelled"] { background: #5a1a1d; color: #fecaca; }
+.admin-stage[data-stage="proposal"] { background: #4a3a12; color: #fde68a; }
+.admin-ref { color: #a3a8b3; font-size: .8rem; }
+.admin-row { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 10px; }
+.admin-row label { display: block; }
+.admin-row em { color: var(--studio-ember); font-style: normal; }
+.admin-row-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.admin-stages { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.admin-stages > span { margin-right: 4px; color: #c7c8cf; font-size: .84rem; }
+.admin-chip { min-height: 40px; padding: 4px 12px; border: 1px solid #555560; border-radius: 999px; color: #fff; font-size: .82rem; font-weight: 600; cursor: pointer; }
+.admin-chip:hover { border-color: #fff; }
+.admin-chip[data-stage="cancelled"]:hover { border-color: var(--studio-red); color: var(--studio-ember); }
+.admin-warning { padding: 8px 12px; border-left: 3px solid var(--studio-red); background: #ed1b2414; font-size: .86rem; }
+.admin-timeline summary { min-height: 44px; display: flex; align-items: center; cursor: pointer; font-size: .86rem; font-weight: 600; }
+.admin-timeline ol { display: grid; gap: 4px; padding-left: 4px; font-size: .82rem; color: #c7c8cf; }
+.admin-timeline li span { display: inline-block; min-width: 108px; color: #a3a8b3; }
+.admin-booking-list { grid-template-columns: 1fr; }
+@media (max-width: 700px) { .admin-row,.admin-row-pair { grid-template-columns: 1fr; } .admin-card-when { text-align: left; } }
