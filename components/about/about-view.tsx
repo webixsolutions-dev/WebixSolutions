@@ -55,7 +55,7 @@ export function AboutView() {
                   className="inline-flex h-13 items-center justify-center gap-2.5 cut-tr-sm border border-[#D5D8E0] bg-white px-6 text-base font-medium text-[#111215] hover:border-[#111215] transition-colors"
                 >
                   <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
-                  <span>WhatsApp Haroon</span>
+                  <span>WhatsApp our team</span>
                 </a>
               </div>
             </div>
@@ -110,7 +110,7 @@ export function AboutView() {
                     • Built proprietary brands: Zelvomart, LaptopSouq.ae & Miraj Builders.
                   </p>
                   <p>
-                    • Direct contact via WhatsApp, Slack, or Google Meet video calls.
+                    • Sets the delivery standards our project leads work to.
                   </p>
                 </div>
               </div>
@@ -153,7 +153,7 @@ export function AboutView() {
                 </div>
                 <div className="inline-flex items-center gap-2">
                   <span className="h-2 w-2 rounded-full bg-[#16A34A]" />
-                  <span>Actively building & reviewing client builds daily</span>
+                  <span>Leads engineering and delivery standards</span>
                 </div>
               </div>
             </div>
