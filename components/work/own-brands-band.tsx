@@ -1,14 +1,16 @@
 import * as React from "react";
-import { Store, Laptop, Building2, Sparkles, ExternalLink } from "lucide-react";
+import { Store, Laptop, Building2, Sparkles } from "lucide-react";
+import { SITE_FACTS } from "@/content/site-facts";
 
 export function OwnBrandsBand() {
+  const zelvomartCampaign = SITE_FACTS.adResults.find((result) => result.id === "pkr-whatsapp-convs" && result.confirmed);
   const brands = [
     {
       name: "Zelvomart",
       category: "DTC E-commerce · Pakistan",
       description:
         "Direct-to-consumer Pakistani retail brand running on custom Next.js storefront with automated WhatsApp COD verification and courier tracking.",
-      result: "64 WhatsApp orders at Rs 15.01 each",
+      result: zelvomartCampaign ? `${zelvomartCampaign.volume} at ${zelvomartCampaign.metricValue} each on WhatsApp` : null,
       icon: Store,
     },
     {
@@ -80,9 +82,11 @@ export function OwnBrandsBand() {
                 </p>
               </div>
 
-              <div className="pt-3 border-t border-[#E4E6EB] flex items-center justify-between text-xs">
-                <span className="font-semibold text-[#16A34A]">{b.result}</span>
-              </div>
+              {b.result && (
+                <div className="pt-3 border-t border-[#E4E6EB] flex items-center justify-between text-xs">
+                  <span className="font-semibold text-[#16A34A]">{b.result}</span>
+                </div>
+              )}
             </div>
           );
         })}
