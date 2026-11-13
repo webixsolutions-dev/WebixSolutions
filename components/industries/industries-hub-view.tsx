@@ -1,8 +1,6 @@
-"use client";
-
-import * as React from "react";
 import Link from "next/link";
-import { ArrowRight, AlertCircle, CheckCircle2, Sparkles, Building2 } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
+import { getPublishedServices } from "@/content/services";
 import { INTERIOR } from "@/content/interior";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
@@ -28,7 +26,7 @@ const FAQS = [
   {
     question: "Have you worked with businesses in my exact niche?",
     answer:
-      "Across 94 custom-coded builds and 120+ clients, our team has delivered projects for online retailers, roofers, electrical contractors, equipment leasing companies, real estate developers, healthcare clinics, and B2B consultancies across North America, the UAE, and Pakistan. On our strategy call, we share relevant live examples and case studies.",
+      "Across 96 custom-coded builds and 120+ clients, our team has delivered projects for online retailers, roofers, electrical contractors, equipment leasing companies, real estate developers, healthcare clinics, and B2B consultancies across North America, the UAE, and Pakistan. On our strategy call, we share relevant live examples and case studies.",
   },
   {
     question: "Do you work with early-stage startups and new businesses?",
@@ -43,9 +41,8 @@ const FAQS = [
 ];
 
 export function IndustriesHubView({ industries, nextSlot }: IndustriesHubViewProps) {
-  const [selectedSlug, setSelectedSlug] = React.useState<string>(industries[0]?.slug || "ecommerce");
-
-  const activeIndustry = industries.find((i) => i.slug === selectedSlug) || industries[0];
+  const guides = industries.filter((ind) => ind.hasDedicatedPage && ind.published);
+  const serviceNames = new Map(getPublishedServices().map((service) => [service.slug, service.shortName]));
 
   return (
     <div className="w-full">
@@ -100,226 +97,78 @@ export function IndustriesHubView({ industries, nextSlot }: IndustriesHubViewPro
 
             <div className="pt-2 flex flex-wrap items-center gap-3">
               <Chip asSpan active>
-                14 Targeted commercial sectors
+                {industries.length} industries covered
               </Chip>
               <span className="text-xs text-[#A7ACB8]">
-                Select an industry below to view common bottlenecks and delivery playbooks
+                {guides.length} with a full guide
               </span>
             </div>
           </div>
         </Container>
       </Section>
 
-      {/* =========================================================================
-          INTERACTIVE SELECTOR + DETAIL PANEL (Porcelain with Notch)
-         ========================================================================= */}
-      <Section
-        id="industry-directory"
-        surface="porcelain"
-        previousSurface="graphite"
-        notch
-        spacing="default"
-      >
+      {/* Industry guides and the full directory: every industry is in the HTML, opened with native details */}
+      <Section id="industry-directory" surface="porcelain" previousSurface="graphite" spacing="default">
         <Container>
-          <nav aria-label="Industry guides" className="mb-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
-            <span className="font-semibold text-[#111215]">Industry guides:</span>
-            {industries.filter((ind) => (ind.hasDedicatedPage && ind.published)).map((ind) => (
-              <Link key={ind.slug} href={`/industries/${ind.slug}/`} className="underline underline-offset-4 hover:text-[#C8101A]">
-                {ind.name}
-              </Link>
-            ))}
-          </nav>
-          {/* Horizontal Industry Selector Bar */}
-          <div className="space-y-4 mb-8">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-semibold text-[#717684] uppercase tracking-wider">
-                Select industry vertical:
-              </span>
-              <span className="text-xs text-[#717684]">
-                Scroll horizontally on mobile
-              </span>
-            </div>
-
-            <div className="overflow-x-auto pb-3 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-thin">
-              <div className="flex items-center gap-2 min-w-max">
-                {industries.map((ind) => {
-                  const isSelected = ind.slug === selectedSlug;
-                  return (
-                    <button
-                      key={ind.slug}
-                      type="button"
-                      onClick={() => setSelectedSlug(ind.slug)}
-                      className={`px-4 py-2.5 rounded-full text-xs font-medium transition-all duration-150 flex items-center gap-2 border ${
-                        isSelected
-                          ? "bg-[#ED1C24] text-white border-[#ED1C24] shadow-xs"
-                          : "bg-white text-[#454954] border-[#D5D8E0] hover:border-[#111215] hover:text-[#111215]"
-                      }`}
-                    >
-                      <span>{ind.shortLabel}</span>
-                      {(ind.hasDedicatedPage && ind.published) && (
-                        <span
-                          className={`text-[10px] px-1.5 py-0.2 rounded-full ${
-                            isSelected
-                              ? "bg-white/20 text-white font-semibold"
-                              : "bg-[#F4F5F7] text-[#ED1C24] font-medium"
-                          }`}
-                        >
-                          Guide
-                        </span>
-                      )}
-                    </button>
-                  );
-                })}
+          {guides.length > 0 && (
+            <>
+              <div className="ind-head">
+                <Kicker>Industry guides</Kicker>
+                <h2 className="type-h2 text-[#111215]">Start with a full guide</h2>
+                <p className="type-body text-[#454954]">Detailed pages for the industries we work in most, with problems, setup, pricing and examples.</p>
               </div>
-            </div>
-          </div>
-
-          {/* Active Industry Panel */}
-          {activeIndustry && (
-            <div className="p-8 md:p-12 rounded-2xl bg-white border border-[#E4E6EB] shadow-sm space-y-10 animate-fade-in">
-              {/* Header */}
-              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-[#E4E6EB] pb-8">
-                <div className="space-y-2">
-                  <div className="flex items-center gap-3">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F4F5F7] text-xs font-semibold text-[#ED1C24]">
-                      <Building2 className="h-3.5 w-3.5" />
-                      <span>{activeIndustry.shortLabel} Playbook</span>
-                    </span>
-                    {(activeIndustry.hasDedicatedPage && activeIndustry.published) && (
-                      <span className="inline-flex items-center gap-1 text-xs text-[#16A34A] font-medium">
-                        <span className="h-1.5 w-1.5 rounded-full bg-[#16A34A]" />
-                        <span>Comprehensive guide available</span>
-                      </span>
-                    )}
-                  </div>
-                  <h2 className="type-h2 text-[#111215]">{activeIndustry.name}</h2>
-                </div>
-
-                <div className="flex flex-wrap items-center gap-3">
-                  {(activeIndustry.hasDedicatedPage && activeIndustry.published) ? (
-                    <Button
-                      href={`/industries/${activeIndustry.slug}/`}
-                      variant="primary"
-                      size="default"
-                    >
-                      <span>View full {activeIndustry.shortLabel} guide</span>
-                      <ArrowRight className="h-4 w-4 ml-1.5" />
-                    </Button>
-                  ) : (
-                    <Button href="/book-a-call/" variant="primary" size="default">
-                      Book a strategy call
-                    </Button>
-                  )}
-                  <Button href="/offers/" variant="secondary" size="default">
-                    Explore packages
-                  </Button>
-                </div>
+              <div className="ind-guides">
+                {guides.map((ind) => (
+                  <Link key={ind.slug} href={`/industries/${ind.slug}/`} className="ind-guide">
+                    <span className="ind-guide-label">Guide</span>
+                    <h3>{ind.name}</h3>
+                    <p>{ind.struggles[0]}</p>
+                    <span className="ind-guide-cta">Read the {ind.shortLabel} guide <ArrowRight className="h-4 w-4" aria-hidden="true" /></span>
+                  </Link>
+                ))}
               </div>
-
-              {/* Struggles vs Solutions Grid */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-                {/* What usually goes wrong */}
-                <div className="p-6 md:p-8 rounded-xl bg-[#F8F9FA] border border-[#E4E6EB] space-y-4">
-                  <div className="flex items-center gap-2 text-[#C8101A]">
-                    <AlertCircle className="h-5 w-5 shrink-0" />
-                    <h3 className="font-display text-base font-semibold text-[#111215]">
-                      What usually holds back {activeIndustry.shortLabel} businesses
-                    </h3>
-                  </div>
-                  <p className="text-xs text-[#717684]">
-                    Common operational and commercial pitfalls we routinely resolve:
-                  </p>
-                  <ul className="space-y-3.5 pt-2">
-                    {activeIndustry.struggles.map((struggle, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-sm text-[#454954]">
-                        <span className="inline-block h-2 w-2 rounded-full bg-[#ED1C24] shrink-0 mt-1.5" />
-                        <span className="leading-relaxed">{struggle}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* What we set up */}
-                <div className="p-6 md:p-8 rounded-xl bg-white border border-[#D5D8E0] space-y-4 shadow-2xs">
-                  <div className="flex items-center gap-2 text-[#16A34A]">
-                    <CheckCircle2 className="h-5 w-5 shrink-0" />
-                    <h3 className="font-display text-base font-semibold text-[#111215]">
-                      What the Webix team engineers & manages
-                    </h3>
-                  </div>
-                  <p className="text-xs text-[#717684]">
-                    Our direct implementation stack for this vertical:
-                  </p>
-                  <ul className="space-y-3.5 pt-2">
-                    {activeIndustry.whatWeDo.map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-sm text-[#111215]">
-                        <span className="inline-block h-2 w-2 rounded-full bg-[#16A34A] shrink-0 mt-1.5" />
-                        <span className="leading-relaxed">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              {/* Relevant Services & Proof Note */}
-              <div className="pt-6 border-t border-[#E4E6EB] flex flex-col md:flex-row md:items-center justify-between gap-6">
-                <div className="space-y-2">
-                  <span className="text-xs font-semibold text-[#717684] uppercase tracking-wider block">
-                    Core services combined for this vertical:
-                  </span>
-                  <div className="flex flex-wrap gap-2">
-                    {activeIndustry.relevantServiceSlugs.map((slug) => (
-                      <Link
-                        key={slug}
-                        href={`/${slug}/`}
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#F4F5F7] border border-[#E4E6EB] text-xs font-medium text-[#454954] hover:border-[#ED1C24] hover:text-[#ED1C24] transition-colors"
-                      >
-                        <span>{slug.replace(/-/g, " ")}</span>
-                        <ArrowRight className="h-3 w-3" />
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-
-                {activeIndustry.proofNote && (
-                  <div className="p-4 rounded-lg bg-[#FAF0F0] border border-[#F5C2C4] max-w-md">
-                    <div className="flex items-center gap-1.5 text-xs font-semibold text-[#C8101A] mb-1">
-                      <Sparkles className="h-3.5 w-3.5" />
-                      <span>Verified proof point</span>
-                    </div>
-                    <p className="text-xs text-[#454954] leading-relaxed">
-                      {activeIndustry.proofNote.text}
-                    </p>
-                  </div>
-                )}
-              </div>
-            </div>
+            </>
           )}
 
-          {/* Hidden All-Industries Static Output for Search Engines (SSR Crawlers) */}
-          <div className="sr-only" aria-hidden="true">
-            {industries.map((ind) => (
-              <article key={ind.slug}>
-                <h3>{ind.name}</h3>
-                <p>{ind.shortLabel}</p>
-                <div>
-                  <h4>Common struggles:</h4>
-                  <ul>
-                    {ind.struggles.map((s, i) => (
-                      <li key={i}>{s}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h4>Our solutions:</h4>
-                  <ul>
-                    {ind.whatWeDo.map((w, i) => (
-                      <li key={i}>{w}</li>
-                    ))}
-                  </ul>
-                </div>
-              </article>
-            ))}
+          <div className="ind-head ind-head-second">
+            <h2 className="type-h2 text-[#111215]">Every industry we work with</h2>
+            <p className="type-body text-[#454954]">Open an industry to see what usually goes wrong and what we set up.</p>
+          </div>
+          <div className="ind-list">
+            {industries.map((ind, index) => {
+              const hasGuide = ind.hasDedicatedPage && ind.published;
+              const related = ind.relevantServiceSlugs.flatMap((slug) => serviceNames.has(slug) ? [{ slug, name: serviceNames.get(slug)! }] : []);
+              return (
+                <details key={ind.slug} className="ind-item" name="industry-directory" open={index === 0}>
+                  <summary>
+                    <span className="ind-num">{String(index + 1).padStart(2, "0")}</span>
+                    <span className="ind-name">{ind.name}</span>
+                    {hasGuide && <span className="ind-badge">Guide</span>}
+                    <ChevronDown className="ind-chevron h-5 w-5" aria-hidden="true" />
+                  </summary>
+                  <div className="ind-body">
+                    <div>
+                      <h3>What usually goes wrong</h3>
+                      <ul>{ind.struggles.map((item) => <li key={item}>{item}</li>)}</ul>
+                    </div>
+                    <div>
+                      <h3>What we set up</h3>
+                      <ul data-tone="done">{ind.whatWeDo.map((item) => <li key={item}>{item}</li>)}</ul>
+                    </div>
+                    <div className="ind-foot">
+                      {related.length > 0 && (
+                        <p>
+                          <span>Services we combine:</span>
+                          {related.map((service) => <Link key={service.slug} href={`/${service.slug}/`}>{service.name}</Link>)}
+                        </p>
+                      )}
+                      {ind.proofNote?.confirmed && <p className="ind-proof">{ind.proofNote.text}</p>}
+                      {hasGuide && <Link className="ind-guide-link" href={`/industries/${ind.slug}/`}>Read the full {ind.shortLabel} guide <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>}
+                    </div>
+                  </div>
+                </details>
+              );
+            })}
           </div>
         </Container>
       </Section>

@@ -12,6 +12,7 @@ Never invent a statistic, award, client name, review, certification or year.
 | Founder & CEO | Haroon Sukhera | Confirmed |
 | Founder story | Started as a freelance WordPress/CMS developer, then built Webix Solutions into a full-service agency | Confirmed |
 | Headquarters (NAP) | Punjab, Pakistan (shown on site). Current city: Dunyapur; moving to Lahore in early 2027 | Owner decision 12 Nov 2026: the site names the region only, so nothing changes at the move. When the Lahore address is final, set `headquarters.addressLocality` in `content/site-facts.ts` and update the Google Business Profile to match |
+| Custom software | Client portals, POS software, dashboards and Python projects are delivered by the team | Confirmed by owner, 12 Nov 2026 |
 | Team description | "Team of 20+" | Owner decision 12 Nov 2026: do not write "remote", "in-house", "campus" or "under one roof" in site copy |
 | Meetings in Lahore | Available by appointment | Confirmed by Haroon (a team member is in Lahore) |
 | Planned move | HQ moves to Lahore within ~6 months — when it happens, update NAP here, on GBP and in schema on the same day | Internal only, do not publish |
@@ -25,14 +26,14 @@ Never invent a statistic, award, client name, review, certification or year.
 | In-house team | 20+ people across SMM, SEO, paid ads, video, graphic design, WordPress, full-stack, Flutter, CRM, Google Maps/GBP, product management | Confirmed (profile). Note: internal CRM shows 10 active employees — use "20+" only if true today [CONFIRM] |
 | Working hours | Two shifts. Day shift from 9:00 AM PKT. Night shift 9:00 PM – 5:00 AM PKT (= 11 AM–7 PM Eastern in winter, 8 AM–4 PM Pacific, 5 AM–1 PM New Zealand) | Confirmed (verify the timezone maths at launch; DST changes it by 1 hour) |
 | Socials | Facebook (webixsolutions1), Instagram (web.ixsolutions), LinkedIn, X, YouTube — exact URLs [CONFIRM] | Partly confirmed |
-| GitHub | github.com/webixsolutions-dev — 96 repositories, 1,385 contributions in the last 12 months (as of Nov 12, 2026) | Confirmed from screenshot |
+| GitHub | github.com/webixsolutions-dev — 96 repositories, 1,402 contributions in the last 12 months (as of Nov 13, 2026) | Confirmed from screenshot |
 
 ## Proof numbers (use exactly these)
 
 | Claim | Value | Status |
 |---|---|---|
 | Websites delivered | 280 | Confirmed |
-| Custom-coded builds | 94 | Confirmed |
+| Custom-coded builds | 96 | Confirmed by owner, Nov 2026 (matches repository count) |
 | CMS websites (WordPress, Shopify, Webflow and Framer) | 150 | Confirmed |
 | Social media accounts managed | 50+ | Confirmed |
 | Happy clients | 120+ | Confirmed |

@@ -1,5 +1,6 @@
 "use client";
 
+import * as React from "react";
 import { useEffect, useId, useMemo, useRef, useState, type FormEvent } from "react";
 import Script from "next/script";
 import { CalendarDays, Check, ChevronLeft, ChevronRight } from "lucide-react";
@@ -23,7 +24,6 @@ type MeetingType = "strategy" | "intro" | "partner";
 type Reservation = { eventId: string; startIso: string; endIso: string };
 const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 const services = getPublishedServices().map(({ slug, shortName }) => ({ slug, shortName }));
-const daysPerPage = 5;
 
 function labelDay(date: string, options: Intl.DateTimeFormatOptions) {
   return new Intl.DateTimeFormat("en", { ...options, timeZone: "UTC" }).format(new Date(`${date}T12:00:00Z`));
@@ -42,7 +42,9 @@ export function BookingWidget({
   const [timezone, setTimezone] = useState(BOOKING_CONFIG.hostTimeZone);
   const [slots, setSlots] = useState<FormattedSlot[]>([]);
   const [date, setDate] = useState("");
-  const [page, setPage] = useState(0);
+  const [monthKey, setMonthKey] = useState<string | null>(null);
+  const [periodKey, setPeriodKey] = useState<"AM" | "PM" | null>(null);
+  const [hourKey, setHourKey] = useState<number | null>(null);
   const [selected, setSelected] = useState<FormattedSlot | null>(null);
   const [reserved, setReserved] = useState<Reservation | null>(null);
   const [loading, setLoading] = useState(true);
@@ -78,7 +80,8 @@ export function BookingWidget({
         setUnavailable(false);
         setSlots(data.slots);
         setDate(data.slots[0]?.visitorDateKey ?? "");
-        setPage(0);
+        setMonthKey(null);
+        setHourKey(null);
       })
       .catch(() => { if (!controller.signal.aborted) setUnavailable(true); })
       .finally(() => { if (!controller.signal.aborted) setLoading(false); });
@@ -103,7 +106,38 @@ export function BookingWidget({
   }, [selected, reserved, turnstileReady]);
 
   const dates = useMemo(() => [...new Set(slots.map((slot) => slot.visitorDateKey))], [slots]);
-  const daySlots = slots.filter((slot) => slot.visitorDateKey === date);
+  const daySlots = useMemo(() => slots.filter((slot) => slot.visitorDateKey === date), [slots, date]);
+  // Calendar: months that have availability, and the grid for the month on screen.
+  const months = useMemo(() => [...new Set(dates.map((day) => day.slice(0, 7)))], [dates]);
+  const month = monthKey && months.includes(monthKey) ? monthKey : (date ? date.slice(0, 7) : months[0] ?? "1970-01");
+  const calendarCells = useMemo(() => {
+    const [year, monthNumber] = month.split("-").map(Number);
+    const first = new Date(Date.UTC(year, monthNumber - 1, 1));
+    const blanks = (first.getUTCDay() + 6) % 7;
+    const length = new Date(Date.UTC(year, monthNumber, 0)).getUTCDate();
+    return [
+      ...Array.from({ length: blanks }, () => null),
+      ...Array.from({ length }, (_, index) => `${month}-${String(index + 1).padStart(2, "0")}`),
+    ];
+  }, [month]);
+  // Clock: each slot placed by its hour in the visitor's time zone.
+  const clockSlots = useMemo(() => {
+    const format = new Intl.DateTimeFormat("en-US", { timeZone: timezone, hour: "numeric", hour12: true });
+    return daySlots.map((slot) => {
+      const parts = format.formatToParts(new Date(slot.iso));
+      return {
+        slot,
+        hour: Number(parts.find((part) => part.type === "hour")?.value ?? 12),
+        period: (parts.find((part) => part.type === "dayPeriod")?.value ?? "AM").toUpperCase() as "AM" | "PM",
+      };
+    });
+  }, [daySlots, timezone]);
+  const period = periodKey && clockSlots.some((slot) => slot.period === periodKey) ? periodKey : clockSlots[0]?.period ?? "AM";
+  const hour = hourKey !== null && clockSlots.some((slot) => slot.period === period && slot.hour === hourKey) ? hourKey : null;
+  const hourSlots = clockSlots.filter((slot) => slot.period === period && slot.hour === hour);
+  function choose(slot: FormattedSlot) {
+    setSelected(slot); setError(""); setToken(""); requestId.current = null;
+  }
   const meeting = BOOKING_CONFIG.meetingTypes.find((item) => item.slug === type)!;
   const timezoneOptions = COMMON_TIMEZONES.some((zone) => zone.value === timezone)
     ? COMMON_TIMEZONES : [{ value: timezone, label: timezone }, ...COMMON_TIMEZONES];
@@ -211,21 +245,47 @@ export function BookingWidget({
             </div>
           ) : dates.length === 0 ? <p role="status">All upcoming times are booked. <a href={`mailto:${SITE_FACTS.contact.email}`}>Email us for help.</a></p> : (
             <>
-              <div className="booking-dates-head">
-                <h3><CalendarDays size={17} /> Choose a date</h3>
-                <div>
-                  <button type="button" aria-label="Previous dates" disabled={page === 0} onClick={() => setPage(page - 1)}><ChevronLeft size={18} /></button>
-                  <button type="button" aria-label="Next dates" disabled={(page + 1) * daysPerPage >= dates.length} onClick={() => setPage(page + 1)}><ChevronRight size={18} /></button>
+              <div className="booking-picker">
+                <div className="booking-calendar">
+                  <div className="booking-dates-head">
+                    <h3><CalendarDays size={17} /> {labelDay(`${month}-01`, { month: "long", year: "numeric" })}</h3>
+                    <div>
+                      <button type="button" aria-label="Previous month" disabled={months.indexOf(month) <= 0} onClick={() => setMonthKey(months[months.indexOf(month) - 1])}><ChevronLeft size={18} /></button>
+                      <button type="button" aria-label="Next month" disabled={months.indexOf(month) >= months.length - 1} onClick={() => setMonthKey(months[months.indexOf(month) + 1])}><ChevronRight size={18} /></button>
+                    </div>
+                  </div>
+                  <div className="booking-weekdays" aria-hidden="true">{["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"].map((day) => <span key={day}>{day}</span>)}</div>
+                  <div className="booking-month">
+                    {calendarCells.map((day, index) => day === null ? <span key={`blank-${index}`} /> : (
+                      <button key={day} type="button" disabled={!dates.includes(day)} aria-pressed={date === day}
+                        aria-label={labelDay(day, { weekday: "long", month: "long", day: "numeric" })}
+                        onClick={() => { setDate(day); setHourKey(null); }}>{Number(day.slice(-2))}</button>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <div className="booking-dates">
-                {dates.slice(page * daysPerPage, (page + 1) * daysPerPage).map((day) => <button key={day} type="button" aria-pressed={date === day} aria-label={labelDay(day, { weekday: "long", month: "long", day: "numeric" })} onClick={() => setDate(day)}>
-                  <span>{labelDay(day, { weekday: "short" })}</span><strong>{day.slice(-2)}</strong><span>{labelDay(day, { month: "short" })}</span>
-                </button>)}
-              </div>
-              <h3 className="booking-times-title">Choose a time <span>{date && labelDay(date, { month: "short", day: "numeric" })}</span></h3>
-              <div className="booking-times">
-                {daySlots.map((slot) => <button key={slot.iso} type="button" onClick={() => { setSelected(slot); setError(""); setToken(""); requestId.current = null; }}>{slot.visitorTimeFormatted}</button>)}
+                <div className="booking-clock-wrap">
+                  <div className="booking-clock-head">
+                    <h3 className="booking-times-title">Choose a time <span>{date && labelDay(date, { month: "short", day: "numeric" })}</span></h3>
+                    <div className="booking-period" role="group" aria-label="Morning or afternoon">
+                      {(["AM", "PM"] as const).map((item) => <button key={item} type="button" aria-pressed={period === item} disabled={!clockSlots.some((slot) => slot.period === item)} onClick={() => { setPeriodKey(item); setHourKey(null); }}>{item}</button>)}
+                    </div>
+                  </div>
+                  <div className="booking-clock" style={{ "--booking-hand": `${((hour ?? 12) % 12) * 30}deg` } as React.CSSProperties} data-has-hour={hour !== null}>
+                    <i className="booking-clock-hand" aria-hidden="true" />
+                    <span className="booking-clock-center" aria-hidden="true" />
+                    {[12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((value, index) => {
+                      const options = clockSlots.filter((slot) => slot.period === period && slot.hour === value);
+                      return <button key={value} type="button" className="booking-clock-hour" style={{ "--booking-angle": `${index * 30}deg` } as React.CSSProperties}
+                        disabled={options.length === 0} aria-pressed={hour === value} aria-label={`${value} ${period}`}
+                        onClick={() => { if (options.length === 1) choose(options[0].slot); else setHourKey(value); }}>{value}</button>;
+                    })}
+                  </div>
+                  <div className="booking-minutes" aria-live="polite">
+                    {hour === null ? <p>Pick an hour on the clock.</p> : hourSlots.map(({ slot }) => (
+                      <button key={slot.iso} type="button" onClick={() => choose(slot)}>{slot.visitorTimeFormatted}</button>
+                    ))}
+                  </div>
+                </div>
               </div>
             </>
           )}

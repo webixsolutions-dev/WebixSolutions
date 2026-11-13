@@ -29,7 +29,7 @@ const VERIFIED_DELIVERY_TRACKS = [
     unit: "Custom-coded builds & repositories",
     title: "Next.js, React, Node.js and Flutter builds",
     detail:
-      "1,385 contributions in the last 12 months across 96 repositories — custom marketing sites, web apps, portals and mobile MVPs.",
+      "1,402 contributions in the last 12 months across 96 repositories — custom marketing sites, web apps, portals and mobile MVPs.",
     stack: ["Next.js", "React", "Node.js", "Flutter", "TypeScript"],
     href: "https://github.com/webixsolutions-dev",
     external: true,

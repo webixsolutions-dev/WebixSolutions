@@ -23,7 +23,9 @@ import {
 } from "lucide-react";
 
 export function CareersView() {
-  const { hero, howWeHire, workplaceValues, openRoles, faqs } = CAREERS_CONTENT;
+  const { hero, howWeHire, workplaceValues, faqs } = CAREERS_CONTENT;
+  const openRoles = CAREERS_CONTENT.hiringOpen ? CAREERS_CONTENT.openRoles : [];
+  const usualRoles = CAREERS_CONTENT.openRoles.map((role) => role.title);
   const [selectedRole, setSelectedRole] = React.useState<OpenRole | null>(null);
 
   return (
@@ -161,11 +163,33 @@ export function CareersView() {
         <Container>
           <div className="max-w-3xl space-y-3 mb-10">
             <Kicker>Current opportunities</Kicker>
-            <h2 className="type-h2 text-white">Open positions at Webix Solutions</h2>
+            <h2 className="type-h2 text-white">
+              {openRoles.length > 0 ? "Open positions at Webix Solutions" : "No open positions right now"}
+            </h2>
             <p className="type-body text-[#9CA3AF]">
-              We are actively hiring experienced software developers, performance marketers, and automation engineers.
+              {openRoles.length > 0
+                ? "These are the roles we are hiring for at the moment."
+                : "We are not hiring at the moment. When a role opens, it will be listed on this page."}
             </p>
           </div>
+
+          {openRoles.length === 0 && (
+            <div className="careers-empty">
+              <div>
+                <h3 className="type-h3 text-white">Want to be considered when we hire?</h3>
+                <p className="text-sm text-[#C1C6D0] leading-relaxed">
+                  Send your CV and a link to your work. We keep it on file and contact you if a matching role opens.
+                </p>
+                <a href={`mailto:${SITE_FACTS.contact.hrEmail}?subject=Future%20role%20at%20Webix%20Solutions`} className="studio-button">
+                  Email your CV to {SITE_FACTS.contact.hrEmail}
+                </a>
+              </div>
+              <div>
+                <p className="careers-empty-label">Roles we have hired for</p>
+                <ul>{usualRoles.map((title) => <li key={title}>{title}</li>)}</ul>
+              </div>
+            </div>
+          )}
 
           <div className="space-y-4">
             {openRoles.map((role) => (

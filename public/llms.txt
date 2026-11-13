@@ -17,6 +17,7 @@
 - [Website design and development](https://webixsolutions.com/web-design-development-service/): custom-coded Next.js sites and builds on WordPress, Shopify, Webflow and Framer.
 - [Shopify store development](https://webixsolutions.com/shopify-store-development-services/): storefronts, migrations and checkout flows.
 - [Mobile app development](https://webixsolutions.com/mobile-app-development-services/): iOS and Android apps built with Flutter.
+- [Custom portals and software](https://webixsolutions.com/custom-web-application-development/): client portals, POS software, dashboards, booking systems and SaaS MVPs built with Next.js, React, Node.js and Python.
 - [Custom CRM and client portals](https://webixsolutions.com/custom-crm-development/): lead pipelines, booking dashboards, customer portals and internal tools.
 - [SEO, AEO and GEO](https://webixsolutions.com/seo-services/): technical SEO, local search and content that answers customers' questions.
 - [Google Business Profile optimisation](https://webixsolutions.com/google-business-profile-optimization/): local listings and Maps visibility.

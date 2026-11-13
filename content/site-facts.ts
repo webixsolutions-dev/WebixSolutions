@@ -128,17 +128,17 @@ export const SITE_FACTS = {
       confirmed: true,
     },
     customCodedBuilds: {
-      value: "94",
+      value: "96",
       label: "Custom-coded builds",
-      detail: "Projects built with Next.js, React, Node.js and Flutter",
+      detail: "Projects built with Next.js, React, Node.js, Python and Flutter",
       confirmed: true,
     },
     githubContributionsLastYear: {
-      value: "1,385",
+      value: "1,402",
       repositoryCount: 96,
       label: "GitHub contributions in the last 12 months",
       detail:
-        "1,385 contributions in the last 12 months across 96 Next.js, React, Node.js and Flutter repositories",
+        "1,402 contributions in the last 12 months across 96 Next.js, React, Node.js, Python and Flutter repositories",
       confirmed: true,
     },
     cmsWebsitesBuilt: {

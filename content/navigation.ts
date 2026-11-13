@@ -31,7 +31,7 @@ const CATEGORY_META: Record<
 > = {
   Build: {
     heading: "Build",
-    subtitle: "Websites, stores & mobile apps",
+    subtitle: "Websites, stores, apps & custom software",
   },
   Grow: {
     heading: "Grow",

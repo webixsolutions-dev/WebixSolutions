@@ -17,6 +17,7 @@ import { MOBILE_APP_DEVELOPMENT_SERVICES } from "./mobile-app-development-servic
 import { CONVERSION_RATE_OPTIMIZATION_SERVICES } from "./conversion-rate-optimization-services";
 import { BRAND_AWARENESS_STRATEGY } from "./brand-awareness-strategy";
 import { REPUTATION_MANAGEMENT_SERVICE } from "./reputation-management-service";
+import { CUSTOM_WEB_APPLICATION_DEVELOPMENT } from "./custom-web-application-development";
 import {
   BUILD_PRICES,
   CARE_PLANS,
@@ -48,6 +49,7 @@ const PAGES: ServicePageContent[] = [
   CONVERSION_RATE_OPTIMIZATION_SERVICES,
   BRAND_AWARENESS_STRATEGY,
   REPUTATION_MANAGEMENT_SERVICE,
+  CUSTOM_WEB_APPLICATION_DEVELOPMENT,
 ];
 
 export function getServicePageContent(slug: string): ServicePageContent | undefined {

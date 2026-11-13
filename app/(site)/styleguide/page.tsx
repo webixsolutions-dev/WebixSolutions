@@ -361,7 +361,7 @@ export default function StyleguidePage() {
                     Custom-coded builds shipped
                   </div>
                   <p className="mt-1 text-sm text-[#A7ACB8]">
-                    1,385 contributions in the last 12 months across 96 Next.js,
+                    1,402 contributions in the last 12 months across 96 Next.js,
                     React, Node.js and Flutter repositories.
                   </p>
                 </div>

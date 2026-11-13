@@ -309,7 +309,7 @@ export function OffersLandingView({ nextSlot }: OffersLandingViewProps) {
                 Engineering team
               </span>
               <div className="font-display text-3xl font-bold text-white">
-                1,385 contributions
+                1,402 contributions
               </div>
               <p className="text-xs text-[#A7ACB8] leading-relaxed">
                 Made across 96 Next.js, React, Node.js and Flutter repositories over the last 12 months with clean architectural hygiene.
