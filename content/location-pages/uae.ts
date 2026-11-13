@@ -24,7 +24,7 @@ export const UAE_LOCATION_PAGE: LocationPageContent = {
   currencyExplanation:
     "Because the UAE Dirham maintains an official peg to the US Dollar (1 USD = 3.6725 AED), our project proposals translate cleanly into Dirhams without foreign exchange volatility. All advertising spend is charged natively in AED to your UAE corporate cards.",
   pricingCard: {
-    startingRate: "From $499 USD (~1,830 AED)",
+    startingRate: "Custom USD quote with an AED estimate",
     description: "High-velocity Gulf commercial execution without Dubai agency price inflation",
     terms: [
       "Zero inflated local office markups common among Dubai Media City agencies",
@@ -80,7 +80,7 @@ export const UAE_LOCATION_PAGE: LocationPageContent = {
       description:
         "Modern Gulf e-commerce demands localized payment options that support local consumer payment habits.",
       bulletPoints: [
-        "Direct integration with Buy Now Pay Later (BNPL) leaders Tabby and Tamara to lift checkout conversion rates by up to 30%",
+        "Direct integration with Buy Now Pay Later (BNPL) leaders Tabby and Tamara where your business and platform are eligible",
         "Integration with UAE licensed payment gateways including Stripe UAE, Paymob, Network International, and Telr",
         "Apple Pay and Google Pay one-tap express mobile checkouts engineered for friction-free smartphone purchases",
         "Strict compliance with UAE Central Bank electronic payment security protocols and 3D Secure 2.0 authentication",
@@ -120,7 +120,7 @@ export const UAE_LOCATION_PAGE: LocationPageContent = {
     {
       question: "What UAE payment gateways and Buy Now Pay Later services do you support?",
       answer:
-        "We routinely integrate Tabby, Tamara, Stripe UAE, Paymob, and Network International into Shopify and custom Next.js checkouts. Providing BNPL installment options is essential in the UAE and frequently increases average order value (AOV) by over 25%.",
+        "We routinely integrate Tabby, Tamara, Stripe UAE, Paymob, and Network International into Shopify and custom Next.js checkouts. Choose payment options based on your eligibility, costs and customer demand.",
     },
     {
       question: "What hands-on experience does Webix have in the UAE commercial ecosystem?",

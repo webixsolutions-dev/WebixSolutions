@@ -5,22 +5,16 @@ import Link from "next/link";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Kicker } from "@/components/ui/kicker";
-import { Button } from "@/components/ui/button";
 import { FinalCtaSection } from "@/components/home/final-cta-section";
-import type { BlogPost, BlogCategory } from "@/content/blog/types";
+import { formatBlogDate, type BlogPost, type BlogCategory } from "@/content/blog/types";
+import { BlogCover } from "./blog-cover";
 import {
-  Calendar,
   Clock,
   ArrowRight,
-  BookOpen,
-  User,
-  Sparkles,
 } from "lucide-react";
 
 export interface BlogIndexViewProps {
   posts: BlogPost[];
-  currentPage?: number;
-  totalPages?: number;
 }
 
 const CATEGORIES: Array<"All" | BlogCategory> = [
@@ -32,11 +26,7 @@ const CATEGORIES: Array<"All" | BlogCategory> = [
   "Web Development",
 ];
 
-export function BlogIndexView({
-  posts,
-  currentPage = 1,
-  totalPages = 1,
-}: BlogIndexViewProps) {
+export function BlogIndexView({ posts }: BlogIndexViewProps) {
   const [selectedCategory, setSelectedCategory] = React.useState<"All" | BlogCategory>("All");
 
   const filteredPosts = React.useMemo(() => {
@@ -71,6 +61,7 @@ export function BlogIndexView({
                   key={cat}
                   type="button"
                   onClick={() => setSelectedCategory(cat)}
+                  aria-pressed={isSelected}
                   className={`px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all ${
                     isSelected
                       ? "bg-[#C8101A] text-white shadow-xs"
@@ -90,6 +81,7 @@ export function BlogIndexView({
          ========================================================================= */}
       <Section surface="porcelain" previousSurface="graphite" notch spacing="default">
         <Container>
+          <Link className="studio-link mb-7" href="/category/blog/">Explore digital marketing guides</Link>
           {filteredPosts.length === 0 ? (
             <div className="p-12 text-center text-[#717684]">
               No articles found in this category.
@@ -100,10 +92,11 @@ export function BlogIndexView({
               {featuredPost && (
                 <Link
                   href={`/${featuredPost.slug}/`}
-                  className="group block cut-tr-lg border border-[#E4E6EB] bg-white p-7 sm:p-10 shadow-xs hover:border-[#ED1C24] transition-all"
+                  className="group grid overflow-hidden rounded-2xl border border-[#D5D8E0] bg-white transition-colors hover:border-[#C8101A] lg:grid-cols-[1.04fr_1fr] items-center"
                 >
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                    <div className="lg:col-span-8 space-y-4">
+                  <BlogCover cover={featuredPost.cover} sizes="(min-width: 1024px) 48vw, 94vw" eager />
+                  <div className="space-y-5 p-6 sm:p-9">
+                    <div className="space-y-4">
                       <div className="flex flex-wrap items-center gap-3 text-xs">
                         <span className="px-2.5 py-0.5 rounded-full bg-[#FAF0F0] text-[#C8101A] font-bold uppercase tracking-wider text-[10px]">
                           {featuredPost.category}
@@ -114,7 +107,7 @@ export function BlogIndexView({
                           <span>{featuredPost.readingTimeMinutes} min read</span>
                         </span>
                         <span className="text-[#717684]">•</span>
-                        <span className="text-[#717684]">{featuredPost.lastUpdated}</span>
+                        <span className="text-[#717684]">{formatBlogDate(featuredPost.modifiedDate ?? featuredPost.publishedDate)}</span>
                       </div>
 
                       <h2 className="type-h2 text-[#111215] group-hover:text-[#ED1C24] transition-colors">
@@ -135,24 +128,8 @@ export function BlogIndexView({
                       </div>
                     </div>
 
-                    <div className="lg:col-span-4 flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-[#E4E6EB] pt-6 lg:pt-0 lg:pl-8 space-y-4">
-                      <div className="space-y-2">
-                        <span className="text-[11px] font-semibold text-[#717684] uppercase tracking-wider block">
-                          Key Takeaways:
-                        </span>
-                        <ul className="space-y-1.5 text-xs text-[#454954]">
-                          {featuredPost.keyTakeaways.map((takeaway, i) => (
-                            <li key={i} className="line-clamp-2">
-                              • {takeaway}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div className="text-xs font-semibold text-[#ED1C24] inline-flex items-center gap-1.5 pt-2">
-                        <span>Read full technical article</span>
-                        <ArrowRight className="h-4 w-4 group-hover:translate-x-1.5 transition-transform" />
-                      </div>
+                    <div className="inline-flex items-center gap-2 font-semibold text-[#C8101A]">
+                      Read article <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </div>
                   </div>
                 </Link>
@@ -165,8 +142,10 @@ export function BlogIndexView({
                     <Link
                       key={post.slug}
                       href={`/${post.slug}/`}
-                      className="group p-6 rounded-xl bg-white border border-[#E4E6EB] hover:border-[#ED1C24] shadow-xs flex flex-col justify-between space-y-4 transition-all"
+                      className="group flex flex-col overflow-hidden rounded-2xl border border-[#D5D8E0] bg-white transition-colors hover:border-[#C8101A]"
                     >
+                      <BlogCover cover={post.cover} sizes="(min-width: 1024px) 31vw, (min-width: 768px) 46vw, 94vw" />
+                      <div className="flex flex-1 flex-col justify-between gap-5 p-5 sm:p-6">
                       <div className="space-y-3">
                         <div className="flex items-center justify-between text-xs text-[#717684]">
                           <span className="px-2 py-0.5 rounded-full bg-[#FAF0F0] text-[#C8101A] font-bold uppercase tracking-wider text-[9px]">
@@ -178,11 +157,11 @@ export function BlogIndexView({
                           </span>
                         </div>
 
-                        <h3 className="font-display text-base font-bold text-[#111215] group-hover:text-[#ED1C24] transition-colors leading-snug">
+                        <h3 className="font-display text-xl font-bold text-[#111215] group-hover:text-[#ED1C24] transition-colors leading-snug">
                           {post.title}
                         </h3>
 
-                        <p className="text-xs text-[#454954] line-clamp-3 leading-relaxed">
+                        <p className="text-sm text-[#454954] line-clamp-3 leading-relaxed">
                           {post.answerFirst}
                         </p>
                       </div>
@@ -195,6 +174,7 @@ export function BlogIndexView({
                           <span>Read</span>
                           <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
                         </span>
+                      </div>
                       </div>
                     </Link>
                   ))}

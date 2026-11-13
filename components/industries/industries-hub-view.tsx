@@ -163,6 +163,7 @@ export function IndustriesHubView({ industries, nextSlot }: IndustriesHubViewPro
                         </p>
                       )}
                       {ind.proofNote?.confirmed && <p className="ind-proof">{ind.proofNote.text}</p>}
+                      {ind.slug === "restaurants-hospitality" && <Link className="ind-guide-link" href="/category/restaurant/">See restaurant websites, apps and marketing <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>}
                       {hasGuide && <Link className="ind-guide-link" href={`/industries/${ind.slug}/`}>Read the full {ind.shortLabel} guide <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>}
                     </div>
                   </div>

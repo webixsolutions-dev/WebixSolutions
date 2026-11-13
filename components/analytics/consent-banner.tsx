@@ -4,6 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import Script from "next/script";
 import { Button } from "@/components/ui/button";
+import { trackAnalyticsEvent } from "./events";
 
 const CONSENT_STORAGE_KEY = "webix_cookie_consent_v1";
 
@@ -27,15 +28,31 @@ export function ConsentBanner() {
     const onOpenSettings = () => {
       setVisible(true);
     };
+    function trackLink(event: MouseEvent) {
+      const link = event.target instanceof Element ? event.target.closest<HTMLAnchorElement>("a[href]") : null;
+      if (!link) return;
+      const url = new URL(link.href);
+      if (url.hostname === "wa.me" || url.hostname === "api.whatsapp.com") {
+        trackAnalyticsEvent("whatsapp_click", { source_page: window.location.pathname });
+      } else if (url.origin === window.location.origin && url.pathname === "/book-a-call/") {
+        trackAnalyticsEvent("cta_click", { source_page: window.location.pathname, destination: url.pathname });
+      }
+    }
+    document.addEventListener("click", trackLink);
     window.addEventListener("webix:open-cookie-settings", onOpenSettings);
     return () => {
       cancelAnimationFrame(frame);
+      document.removeEventListener("click", trackLink);
       window.removeEventListener("webix:open-cookie-settings", onOpenSettings);
     };
   }, []);
 
   const handleChoice = (choice: "accepted" | "declined") => {
     window.localStorage.setItem(CONSENT_STORAGE_KEY, choice);
+    if (gaId) {
+      const analyticsWindow = window as unknown as Record<string, unknown>;
+      analyticsWindow[`ga-disable-${gaId}`] = choice === "declined";
+    }
     setConsent(choice);
     setVisible(false);
   };
@@ -52,9 +69,9 @@ export function ConsentBanner() {
           <Script id="ga4-init" strategy="afterInteractive">
             {`
               window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${gaId}', { anonymize_ip: true });
+              window.gtag = function(){window.dataLayer.push(arguments);};
+              window.gtag('js', new Date());
+              window.gtag('config', '${gaId}', { anonymize_ip: true });
             `}
           </Script>
         </>

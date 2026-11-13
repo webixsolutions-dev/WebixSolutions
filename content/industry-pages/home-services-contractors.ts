@@ -119,7 +119,7 @@ export const HOME_SERVICES_CONTRACTORS_PAGE: IndustryPageContent = {
   pricingNote: {
     headline: "Predictable contractor marketing with zero long-term hostage contracts",
     subline:
-      "Custom contractor websites start from $499. Comprehensive growth plans including local SEO, Google Ads management, and AI receptionist support start from $399/month on /offers/.",
+      "We quote the website separately from ongoing local SEO, Google Ads management and call handling, based on your service area and workflow.",
     ctaLabel: "View contractor packages",
     ctaHref: "/offers/",
   },

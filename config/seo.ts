@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const SITE_URL = "https://webixsolutions.com";
+export const SITE_URL = "https://www.webixsolutions.com";
 export const SITE_NAME = "Webix Solutions";
 export const DEFAULT_TITLE = "Digital Marketing, Web & AI Agency | Webix Solutions";
 export const DEFAULT_DESCRIPTION =
@@ -21,6 +21,7 @@ export interface PageMetaInput {
   ogType?: "website" | "article";
   publishedTime?: string;
   modifiedTime?: string;
+  image?: { path: string; alt: string; width?: number; height?: number };
 }
 
 export function ensureTrailingSlash(path: string): string {
@@ -47,6 +48,10 @@ export function buildMetadata(input: PageMetaInput): Metadata {
     );
   }
 
+  const image = input.image
+    ? { url: new URL(input.image.path, SITE_URL).href, alt: input.image.alt, width: input.image.width, height: input.image.height }
+    : { url: OG_IMAGE_URL, width: 1200, height: 630, alt: OG_IMAGE_ALT };
+
   return {
     title: {
       absolute: fullTitle,
@@ -65,14 +70,14 @@ export function buildMetadata(input: PageMetaInput): Metadata {
       siteName: SITE_NAME,
       locale: "en_US",
       type: input.ogType ?? "website",
-      images: [{ url: OG_IMAGE_URL, width: 1200, height: 630, alt: OG_IMAGE_ALT }],
+      images: [image],
       ...(input.publishedTime ? { publishedTime: input.publishedTime } : {}),
       ...(input.modifiedTime ? { modifiedTime: input.modifiedTime } : {}),
     },
     twitter: {
       card: "summary_large_image",
       title: fullTitle,
-      images: [OG_IMAGE_URL],
+      images: [image],
       description: input.description,
     },
   };

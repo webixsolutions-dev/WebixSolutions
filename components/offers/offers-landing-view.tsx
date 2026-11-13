@@ -145,7 +145,7 @@ export function OffersLandingView({ nextSlot }: OffersLandingViewProps) {
               Choose the right growth engine for your stage
             </h2>
             <p className="type-body text-[#454954]">
-              Four structured solutions with zero hidden markups. From fast 14-day launch kits to full-stack multi-channel dominance.
+              Compare a website launch, ongoing marketing or an automation project by scope and delivery milestones.
             </p>
           </div>
 

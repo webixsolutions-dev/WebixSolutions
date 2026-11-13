@@ -97,7 +97,7 @@ Complete these tasks in order on the day of switchover:
 
 ### 2. Search Console & Indexing Cleanup (CRITICAL)
 - [ ] Open **Google Search Console** for `webixsolutions.com`.
-- [ ] Submit sitemap: `https://webixsolutions.com/sitemap.xml`.
+- [ ] Submit sitemap: `https://www.webixsolutions.com/sitemap.xml`.
 - [ ] **Spam Removal Tool**: Navigate to **Removals > Temporary Removals > New Request > Remove all URLs with this prefix** and submit:
   ```
   https://webixsolutions.com/market/
@@ -114,7 +114,7 @@ Complete these tasks in order on the day of switchover:
   - `https://webixsolutions.com/book-a-call/`
 
 ### 3. Bing Webmaster Tools & IndexNow
-- [ ] Submit `https://webixsolutions.com/sitemap.xml` in Bing Webmaster Tools.
+- [ ] Submit `https://www.webixsolutions.com/sitemap.xml` in Bing Webmaster Tools.
 - [ ] Enable **IndexNow** in Bing WMT for automated instant crawl notification.
 
 ### 4. Google Business Profile (GBP) & Local SEO

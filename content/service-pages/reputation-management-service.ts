@@ -5,19 +5,19 @@ export const REPUTATION_MANAGEMENT_SERVICE: ServicePageContent = {
   slug: "reputation-management-service",
   heroKicker: "Review generation, responses and brand protection",
   intro: [
-    "We help growing businesses build a 5-star online reputation through automated review requests to happy clients, professional responses to all feedback, and search result cleanup.",
+    "We help growing businesses collect authentic customer feedback through neutral review requests to eligible customers, professional responses to all feedback, and search result cleanup.",
     "Engineered with 100% compliant, white-hat methods across Google Maps, Trustpilot, Facebook and industry platforms for companies in Canada, the US, the UAE, New Zealand and Pakistan.",
   ],
   proofChip: "Ethical review generation and brand monitoring across major platforms",
 
   outcomes: {
     h2: "A stellar online reputation that turns researchers into customers",
-    lead: "Over 90% of buyers check Google reviews before hiring a service or making a purchase. A proactive reputation strategy ensures what they see earns their business.",
+    lead: "Reviews help customers judge whether a business can meet their needs. Ask eligible customers for honest feedback and respond consistently.",
     items: [
       {
         title: "A steady stream of authentic 5-star reviews",
         detail:
-          "Automated SMS, email and WhatsApp review requests sent at the peak moment of customer satisfaction to capture genuine positive feedback.",
+          "Automated SMS, email and WhatsApp review requests sent after a completed purchase or service to invite honest feedback.",
       },
       {
         title: "Professional responses to every review within 24 hours",
@@ -153,7 +153,7 @@ export const REPUTATION_MANAGEMENT_SERVICE: ServicePageContent = {
     {
       question: "Can you remove negative reviews from Google or Facebook?",
       answer:
-        "We can successfully remove reviews that violate official platform policies — such as reviews containing hate speech, profanity, obvious conflicts of interest, mistaken identity, or proven spam. We submit formal legal and policy disputes directly to Google or Meta. Valid negative reviews from real customers cannot be legally removed; instead, we bury their impact with a surge of genuine positive reviews and diplomatic responses.",
+        "We can report reviews that appear to violate platform policy. The platform decides whether to remove them. For genuine critical feedback, we help you write a response and address the issue.",
     },
     {
       question: "How do you get more genuine reviews without annoying customers?",

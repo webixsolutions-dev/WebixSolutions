@@ -14,7 +14,8 @@ export interface AuthorProfile {
   name: string;
   role: string;
   bio: string;
-  linkedin: string;
+  linkedin?: string;
+  organization?: boolean;
   avatarText: string;
 }
 
@@ -24,12 +25,13 @@ export interface BlogPost {
   metaTitle: string;
   metaDescription: string;
   publishedDate: string;
-  lastUpdated: string;
+  modifiedDate?: string;
+  cover: { path: string; alt: string };
+  sources?: { label: string; href: string }[];
   category: BlogCategory;
   readingTimeMinutes: number;
   answerFirst: string;
   keyTakeaways: [string, string, string];
-  tableOfContents: Array<{ id: string; label: string }>;
   relatedServiceSlug: string;
   relatedServiceCtaLabel: string;
   author: AuthorProfile;
@@ -45,4 +47,8 @@ export interface BlogPost {
     };
     bullets?: string[];
   }>;
+}
+
+export function formatBlogDate(date: string) {
+  return new Intl.DateTimeFormat("en", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }).format(new Date(date));
 }

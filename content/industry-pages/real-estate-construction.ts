@@ -118,7 +118,7 @@ export const REAL_ESTATE_CONSTRUCTION_PAGE: IndustryPageContent = {
   pricingNote: {
     headline: "High-ROI digital infrastructure for developers, agencies & builders",
     subline:
-      "Dedicated development project landing pages start from $499. Comprehensive multi-project portals and ongoing international ad management start from $399/month on /offers/.",
+      "We quote project landing pages, multi-project portals and ongoing ad management based on the number of projects, integrations and markets.",
     ctaLabel: "View real estate packages",
     ctaHref: "/offers/",
   },

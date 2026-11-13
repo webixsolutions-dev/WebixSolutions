@@ -1,8 +1,4 @@
-"use client";
-
-import * as React from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { INTERIOR } from "@/content/interior";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
@@ -11,24 +7,14 @@ import { Button } from "@/components/ui/button";
 import { FinalCtaSection } from "@/components/home/final-cta-section";
 import { GithubActivityBlock } from "./github-activity-block";
 import { OwnBrandsBand } from "./own-brands-band";
-import { ProjectCover } from "@/components/studio/project-cover";
-import type { WorkEntry, WorkCategory } from "@/content/work";
+import { WorkDirectory } from "./work-directory";
+import { WORK_CATEGORIES, type WorkEntry } from "@/content/work";
 import type { NextSlotResult } from "@/lib/booking/next-slot";
 
 interface OurWorkHubViewProps {
   entries: WorkEntry[];
   nextSlot: NextSlotResult;
 }
-
-const CATEGORIES: WorkCategory[] = [
-  "All",
-  "Websites",
-  "E-commerce",
-  "Custom software & CRM",
-  "AI & automation",
-  "Paid ads",
-  "Social media",
-];
 
 const PLATFORMS = [
   "Next.js",
@@ -46,13 +32,6 @@ const PLATFORMS = [
 ];
 
 export function OurWorkHubView({ entries, nextSlot }: OurWorkHubViewProps) {
-  const [selectedCategory, setSelectedCategory] = React.useState<WorkCategory>("All");
-
-  const filteredEntries =
-    selectedCategory === "All"
-      ? entries
-      : entries.filter((e) => e.category === selectedCategory);
-
   return (
     <div className="w-full">
       {/* =========================================================================
@@ -122,110 +101,7 @@ export function OurWorkHubView({ entries, nextSlot }: OurWorkHubViewProps) {
         spacing="default"
       >
         <Container>
-          {/* Category Filter Pills */}
-          <div className="space-y-4 mb-10">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-semibold text-[#717684] uppercase tracking-wider">
-                Filter by discipline:
-              </span>
-              <span className="text-xs text-[#717684]">
-                Showing {filteredEntries.length} projects
-              </span>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-2">
-              {CATEGORIES.filter((cat) => cat === "All" || entries.some((entry) => entry.category === cat)).map((cat) => (
-                <button
-                  key={cat}
-                  type="button"
-                  onClick={() => setSelectedCategory(cat)}
-                  aria-pressed={selectedCategory === cat}
-                  className={`px-4 py-2 rounded-full text-xs font-medium border transition-colors ${
-                    selectedCategory === cat
-                      ? "bg-[#be1421] text-white border-[#be1421]"
-                      : "bg-white text-[#454954] border-[#D5D8E0] hover:border-[#111215] hover:text-[#111215]"
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Stacked Case Studies Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-16" data-studio-gallery>
-            {entries.map((study) => (
-              <div
-                key={study.slug}
-                hidden={selectedCategory !== "All" && selectedCategory !== study.category}
-                className="group studio-cut-frame interior-project-card"
-              >
-                <ProjectCover study={study} />
-                <div className="p-6 md:p-8 space-y-5">
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="inline-block text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-[#F4F5F7] text-[#b51520]">
-                      {study.category}
-                    </span>
-                    <span className="text-xs font-mono text-[#717684]">
-                      {study.country}
-                    </span>
-                  </div>
-
-                  <h2 className="font-display text-2xl font-bold text-[#111215] group-hover:text-[#b51520] transition-colors leading-snug">
-                    {study.title}
-                  </h2>
-
-                  <p className="text-sm text-[#454954] leading-relaxed">
-                    {study.summary}
-                  </p>
-
-                  {/* Highlight Metric */}
-                  {study.results[0] && (
-                    <div className="p-4 rounded-xl bg-[#FAF0F0] border border-[#F5C2C4] flex items-center justify-between">
-                      <div>
-                        <div className="font-display text-2xl font-bold text-[#C8101A]">
-                          {study.results[0].value}
-                        </div>
-                        <div className="text-xs text-[#454954] font-medium mt-0.5">
-                          {study.results[0].label}
-                        </div>
-                      </div>
-                      <span className="text-[11px] text-[#717684] italic max-w-[140px] text-right">
-                        {study.results[0].source}
-                      </span>
-                    </div>
-                  )}
-
-                  {/* Stack Chips */}
-                  <div className="flex flex-wrap gap-1.5 pt-2">
-                    {study.stack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="text-[11px] font-mono px-2 py-0.5 rounded bg-[#F4F5F7] text-[#454954]"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="pt-4 border-t border-[#E4E6EB] flex items-center justify-between">
-                  <span className="text-xs text-[#717684]">
-                    {study.permission === "named" ? "Named project" : "Anonymised project"}
-                  </span>
-                  {!study.scopeOnly && <Link
-                    href={`/our-work/${study.slug}/`}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#b51520] group-hover:translate-x-1 transition-transform"
-                  >
-                    <span>Read case study</span>
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>}
-                </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <WorkDirectory entries={entries} categories={WORK_CATEGORIES.filter((item) => item === "All" || entries.some((entry) => entry.category === item))} />
 
           {/* Own Brands Band */}
           <OwnBrandsBand />

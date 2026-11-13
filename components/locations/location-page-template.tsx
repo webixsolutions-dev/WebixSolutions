@@ -26,10 +26,19 @@ interface LocationPageTemplateProps {
   nextSlot: NextSlotResult;
 }
 
+const marketExamples: Partial<Record<LocationPageContent["slug"], { href: string; label: string }>> = {
+  canada: { href: "/our-work/camz-cleaning-booking/", label: "See the Camz Cleaning project" },
+  "united-states": { href: "/our-work/us-contractor-websites/", label: "See the US contractor website work" },
+  uae: { href: "https://laptopsouq.ae", label: "Visit our UAE store, LaptopSouq" },
+  pakistan: { href: "/our-work/zelvomart-ecommerce-platform/", label: "See the Zelvomart project" },
+};
+
 export function LocationPageTemplate({
   content,
   nextSlot,
 }: LocationPageTemplateProps) {
+  const example = marketExamples[content.slug];
+
   return (
     <div className="w-full">
       {/* =========================================================================
@@ -78,7 +87,7 @@ export function LocationPageTemplate({
               <p className="type-body text-[#A7ACB8] max-w-[62ch]">
                 {content.heroIntro[1]}
               </p>
-              {content.slug === "canada" && <Link className="studio-link" href="/our-work/camz-cleaning-booking/">See the Camz Cleaning project <ArrowUpRight size={16} /></Link>}
+              {example && <Link className="studio-link" href={example.href}>{example.label} <ArrowUpRight size={16} aria-hidden="true" /></Link>}
             </div>
 
             <div

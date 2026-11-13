@@ -7,7 +7,7 @@ export const CANADA_LOCATION_PAGE: LocationPageContent = {
   shortCode: "CA",
   title: "Web Design, SEO & AI for Canada | Webix Solutions",
   metaDescription:
-    "Websites, SEO, Meta and Google ads and AI automation for Canadian businesses — working Eastern and Pacific business hours. Prices in CAD.",
+    "Websites, SEO, Meta and Google ads and AI automation for Canadian businesses — working Eastern and Pacific business hours. CAD estimates on request.",
   h1: "Digital marketing, websites and AI for businesses in Canada",
   heroIntro: [
     "We work with Canadian businesses and agency partners on websites, local search and customer intake.",
@@ -20,7 +20,7 @@ export const CANADA_LOCATION_PAGE: LocationPageContent = {
   currencyExplanation:
     "Our invoices are issued in USD with approximate CAD estimates provided for predictable budgeting. Ad spend is paid directly by your business in Canadian Dollars to your Canadian Meta, Google, and TikTok ad accounts.",
   pricingCard: {
-    startingRate: "From $499 USD (~$680 CAD)",
+    startingRate: "Custom USD quote with a CAD estimate",
     description: "Fixed-price project scopes and predictable monthly retainers",
     terms: [
       "No Canadian agency middleman markups or bloated overhead fees",
@@ -34,17 +34,17 @@ export const CANADA_LOCATION_PAGE: LocationPageContent = {
   overlapRows: [
     {
       pktWindow: "9:00 PM – 1:00 AM PKT",
-      localWindow: "11:00 AM – 3:00 PM ET (8:00 AM – 12:00 PM PT)",
+      localWindow: "11:00 AM–3:00 PM EST / 12:00 PM–4:00 PM EDT (8:00 AM–12:00 PM PST / 9:00 AM–1:00 PM PDT)",
       activity: "Live video strategy calls, Slack/WhatsApp standups, sprint check-ins, and same-day ad launches.",
     },
     {
       pktWindow: "1:00 AM – 5:00 AM PKT",
-      localWindow: "3:00 PM – 7:00 PM ET (12:00 PM – 4:00 PM PT)",
+      localWindow: "3:00 PM–7:00 PM EST / 4:00 PM–8:00 PM EDT (12:00 PM–4:00 PM PST / 1:00 PM–5:00 PM PDT)",
       activity: "Immediate revision requests, afternoon campaign tuning, urgent site edits, and West Coast alignment.",
     },
     {
       pktWindow: "9:00 AM – 6:00 PM PKT",
-      localWindow: "11:00 PM – 8:00 AM ET (Canadian overnight)",
+      localWindow: "11:00 PM–8:00 AM EST / 12:00 AM–9:00 AM EDT",
       activity: "Focused engineering sprints, design batch production, and code commits ready in your inbox by 9:00 AM ET.",
     },
   ],
@@ -76,9 +76,9 @@ export const CANADA_LOCATION_PAGE: LocationPageContent = {
       description:
         "Businesses serving Quebec, Ottawa, or national Canadian markets need a fully localized experience in both languages.",
       bulletPoints: [
-        "Multilingual Next.js and Shopify store architectures with sub-path routing (/fr/) and hreflang tag tags",
+        "Multilingual Next.js and Shopify stores with separate language URLs",
         "Culturally natural French translations for headings, product descriptions, and checkout trust badges",
-        "Compliant language toggles meeting Quebec Bill 96 commercial website requirements",
+        "Language switchers that link to the corresponding translated page",
         "Localized ad copy variants specifically tuned for francophone Quebecer search terminology",
       ],
     },
@@ -91,8 +91,8 @@ export const CANADA_LOCATION_PAGE: LocationPageContent = {
     narrative:
       "Our team provides Canadian founders and growing businesses with dedicated developers and paid media strategists who communicate clearly during Toronto and Vancouver business hours, eliminating the frustrating 24-hour communication lag common with conventional offshore outsourcers.",
     takeaways: [
-      "Custom-coded Next.js websites deployed on Cloudflare Canadian edge nodes for sub-2.0s load times",
-      "Full compliance with CASL and Canadian privacy benchmarks across all landing pages",
+      "Mobile-first Next.js websites with performance checked before handover",
+      "Consent and unsubscribe controls scoped for your review",
       "Real-time coordination via Slack, Google Meet, and WhatsApp during Canadian afternoon hours",
       "Complete client ownership of all domain registrations, source code repos, and advertising accounts",
     ],
@@ -101,12 +101,12 @@ export const CANADA_LOCATION_PAGE: LocationPageContent = {
     {
       question: "How does working with a Pakistani team work smoothly for a Canadian business?",
       answer:
-        "We coordinate smoothly by running a dedicated night shift in Pakistan (9:00 PM – 5:00 AM PKT) that mirrors 11:00 AM – 7:00 PM Eastern Time. During your normal working day, our senior developers and marketing leads are live on Slack, WhatsApp, and Google Meet for real-time discussions. While your team sleeps, our day team completes intensive engineering sprints, delivering completed tasks to your inbox by the next morning.",
+        "We coordinate smoothly by running a dedicated night shift in Pakistan (9:00 PM – 5:00 AM PKT) which overlaps 11:00 AM–7:00 PM EST or noon–8:00 PM EDT. During your normal working day, our senior developers and marketing leads are live on Slack, WhatsApp, and Google Meet for real-time discussions. While your team sleeps, our day team completes intensive engineering sprints, delivering completed tasks to your inbox by the next morning.",
     },
     {
       question: "Can Canadian companies pay for services in Canadian Dollars (CAD)?",
       answer:
-        "Yes. While our contractual proposals are established in USD for international standardization, we provide estimated CAD pricing for your quarterly financial planning. Invoices are paid via major Canadian corporate credit cards, Wise, or international bank transfer, and all ad spend is billed directly in CAD by Google and Meta.",
+        "Our service invoices are in USD and we can provide a CAD estimate for budgeting. Ad spend is billed separately through your own ad account.",
     },
     {
       question: "How do you ensure our marketing campaigns comply with CASL regulations?",

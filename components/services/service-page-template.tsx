@@ -12,8 +12,9 @@ import { CutFrame } from "@/components/ui/cut-frame";
 import { FaqSection } from "@/components/shared/faq-section";
 import { FinalCtaSection } from "@/components/home/final-cta-section";
 import { RoiCalculator } from "@/components/services/roi-calculator";
+import { getPublishedWorkEntries } from "@/content/work";
 import { SITE_FACTS } from "@/content/site-facts";
-import { getServiceBySlug, type ServiceEntry } from "@/content/services";
+import { getServiceBySlug, type ServiceEntry, type ServiceFaq } from "@/content/services";
 import {
   resolveConfirmedPrice,
   type ServicePageContent,
@@ -25,12 +26,14 @@ export interface ServicePageTemplateProps {
   service: ServiceEntry;
   nextSlot: NextSlotResult;
   pageContent?: ServicePageContent;
+  faqs: ServiceFaq[];
 }
 
 export function ServicePageTemplate({
   service,
   nextSlot,
   pageContent,
+  faqs,
 }: ServicePageTemplateProps) {
   // Breadcrumbs
   const breadcrumbs = [
@@ -187,30 +190,13 @@ export function ServicePageTemplate({
 
   // FAQs
   const faqHeading = pageContent?.faqHeading ?? `Direct answers about ${service.shortName}`;
-  const faqs = pageContent?.faqs ?? [
-    {
-      question: `How much does ${service.shortName} cost?`,
-      answer: `Our base tier is scoped transparently. Every project is quoted with a fixed-price written scope after a free 30-minute discovery call so there are never hidden hourly overages.`,
-    },
-    {
-      question: `How long does ${service.shortName} typically take?`,
-      answer: `Standard delivery takes 10 to 14 business days once content, logins, and project goals are confirmed. Larger custom builds or multi-market campaigns take between 3 and 6 weeks.`,
-    },
-    {
-      question: "Who owns the deliverables and accounts after completion?",
-      answer: `You do. Upon payment, you own 100% of your source code, design files, domains, tracking pixels, and advertising accounts. We never hold your property hostage.`,
-    },
-    {
-      question: "What time zone do you work in?",
-      answer: `Our team works across two coordinated shifts: a day shift overlapping UAE business hours and a night shift (9:00 PM to 5:00 AM PKT) overlapping North American Eastern and Pacific working hours.`,
-    },
-  ];
-
   // Related Services
   const relatedSlugs = pageContent?.related ?? service.relatedSlugs?.slice(0, 3) ?? [];
   const relatedServices = relatedSlugs
     .map((slug) => getServiceBySlug(slug))
     .filter((s): s is ServiceEntry => Boolean(s && s.published));
+
+  const examples = getPublishedWorkEntries().filter((study) => !study.scopeOnly && study.services.includes(service.slug)).slice(0, 2);
 
   return (
     <div className="w-full">
@@ -847,7 +833,7 @@ export function ServicePageTemplate({
       {/* =========================================================================
           SECTION 8: FAQ ACCORDION (Surface: Porcelain with Notch)
          ========================================================================= */}
-      <FaqSection
+      {faqs.length > 0 && <FaqSection
         id="service-questions"
         kicker="Frequently asked questions"
         heading={faqHeading}
@@ -856,7 +842,7 @@ export function ServicePageTemplate({
         surface="porcelain"
         previousSurface="graphite"
         notch
-      />
+      />}
 
       {/* =========================================================================
           SECTION 9: RELATED SERVICES & INDUSTRIES (Surface: Steel with Notch)
@@ -898,6 +884,14 @@ export function ServicePageTemplate({
               </Link>
             ))}
           </div>
+
+          {examples.length > 0 && (
+            <ul className="mt-8 flex flex-wrap gap-5">
+              {examples.map((study) => (
+                <li key={study.slug}><Link className="studio-link" href={`/our-work/${study.slug}/`}>See the {study.title} project</Link></li>
+              ))}
+            </ul>
+          )}
 
           {/* Industry Cross-Link */}
           <div className="mt-6 p-6 rounded-lg bg-[#E4E6EB] border border-[#CCD0D9] flex flex-col sm:flex-row sm:items-center justify-between gap-4">

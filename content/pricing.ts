@@ -207,7 +207,7 @@ export const FLAGSHIP_OFFERS: FlagshipOffer[] = [
   {
     id: "launch-kit",
     name: "Launch Kit",
-    badge: "One-time · 14 days",
+    badge: "One-time project",
     priceDisplay: "$499",
     priceUsd: 499,
     billingType: "one-time",

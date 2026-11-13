@@ -39,7 +39,7 @@ const FAQS = [
   {
     question: "Do you offer monthly growth packages?",
     answer:
-      "Yes. We offer integrated monthly growth packages starting from $399/month on our /offers/ page. These combine website maintenance, SEO fixes, social media content, and paid advertising management under a single predictable monthly investment.",
+      "Yes. We offer integrated monthly growth packages with a written quote based on scope. These combine website maintenance, SEO fixes, social media content, and paid advertising management under a single predictable monthly investment.",
   },
   {
     question: "Do you sign non-disclosure agreements (NDAs)?",
@@ -92,7 +92,7 @@ export function ServicesHubView({ categories, nextSlot }: ServicesHubViewProps) 
             <Kicker>Full-service digital delivery</Kicker>
 
             <h1 className="type-display text-white">
-              Find the right service
+              Web development, marketing and AI services
             </h1>
 
             <p className="type-lead text-[#A7ACB8] max-w-[62ch]">
