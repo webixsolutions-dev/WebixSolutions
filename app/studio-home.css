@@ -565,3 +565,19 @@ body:has(.interior-closing) .studio-footer-cta { display: none; }
 .booking-request-time { color: #fff !important; font: 600 1.15rem/1.3 var(--font-clash-grotesk),sans-serif; }
 .booking-request-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
 .booking-dialog .booking-panel { border: 0; padding: 0; background: none; }
+
+/* Booking: call type as buttons, time zone detected and shown as one line */
+.booking-types { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; }
+.booking-types button { display: grid; gap: 2px; min-height: 56px; padding: 8px 12px; border: 1px solid #555560; border-radius: 12px; background: #202227; color: #fff; text-align: left; cursor: pointer; }
+.booking-types button:hover { border-color: #fff; }
+.booking-types button[aria-pressed="true"] { background: var(--studio-action); border-color: var(--studio-action); }
+.booking-types strong { font-size: .92rem; font-weight: 650; line-height: 1.2; }
+.booking-types span { color: #c7c8cf; font-size: .78rem; }
+.booking-types button[aria-pressed="true"] span { color: #fff; }
+.booking-zone { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin-top: 12px; font-size: .86rem; }
+.booking-zone svg { flex: none; color: #c7c8cf; }
+.booking-zone p { flex: 1 1 200px; }
+.booking-zone p strong { color: #fff; font-weight: 600; }
+.booking-zone-change { min-height: 44px; padding-inline: 4px; color: #fff; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.booking-zone select { flex-basis: 100%; }
+@media (max-width: 420px) { .booking-types strong { font-size: .82rem; } .booking-types button { padding-inline: 9px; } }
