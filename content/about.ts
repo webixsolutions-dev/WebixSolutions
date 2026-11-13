@@ -111,7 +111,7 @@ export const ABOUT_CONTENT = {
       number: "03",
       rule: "Speak directly with senior leads, zero SDRs",
       description:
-        "You never get passed between aggressive junior sales reps or outsourced account managers. When you book a call or message our team, you speak with Haroon or department heads who build the work.",
+        "You never get passed between aggressive junior sales reps or outsourced account managers. When you book a call or message our team, you speak with the project leads who build the work.",
     },
     {
       number: "04",
@@ -142,7 +142,7 @@ export const ABOUT_CONTENT = {
     },
     {
       q: "Can I meet the Webix team before signing a contract?",
-      a: "Yes. You can schedule a 30-minute Google Meet strategy call directly through our booking calendar, or message Haroon directly on WhatsApp to coordinate an initial conversation.",
+      a: "Yes. You can schedule a 30-minute Google Meet strategy call directly through our booking calendar, or message our team on WhatsApp to arrange a first conversation.",
     },
     {
       q: "How does your team coordinate across international time zones?",

@@ -145,7 +145,7 @@ export function LocationPageTemplate({
 
           <div className="rounded-xl border border-[#E4E6EB] bg-white overflow-hidden shadow-xs">
             <div className="overflow-x-auto">
-              <table className="w-full text-left text-sm border-collapse">
+              <table className="w-full min-w-[620px] text-left text-sm border-collapse">
                 <thead>
                   <tr className="border-b border-[#E4E6EB] bg-[#F8F9FA] text-[#717684] text-xs font-semibold uppercase tracking-wider">
                     <th scope="col" className="p-4 sm:p-5">

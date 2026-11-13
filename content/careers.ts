@@ -46,7 +46,7 @@ export const CAREERS_CONTENT = {
       step: "03",
       title: "Team Alignment",
       description:
-        "A direct conversation with Haroon Sukhera and senior department leads to discuss work styles, shift preferences, and long-term career growth.",
+        "A conversation with senior department leads to discuss work styles, shift preferences, and long-term career growth.",
     },
     {
       step: "04",
@@ -174,7 +174,7 @@ export const CAREERS_CONTENT = {
     {
       question: "What does the interview process look like?",
       answer:
-        "We review your real work, assign a 1–2 day paid practical milestone challenge, and conduct a direct alignment conversation with Haroon Sukhera and department leads.",
+        "We review your real work, assign a 1–2 day paid practical milestone challenge, and hold a final conversation with department leads.",
     },
   ],
 };

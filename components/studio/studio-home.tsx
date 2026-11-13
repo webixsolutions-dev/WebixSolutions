@@ -32,7 +32,7 @@ export function StudioHome({ nextSlot }: { nextSlot: NextSlotResult }) {
               <a href="#selected-work" className="studio-button studio-button-outline">Explore our work <ArrowDown size={16} /></a>
             </div>
           </div>
-          <HeroShowcase nextSlot={nextSlot} platforms={STUDIO.platforms} markets={SITE_FACTS.markets.map((market) => market.name)} />
+          <HeroShowcase nextSlot={nextSlot} platforms={STUDIO.heroPlatforms} markets={SITE_FACTS.markets.map((market) => market.name)} />
           <div className="studio-hero-index"><a href="#studio-proof-title"><ArrowDown size={15} /> Scroll to explore</a><span>{STUDIO.heroNote}</span></div>
         </div>
       </section>

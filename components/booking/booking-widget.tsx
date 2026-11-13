@@ -49,6 +49,7 @@ export function BookingWidget({
   const [reserved, setReserved] = useState<Reservation | null>(null);
   const [loading, setLoading] = useState(true);
   const [unavailable, setUnavailable] = useState(false);
+  const [requestOnly, setRequestOnly] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
   const [refresh, setRefresh] = useState(0);
@@ -74,10 +75,11 @@ export function BookingWidget({
     void fetch(`/api/booking/slots?type=${type}&tz=${encodeURIComponent(timezone)}`, { signal: controller.signal })
       .then(async (response) => {
         if (!response.ok) throw new Error("Availability could not load");
-        return response.json() as Promise<{ slots: FormattedSlot[] }>;
+        return response.json() as Promise<{ slots: FormattedSlot[]; requestOnly?: boolean }>;
       })
       .then((data) => {
         setUnavailable(false);
+        setRequestOnly(data.requestOnly === true);
         setSlots(data.slots);
         setDate(data.slots[0]?.visitorDateKey ?? "");
         setMonthKey(null);
@@ -205,6 +207,19 @@ export function BookingWidget({
           <p>{appointment}</p>
           <p>Our team will email you the meeting details. Your reference is <strong>{reserved.eventId.slice(0, 8).toUpperCase()}</strong>.</p>
           <button type="button" className="studio-button studio-button-outline" onClick={addToCalendar}>Add to calendar</button>
+        </div>
+      ) : selected && requestOnly ? (
+        <div className="booking-request">
+          <button type="button" className="studio-link booking-back" onClick={() => setSelected(null)}><ChevronLeft size={17} /> Change time</button>
+          <h3 tabIndex={-1} ref={detailsTitle}>Request this time</h3>
+          <p className="booking-request-time">{meeting.title} · {appointment}</p>
+          <p>Send the time to our team on WhatsApp or by email. We reply to confirm it or suggest the nearest free time.</p>
+          <div className="booking-request-actions">
+            <a className="studio-button" target="_blank" rel="noopener noreferrer"
+              href={`https://wa.me/${SITE_FACTS.contact.whatsappNumber}?text=${encodeURIComponent(`Hi Webix Solutions, I would like to book a ${meeting.title} on ${appointment}.`)}`}>Send on WhatsApp</a>
+            <a className="studio-button studio-button-outline"
+              href={`mailto:${SITE_FACTS.contact.email}?subject=${encodeURIComponent(`${meeting.title} request`)}&body=${encodeURIComponent(`Hi Webix Solutions,\n\nI would like to book a ${meeting.title} on ${appointment}.\n\nName:\nCompany or website:\n`)}`}>Send by email</a>
+          </div>
         </div>
       ) : selected ? (
         <form onSubmit={reserve} className="booking-form">

@@ -247,7 +247,7 @@ export function OffersLandingView({ nextSlot }: OffersLandingViewProps) {
 
           <div className="rounded-xl border border-[#D5D8E0] bg-white overflow-hidden shadow-xs">
             <div className="overflow-x-auto">
-              <table className="w-full text-left text-sm border-collapse">
+              <table className="w-full min-w-[640px] text-left text-sm border-collapse">
                 <thead>
                   <tr className="border-b border-[#D5D8E0] bg-[#F8F9FA] text-[#717684] text-xs font-semibold uppercase tracking-wider">
                     <th scope="col" className="p-4 sm:p-5">Package</th>

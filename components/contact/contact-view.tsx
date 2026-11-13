@@ -88,7 +88,7 @@ export function ContactView() {
     {
       question: "How fast do you reply to inquiries?",
       answer:
-        "We review every message and reply within one business day. For urgent matters, you can message Haroon directly on WhatsApp for a faster response during operational shift hours.",
+        "We review every message and reply within one business day. For urgent matters, message us on WhatsApp and our team will get back to you during working hours.",
     },
     {
       question: "Can we communicate directly on WhatsApp or Slack?",
@@ -160,10 +160,10 @@ export function ContactView() {
               </div>
               <div className="space-y-1">
                 <h2 className="font-display text-base font-bold text-white group-hover:text-[#25D366] transition-colors">
-                  WhatsApp Founder Direct
+                  Message us on WhatsApp
                 </h2>
                 <p className="text-xs text-[#9CA3AF] leading-relaxed">
-                  Fast text or voice note exchange with Haroon ({SITE_FACTS.contact.phoneDisplay}).
+                  Send a text or voice note and our team will reply ({SITE_FACTS.contact.phoneDisplay}).
                 </p>
               </div>
               <div className="text-xs font-semibold text-[#25D366] inline-flex items-center gap-1.5 pt-2">
