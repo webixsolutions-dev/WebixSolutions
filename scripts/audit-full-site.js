@@ -97,8 +97,8 @@ function extractInternalLinks(html) {
     if (raw.startsWith("/") && !raw.startsWith("//") && !raw.startsWith("/_next") && !raw.startsWith("/api/")) {
       const clean = raw.split("#")[0].split("?")[0];
       if (clean) links.add(clean);
-    } else if (raw.startsWith("https://webixsolutions.com/")) {
-      const clean = raw.replace("https://webixsolutions.com", "").split("#")[0].split("?")[0];
+    } else if (raw.startsWith("https://www.webixsolutions.com/")) {
+      const clean = raw.replace("https://www.webixsolutions.com", "").split("#")[0].split("?")[0];
       if (clean) links.add(clean);
     }
   }
@@ -113,14 +113,18 @@ async function runAudit() {
   // 1. Fetch sitemap
   console.log("1. Fetching sitemap.xml to discover all published URLs...");
   const sitemapRes = await request("/sitemap.xml");
-  const locRegex = /<loc>([^<]+)<\/loc>/g;
-  const urls = [];
-  let locMatch;
-  while ((locMatch = locRegex.exec(sitemapRes.body)) !== null) {
-    const fullUrl = locMatch[1];
-    const pathOnly = fullUrl.replace("https://webixsolutions.com", "") || "/";
-    urls.push(pathOnly);
-  }
+  if (sitemapRes.statusCode !== 200) throw new Error(`Sitemap HTTP ${sitemapRes.statusCode}`);
+  const getPaths = (xml) => Array.from(xml.matchAll(/<loc>([^<]+)<\/loc>/g), ([, location]) =>
+    new URL(location.replace(/&amp;/g, "&")).pathname
+  );
+  const documents = /<sitemapindex[\s>]/.test(sitemapRes.body)
+    ? await Promise.all(getPaths(sitemapRes.body).map(async (path) => {
+      const group = await request(path);
+      if (group.statusCode !== 200) throw new Error(`${path} HTTP ${group.statusCode}`);
+      return group.body;
+    }))
+    : [sitemapRes.body];
+  const urls = [...new Set(documents.flatMap(getPaths))];
   console.log(`Discovered ${urls.length} indexable URLs in sitemap.xml.`);
 
   // Add noindex utility routes for full coverage
@@ -217,7 +221,7 @@ async function runAudit() {
     if (data.titleLength > 60) issues.push(`[${route}] Title > 60 chars (${data.titleLength}): "${data.title}"`);
     if (data.metaLength > 155) issues.push(`[${route}] Meta description > 155 chars (${data.metaLength})`);
     if (data.h1Count !== 1) issues.push(`[${route}] H1 count is ${data.h1Count} (must be exactly 1)`);
-    if (!data.canonical.startsWith("https://webixsolutions.com")) issues.push(`[${route}] Invalid canonical: "${data.canonical}"`);
+    if (!data.canonical.startsWith("https://www.webixsolutions.com")) issues.push(`[${route}] Invalid canonical: "${data.canonical}"`);
     if (!data.canonical.endsWith("/")) issues.push(`[${route}] Canonical missing trailing slash: "${data.canonical}"`);
     if (!data.gptBotOk) issues.push(`[${route}] GPTBot check failed (H1 or H2 missing in initial HTML)`);
   }
@@ -268,12 +272,12 @@ async function runAudit() {
   const stagingTag = stagingRes.headers["x-robots-tag"] || "";
   const stagingPass = stagingTag.includes("noindex");
 
-  const prodRes = await request("/", { headers: { Host: "webixsolutions.com" } });
+  const prodRes = await request("/", { headers: { Host: "www.webixsolutions.com" } });
   const prodTag = prodRes.headers["x-robots-tag"] || "";
   const prodPass = !prodTag.includes("noindex");
 
   console.log(`Staging host (staging.webixsolutions.com) X-Robots-Tag: "${stagingTag}" (Pass: ${stagingPass})`);
-  console.log(`Production host (webixsolutions.com) X-Robots-Tag: "${prodTag || 'none'}" (Pass: ${prodPass})`);
+  console.log(`Production host (www.webixsolutions.com) X-Robots-Tag: "${prodTag || 'none'}" (Pass: ${prodPass})`);
 
   if (!stagingPass) issues.push("Staging host did not send X-Robots-Tag: noindex");
   if (!prodPass) issues.push("Production host sent X-Robots-Tag: noindex");

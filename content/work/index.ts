@@ -35,6 +35,7 @@ export interface WorkEntry {
   category: Exclude<WorkCategory, "All">;
   summary: string;
   cover?: string;
+  coverAlt?: string;
   projectUrl?: string;
   coverCaption?: string;
   challenge: string;
@@ -62,15 +63,15 @@ export const WORK_CATEGORIES: WorkCategory[] = [
 const workImage = (file: string) => `/images/studio/${file}.webp`;
 
 const anonymousWebsiteScopes: WorkEntry[] = [
-  { slug: "property-inspection-site", title: "Property inspection website", summary: "A website build for a property inspection business.", category: "Websites" },
-  { slug: "independent-news-blog", title: "Independent news and blog website", summary: "A CMS website for publishing editorial and news articles.", category: "Websites" },
-  { slug: "coupons-directory", title: "Coupon directory website", summary: "A website build for a directory of offers and coupons.", category: "E-commerce" },
-  { slug: "retail-product-checkout", title: "Retail product and checkout improvements", summary: "Focused page updates for an online retailer, including product information and purchase flow.", category: "E-commerce" },
-  { slug: "hospitality-website", title: "Independent motel website", summary: "A website build for a hospitality business.", category: "Websites" },
-  { slug: "training-and-education-pages", title: "Education website page build", summary: "A scoped engagement to build three pages for an education provider.", category: "Websites" },
-  { slug: "construction-homepage", title: "Building contractor homepage", summary: "A new homepage for a building and renovation business.", category: "Websites" },
-  { slug: "social-media-content-management", title: "Social media content management", summary: "Planning and producing posts, reels and campaign creative for service and retail businesses.", category: "Social media" },
-  { slug: "book-checkout-redesign", title: "Book storefront checkout redesign", summary: "A targeted checkout redesign for a book storefront.", category: "E-commerce" },
+  { slug: "property-inspection-site", coverAlt: "Illustration of a property inspector checking a home electrical panel", title: "Property inspection website", summary: "A website build for a property inspection business.", category: "Websites" },
+  { slug: "independent-news-blog", coverAlt: "Illustration of a newsroom desk with a news website on a laptop", title: "Independent news and blog website", summary: "A CMS website for publishing editorial and news articles.", category: "Websites" },
+  { slug: "coupons-directory", coverAlt: "Illustration of coupon tickets and a shopping offers page on a phone", title: "Coupon directory website", summary: "A website build for a directory of offers and coupons.", category: "E-commerce" },
+  { slug: "retail-product-checkout", coverAlt: "Illustration of an online product page and mobile checkout beside a parcel", title: "Retail product and checkout improvements", summary: "Focused page updates for an online retailer, including product information and purchase flow.", category: "E-commerce" },
+  { slug: "hospitality-website", coverAlt: "Illustration of an independent motel exterior in evening light", title: "Independent motel website", summary: "A website build for a hospitality business.", category: "Websites" },
+  { slug: "training-and-education-pages", coverAlt: "Illustration of a training classroom with desks and a laptop", title: "Education website page build", summary: "A scoped engagement to build three pages for an education provider.", category: "Websites" },
+  { slug: "construction-homepage", coverAlt: "Illustration of a home renovation with timber framing and building tools", title: "Building contractor homepage", summary: "A new homepage for a building and renovation business.", category: "Websites" },
+  { slug: "social-media-content-management", coverAlt: "Illustration of a product filming setup and video editing laptop", title: "Social media content management", summary: "Planning and producing posts, reels and campaign creative for service and retail businesses.", category: "Social media" },
+  { slug: "book-checkout-redesign", coverAlt: "Illustration of books and packaging beside a laptop checkout page", title: "Book storefront checkout redesign", summary: "A targeted checkout redesign for a book storefront.", category: "E-commerce" },
 ].map((scope) => ({
   ...scope, category: scope.category as WorkEntry["category"], descriptor: "Anonymised client project",
   country: "", challenge: scope.summary, solution: [], results: [], stack: [],
@@ -96,6 +97,7 @@ export const WORK_REGISTRY: WorkEntry[] = [
     permission: "named",
     published: true,
     cover: workImage("camz"),
+    coverAlt: "Cleaner in a navy uniform wiping a kitchen countertop with Calgary visible outside",
     projectUrl: "https://camzcleaning.com/",
   },
   {
@@ -113,6 +115,7 @@ export const WORK_REGISTRY: WorkEntry[] = [
     permission: "named",
     published: true,
     cover: "/images/studio/jooblie-cover.svg",
+    coverAlt: "Jooblie illustration connecting job search, applications and recruiter tools",
     coverCaption: "Illustration of the Jooblie product flow",
   },
   {
@@ -130,12 +133,14 @@ export const WORK_REGISTRY: WorkEntry[] = [
     permission: "named",
     published: true,
     cover: workImage("walshkon-cover"),
+    coverAlt: "Walshkon Consultants website showing country choices for India, Canada and the UK",
     coverCaption: "Walshkon Consultants public website",
     projectUrl: "https://www.walshkonconsultants.com/",
   },
   {
     slug: "zelvomart-ecommerce-platform",
     cover: workImage("commerce"),
+    coverAlt: "Product illustration with a travel mug, phone stands and a lotion bottle",
     title: "Zelvomart — Custom E-commerce Platform & WhatsApp Ads",
     descriptor: "Webix-owned e-commerce store · Pakistan",
     country: "Pakistan",
@@ -182,6 +187,7 @@ export const WORK_REGISTRY: WorkEntry[] = [
   {
     slug: "us-contractor-websites",
     cover: workImage("trade-cover"),
+    coverAlt: "Illustration of a contractor holding a tablet outside a house",
     title: "Websites for US Trade Contractors",
     descriptor: "Electrical & Exterior Lighting Contractors · United States",
     country: "United States",
@@ -222,6 +228,7 @@ export const WORK_REGISTRY: WorkEntry[] = [
   {
     slug: "custom-crm-agency-operations",
     cover: "/images/studio/crm-cover.svg",
+    coverAlt: "CRM illustration with client, project, team and invoicing modules around a project pipeline",
     title: "Custom Agency Operations & Client Management CRM",
     descriptor: "Agency Infrastructure & Workflow Automation · Pakistan",
     country: "Pakistan",
@@ -262,6 +269,7 @@ export const WORK_REGISTRY: WorkEntry[] = [
   {
     slug: "webix-lead-desk",
     cover: "/images/studio/lead-cover.svg",
+    coverAlt: "Webix Lead Desk illustration linking research, audit and drafting with owner approval",
     title: "Webix Lead Desk",
     descriptor: "Internal lead research and outreach workspace",
     country: "",

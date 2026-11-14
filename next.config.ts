@@ -20,6 +20,9 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  async rewrites() {
+    return [{ source: "/sitemap-:group.xml", destination: "/sitemaps/:group.xml" }];
+  },
   async headers() {
     return [
       {

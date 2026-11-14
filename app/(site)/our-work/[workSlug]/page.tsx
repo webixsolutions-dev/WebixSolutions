@@ -38,7 +38,7 @@ export async function generateMetadata({
     title,
     description: study.summary.slice(0, 155),
     path: `/our-work/${study.slug}/`,
-    ...(study.cover && !study.cover.endsWith(".svg") ? { image: { path: study.cover, alt: study.coverCaption ?? study.title } } : {}),
+    ...(study.cover && !study.cover.endsWith(".svg") ? { image: { path: study.cover, alt: study.coverAlt ?? study.title } } : {}),
   });
 }
 

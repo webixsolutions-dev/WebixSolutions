@@ -44,7 +44,7 @@ export function Footer() {
         </div>
         <div className="studio-footer-news"><div><p>Notes from the studio</p><span>Occasional updates on web, search and automation.</span></div><NewsletterForm /></div>
         <div className="studio-footer-wordmark" aria-hidden="true">WEBIX SOLUTIONS</div>
-        <div className="studio-footer-legal"><span>© {new Date().getFullYear()} Webix Solutions</span><div>{columns.legal.map((item) => <Link href={item.href} key={item.href}>{item.label}</Link>)}<CookieSettingsTrigger /></div></div>
+        <div className="studio-footer-legal"><span>© {new Date().getFullYear()} Webix Solutions</span><div>{columns.legal.map((item) => <Link href={item.href} key={item.href}>{item.label}</Link>)}<Link href="/sitemap/">Sitemap</Link><CookieSettingsTrigger /></div></div>
       </div>
     </footer>
   );
