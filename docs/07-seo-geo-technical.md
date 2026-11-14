@@ -92,7 +92,7 @@ See `public-files/robots.txt`. Allows all search and AI crawlers, blocks only `/
 Both `/llms.txt` and `/llms-full.txt` are generated from approved company facts and published content registries in `lib/llms.ts`. They provide optional reference links to services, articles and case studies.
 
 ## Sitemaps
-`app/sitemap.ts` generated from the content registry: only indexable, published pages, with `lastModified` from content files. Exclude noindex pages, `/lp/*`, W2 pages that aren't built yet. Submit `https://www.webixsolutions.com/sitemap.xml` in GSC and Bing Webmaster Tools (also enable IndexNow via Bing).
+`lib/sitemap.ts` generates six sitemap groups from the published registries. `/sitemap.xml` lists the group files at `/sitemap-*.xml`. Articles retain verified modification dates. Images are associated with the pages that display them, using original public image URLs. Descriptive alt text lives in the content registries and rendered image elements. `/sitemap/` provides an HTML view, and `/sitemap.xsl` styles XML in supporting browsers. Exclude noindex pages, `/lp/*`, W2 pages that aren't built yet. Submit `https://www.webixsolutions.com/sitemap.xml` in GSC and Bing Webmaster Tools (also enable IndexNow via Bing).
 
 ## Content rules for SEO + assistants
 - Answer-first: the first two sentences under every H1/H2 answer the question the heading implies (assistants quote openings).
